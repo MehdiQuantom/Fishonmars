@@ -1,0 +1,67 @@
+.row {
+ width: 150px;
+  height: 150px;
+  position: absolute;
+  top: 0px;
+  left: 1425px;
+}
+
+.row2 {
+  width: 150px;
+  height: 150px;
+  position: absolute;
+  top: 0px;
+  left: 475px;
+  
+}
+
+.row3 {
+width: 150px;
+  height: 150px;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+}
+
+.row4 {
+  width: 150px;
+  height: 150px;
+  position: absolute;
+  top: 0px;
+  left: 950px;
+  
+}
+
+.row5 {
+  width: 150px;
+  height: 150px;
+  position: absolute;
+  top: 475px;
+  left: 1425px;
+  
+}
+.row6 {
+  width: 150px;
+  height: 150px;
+  position: absolute;
+  top: 475px;
+  left: 475px;
+  
+}
+.row7 {
+  width: 150px;
+  height: 150px;
+  position: absolute;
+  top: 475px;
+  left: 0px;
+  
+}
+.row8 {
+  width: 150px;
+  height: 150px;
+  position: absolute;
+  top: 475px;
+  left: 950px;
+  
+  
+}
