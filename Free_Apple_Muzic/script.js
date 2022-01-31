@@ -71,6 +71,6 @@ function coolal(type, title, text) {
 //////////////////////////////////////////////////
 $(document).ready(function() { 
   setTimeout(function() {
-    coolal("alert"/*Change this value to "alert" or "yes-no"*/, "IOS Alert", "IOS like custom alert box<br /> made with custom alert function");
+    coolal("alert"/*Change this value to "alert" or "yes-no"*/, "Attention", "Enable Your VPN <br /> Mehdi Quantom");
   }, 1000)
 });
