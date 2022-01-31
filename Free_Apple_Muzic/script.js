@@ -71,6 +71,6 @@ function coolal(type, title, text) {
 //////////////////////////////////////////////////
 $(document).ready(function() { 
   setTimeout(function() {
-    coolal("alert"/*Change this value to "alert" or "yes-no"*/, "Attention", "Enable Your VPN <br /> Mehdi Quantom");
+    coolal("alert"/*Change this value to "alert" or "yes-no"*/, "Attention", "Enable Your VPN <br/> Mehdi Quantom");
   }, 1000)
 });
