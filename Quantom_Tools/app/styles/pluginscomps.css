@@ -1,0 +1,24 @@
+﻿/*!
+ This file is part of DecSoft App Builder.
+ Visit our website for license information.
+ Copyright ©2020 DecSoft. All rights reserved.
+ Visit our website at: https://www.decsoftutils.com
+ */
+
+.decsoft-typeahead-container
+{
+  z-index: 1;
+}
+
+.decsoft-typeahead-list
+{
+  margin-top: 6px;
+  overflow-y: auto;	
+  max-height: 250px;
+}
+
+.decsoft-typeahead-list
+{
+  width: 100%;
+  min-width: 100%;	
+}
