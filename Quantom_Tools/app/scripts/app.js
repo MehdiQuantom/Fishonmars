@@ -1,1123 +1,25 @@
 ﻿/*!
- This file is part of DecSoft App Builder.
- Visit our website for license information.
- Copyright ©2020 DecSoft. All rights reserved.
- Visit our website at: https://www.decsoftutils.com
+ * This file is part of App Builder
+ * For licenses information see App Builder help
+ * ©2019 DecSoft App Builder - https://www.davidesperalta.com/
  */
 
-Vue.config.silent = false;
-Vue.config.devtools = true;
-Vue.config.performance = false;
+window.App = {};
 
-window.appFrames = {};
+window.App.Utils = (function () {
 
-window.appFrames.frame1 = {
-        name: "frame1",
-        event: null};
+  var
+    lastSound = 0;
 
+  return {
 
-
-Vue.component("dialog1", function (resolve, reject) {
-  jQuery.get("app/views/html/dialog1.html", function (response) {
-    resolve({
-      props: ["app"],
-      template: response,
-      data: function () {
-        return {
-          name: "dialog1",
-          size: "xl",
-          classes: "",
-          event: null
-        };
-      },
-      mounted: function () {
-        var
-          self = this;
-        $("#dialog1").on("show.bs.modal", function () {
-          var
-            view = self,
-            views = app._getLoadedViews(),
-            frames = app._getLoadedFrames(),
-            dialogs = app._getLoadedDialogs();
-          view.event = null;
-          app.internal.activeDialog = self;
-          app._setViewEvents(self);
-
-        });
-        $("#dialog1").on("hidden.bs.modal", function () {
-          var
-            view = self,
-            views = app._getLoadedViews(),
-            frames = app._getLoadedFrames(),
-            dialogs = app._getLoadedDialogs();
-          view.event = null;
-          app.internal.activeDialog = app._getActiveDialog();
-
-        });
-      },
-      methods: {
-        show: function () {
-          $("#" + this.name).modal({backdrop: "static", keyboard: false});
-        },
-        hide: function () {
-          $("#" + this.name).modal("hide");
-        },
-        clickHandler: function (event) {
-          var
-            view = this,
-            self = this,
-            views = app._getLoadedViews(),
-            frames = app._getLoadedFrames(),
-            dialogs = app._getLoadedDialogs();
-          view.event = event;
-
-        },
-        dblclickHandler: function (event) {
-          var
-            view = this,
-            self = this,
-            views = app._getLoadedViews(),
-            frames = app._getLoadedFrames(),
-            dialogs = app._getLoadedDialogs();
-          view.event = event;
-
-        },
-        mouseupHandler: function (event) {
-          var
-            view = this,
-            self = this,
-            views = app._getLoadedViews(),
-            frames = app._getLoadedFrames(),
-            dialogs = app._getLoadedDialogs();
-          view.event = event;
-
-        },
-        mousedownHandler: function (event) {
-          var
-            view = this,
-            self = this,
-            views = app._getLoadedViews(),
-            frames = app._getLoadedFrames(),
-            dialogs = app._getLoadedDialogs();
-          view.event = event;
-
-        },
-        mousemoveHandler: function (event) {
-          var
-            view = this,
-            self = this,
-            views = app._getLoadedViews(),
-            frames = app._getLoadedFrames(),
-            dialogs = app._getLoadedDialogs();
-          view.event = event;
-
-        },
-        mouseenterHandler: function (event) {
-          var
-            view = this,
-            self = this,
-            views = app._getLoadedViews(),
-            frames = app._getLoadedFrames(),
-            dialogs = app._getLoadedDialogs();
-          view.event = event;
-
-        },
-        mouseleaveHandler: function (event) {
-          var
-            view = this,
-            self = this,
-            views = app._getLoadedViews(),
-            frames = app._getLoadedFrames(),
-            dialogs = app._getLoadedDialogs();
-          view.event = event;
-
-        },
-        contextmenuHandler: function (event) {
-          var
-            view = this,
-            self = this,
-            views = app._getLoadedViews(),
-            frames = app._getLoadedFrames(),
-            dialogs = app._getLoadedDialogs();
-          view.event = event;
-
-        },
-        swipeRightHandler: function (event) {
-          var
-            view = this,
-            self = this,
-            views = app._getLoadedViews(),
-            frames = app._getLoadedFrames(),
-            dialogs = app._getLoadedDialogs();
-          view.event = event;
-
-        },
-        swipeLeftHandler: function (event) {
-          var
-            view = this,
-            self = this,
-            views = app._getLoadedViews(),
-            frames = app._getLoadedFrames(),
-            dialogs = app._getLoadedDialogs();
-          view.event = event;
-
-        }
-      }
-    });
-  });
-});
-
-window.appViews = {};
-
-window.appViews.view1 = Vue.component("view1", function (resolve, reject) {
-  jQuery.get("app/views/html/view1.html", function (response) {
-    resolve({
-      props: ["app"],
-      template: response,
-      data: function () {
-        return {
-          name: "view1",
-          classes: "",
-          transitionName: "",
-          transitionMode: "",
-          inAnimation: "",
-          outAnimation: "",
-          event: null,
-          input1: {
-            name: "input1",
-            type: "password",
-            value: "",
-            size: "sm",
-            classes: "",
-            title: "",
-            placeholder: "",
-            tabIndex: 0,
-            readonly: false,
-            hidden: false,
-            disabled: false,
-            event: null,
-            changeHandler: function () {},
-            cutHandler: function () {},
-            copyHandler: function () {},
-            pasteHandler: function () {},
-            blurHandler: function () {},
-            focusHandler: function () {},
-            clickHandler: function () {},
-            dblclickHandler: function () {},
-            keyupHandler: function () {},
-            keydownHandler: function () {},
-            mouseupHandler: function () {},
-            mousedownHandler: function () {},
-            mousemoveHandler: function () {},
-            mouseenterHandler: function () {},
-            mouseleaveHandler: function () {},
-            contextmenuHandler: function () {}
-          },
-
-          input2: {
-            name: "input2",
-            type: "text",
-            value: "",
-            size: "sm",
-            classes: "",
-            title: "",
-            placeholder: "",
-            tabIndex: 0,
-            readonly: false,
-            hidden: false,
-            disabled: false,
-            event: null,
-            changeHandler: function () {},
-            cutHandler: function () {},
-            copyHandler: function () {},
-            pasteHandler: function () {},
-            blurHandler: function () {},
-            focusHandler: function () {},
-            clickHandler: function () {},
-            dblclickHandler: function () {},
-            keyupHandler: function () {},
-            keydownHandler: function () {},
-            mouseupHandler: function () {},
-            mousedownHandler: function () {},
-            mousemoveHandler: function () {},
-            mouseenterHandler: function () {},
-            mouseleaveHandler: function () {},
-            contextmenuHandler: function () {}
-          },
-
-          label2: {
-            name: "label2",
-            classes: "",
-            input: "",
-            title: "",
-            text: "User Name:",
-            leftIcon: "far fa-user",
-            rightIcon: "",
-            hidden: false,
-            event: null,
-            clickHandler: function () {},
-            dblclickHandler: function () {},
-            mouseupHandler: function () {},
-            mousedownHandler: function () {},
-            mousemoveHandler: function () {},
-            mouseenterHandler: function () {},
-            mouseleaveHandler: function () {},
-            contextmenuHandler: function () {}
-          },
-
-          label3: {
-            name: "label3",
-            classes: "",
-            input: "",
-            title: "",
-            text: "Password:",
-            leftIcon: "fas fa-lock",
-            rightIcon: "",
-            hidden: false,
-            event: null,
-            clickHandler: function () {},
-            dblclickHandler: function () {},
-            mouseupHandler: function () {},
-            mousedownHandler: function () {},
-            mousemoveHandler: function () {},
-            mouseenterHandler: function () {},
-            mouseleaveHandler: function () {},
-            contextmenuHandler: function () {}
-          },
-
-          button2: {
-            name: "button2",
-            classes: "",
-            size: "sm",
-            title: "",
-            tabIndex: 0,
-            text: "Guest",
-            kind: "dark",
-            outline: false,
-            active: false,
-            leftIcon: "",
-            rightIcon: "",
-            leftBadge: "",
-            leftBadgeKind: "light",
-            leftBadgePilled: false,
-            rightBadge: "",
-            rightBadgeKind: "light",
-            rightBadgePilled: false,
-            hidden: false,
-            disabled: false,
-            event: null,
-            blurHandler: function () {},
-            focusHandler: function () {},
-
-            clickHandler: function (event) {
-              var
-                view = app._getCurrentView(),
-                views = app._getLoadedViews(),
-                frames = app._getLoadedFrames(),
-                dialogs = app._getLoadedDialogs(),
-                self = view.button2;
-                self.event = event;
-
-app.showView('view2');
-app.showToast(
-  'Sorry But Not Alowed Right Now !',
-  false,
-  app.kind.warning,
-  'Warning !',
-  '1 Second Ago'
-  );
-
-            },
-            dblclickHandler: function () {},
-            mouseupHandler: function () {},
-            mousedownHandler: function () {},
-            mousemoveHandler: function () {},
-            mouseenterHandler: function () {},
-            mouseleaveHandler: function () {},
-            contextmenuHandler: function () {}
-          },
-
-          progress1: {
-            name: "progress1",
-            striped: true,
-            animated: true,
-            value: 100,
-            classes: "",
-            kind: "danger",
-            title: "",
-            hidden: false,
-            disabled: false,
-            event: null,
-            clickHandler: function () {},
-            dblclickHandler: function () {},
-            mouseupHandler: function () {},
-            mousedownHandler: function () {},
-            mousemoveHandler: function () {},
-            mouseenterHandler: function () {},
-            mouseleaveHandler: function () {},
-            contextmenuHandler: function () {}
-          },
-
-          button1: {
-            name: "button1",
-            classes: "",
-            size: "sm",
-            title: "",
-            tabIndex: 0,
-            text: "Submit",
-            kind: "primary",
-            outline: false,
-            active: false,
-            leftIcon: "",
-            rightIcon: "",
-            leftBadge: "",
-            leftBadgeKind: "light",
-            leftBadgePilled: false,
-            rightBadge: "",
-            rightBadgeKind: "light",
-            rightBadgePilled: false,
-            hidden: false,
-            disabled: false,
-            event: null,
-            blurHandler: function () {},
-            focusHandler: function () {},
-
-            clickHandler: function (event) {
-              var
-                view = app._getCurrentView(),
-                views = app._getLoadedViews(),
-                frames = app._getLoadedFrames(),
-                dialogs = app._getLoadedDialogs(),
-                self = view.button1;
-                self.event = event;
-
-app.showToast(
-  'Wrong User Or Password - Try As A Guest !',
-  false,
-  app.kind.warning,
-  'Warning !',
-  '1 Second Ago'
-  );
-
-            },
-            dblclickHandler: function () {},
-            mouseupHandler: function () {},
-            mousedownHandler: function () {},
-            mousemoveHandler: function () {},
-            mouseenterHandler: function () {},
-            mouseleaveHandler: function () {},
-            contextmenuHandler: function () {}
-          },
-          image1: {
-            name: "image1",
-            url: "app/images/jo_modi.png",
-            classes: "",
-            description: "",
-            title: "",
-            imageFit: "cover",
-            hidden: false,
-            disabled: false,
-            event: null,
-            loadHandler: function () {},
-            errorHandler: function () {},
-            clickHandler: function () {},
-            dblclickHandler: function () {},
-            mouseupHandler: function () {},
-            mousedownHandler: function () {},
-            mousemoveHandler: function () {},
-            mouseenterHandler: function () {},
-            mouseleaveHandler: function () {},
-            contextmenuHandler: function () {}
-          },
-
-        };
-      },
-      activated: function () {
-        var
-          view = this,
-          self = this,
-          views = app._getLoadedViews(),
-          frames = app._getLoadedFrames(),
-          dialogs = app._getLoadedDialogs();
-        view.event = null;
-        app._setViewEvents(this);
-
-      },
-      deactivated: function () {
-        var
-          view = this,
-          self = this,
-          views = app._getLoadedViews(),
-          frames = app._getLoadedFrames(),
-          dialogs = app._getLoadedDialogs();
-        view.event = null;
-
-      },
-      methods: {
-        clickHandler: function (event) {
-          var
-            view = this,
-            self = this,
-            views = app._getLoadedViews(),
-            frames = app._getLoadedFrames(),
-            dialogs = app._getLoadedDialogs();
-          view.event = event;
-
-        },
-        dblclickHandler: function (event) {
-          var
-            view = this,
-            self = this,
-            views = app._getLoadedViews(),
-            frames = app._getLoadedFrames(),
-            dialogs = app._getLoadedDialogs();
-          view.event = event;
-
-        },
-        mouseupHandler: function (event) {
-          var
-            view = this,
-            self = this,
-            views = app._getLoadedViews(),
-            frames = app._getLoadedFrames(),
-            dialogs = app._getLoadedDialogs();
-          view.event = event;
-
-        },
-        mousedownHandler: function (event) {
-          var
-            view = this,
-            self = this,
-            views = app._getLoadedViews(),
-            frames = app._getLoadedFrames(),
-            dialogs = app._getLoadedDialogs();
-          view.event = event;
-
-        },
-        mousemoveHandler: function (event) {
-          var
-            view = this,
-            self = this,
-            views = app._getLoadedViews(),
-            frames = app._getLoadedFrames(),
-            dialogs = app._getLoadedDialogs();
-          view.event = event;
-
-        },
-        mouseenterHandler: function (event) {
-          var
-            view = this,
-            self = this,
-            views = app._getLoadedViews(),
-            frames = app._getLoadedFrames(),
-            dialogs = app._getLoadedDialogs();
-          view.event = event;
-
-        },
-        mouseleaveHandler: function (event) {
-          var
-            view = this,
-            self = this,
-            views = app._getLoadedViews(),
-            frames = app._getLoadedFrames(),
-            dialogs = app._getLoadedDialogs();
-          view.event = event;
-
-        },
-        contextmenuHandler: function (event) {
-          var
-            view = this,
-            self = this,
-            views = app._getLoadedViews(),
-            frames = app._getLoadedFrames(),
-            dialogs = app._getLoadedDialogs();
-          view.event = event;
-
-        },
-        swipeRightHandler: function (event) {
-          var
-            view = this,
-            self = this,
-            views = app._getLoadedViews(),
-            frames = app._getLoadedFrames(),
-            dialogs = app._getLoadedDialogs();
-          view.event = event;
-
-        },
-        swipeLeftHandler: function (event) {
-          var
-            view = this,
-            self = this,
-            views = app._getLoadedViews(),
-            frames = app._getLoadedFrames(),
-            dialogs = app._getLoadedDialogs();
-          view.event = event;
-
-        }
-      }
-    });
-  });
-});
-
-window.appViews.view2 = Vue.component("view2", function (resolve, reject) {
-  jQuery.get("app/views/html/view2.html", function (response) {
-    resolve({
-      props: ["app"],
-      template: response,
-      data: function () {
-        return {
-          name: "view2",
-          classes: "",
-          transitionName: "",
-          transitionMode: "",
-          inAnimation: "",
-          outAnimation: "",
-          event: null,
-          button1: {
-            name: "button1",
-            classes: "",
-            size: "sm",
-            title: "",
-            tabIndex: 0,
-            text: "button1",
-            kind: "primary",
-            outline: false,
-            active: false,
-            leftIcon: "",
-            rightIcon: "",
-            leftBadge: "",
-            leftBadgeKind: "light",
-            leftBadgePilled: false,
-            rightBadge: "",
-            rightBadgeKind: "light",
-            rightBadgePilled: false,
-            hidden: false,
-            disabled: false,
-            event: null,
-            blurHandler: function () {},
-            focusHandler: function () {},
-            clickHandler: function () {},
-            dblclickHandler: function () {},
-            mouseupHandler: function () {},
-            mousedownHandler: function () {},
-            mousemoveHandler: function () {},
-            mouseenterHandler: function () {},
-            mouseleaveHandler: function () {},
-            contextmenuHandler: function () {}
-          },
-
-        };
-      },
-      activated: function () {
-        var
-          view = this,
-          self = this,
-          views = app._getLoadedViews(),
-          frames = app._getLoadedFrames(),
-          dialogs = app._getLoadedDialogs();
-        view.event = null;
-        app._setViewEvents(this);
-
-      },
-      deactivated: function () {
-        var
-          view = this,
-          self = this,
-          views = app._getLoadedViews(),
-          frames = app._getLoadedFrames(),
-          dialogs = app._getLoadedDialogs();
-        view.event = null;
-
-      },
-      methods: {
-        clickHandler: function (event) {
-          var
-            view = this,
-            self = this,
-            views = app._getLoadedViews(),
-            frames = app._getLoadedFrames(),
-            dialogs = app._getLoadedDialogs();
-          view.event = event;
-
-        },
-        dblclickHandler: function (event) {
-          var
-            view = this,
-            self = this,
-            views = app._getLoadedViews(),
-            frames = app._getLoadedFrames(),
-            dialogs = app._getLoadedDialogs();
-          view.event = event;
-
-        },
-        mouseupHandler: function (event) {
-          var
-            view = this,
-            self = this,
-            views = app._getLoadedViews(),
-            frames = app._getLoadedFrames(),
-            dialogs = app._getLoadedDialogs();
-          view.event = event;
-
-        },
-        mousedownHandler: function (event) {
-          var
-            view = this,
-            self = this,
-            views = app._getLoadedViews(),
-            frames = app._getLoadedFrames(),
-            dialogs = app._getLoadedDialogs();
-          view.event = event;
-
-        },
-        mousemoveHandler: function (event) {
-          var
-            view = this,
-            self = this,
-            views = app._getLoadedViews(),
-            frames = app._getLoadedFrames(),
-            dialogs = app._getLoadedDialogs();
-          view.event = event;
-
-        },
-        mouseenterHandler: function (event) {
-          var
-            view = this,
-            self = this,
-            views = app._getLoadedViews(),
-            frames = app._getLoadedFrames(),
-            dialogs = app._getLoadedDialogs();
-          view.event = event;
-
-        },
-        mouseleaveHandler: function (event) {
-          var
-            view = this,
-            self = this,
-            views = app._getLoadedViews(),
-            frames = app._getLoadedFrames(),
-            dialogs = app._getLoadedDialogs();
-          view.event = event;
-
-        },
-        contextmenuHandler: function (event) {
-          var
-            view = this,
-            self = this,
-            views = app._getLoadedViews(),
-            frames = app._getLoadedFrames(),
-            dialogs = app._getLoadedDialogs();
-          view.event = event;
-
-        },
-        swipeRightHandler: function (event) {
-          var
-            view = this,
-            self = this,
-            views = app._getLoadedViews(),
-            frames = app._getLoadedFrames(),
-            dialogs = app._getLoadedDialogs();
-          view.event = event;
-
-        },
-        swipeLeftHandler: function (event) {
-          var
-            view = this,
-            self = this,
-            views = app._getLoadedViews(),
-            frames = app._getLoadedFrames(),
-            dialogs = app._getLoadedDialogs();
-          view.event = event;
-
-        }
-      }
-    });
-  });
-});
-
-Vue.filter('uppercase', function (value) {
-  if (value) {
-    value = value.toString();
-    return value.toUpperCase();
-  }
-});
-
-Vue.filter('lowercase', function (value) {
-  if (value) {
-    value = value.toString();
-    return value.toLowerCase();
-  }
-});
-
-window.appStore = new Vuex.Store({
-  state: {}
-});
-
-window.app = new Vue({
-
-  router: new VueRouter({routes: [
-    
-    { path: '/view1', alias: '*', name: 'view1', component: window.appViews.view1, props: function (route) { app.query = $.isEmptyObject(route.query) ? false : route.query; } },
-    { path: '/view2', name: 'view2', component: window.appViews.view2, props: function (route) { app.query = $.isEmptyObject(route.query) ? false : route.query; } }
-  ]}),
-
-  created: function () {
-    this._setupAppHtml();
-    this._setupAppEvents();
-    this._setupAppDialogs();
-    this._setupAppVariables();
-    this._setupAppPlugins();
-    this._setupCordovaPlugins();
-  },
-
-  mounted: function () {
-    var
-      app = this;
-
-    
-  },
-
-  data: function () {
-
-    return {
-      event: null,
-      error: null,
-
-      
-      id: "com.services.mehdiquantom",
-      version: "1.0.0",
-      name: "Login",
-      shortName: "QS",
-      description: "Coded By Mehdi Quantom",
-      authorName: "Mehdi Quantom",
-      authorEmail: "Mehdi Quantom",
-      authorUrl: "https://www.google.com/",
-      language: "en",
-      languageName: "English",
-      textDirection: "ltr",
-      style: "scaled",
-      buildNumber: 0,
-      theme: "default",
-      themes: ["default"],
-      sidebar: {
-        item: {
-          index: -1,
-          subindex: -1
-        },
-        header: "",
-        direction: "left",
-        headerKind: "none",
-        headerAlign: "left",
-        imageUrl: "",
-        items: [],
-        itemClickHandler: this._appEventOnSidebarItemClick,
-        headerClickHandler: this._appEventOnSidebarHeaderClick
-      },
-      alert: {
-        body: "",
-        kind: "",
-        title: "",
-        buttons: [],
-        closeCallback: function () {}
-      },
-      internal: {
-        dialogs: [],
-        lastSound: null,
-        activeDialog: null,
-        dabdialogs: [],
-        defaultLanguage: "en",
-      },
-    };
-  },
-
-  computed: {
-    
-    store: function () {
-      return window.appStore.state;
+    lowerCase: function (text) {
+      return text.toLowerCase();
     },
     
-    viewTransitionName: function () {
-      return app._getCurrentView().transitionName !== '' ? 'name' : null;
-    },
-    
-    viewTransitionMode: function () {
-      return app._getCurrentView().transitionMode !== '' ? 'mode' : null;
-    },
-    
-    viewInAnimation: function () {
-      return app._getCurrentView().inAnimation !== '' ? 'enter-active-class' : null;
-    },
-    
-    viewOutAnimation: function () {
-      return app._getCurrentView().outAnimation !== '' ? 'leave-active-class' : null;
-    }    
-  },
-
-  methods: {
-
-    // Public app variables related methods
-
-    setVar: function (varName, varValue) {
-      this.$set(this.store, varName, varValue);
-    },
-
-    // Public app views related methods
-
-    showView: function (viewName) {
-      this.$router.push(viewName);
-    },
-
-    replaceView: function (viewName) {
-      this.$router.replace(viewName);
-    },
-
-    // Public app dialogs related methods
-
-    showDialog: function (dialogName) {
-      $('#' + dialogName).modal({backdrop:
-       'static', keyboard: false});
-    },
-
-    hideDialog: function (dialogName) {
-      $('#' + dialogName).modal('hide');
-    },
-
-    hideDialogs: function () {
-      $('.app-dialog.modal').modal('hide');
-    },
-	
-	// Public app alert related methods
-	
-	showAlert: function (body, title, kind, buttons, closeCallback) {
-		
-      app.alert.kind = kind || '';
-      app.alert.title = title || '';
-      app.alert.body = body || '';
-      app.alert.buttons = buttons || false;
-      app.alert.closeCallback = closeCallback || function () {};		
-	  
-	  $('#dab-alert-modal').on('hidePrevented.bs.modal', function (e) {
-        
-		// TODO: https://github.com/twbs/bootstrap/issues/31615
-		Object.assign(e, { defaultPrevented: true });
-        e.preventDefault()		  
-		
-		if (!app.alert.buttons || app.alert.buttons.length === 0) {
-	      $('#dab-alert-modal').modal('hide');	  			
-		}  
-	  });
-	  
-      window.setTimeout(function () {
-	    $('#dab-alert-modal').modal('show');		  
-	  }, 10); 	
-	},	
-	
-	hideAlert: function () {
-	  $('#dab-alert-modal').modal('hide');	
-	},
-	
-	// Public app sidebar related methods
-	
-	showSidebar: function () {
-      $('#dab-sidebar').addClass('active');
-      $('#dab-sidebar-overlay').addClass('active');		
-	},
-	
-	hideSidebar: function () {
-      $('#dab-sidebar').removeClass('active');
-      $('#dab-sidebar-overlay').removeClass('active');		
-	},	
-	
- 	sidebarIsVisible: function () {
-      return $('#dab-sidebar').hasClass('active');		
-	},
-	
- 	sidebarSetDirection: function (direction) {
-	  if (app.sidebar.direction === direction) {
-	    return app.sidebar.direction;	  
-	  }		  
-      app.sidebar.direction = direction;
-      if (direction === 'right') {
-        var 
-          css = '#dab-sidebar { left: initial; right: -280px; }\
-		         #dab-sidebar.active { left: initial; right: 0; }',
-          style = document.createElement('style');
-        document.head.appendChild(style);
-        style.type = 'text/css';
-	    style.id = 'sidebar-stylesheet';
-        style.appendChild(document.createTextNode(css));		
-	  } else {
-	    if ($('#sidebar-stylesheet').length > 0) {
-          $('#sidebar-stylesheet').remove();
-		}	  
-	  }
-	  return app.sidebar.direction; 
-	},	
-
-    // Public app toasts related methods
-
-    showToast: function (text, hideMsecs, kind, title,
-     subtitle, clickCallback, dismissCallback, payload) {
-      var
-        toastId = this.randomStr(),
-        toasts = this._getToastsComponent();
-      toasts.toasts.push({
-        "text": text,
-        "id": toastId,
-        "title": title || '',
-        "kind": kind || 'light',
-        "payload": payload || null,
-        "subtitle": subtitle || '',
-        "clickCallback": clickCallback || function () {},
-        "dismissCallback": dismissCallback || function () {}
-      });
-      if (hideMsecs) {
-        window.setTimeout(function () {
-          for (var i in toasts.toasts) {
-            if (toasts.toasts[i].id === toastId) {
-              toasts.toasts.splice(i, 1);
-            }
-          }
-        }, hideMsecs);
-      }
-      return toastId;
-    },
-
-    hideToast: function (toastId) {
-      var
-        toasts = this._getToastsComponent();
-      for (var i in toasts.toasts) {
-        if (toasts.toasts[i].id === toastId) {
-          toasts.toasts.splice(i, 1);
-        }
-      }
-    },
-
-    hideToasts: function () {
-      var
-        toasts = this._getToastsComponent();
-      toasts.toasts = [];
-    },
-
-    getToast: function (toastId) {
-      var
-        toasts = this._getToastsComponent();
-      for (var i in toasts.toasts) {
-        if (toasts.toasts[i].id === toastId) {
-          return toasts.toasts[i];
-        }
-      }
-      return null;
-    },
-
-    getToasts: function () {
-      var
-        toasts = this._getToastsComponent();
-      return toasts.toasts;
-    },
-	
-	// Public app local storage related methods
-	
-	setOption: function (key, value) {
-      return localStorage.setItem(key, value);		
-	},
-	
-	getOption: function (key, defaultValue) {
-      return localStorage.getItem(key) !== null ? 
-	   localStorage.getItem(key) : defaultValue;		
-	},
-
-	removeOption: function (key) {
-      return localStorage.removeItem(key);
-	},	
-	
-	clearOptions: function () {
-      return localStorage.clear();
-	},		
-
-    // Public app controls related methods
-
-    focusControl: function (controlName) {
-      $('#' + controlName).focus();
-    },
-
-    // Public app themes related methods
-
-    setAppTheme: function (themeName) {
-      var
-	    lowerThemeName = themeName.toLowerCase();
-	  
-      if (this.themes.indexOf(lowerThemeName) === -1) {
-	    return false;		  
-	  }	  
-
-      this.theme = lowerThemeName;      
-      $('#app-theme').attr('href', 'app/styles/' + lowerThemeName + '.css');
-	  return lowerThemeName;
-    },
-
-    setAppFixedStyle: function () {
-      this.style = 'fixed';
-      $('#app-style').attr('href', 'app/styles/fixed.css');
-    },
-
-    setAppScaledStyle: function () {
-      this.style = 'scaled';
-      $('#app-style').attr('href', 'app/styles/scaled.css');
-    },
-
-    setAppTextDirection: function (textDirection) {
-      var
-        html = document.getElementsByTagName('html')[0];
-      this.textDirection = textDirection;
-      html.setAttribute('dir', textDirection);
-    },
-
-    // Public app device related methods
-
-    setViewReadyForDeviceKeyboard: function () {
-	  var
-	    self = this;
-      document.addEventListener('deviceready', function () {
-        $('#' + self._getCurrentView().name).css({
-          "margin-top": '0px',
-          "height": window.innerHeight + 'px'
-        });		  
-	  });	
-    },
-	
-    setDialogReadyForDeviceKeyboard: function () {
-	  var
-	    self = this;
-      document.addEventListener('deviceready', function () {
-        $('#' + self._getCurrentView().name + ' .modal-content').css({
-          "margin-top": '0px',
-          "height": window.innerHeight + 'px'
-        });		  
-	  });	
-    },	
-
-    // Public app Web Extensions related methods
-
-    webExtensionSendMessageToActiveTab: function (message, callback) {
-      if (window.chrome) {
-        chrome.tabs.query({active: true, currentWindow: true}, function (tabs) {
-          chrome.tabs.sendMessage(tabs[0].id, message, callback);
-        });
-      }
-    },
-	
-    webExtensionSendMessageToAllTabs: function (message, callback) {
-      if (window.chrome) {
-        chrome.tabs.query({}, function(tabs) {
-          for (var i=0; i<tabs.length; ++i) {
-            chrome.tabs.sendMessage(tabs[i].id, message, callback);
-          }
-        });
-      }
-    },	
-
-    // Public app strings related methods
+    upperCase: function (text) {
+      return text.toUpperCase();
+    },    
 
     strLen: function (text) {
       return text.length;
@@ -1127,16 +29,12 @@ window.app = new Vue({
       return text.trim();
     },
 
-    lowerCase: function (text) {
-      return text.toLowerCase();
-    },
-
-    upperCase: function (text) {
-      return text.toUpperCase();
-    },
-
     strSearch: function (text, query) {
       return text.search(query);
+    },
+
+    splitStr: function (text, separator) {
+      return text.split(separator);
     },
 
     subStr: function (text, start, count) {
@@ -1151,829 +49,2079 @@ window.app = new Vue({
       return text.split(from).join(to);
     },
 
-    splitStr: function (text, separator, limit) {
-      return text.split(separator, limit);
-    },
-
-    strToBase64: function (text) {
-      return window.Base64.encode(text);
-    },
-
-    base64ToStr: function (text) {
-      return window.Base64.decode(text);
-    },
-
-    serialize: function (value) {
-      return JSON.stringify(value);
-    },
-
-    unserialize: function (text) {
-      return JSON.parse(text);
-    },
-
-    randomStr: function (length) {
-      var
-        result = '',
-        length = length || 10,
-        charsMap = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789',
-        mapLength = charsMap.length;
-      for (var i = 0; i < length; i++) {
-        result += charsMap.charAt(Math.floor(Math.random() * mapLength));
-      }
-      return result;
-    },
-	
-	// Public app numbers related methods
-	
-	randomNum: function (maxNum) {
-	  maxNum = maxNum || 100;
-	  return Math.floor(Math.random() * maxNum);	
-	},
-
-    // Public app sound related methods
-
-    beep: function () {
-      this.playSound(
-        'app/audios/beep/beep.mp3',
-        'app/audios/beep/beep.ogg'
-      );
-    },
-
     playSound: function (mp3Url, oggUrl) {
-      if (this.internal.lastSound === null) {
-        this.internal.lastSound = new Audio();
+      if (lastSound === 0) {
+        lastSound = new Audio();
       }
-      if (this.internal.lastSound.canPlayType('audio/ogg') !== '') {
-        this.internal.lastSound.src = oggUrl;
-        this.internal.lastSound.type = 'audio/ogg';
+      if (lastSound.canPlayType('audio/mpeg')) {
+        lastSound.src = mp3Url;
+        lastSound.type = 'audio/mpeg';
       } else {
-        this.internal.lastSound.src = mp3Url;
-        this.internal.lastSound.type = 'audio/mpeg';		  
+        lastSound.src = oggUrl;
+        lastSound.type = 'audio/ogg';
       }
-      this.internal.lastSound.play();
-	  return this.internal.lastSound;
+      lastSound.play();
     },
 
     stopSound: function () {
-      this.internal.lastSound.pause();
-      this.internal.lastSound.currentTime = 0;
+      lastSound.pause();
+      lastSound.currentTime = 0.0;
     },
-	
-	// Public app resources related methods
-	
-	resource: function (name) {
-      if (!window.appLangs[this.language]) {
-        return window.appLangs[this.internal.defaultLanguage].resources[name];
-      } else {
-        return window.appLangs[this.language]['resources'][name] !== undefined ?
-          window.appLangs[this.language]['resources'][name] :
-		  window.appLangs[this.internal.defaultLanguage].resources[name];
+
+    sleep: function (ms) {
+      var
+        start = new Date().getTime();
+      for (var i = 0; i < 1e7; i++) {
+        if ((new Date().getTime() - start) > ms){
+          break;
+        }
       }
-	},
-
-    // Public app languages related methods
-
-    translateView: function () {
-      return this._translateView();
-	},
-	
-	getLanguages: function () {
-	  var
-	    result = [];
-	  for (var i in window.appLangs) {
-	    result.push({code: i, name: window.appLangs[i].language.name});	  
-	  }  	
-	  return result;
-	},
-	
-	getLanguagesNames: function () {
-	  var
-        result = [];	  
-      for (var i in window.appLangs) {
-	    result.push(window.appLangs[i].language.name);	  
-	  }
-	  return result;
-	},	
-	
-	getLanguagesCodes: function () {
-	  var
-        result = [];	  
-      for (var i in window.appLangs) {
-	    result.push(i);	  
-	  }
-	  return result;
-	},		
-	
-	getLanguageCodeFromName: function (name) {
-	  var
-        result = '';	  
-      for (var i in window.appLangs) {
-	    if (window.appLangs[i].language.name === name) {
-		  result = i;
-          break;		  
-		}	  
-	  }
-	  return result;
-	},	
-	
-	getLanguageNameFromCode: function (code) {
-	  var
-        result = '';	  
-      for (var i in window.appLangs) {
-	    if (i === code) {
-		  result = window.appLangs[i].language.name;
-          break;		  
-		}	  
-	  }
-	  return result;
-	},
-
+    },
     
-	
-    // Internal / Private app methods
-
-    _appEventOnResize: function (event) {
-      var
-        self = this,
-        view = app._getCurrentView(),
-        views = app._getLoadedViews(),
-        frames = app._getLoadedFrames(),
-        dialogs = app._getLoadedDialogs();
-      self.event = event;
-      
-    },
-	
-    _appEventOnMessage: function (event) {
-      var
-        self = this,
-        view = app._getCurrentView(),
-        views = app._getLoadedViews(),
-        frames = app._getLoadedFrames(),
-        dialogs = app._getLoadedDialogs();
-      self.event = event;
-      
-    },		
-	
-    _appEventOnContextMenu: function (event) {
-      var
-        self = this,
-        view = app._getCurrentView(),
-        views = app._getLoadedViews(),
-        frames = app._getLoadedFrames(),
-        dialogs = app._getLoadedDialogs();
-      self.event = event;
-      
-    },			
-
-    _appEventOnOnline: function (event) {
-      var
-        self = this,
-        view = app._getCurrentView(),
-        views = app._getLoadedViews(),
-        frames = app._getLoadedFrames(),
-        dialogs = app._getLoadedDialogs();
-      self.event = event;
-      
-    },
-
-    _appEventOnOffline: function (event) {
-      var
-        self = this,
-        view = app._getCurrentView(),
-        views = app._getLoadedViews(),
-        frames = app._getLoadedFrames(),
-        dialogs = app._getLoadedDialogs();
-      self.event = event;
-      
-    },
-
-    _appEventOnDomReady: function () {
-      var
-        self = this,
-        view = app._getCurrentView(),
-        views = app._getLoadedViews(),
-        frames = app._getLoadedFrames(),
-        dialogs = app._getLoadedDialogs();
-      self.event = null;
-      
-    },
-
-    _appEventOnBatteryStatus: function (event) {
-      var
-        self = this,
-        view = app._getCurrentView(),
-        views = app._getLoadedViews(),
-        frames = app._getLoadedFrames(),
-        dialogs = app._getLoadedDialogs();
-      self.event = null;
-      self.cordova.battery.level = event.level;
-      self.cordova.battery.isPlugged = event.isPlugged;
-      
-    },
-
-    _appEventOnBatteryLow: function (event) {
-      var
-        self = this,
-        view = app._getCurrentView(),
-        views = app._getLoadedViews(),
-        frames = app._getLoadedFrames(),
-        dialogs = app._getLoadedDialogs();
-      self.event = null;
-      self.cordova.battery.level = event.level;
-      self.cordova.battery.isPlugged = event.isPlugged;
-      
-    },
-
-    _appEventOnBatteryCritical: function (event) {
-      var
-        self = this,
-        view = app._getCurrentView(),
-        views = app._getLoadedViews(),
-        frames = app._getLoadedFrames(),
-        dialogs = app._getLoadedDialogs();
-      self.event = null;
-      self.cordova.battery.level = event.level;
-      self.cordova.battery.isPlugged = event.isPlugged;
-      
-    },
-
-    _appEventOnDeviceReady: function (event) {
-      var
-        self = this,
-        view = app._getCurrentView(),
-        views = app._getLoadedViews(),
-        frames = app._getLoadedFrames(),
-        dialogs = app._getLoadedDialogs();
-      self.event = event;
-
-      window.addEventListener('online', self._appEventOnOnline);
-      window.addEventListener('offline', self._appEventOnOffline);
-      window.addEventListener('batterylow', self._appEventOnBatteryLow);
-      window.addEventListener('batterystatus', self._appEventOnBatteryStatus);
-      window.addEventListener('batterycritical', self._appEventOnBatteryCritical);
-      window.addEventListener('orientationchange', self._appEventOnOrientationChange);
-      document.addEventListener('pause', self._appEventOnPause);
-      document.addEventListener('resume', self._appEventOnResume);
-       
-       
-       
-      
-    },
-
-    _appEventOnPause: function (event) {
-      var
-        self = this,
-        view = app._getCurrentView(),
-        views = app._getLoadedViews(),
-        frames = app._getLoadedFrames(),
-        dialogs = app._getLoadedDialogs();
-      self.event = event;
-      
-    },
-
-    _appEventOnResume: function (event) {
-      var
-        self = this,
-        view = app._getCurrentView(),
-        views = app._getLoadedViews(),
-        frames = app._getLoadedFrames(),
-        dialogs = app._getLoadedDialogs();
-      self.event = event;
-      
-    },
-
-    _appEventOnBackButton: function (event) {
-      var
-        self = this,
-        view = app._getCurrentView(),
-        views = app._getLoadedViews(),
-        frames = app._getLoadedFrames(),
-        dialogs = app._getLoadedDialogs();
-      self.event = event;
-      
-    },
-
-    _appEventOnOrientationChange: function (event) {
-      var
-        self = this,
-        view = app._getCurrentView(),
-        views = app._getLoadedViews(),
-        frames = app._getLoadedFrames(),
-        dialogs = app._getLoadedDialogs();
-      self.event = event;
-      
-    },
-
-    _appEventOnVolumeUpButton: function (event) {
-      var
-        self = this,
-        view = app._getCurrentView(),
-        views = app._getLoadedViews(),
-        frames = app._getLoadedFrames(),
-        dialogs = app._getLoadedDialogs();
-      self.event = event;
-      
-    },
-
-    _appEventOnVolumeDownButton: function (event) {
-      var
-        self = this,
-        view = app._getCurrentView(),
-        views = app._getLoadedViews(),
-        frames = app._getLoadedFrames(),
-        dialogs = app._getLoadedDialogs();
-      self.event = event;
-      
-    },
-
-    _appEventOnClick: function (event) {
-      var
-        self = this,
-        view = app._getCurrentView(),
-        views = app._getLoadedViews(),
-        frames = app._getLoadedFrames(),
-        dialogs = app._getLoadedDialogs();
-      self.event = event;
-      
-    },
-
-    _appEventOnDblClick: function (event) {
-      var
-        self = this,
-        view = app._getCurrentView(),
-        views = app._getLoadedViews(),
-        frames = app._getLoadedFrames(),
-        dialogs = app._getLoadedDialogs();
-      self.event = event;
-      
-    },
-
-    _appEventSwipeRight: function (event) {
-      var
-        self = this,
-        view = app._getCurrentView(),
-        views = app._getLoadedViews(),
-        frames = app._getLoadedFrames(),
-        dialogs = app._getLoadedDialogs();
-      self.event = event;
-      
-    },
-
-    _appEventSwipeLeft: function (event) {
-      var
-        self = this,
-        view = app._getCurrentView(),
-        views = app._getLoadedViews(),
-        frames = app._getLoadedFrames(),
-        dialogs = app._getLoadedDialogs();
-      self.event = event;
-      
-    },
-
-    _appEventOnKeyUp: function (event) {
-      var
-        self = this,
-        view = app._getCurrentView(),
-        views = app._getLoadedViews(),
-        frames = app._getLoadedFrames(),
-        dialogs = app._getLoadedDialogs();
-      self.event = event;
-      
-    },
-
-    _appEventOnKeyDown: function (event) {
-      var
-        self = this,
-        view = app._getCurrentView(),
-        views = app._getLoadedViews(),
-        frames = app._getLoadedFrames(),
-        dialogs = app._getLoadedDialogs();
-      self.event = event;
-      
-    },
-
-    _appEventOnMouseUp: function (event) {
-      var
-        self = this,
-        view = app._getCurrentView(),
-        views = app._getLoadedViews(),
-        frames = app._getLoadedFrames(),
-        dialogs = app._getLoadedDialogs();
-      self.event = event;
-      
-    },
-
-    _appEventOnMouseDown: function (event) {
-      var
-        self = this,
-        view = app._getCurrentView(),
-        views = app._getLoadedViews(),
-        frames = app._getLoadedFrames(),
-        dialogs = app._getLoadedDialogs();
-      self.event = event;
-      
-    },
-
-    _appEventOnMouseMove: function (event) {
-      var
-        self = this,
-        view = app._getCurrentView(),
-        views = app._getLoadedViews(),
-        frames = app._getLoadedFrames(),
-        dialogs = app._getLoadedDialogs();
-      self.event = event;
-      
-    },
-
-    _appEventOnChromeRuntimeMessage: function (message) {
-      var
-        self = this,
-        view = app._getCurrentView(),
-        views = app._getLoadedViews(),
-        frames = app._getLoadedFrames(),
-        dialogs = app._getLoadedDialogs();
-      self.event = null;
-      
-    },
-
-    _appEventOnVueJsError: function (error, vm, info) {
-      var
-        self = this,
-        view = app._getCurrentView(),
-        views = app._getLoadedViews(),
-        frames = app._getLoadedFrames(),
-        dialogs = app._getLoadedDialogs();
-      self.event = null;
-      self.error = {"message": error, "vm": vm, "info": info};
-
-      window.console.error("VueJS error:" + "\n\nError message: " + self.error.message + "\n\nError info: " + self.error.info);
-
-      self.error = null;
-    },
-
-    _appEventOnJavascriptError: function (errorMsg, url, lineNumber) {
-      var
-        self = this,
-        view = app._getCurrentView(),
-        views = app._getLoadedViews(),
-        frames = app._getLoadedFrames(),
-        dialogs = app._getLoadedDialogs();
-      self.event = null;
-      self.error = {"message": errorMsg, "url": url, "lineNumber": lineNumber};
-
-      window.console.error("Javascript error:" + "\n\nError message: " + self.error.message + "\n\nError script: " + self.error.url + "\n\nLine number: " + self.error.lineNumber);
-
-      self.error = null;
-    },
-
-    _appEventViewChange: function (to, from) {
-	  if (to.name === from.name) {
-	    return;	  
-	  }	
-      var
-        self = this,
-        view = app._getCurrentView(),
-        views = app._getLoadedViews(),
-        frames = app._getLoadedFrames(),
-        dialogs = app._getLoadedDialogs();
-      self.event = {
-        "nextViewName": to.name,
-        "prevViewName": from.name
-      };
-      
-    },
-
-    _appEventOnSidebarItemClick: function (event, item, index, subindex) {
-      var
-        self = this,
-        view = app._getCurrentView(),
-        views = app._getLoadedViews(),
-        frames = app._getLoadedFrames(),
-        dialogs = app._getLoadedDialogs();
-	  self.event = event;
-      self.sidebar.item = item;
-	  self.sidebar.item.index = index;
-	  self.sidebar.item.subindex = subindex;
-      
-    },		
-	
-    _appEventOnSidebarHeaderClick: function (event) {
-      var
-        self = this,
-        view = app._getCurrentView(),
-        views = app._getLoadedViews(),
-        frames = app._getLoadedFrames(),
-        dialogs = app._getLoadedDialogs();
-	  self.event = event;	
-      
-    },	
-
-    _setupAppEvents: function () {
-      this._setupAppErrorsEvents();
-      this._setupAppWindowEvents();
-      this._setupAppDocumentEvents();
-      this._setupAppHammerEvents();
-      this._setupAppDeviceEvents();
-      this._setupAppRouterEvents();
-      this._setupAppChromeEvents();
-    },
-
-    _setupAppErrorsEvents: function () {
-      Vue.config.errorHandler = this._appEventOnVueJsError;
-      window.addEventListener('error', this._appEventOnJavascriptError);
-    },
-
-    _setupAppWindowEvents: function () {
-      window.addEventListener('resize', this._appEventOnResize);
-      window.addEventListener('message', this._appEventOnMessage);
-      window.addEventListener('contextmenu', this._appEventOnContextMenu);	  
-    },
-
-    _setupAppDocumentEvents: function () {
-      var self = this;
-      $(self._appEventOnDomReady);
-      document.addEventListener('click', this._appEventOnClick);
-      document.addEventListener('dblclick', this._appEventOnDblClick);
-      document.addEventListener('keyup', this._appEventOnKeyUp);
-      document.addEventListener('keydown', this._appEventOnKeyDown);
-      document.addEventListener('mouseup', this._appEventOnMouseUp);
-      document.addEventListener('mousedown', this._appEventOnMouseDown);
-      document.addEventListener('mousemove', this._appEventOnMouseMove);
-    },
-
-    _setupAppHammerEvents: function () {
-      var
-        ha = new Hammer(document.body);
-	  ha.get('swipe').set({direction: Hammer.DIRECTION_HORIZONTAL});	
-      ha.on('swiperight', this._appEventSwipeRight);
-      ha.on('swipeleft', this._appEventSwipeLeft);
-    },
-
-    _setupAppDeviceEvents: function () {
-      document.addEventListener('deviceready', this._appEventOnDeviceReady);
-    },
-
-    _setupAppRouterEvents: function () {
-      var
-              self = this;
-      this.$router.beforeEach(function (to, from, next) {
-        next(self._appEventViewChange(to, from));
+    parseViewParams: function (params) {
+      if (angular.isUndefined(params)) {
+        return {};
+      }
+      var 
+        result = {},
+        pairs = params.split('&');
+      pairs.forEach(function(pair) {
+        pair = pair.split('=');
+        result[pair[0]] = decodeURIComponent(pair[1] || '');
       });
+      return JSON.parse(JSON.stringify(result));
     },
-
-    _setupAppChromeEvents: function () {
-      if (window.chrome && chrome.runtime && chrome.runtime.onMessage) {
-        chrome.runtime.onMessage.addListener(
-         this._appEventOnChromeRuntimeMessage);
+    
+    transformRequest: function (kind) {
+      if (kind === 'json') {
+        return function(data) { 
+          return JSON.stringify(data); 
+        };
+      } else if (kind === 'form') {
+        return function(data) { 
+          var 
+            frmData = []; 
+          angular.forEach(data, function(value, key) { 
+            frmData.push(encodeURIComponent(key) + '=' + encodeURIComponent(value)); 
+          }); 
+          return frmData.join('&'); 
+        };
+      } else if (kind === 'data') {
+        return function(data) { 
+          var 
+            frmData = new FormData(); 
+          angular.forEach(data, function(value, key) { 
+            frmData.append(key, value); 
+          }); 
+          return frmData; 
+        };      
       }
-    },
-
-    _getControlByName: function (parent, name) {
-      for (var i in parent.$children) {
-        if (parent.$children[i].name === '') {
-          continue;
-        }
-        if (name === parent.$children[i].name) {
-          return parent.$children[i];
-        }
-        if (parent.$children[i].$children.length > 0) {
-          var
-            result = this._getControlByName(parent.$children[i], name);
-          if (result && result.name && result.name === name) {
-            return result;
-          }
-        }
-      }
-    },
-
-    _getCurrentViewControlByName: function (name) {
-      return this._getControlByName(this._getCurrentView(), name);
-    },
-
-    _getCurrentView: function () {
-      if (this.internal.activeDialog !== null) {
-        return this.internal.activeDialog;
-      }
-
-      for (var i in this.$children) {
-        if (this.$route.name === this.$children[i].name) {
-          return this.$children[i];
-        }
-      }
-      return null;
-    },
-
-    _getLoadedFrames: function () {
-      return window.appFrames;
-    },
-
-    _getLoadedViews: function () {
-      var
-        result = [];
-      for (var i in this.$children) {
-        result[this.$children[i].name] = this.$children[i];
-      }
-      return result;
-    },
-
-    _getLoadedDialogs: function () {
-      var
-        result = [];
-      for (var i in this.internal.dialogs.$children) {
-        if (this.internal.dabdialogs.indexOf(this.internal.dialogs.$children[i].$el.id) !== -1) {
-          continue;
-        }
-        result[this.internal.dialogs.$children[i].name] = this.internal.dialogs.$children[i];
-      }
-      return result;
-    },
-
-    _getActiveDialog: function () {
-      this.internal.activeDialog = null;
-      var
-        activeModals = $($('.modal.show').get().reverse());
-      if (activeModals.length > 0) {
-        for (var i = 0; i < this.internal.dialogs.$children.length; i++) {
-          if (this.internal.dabdialogs.indexOf(this.internal.dialogs.$children[i].$el.id) !== -1) {
-            continue;
-          }
-          if (this.internal.dialogs.$children[i].$el.id === $($('.modal.show').get().reverse())[0].id) {
-            this.internal.activeDialog = this.internal.dialogs.$children[i];
-            break;
-          }
-        }
-      }
-      return this.internal.activeDialog;
-    },
-
-    _getToastsComponent: function () {
-      for (var i in app.internal.dialogs.$children) {
-        if (app.internal.dialogs.$children[i].$el.id === 'dab-toasts-wrapper') {
-          return app.internal.dialogs.$children[i];
-        }
-      }
-      return null;
-    },
-
-    _transformHttpRequest: function (http) {
-      if (http.contentType === 'application/json') {
-        return JSON.stringify(http.data);
-      } else if (http.contentType === 'application/x-www-form-urlencoded') {
-        var
-          result = [];
-        for (var key in http.data) {
-          result.push(encodeURIComponent(key) + '=' + encodeURIComponent(http.data[key]));
-        }
-        return result.join('&');
-      } else if (http.contentType === false ||
-       http.contentType === 'multipart/form-data') {
-        var
-          result = new FormData();
-        for (var key in http.data) {
-          result.append(key, http.data[key]);
-        }
-        return result;
-      } else {
-        return http.data;
-      }
-    },
-
-    _translateFrames: function () {
-      for (var frame in window.appFrames) {
-        for (var control in window.appFrames[frame]) {
-          for (var property in window.appFrames[frame][control]) {
-            var
-              origProp = property + '_default';
-            if (this.language === this.internal.defaultLanguage) {
-              if (window.appFrames[frame][control][origProp] !== undefined) {
-                window.appFrames[frame][control][property] =
-                 window.appFrames[frame][control][origProp];
-              }
-              continue;
-            }
-            if (window.appLangs[this.language] && window.appLangs[this.language]['frames'] &&
-             window.appLangs[this.language]['frames'][frame] && window.appLangs[this.language]['frames'][frame][control] &&
-              window.appLangs[this.language]['frames'][frame][control][property]) {
-			   if (window.appFrames[frame][control][origProp] === undefined) { 	  
-                 window.appFrames[frame][control][origProp] =
-                  window.appFrames[frame][control][property];
-			   }
-               window.appFrames[frame][control][property] =
-                window.appLangs[this.language]['frames'][frame][control][property];
-            }
-          }
-        }
-      }
-    },
-	
-	_translateSidebar: function () {
-      if (window.appLangs[this.language] && window.appLangs[this.language].sidebar) {
-		if (window.appLangs[this.language].sidebar['header'] !== undefined) {
-          this.sidebar.header = window.appLangs[this.language].sidebar.header;
-		}		
-		if (window.appLangs[this.language].sidebar['imageUrl'] !== undefined) {
-          this.sidebar.imageUrl = window.appLangs[this.language].sidebar.imageUrl;
-		}		
-		if (window.appLangs[this.language].sidebar['items'] !== undefined) {
-          this.sidebar.items = window.appLangs[this.language].sidebar.items;
-		}		
-      }	  	  		
-	},
-
-    _translateView: function () {
-	  var
-	    view = this._getCurrentView();
-      this._translateFrames();
-      this._translateSidebar(); 
-      for (var control in view) {
-        for (var property in view[control]) {
-          var
-            origProp = property + '_default';
-          if (this.language === this.internal.defaultLanguage) {
-            if (view[control][origProp] !== undefined) {
-              view[control][property] = view[control][origProp];
-            }
-            continue;
-          }
-          if (window.appLangs[this.language] && window.appLangs[this.language]['views'] &&
-           window.appLangs[this.language]['views'][view.name] && window.appLangs[this.language]['views'][view.name][control] &&
-            window.appLangs[this.language]['views'][view.name][control][property]) {
-             if (view[control][origProp] === undefined) {
-			   view[control][origProp] = view[control][property];
-			 }
-             view[control][property] = window.appLangs[this.language]['views'][view.name][control][property];
-          }
-        }
-      }
-    },
-
-    _setViewEvents: function (view) {
-      if (view._with_event_listeners) {
-        return true;
-      }
-      var
-        el = document.getElementById(view.name),
-        ha = new Hammer(el);
-      el.addEventListener('click', view.clickHandler);
-      el.addEventListener('dblclick', view.dblclickHandler);
-      el.addEventListener('mouseup', view.mouseupHandler);
-      el.addEventListener('mousedown', view.mousedownHandler);
-      el.addEventListener('mousemove', view.mousemoveHandler);
-      el.addEventListener('mouseenter', view.mouseenterHandler);
-      el.addEventListener('mouseleave', view.mouseleaveHandler);
-      el.addEventListener('contextmenu', view.contextmenuHandler);
-	  ha.get('swipe').set({direction: Hammer.DIRECTION_HORIZONTAL});
-      ha.on('swiperight', view.swipeRightHandler);
-      ha.on('swipeleft', view.swipeLeftHandler);
-      view._with_event_listeners = true;
-    },
-
-    _setupAppHtml: function () {
-      var
-        html = document.getElementsByTagName('html')[0],
-        title = document.getElementsByTagName('title')[0];
-      title.innerText = this.name;
-      html.setAttribute('dir', this.textDirection);
-      html.setAttribute('lang', this.language);
-    },
-
-    _setupAppDialogs: function () {
-      var
-        app = this;
-      $(function () {
-        app.internal.dialogs = new Vue().$mount('#dialogs');
-      });
-    },
-
-    _setupAppVariables: function () {
-	  this.query = false;
-      this.navbarStyle = {dark: 'dark', light: 'light'};
-      this.size = {sm: 'sm', md: 'md', lg: 'lg', xl: 'xl'};
-      this.tableStyle = {none: '', dark: 'dark', light: 'light'};
-	  this.align = {left: "left", center: "center", right: "right"};
-      this.dropdownItem = {item: 'item', header: 'header', divider: 'divider'};
-      this.dropdownDir = {up: 'dropup', down: 'dropdown', left: 'dropleft', right: 'dropright'};
-      this.httpMethod = {get: 'GET', post: 'POST', put: 'PUT', head: 'HEAD', "delete": 'DELETE'};
-      this.navbarPos = {fixedTop: 'fixed-top', fixedBottom: 'fixed-bottom', stickyTop: 'sticky-top'};
-      this.imageFit = {fill: 'fill', none: 'none', cover: 'cover', revert: 'revert', contain: 'contain', scaleDown: 'scale-down'};
-      this.kind = {link: 'link', dark: 'dark', info: 'info', light: 'light', danger: 'danger', primary: 'primary', warning: 'warning', success: 'success', secondary: 'secondary'};
-      this.inAnimation = {bounceIn: 'bounceIn', bounceInDown: 'bounceInDown', bounceInLeft: 'bounceInLeft', bounceInRight: 'bounceInRight', bounceInUp: 'bounceInUp', fadeIn: 'fadeIn', fadeInDown: 'fadeInDown', fadeInDownBig: 'fadeInDownBig', fadeInLeft: 'fadeInLeft', fadeInLeftBig: 'fadeInLeftBig', fadeInRight: 'fadeInRight', fadeInRightBig: 'fadeInRightBig', fadeInUp: 'fadeInUp', fadeInUpBig: 'fadeInUpBig', fadeInTopLeft: 'fadeInTopLeft', fadeInTopRight: 'fadeInTopRight', fadeInBottomLeft: 'fadeInBottomLeft', fadeInBottomRight: 'fadeInBottomRight', flipInX: 'flipInX', flipInY: 'flipInY', lightSpeedIn: 'lightSpeedIn', lightSpeedInRight: 'lightSpeedInRight', lightSpeedInLeft: 'lightSpeedInLeft', rollIn: 'rollIn', rotateIn: 'rotateIn', rotateInDownLeft: 'rotateInDownLeft', rotateInDownRight: 'rotateInDownRight', rotateInUpLeft: 'rotateInUpLeft', rotateInUpRight: 'rotateInUpRight', zoomIn: 'zoomIn', zoomInDown: 'zoomInDown', zoomInLeft: 'zoomInLeft', zoomInRight: 'zoomInRight', zoomInUp: 'zoomInUp', bounce: 'bounce', flash: 'flash', pulse: 'pulse', rubberBand: 'rubberBand', shake: 'shake', swing: 'swing', tada: 'tada', wobble: 'wobble', jello: 'jello'};
-      this.outAnimation = {bounceOut: 'bounceOut', bounceOutDown: 'bounceOutDown', bounceOutLeft: 'bounceOutLeft', bounceOutRight: 'bounceOutRight', bounceOutUp: 'bounceOutUp', fadeOut: 'fadeOut', fadeOutDown: 'fadeOutDown', fadeOutDownBig: 'fadeOutDownBig', fadeOutLeft: 'fadeOutLeft', fadeOutLeftBig: 'fadeOutLeftBig', fadeOutRight: 'fadeOutRight', fadeOutRightBig: 'fadeOutRightBig', fadeOutUp: 'fadeOutUp', fadeOutUpBig: 'fadeOutUpBig', fadeOutTopLeft: 'fadeOutTopLeft', fadeOutTopRight: 'fadeOutTopRight', fadeOutBottomRight: 'fadeOutBottomRight', fadeOutBottomLeft: 'fadeOutBottomLeft', flipOutX: 'flipOutX', flipOutY: 'flipOutY', lightSpeedOut: 'lightSpeedOut', lightSpeedOutRight: 'lightSpeedOutRight', lightSpeedOutLeft: 'lightSpeedOutLeft', rollOut: 'rollOut', rotateOut: 'rotateOut', rotateOutDownLeft: 'rotateOutDownLeft', rotateOutDownRight: 'rotateOutDownRight', rotateOutUpLeft: 'rotateOutUpLeft', rotateOutUpRight: 'rotateOutUpRight', slideOutUp: 'slideOutUp', slideOutDown: 'slideOutDown', slideOutLeft: 'slideOutLeft', slideOutRight: 'slideOutRight', zoomOut: 'zoomOut', zoomOutDown: 'zoomOutDown', zoomOutLeft: 'zoomOutLeft', zoomOutRight: 'zoomOutRight', zoomOutUp: 'zoomOutUp', backOutDown: 'backOutDown', backOutLeft: 'backOutLeft', backOutRight: 'backOutRight', backOutUp: 'backOutUp', bounce: 'bounce', flash: 'flash', pulse: 'pulse', rubberBand: 'rubberBand', shake: 'shake', swing: 'swing', tada: 'tada', wobble: 'wobble', jello: 'jello', hinge: 'hinge'};
-    },
-	
-	_setupAppPlugins: function () {
-      var
-        app = this;		
-      this.plugins = {};       		
-	  
-	},
-
-    _setupCordovaPlugins: function () {
-      var
-        app = this;
-      this.cordova = {};
-      
     }
+  };
+})();
+
+window.App.Modal = (function () {
+
+  var
+    stack = [],
+    current = 0;
+
+  return {
+
+    insert: function (name) {
+      current = stack.length;
+      stack[current] = {};
+      stack[current].name = name;
+      stack[current].instance = null;
+      return stack[current];
+    },
+
+    getCurrent: function () {
+      if (stack[current]) {
+        return stack[current].instance;
+      } else {
+        return null;
+      }
+    },
+    
+    removeCurrent: function () {
+      stack.splice(current, 1);
+      current = current - 1;
+      current = (current < 0) ? 0 : current;
+    },
+
+    closeAll: function () {
+      for (var i = stack.length-1; i >= 0; i--) {
+        stack[i].instance.dismiss();
+      }
+      stack = [];
+      current = 0;
+    }
+  };
+})();
+
+window.App.Debugger = (function () {
+
+  return {
+
+    exists: function () {
+      return (typeof window.external === 'object')
+       && ('hello' in window.external);
+    },
+
+    log: function (text, aType, lineNum) {
+      if (window.App.Debugger.exists()) {
+        window.external.log('' + text, aType || 'info', lineNum || 0);
+      } else {
+        console.log(text);
+      }
+    },
+
+    watch: function (varName, newValue, oldValue) {
+      if (window.App.Debugger.exists()) {
+        if (angular.isArray(newValue)) {
+          window.external.watch('', varName, newValue.toString(), 'array');
+        } else if (angular.isObject(newValue)) {
+          angular.forEach(newValue, function (value, key) {
+            if (!angular.isFunction (value)) {
+              try {
+                window.external.watch(varName, key, value.toString(), typeof value);
+              } 
+              catch(exception) {}
+            }
+          });
+        } else if (angular.isString(newValue) || angular.isNumber(newValue)) {
+          window.external.watch('', varName, newValue.toString(), typeof newValue);
+        }
+      }
+    }
+  };
+})();
+
+window.App.Module = angular.module
+(
+  'AppModule',
+  [
+    'ngAria',
+    'ngRoute',
+    'ngTouch',
+    'ngSanitize',
+    'blockUI',
+    'chart.js',
+    'ngOnload',
+    'ui.bootstrap',
+    'angular-canvas-gauge',
+    'com.2fdevs.videogular',
+    'com.2fdevs.videogular.plugins.controls',
+    'AppCtrls'
+  ]
+);
+
+window.App.Module.run(function () {
+  if (window.FastClick) {
+    window.FastClick.attach(window.document.body);
   }
-})
-.$mount('#app');
+});
+
+window.App.Module.directive('ngScroll',
+[
+  '$parse',
+
+  function ($parse) {
+    return {
+      restrict: 'A',
+      link: function ($scope, el, attrs) {
+        el.bind('scroll', function (event) {
+          var
+            fn = $parse(attrs.ngScroll);
+          fn($scope, {$event: event});
+          $scope.$apply();
+        });
+      }
+    };
+  }
+]);
+
+window.App.Module.directive('ngImageLoad',
+[
+  '$parse',
+
+  function ($parse) {
+    return {
+      restrict: 'A',
+      link: function ($scope, el, attrs) {
+        el.bind('load', function (event) {
+          var 
+            fn = $parse(attrs.ngImageLoad);
+          fn($scope, {$event: event});
+        });
+      }
+    };
+  }
+]);
+
+window.App.Module.directive('stringToNumber', function() {
+  return {
+    require: 'ngModel',
+    link: function(scope, element, attrs, ngModel) {
+      ngModel.$parsers.push(function(value) {
+        return '' + value;
+      });
+      ngModel.$formatters.push(function(value) {
+        return parseFloat(value);
+      });
+    }
+  };
+});
+
+window.App.Module.directive('ngImageError',
+[
+  '$parse',
+
+  function ($parse) {
+    return {
+      restrict: 'A',
+      link: function ($scope, el, attrs) {
+        el.bind('error', function (event) {
+          var 
+            fn = $parse(attrs.ngImageError);
+          fn($scope, {$event: event});
+        });
+      }
+    };
+  }
+]);
+
+window.App.Module.directive('ngContextMenu',
+[
+  '$parse',
+
+  function ($parse) {
+    return {
+      restrict: 'A',
+      link: function ($scope, el, attrs) {
+        el.bind('contextmenu', function (event) {
+          var
+            fn = $parse(attrs.ngContextMenu);
+          fn($scope, {$event: event});
+        });
+      }
+    };
+  }
+]);
+
+window.App.Module.directive('bindFile',
+[
+  function () {
+    return {
+      restrict: 'A',
+      require: 'ngModel',
+      link: function ($scope, el, attrs, ngModel) {
+        el.bind('change', function (event) {
+          ngModel.$setViewValue(event.target.files[0]);
+          $scope.$apply();
+        });
+
+        $scope.$watch(function () {
+          return ngModel.$viewValue;
+        }, function (value) {
+          if (!value) {
+            el.val('');
+          }
+        });
+      }
+    };
+  }
+]);
+
+window.App.Module.config
+([
+  '$compileProvider',
+
+  function ($compileProvider) {
+    $compileProvider.debugInfoEnabled(window.App.Debugger.exists());
+    $compileProvider.imgSrcSanitizationWhitelist
+     (/^\s*(https?|blob|ftp|mailto|file|tel|app|data|moz-extension|chrome-extension|ms-appdata|ms-appx-web):/);
+  }
+]);
+
+window.App.Module.config
+([
+  '$httpProvider',
+
+  function ($httpProvider) {
+    if (!$httpProvider.defaults.headers.get) {
+      $httpProvider.defaults.headers.get = {};
+    }
+    if (!$httpProvider.defaults.headers.post) {
+      $httpProvider.defaults.headers.post = {};
+    }
+    $httpProvider.defaults.headers.get['Cache-Control'] = 'no-cache';
+    $httpProvider.defaults.headers.get['If-Modified-Since'] = 'Mon, 26 Jul 1997 05:00:00 GMT';    
+    $httpProvider.defaults.headers.post['Content-Type'] = undefined;
+    $httpProvider.defaults.transformRequest.unshift(window.App.Utils.transformRequest('data'));
+}]);
+
+window.App.Module.config
+([
+  '$provide',
+
+  function ($provide) {
+    $provide.decorator('$exceptionHandler',
+    ['$injector',
+      function ($injector) {
+        return function (exception, cause) {
+          var
+            $rs = $injector.get('$rootScope');
+
+          if (!angular.isUndefined(cause)) {
+            exception.message += ' (caused by "'+cause+'")';
+          }
+
+          $rs.App.LastError = exception.message;
+          $rs.OnAppError();
+          $rs.App.LastError = '';
+
+          if (window.App.Debugger.exists()) {
+            throw exception;
+          } else {
+            if (window.console) {
+              window.console.error(exception);
+            }
+          }
+        };
+      }
+    ]);
+  }
+]);
+
+window.App.Module.config
+([
+  'blockUIConfig',
+
+  function (blockUIConfig) {
+    blockUIConfig.delay = 0;
+    blockUIConfig.autoBlock = false;
+    blockUIConfig.resetOnException = true;
+    blockUIConfig.message = 'Please wait';
+    blockUIConfig.autoInjectBodyBlock = false;
+    blockUIConfig.blockBrowserNavigation = true;
+  }
+]);
+
+window.App.Module.config
+([
+  '$routeProvider',
+
+  function ($routeProvider) {
+    $routeProvider.otherwise({redirectTo: "/" + window.App.Config.DefaultView})
+    .when("/Login/:params*?", {controller: "LoginCtrl", templateUrl: "app/views/Login.html"})
+    .when("/Main/:params*?", {controller: "MainCtrl", templateUrl: "app/views/Main.html"})
+    .when("/Location/:params*?", {controller: "LocationCtrl", templateUrl: "app/views/Location.html"})
+    .when("/Camera/:params*?", {controller: "CameraCtrl", templateUrl: "app/views/Camera.html"})
+    .when("/Luncher/:params*?", {controller: "LuncherCtrl", templateUrl: "app/views/Luncher.html"});
+  }
+]);
+
+window.App.Module.service
+(
+  'AppEventsService',
+
+  ['$rootScope',
+
+  function ($rootScope) {
+
+    function setAppHideEvent() {
+      window.document.addEventListener('visibilitychange', function (event) {
+        if (window.document.hidden) {
+          window.App.Event = event;
+          $rootScope.OnAppHide();
+          $rootScope.$apply();
+        }
+      }, false);
+    }
+    
+    function setAppShowEvent() {
+      window.document.addEventListener('visibilitychange', function (event) {
+        if (!window.document.hidden) {
+          window.App.Event = event;
+          $rootScope.OnAppShow();
+          $rootScope.$apply();
+        }
+      }, false);
+    }    
+
+    function setAppOnlineEvent() {
+      window.addEventListener('online', function (event) {
+        window.App.Event = event;
+        $rootScope.OnAppOnline();
+      }, false);
+    }
+
+    function setAppOfflineEvent() {
+      window.addEventListener('offline', function (event) {
+        window.App.Event = event;
+        $rootScope.OnAppOffline();
+      }, false);
+    }
+
+    function setAppResizeEvent() {
+      window.addEventListener('resize', function (event) {
+        window.App.Event = event;
+        $rootScope.OnAppResize();
+      }, false);
+    }
+
+    function setAppPauseEvent() {
+      if (!window.App.Cordova) {
+        document.addEventListener('pause', function (event) {
+          window.App.Event = event;
+          $rootScope.OnAppPause();
+          $rootScope.$apply();
+        }, false);
+      }
+    }
+
+    function setAppReadyEvent() {
+      if (window.App.Cordova) {
+        angular.element(window.document).ready(function (event) {
+          window.App.Event = event;
+          $rootScope.OnAppReady();
+        });
+      } else {
+        document.addEventListener('deviceready', function (event) {
+          window.App.Event = event;
+          $rootScope.OnAppReady();
+        }, false);
+      }
+    }
+
+    function setAppResumeEvent() {
+      if (!window.App.Cordova) {
+        document.addEventListener('resume', function (event) {
+          window.App.Event = event;
+          $rootScope.OnAppResume();
+          $rootScope.$apply();
+        }, false);
+      }
+    }
+
+    function setAppBackButtonEvent() {
+      if (!window.App.Cordova) {
+        document.addEventListener('backbutton', function (event) {
+          window.App.Event = event;
+          $rootScope.OnAppBackButton();
+        }, false);
+      }
+    }
+
+    function setAppMenuButtonEvent() {
+      if (!window.App.Cordova) {
+        document.addEventListener('deviceready', function (event) {
+          // http://stackoverflow.com/q/30309354
+          navigator.app.overrideButton('menubutton', true);
+          document.addEventListener('menubutton', function (event) {
+            window.App.Event = event;
+            $rootScope.OnAppMenuButton();
+          }, false);
+        }, false);
+      }
+    }
+
+    function setAppOrientationEvent() {
+      window.addEventListener('orientationchange', function (event) {
+        window.App.Event = event;
+        $rootScope.OnAppOrientation();
+      }, false);
+    }
+
+    function setAppVolumeUpEvent() {
+      if (!window.App.Cordova) {
+        document.addEventListener('volumeupbutton', function (event) {
+          window.App.Event = event;
+          $rootScope.OnAppVolumeUpButton();
+        }, false);
+      }
+    }
+
+    function setAppVolumeDownEvent() {
+      if (!window.App.Cordova) {
+        document.addEventListener('volumedownbutton', function (event) {
+          window.App.Event = event;
+          $rootScope.OnAppVolumeDownButton();
+        }, false);
+      }
+    }
+
+    function setAppKeyUpEvent() {
+      document.addEventListener('keyup', function (event) {
+        window.App.Event = event;
+        $rootScope.OnAppKeyUp();
+      }, false);
+    }
+
+    function setAppKeyDownEvent() {
+      document.addEventListener('keydown', function (event) {
+        window.App.Event = event;
+        $rootScope.OnAppKeyDown();
+      }, false);
+    }
+    
+    function setAppClickEvent() {
+      document.addEventListener('click', function (event) {
+        window.App.Event = event;
+        $rootScope.OnAppClick();
+      }, false);
+    }    
+
+    function setAppMouseUpEvent() {
+      document.addEventListener('mouseup', function (event) {
+        window.App.Event = event;
+        $rootScope.OnAppMouseUp();
+      }, false);
+    }
+
+    function setAppMouseDownEvent() {
+      document.addEventListener('mousedown', function (event) {
+        window.App.Event = event;
+        $rootScope.OnAppMouseDown();
+      }, false);
+    }
+    
+    function setAppMouseMoveEvent() {
+      document.addEventListener('mousemove', function (event) {
+        window.App.Event = event;
+        $rootScope.OnAppMouseMove();
+      }, false);
+    }    
+
+    function setAppViewChangeEvent() {
+      angular.element(window.document).ready(function (event) {
+        $rootScope.$on('$locationChangeStart', function (event, next, current) {
+          window.App.Event = event;
+          $rootScope.App.NextView = next.substring(next.lastIndexOf('/') + 1);
+          $rootScope.App.PrevView = current.substring(current.lastIndexOf('/') + 1);
+          $rootScope.OnAppViewChange();
+        });
+      });
+    }
+    
+    function setAppWebExtMsgEvent() {
+      if (window.chrome) {
+        chrome.runtime.onMessage.addListener(function (message, sender, responseFunc) {
+          $rootScope.App.WebExtMessage = message;
+          $rootScope.OnAppWebExtensionMsg();
+        });
+      }    
+    }    
+
+    return {
+      init : function () {
+        
+        
+              
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+      }
+    };
+  }
+]);
+
+window.App.Module.service
+(
+  'AppGlobalsService',
+
+  ['$rootScope', '$filter',
+
+  function ($rootScope, $filter) {
+
+    var setGlobals = function () {    
+      $rootScope.App = {};
+      $rootScope.App._Timers = {};
+      var s = function (name, method) {
+        Object.defineProperty($rootScope.App, name, { get: method });
+      };      
+      s('Url', function () { return window.location.href; });      
+      s('WeekDay', function () { return new Date().getDay(); });
+      s('Event', function () { return window.App.Event || ''; });
+      s('OuterWidth', function () { return window.outerWidth; });
+      s('InnerWidth', function () { return window.innerWidth; });
+      s('InnerHeight', function () { return window.innerHeight; });
+      s('OuterHeight', function () { return window.outerHeight; });
+      s('Timestamp', function () { return new Date().getTime(); });
+      s('Day', function () { return $filter('date')(new Date(), 'dd'); });
+      s('Hour', function () { return $filter('date')(new Date(), 'hh'); });
+      s('Week', function () { return $filter('date')(new Date(), 'ww'); });
+      s('Month', function () { return $filter('date')(new Date(), 'MM'); });
+      s('Year', function () { return $filter('date')(new Date(), 'yyyy'); });
+      s('Hour24', function () { return $filter('date')(new Date(), 'HH'); });
+      s('Online', function () { return navigator.onLine ? 'true' : 'false' });
+      s('Minutes', function () { return $filter('date')(new Date(), 'mm'); });
+      s('Seconds', function () { return $filter('date')(new Date(), 'ss'); });
+      s('DayShort', function () { return $filter('date')(new Date(), 'd'); });
+      s('WeekShort', function () { return $filter('date')(new Date(), 'w'); });
+      s('HourShort', function () { return $filter('date')(new Date(), 'h'); });
+      s('YearShort', function () { return $filter('date')(new Date(), 'yy'); });
+      s('MonthShort', function () { return $filter('date')(new Date(), 'M'); });
+      s('Hour24Short', function () { return $filter('date')(new Date(), 'H'); });
+      s('Fullscreen', function () { return window.BigScreen.element !== null; });
+      s('MinutesShort', function () { return $filter('date')(new Date(), 'm'); });
+      s('SecondsShort', function () { return $filter('date')(new Date(), 's'); });
+      s('Milliseconds', function () { return $filter('date')(new Date(), 'sss'); });
+      s('Debugger', function () { return window.App.Debugger.exists() ? 'true' : 'false'; });      
+      s('Cordova', function () {  return angular.isUndefined(window.App.Cordova) ? 'true' : 'false'; });
+      s('Orientation', function () { return window.innerWidth >= window.innerHeight ? 'landscape' : 'portrait'; });
+      s('ActiveControl', function () { return (window.document.activeElement !== null) ? window.document.activeElement.id : ''; });
+      s('CurrentView', function () { var s = window.document.location.hash.substring(3), i = s.indexOf('/'); return (i !== -1) ? s.substring(0, i) : s; });
+      s('DialogView', function () { return window.document.querySelector('.modal-content .appView') ? window.document.querySelector('.modal-content .appView').id : ''; });
+
+      
+$rootScope.App.IdleIsIdling = "false";
+$rootScope.App.IdleIsRunning = "false";
+$rootScope.App.ID = "com.mehdiquantom.pwa";
+$rootScope.App.Name = "Quantom Services";
+$rootScope.App.ShortName = "MQ";
+$rootScope.App.Version = "1.0.0";
+$rootScope.App.Description = "Mehdi Quantom";
+$rootScope.App.AuthorName = "Mehdi Quantom";
+$rootScope.App.AuthorEmail = "bbjon4000@gmail.com";
+$rootScope.App.AuthorUrl = "https://mehdiquantom.github.io/Fishonmars";
+$rootScope.App.LanguageCode = "en";
+$rootScope.App.TextDirection = "ltr";
+$rootScope.App.BuildNumber = 33;
+$rootScope.App.Scaled = "scaled";
+$rootScope.App.Views = ["Login", "Main", "Location", "Camera", "Luncher"];
+$rootScope.App.Theme = "default";
+$rootScope.App.Themes = ["default"];
+if ($rootScope.App.Themes.indexOf("default") == -1) { $rootScope.App.Themes.push("default"); }
+    };
+
+    return {
+      init : function () {
+        setGlobals();
+      }
+    };
+  }
+]);
+
+window.App.Module.service
+(
+  'AppControlsService',
+
+  ['$rootScope', '$http', '$sce',
+
+  function ($rootScope, $http, $sce) {
+
+    var setControlVars = function () {
+      
+
+$rootScope.PasswordInput = {
+  ABRole: 3001,
+  Hidden: "",
+  Value: "Password",
+  Title: "",
+  AriaLabel: "",
+  TabIndex: 0,
+  TooltipText: "",
+  TooltipPos: "top",
+  PopoverText: "",
+  PopoverEvent: "mouseenter",
+  PopoverTitle: "",
+  PopoverPos: "top",
+  PlaceHolder: "",
+  Class: "form-control form-control-md ",
+  Disabled: "",
+  ReadOnly: ""
+};
+
+$rootScope.Button1 = {
+  ABRole: 2001,
+  Hidden: "",
+  Title: "",
+  AriaLabel: "",
+  TabIndex: 0,
+  TooltipText: "",
+  TooltipPos: "top",
+  PopoverText: "",
+  PopoverTitle: "",
+  PopoverEvent: "mouseenter",
+  PopoverPos: "top",
+  Badge: "",
+  Icon: "",
+  Text: "Login",
+  Class: "btn btn-primary btn-md ",
+  Disabled: ""
+};
+
+$rootScope.Button3 = {
+  ABRole: 2001,
+  Hidden: "",
+  Title: "",
+  AriaLabel: "",
+  TabIndex: 0,
+  TooltipText: "",
+  TooltipPos: "top",
+  PopoverText: "",
+  PopoverTitle: "",
+  PopoverEvent: "mouseenter",
+  PopoverPos: "top",
+  Badge: "",
+  Icon: "",
+  Text: "GeoLocation",
+  Class: "btn btn-primary btn-md ",
+  Disabled: ""
+};
+
+$rootScope.Button4 = {
+  ABRole: 2001,
+  Hidden: "",
+  Title: "",
+  AriaLabel: "",
+  TabIndex: 0,
+  TooltipText: "",
+  TooltipPos: "top",
+  PopoverText: "",
+  PopoverTitle: "",
+  PopoverEvent: "mouseenter",
+  PopoverPos: "top",
+  Badge: "",
+  Icon: "",
+  Text: "Webcam + Camera",
+  Class: "btn btn-primary btn-md ",
+  Disabled: ""
+};
+
+$rootScope.Button5 = {
+  ABRole: 2001,
+  Hidden: "",
+  Title: "",
+  AriaLabel: "",
+  TabIndex: 0,
+  TooltipText: "",
+  TooltipPos: "top",
+  PopoverText: "",
+  PopoverTitle: "",
+  PopoverEvent: "mouseenter",
+  PopoverPos: "top",
+  Badge: "",
+  Icon: "",
+  Text: "Button5",
+  Class: "btn btn-primary btn-md ",
+  Disabled: ""
+};
+
+$rootScope.Location1 = {
+  ABRole: 50003,
+  Timeout: 5000
+};
+
+$rootScope.LatitudeInput = {
+  ABRole: 3001,
+  Hidden: "",
+  Value: "Latitude",
+  Title: "",
+  AriaLabel: "",
+  TabIndex: 0,
+  TooltipText: "",
+  TooltipPos: "top",
+  PopoverText: "",
+  PopoverEvent: "mouseenter",
+  PopoverTitle: "",
+  PopoverPos: "top",
+  PlaceHolder: "",
+  Class: "form-control form-control-md ",
+  Disabled: "",
+  ReadOnly: ""
+};
+
+$rootScope.LongitudeInput = {
+  ABRole: 3001,
+  Hidden: "",
+  Value: "Longitude",
+  Title: "",
+  AriaLabel: "",
+  TabIndex: 0,
+  TooltipText: "",
+  TooltipPos: "top",
+  PopoverText: "",
+  PopoverEvent: "mouseenter",
+  PopoverTitle: "",
+  PopoverPos: "top",
+  PlaceHolder: "",
+  Class: "form-control form-control-md ",
+  Disabled: "",
+  ReadOnly: ""
+};
+
+$rootScope.MapsIFrame = {
+  ABRole: 4001,
+  Hidden: "",
+  Url: "",
+  Class: "ios-iframe-wrapper "
+};
+
+$rootScope.Button2 = {
+  ABRole: 2001,
+  Hidden: "",
+  Title: "",
+  AriaLabel: "",
+  TabIndex: 0,
+  TooltipText: "",
+  TooltipPos: "top",
+  PopoverText: "",
+  PopoverTitle: "",
+  PopoverEvent: "mouseenter",
+  PopoverPos: "top",
+  Badge: "",
+  Icon: "",
+  Text: "Get Location",
+  Class: "btn btn-primary btn-md ",
+  Disabled: ""
+};
+
+$rootScope.PlayButton = {
+  ABRole: 2001,
+  Hidden: "",
+  Title: "",
+  AriaLabel: "",
+  TabIndex: 0,
+  TooltipText: "",
+  TooltipPos: "top",
+  PopoverText: "",
+  PopoverTitle: "",
+  PopoverEvent: "mouseenter",
+  PopoverPos: "top",
+  Badge: "",
+  Icon: "",
+  Text: "Play",
+  Class: "btn btn-success btn-md ",
+  Disabled: ""
+};
+
+$rootScope.CaptureButton = {
+  ABRole: 2001,
+  Hidden: "",
+  Title: "",
+  AriaLabel: "",
+  TabIndex: 0,
+  TooltipText: "",
+  TooltipPos: "top",
+  PopoverText: "",
+  PopoverTitle: "",
+  PopoverEvent: "mouseenter",
+  PopoverPos: "top",
+  Badge: "",
+  Icon: "",
+  Text: "Capture",
+  Class: "btn btn-primary btn-md ",
+  Disabled: ""
+};
+
+$rootScope.WebCam = {
+  ABRole: 10002,
+  Hidden: "",
+  Error: "",
+  VideoWidth: "",
+  VideoHeight: "",
+  Class: ""
+};
+
+$rootScope.WebCamHtml = {
+  ABRole: 6001,
+  Hidden: "",
+  Class: "ios-inertial-scroll ",
+  Title: "",
+  TooltipText: "",
+  TooltipPos: "top",
+  PopoverText: "",
+  PopoverEvent: "mouseenter",
+  PopoverTitle: "",
+  PopoverPos: "top"
+};
+
+$rootScope.Button6 = {
+  ABRole: 2001,
+  Hidden: "",
+  Title: "",
+  AriaLabel: "",
+  TabIndex: 0,
+  TooltipText: "",
+  TooltipPos: "top",
+  PopoverText: "",
+  PopoverTitle: "",
+  PopoverEvent: "mouseenter",
+  PopoverPos: "top",
+  Badge: "",
+  Icon: "",
+  Text: "Check the specified app",
+  Class: "btn btn-info btn-md ",
+  Disabled: ""
+};
+
+$rootScope.Input1 = {
+  ABRole: 3001,
+  Hidden: "",
+  Value: "com.whatsapp",
+  Title: "",
+  AriaLabel: "",
+  TabIndex: 0,
+  TooltipText: "",
+  TooltipPos: "top",
+  PopoverText: "",
+  PopoverEvent: "mouseenter",
+  PopoverTitle: "",
+  PopoverPos: "top",
+  PlaceHolder: "",
+  Class: "form-control form-control-md ",
+  Disabled: "",
+  ReadOnly: ""
+};
+
+$rootScope.Button7 = {
+  ABRole: 2001,
+  Hidden: "",
+  Title: "",
+  AriaLabel: "",
+  TabIndex: 0,
+  TooltipText: "",
+  TooltipPos: "top",
+  PopoverText: "",
+  PopoverTitle: "",
+  PopoverEvent: "mouseenter",
+  PopoverPos: "top",
+  Badge: "",
+  Icon: "",
+  Text: "Launch the specified app",
+  Class: "btn btn-success btn-md ",
+  Disabled: ""
+};
+
+$rootScope.Label1 = {
+  ABRole: 6002,
+  Hidden: "",
+  Class: "",
+  Text: "App ID",
+  Input: "Input1",
+  Title: "",
+  AriaLabel: "",
+  TooltipText: "",
+  TooltipPos: "top",
+  PopoverText: "",
+  PopoverEvent: "mouseenter",
+  PopoverTitle: "",
+  PopoverPos: "top",
+  Icon: ""
+};
+    };
+
+    return {
+      init : function () {
+        setControlVars();
+      }
+    };
+  }
+]);
+
+window.App.Plugins = {};
+
+window.App.Module.service
+(
+  'AppPluginsService',
+
+  ['$rootScope',
+
+  function ($rootScope) {
+
+    return {
+      init : function () {
+        Object.keys(window.App.Plugins).forEach(function (plugin) {
+          if (angular.isFunction(window.App.Plugins[plugin])) {
+            plugin = window.App.Plugins[plugin].call();
+            if (angular.isFunction(plugin.PluginSetupEvent)) {
+              plugin.PluginSetupEvent();
+            }
+            if (angular.isUndefined(window.App.Cordova) &&
+             angular.isFunction(plugin.PluginAppReadyEvent)) {
+               document.addEventListener('deviceready',
+                plugin.PluginAppReadyEvent, false);
+            }
+          }
+        });
+      },
+      docReady : function () {
+        Object.keys(window.App.Plugins).forEach(function (plugin) {
+          if (angular.isFunction(window.App.Plugins[plugin])) {
+            plugin = window.App.Plugins[plugin].call();
+            if (angular.isFunction(plugin.PluginDocumentReadyEvent)) {
+              angular.element(window.document).ready(
+               plugin.PluginDocumentReadyEvent);
+            }
+          }
+        });
+      }      
+    };
+  }
+]);
+
+window.App.Ctrls = angular.module('AppCtrls', []);
+
+window.App.Ctrls.controller
+(
+  'AppCtrl',
+
+  ['$scope', '$rootScope', '$location', '$uibModal', '$http', '$sce', '$timeout', '$window', '$document', 'blockUI', '$uibPosition',
+    '$templateCache', 'AppEventsService', 'AppGlobalsService', 'AppControlsService', 'AppPluginsService',
+
+  function ($scope, $rootScope, $location, $uibModal, $http, $sce, $timeout, $window, $document, blockUI, $uibPosition,
+   $templateCache, AppEventsService, AppGlobalsService, AppControlsService, AppPluginsService) {
+
+    window.App.Scope = $scope;
+    window.App.RootScope = $rootScope;
+
+    AppEventsService.init();
+    AppGlobalsService.init();
+    AppControlsService.init();
+    AppPluginsService.init();
+     
+    $scope.trustAsHtml = function (html) {
+      return $sce.trustAsHtml(html);
+    };    
+
+    $scope.showView = function (viewName) {
+      window.App.Modal.closeAll();
+      $timeout(function () {
+        $location.path(viewName);
+      });
+    };
+
+    $scope.replaceView = function (viewName) {
+      window.App.Modal.closeAll();
+      $timeout(function () {
+        $location.path(viewName).replace();
+      });      
+    };
+
+    $scope.showModalView = function (viewName, callback) {
+      var
+        execCallback = null,
+        modal = window.App.Modal.insert(viewName);
+
+      modal.instance = $uibModal.open
+      ({
+        size: 'lg',
+        scope: $scope,
+        keyboard: false,
+        animation: false,
+        backdrop: 'static',
+        windowClass: 'dialogView',
+        controller: viewName + 'Ctrl',
+        templateUrl: 'app/views/' + viewName + '.html'
+      });
+      execCallback = function (modalResult) {
+        window.App.Modal.removeCurrent();
+        if (angular.isFunction (callback)) {
+          callback(modalResult);
+        }
+      };
+      modal.instance.result.then(
+        function (modalResult){execCallback(modalResult);},
+        function (modalResult){execCallback(modalResult);}
+      );      
+    };
+
+    $scope.closeModalView = function (modalResult) {
+      var
+        modal = window.App.Modal.getCurrent();
+
+      if (modal !== null) {
+        modal.close(modalResult);
+      }
+    };
+
+    $scope.loadVariables = function (text) {
+
+      var
+        setVar = function (name, value) {
+          var
+            newName = '',
+            dotPos = name.indexOf('.');
+
+          if (dotPos !== -1) {
+            newName = name.split('.');
+            if (newName.length === 2) {
+              $rootScope[newName[0].trim()][newName[1].trim()] = value;
+            } else if (newName.length === 3) {
+              // We support up to 3 levels here
+              $rootScope[newName[0].trim()][newName[1].trim()][newName[2].trim()] = value;
+            }
+          } else {
+            $rootScope[name] = value;
+          }
+        };
+
+      var
+        varName = '',
+        varValue = '',
+        isArray = false,
+        text = text || '',
+        separatorPos = -1;
+
+      angular.forEach(text.split('\n'), function (value, key) {
+        separatorPos = value.indexOf('=');
+        if ((value.trim() !== '') && (value.substr(0, 1) !== ';') && (separatorPos !== -1)) {
+          varName = value.substr(0, separatorPos).trim();
+          if (varName !== '') {
+            varValue = value.substr(separatorPos + 1, value.length).trim();
+            isArray = varValue.substr(0, 1) === '|';
+            if (!isArray) {
+              setVar(varName, varValue);
+            } else {
+              setVar(varName, varValue.substr(1, varValue.length).split('|'));
+            }
+          }
+        }
+      });
+    };
+    
+    $scope.alertBox = function (content, type) {
+      var
+        execCallback = null,
+        aType = type || 'info',
+        modal = window.App.Modal.insert('builder/views/alertBox.html');
+
+      modal.instance = $uibModal.open
+      ({
+        size: 'lg',
+        scope: $scope,
+        keyboard: true,        
+        animation: false,
+        controller: 'AppDialogsCtrl',
+        templateUrl: 'builder/views/alertBox.html',
+        resolve: {
+          properties: function () {
+            return {
+              Type: aType,
+              Content: content
+            };
+          }
+        }
+      });
+      execCallback = function () {
+        window.App.Modal.removeCurrent();     
+      };
+      modal.instance.result.then(
+        function (modalResult){execCallback();},
+        function (modalResult){execCallback();}
+      );
+    };  
+
+    $scope.autoCloseAlertBox = function (content, type, seconds, callback) {
+      var
+        execCallback = null,
+        aType = type || 'info',
+        modal = window.App.Modal.insert('builder/views/autoCloseAlertBox.html');
+
+      modal.instance = $uibModal.open
+      ({
+        size: 'lg',
+        scope: $scope,
+        keyboard: false,
+        animation: false,
+        backdrop: 'static',
+        controller: 'AppDialogsCtrl',
+        templateUrl: 'builder/views/autoCloseAlertBox.html',
+        resolve: {
+          properties: function () {
+            return {
+              Type: aType,
+              Content: content
+            };
+          }
+        }
+      });
+      execCallback = function () {
+        window.App.Modal.removeCurrent();
+        if (angular.isFunction (callback)) {
+          callback();
+        }        
+      };
+      modal.instance.result.then(
+        function (modalResult){execCallback();},
+        function (modalResult){execCallback();}
+      );
+      setTimeout(function () {
+        $scope.closeModalView();
+      }, seconds !== '' ? parseFloat(seconds) * 1000 : 5000);
+    };
+    
+    $scope.inputBox = function (header, buttons,
+     inputVar, defaultVal, type, callback) {
+      var
+        execCallback = null,
+        aType = type || 'info',
+        aButtons = buttons || 'Ok|Cancel',
+        modal = window.App.Modal.insert('builder/views/inputBox.html');
+
+      $rootScope[inputVar] = defaultVal;
+
+      modal.instance = $uibModal.open
+      ({
+        size: 'lg',
+        scope: $scope,
+        keyboard: false,
+        animation: false,
+        backdrop: 'static',
+        controller: 'AppDialogsCtrl',
+        templateUrl: 'builder/views/inputBox.html',
+        resolve: {
+          properties: function () {
+            return {
+              Type: aType,
+              Header: header,
+              Buttons: aButtons.split('|'),
+              InputVar: $rootScope.inputVar
+            };
+          }
+        }
+      });
+      execCallback = function (modalResult) {
+        window.App.Modal.removeCurrent();
+        if (angular.isFunction (callback)) {
+          callback(modalResult, $rootScope[inputVar]);
+        }
+      };
+      modal.instance.result.then(
+        function (modalResult){execCallback(modalResult);},
+        function (modalResult){execCallback(modalResult);}
+      );
+    };
+
+    $scope.messageBox = function (header,
+     content, buttons, type, callback) {
+      var
+        execCallback = null,
+        aType = type || 'info',
+        aButtons = buttons || null,
+        modal = window.App.Modal.insert('builder/views/messageBox.html');
+
+      modal.instance = $uibModal.open
+      ({
+        size: 'lg',
+        scope: $scope,
+        keyboard: false,
+        animation: false,
+        backdrop: 'static',
+        controller: 'AppDialogsCtrl',
+        templateUrl: 'builder/views/messageBox.html',
+        resolve: {
+          properties: function () {
+            return {
+              Type: aType,
+              Header: header,
+              Content: content,
+              Buttons: aButtons !== null ? aButtons.split('|') : null
+            };
+          }
+        }
+      });
+      execCallback = function (modalResult) {
+        window.App.Modal.removeCurrent();
+        if (angular.isFunction (callback)) {
+          callback(modalResult);
+        }
+      };
+      modal.instance.result.then(
+        function (modalResult){execCallback(modalResult);},
+        function (modalResult){execCallback(modalResult);}
+      );
+    };
+
+    $scope.alert = function (title, text) {
+      if (window.App.Cordova || !('notification' in navigator)) {
+        window.alert(text);
+      } else {
+        navigator.notification.alert(
+         text, null, title, null);
+      }
+    };
+
+    $scope.confirm = function (title, text, callback) {
+      if (window.App.Cordova || !('notification' in navigator)) {
+        callback(window.confirm(text));
+      } else {
+        navigator.notification.confirm
+        (
+          text,
+          function (btnIndex) {
+            callback(btnIndex === 1);
+          },
+          title,
+          null
+        );
+      }
+    };
+
+    $scope.prompt = function (title, text, defaultVal, callback) {
+      if (window.App.Cordova || !('notification' in navigator)) {
+        var
+          result = window.prompt(text, defaultVal);
+        callback(result !== null, result);
+      } else {
+        navigator.notification.prompt(
+          text,
+          function (result) {
+            callback(result.buttonIndex === 1, result.input1);
+          },
+          title,
+          null,
+          defaultVal
+        );
+      }
+    };
+
+    $scope.beep = function (times) {
+      if (window.App.Cordova || !('notification' in navigator)) {
+        window.App.Utils.playSound
+        (
+          'builder/sounds/beep/beep.mp3',
+          'builder/sounds/beep/beep.ogg'
+        );
+      } else {
+        navigator.notification.beep(times);
+      }
+    };
+
+    $scope.vibrate = function (milliseconds) {
+      if (window.App.Cordova || !('notification' in navigator)) {
+        var
+          body = angular.element(document.body);
+        body.addClass('animated shake');
+        setTimeout(function () {
+          body.removeClass('animated shake');
+        }, milliseconds);
+      } else {
+        navigator.vibrate(milliseconds);
+      }
+    };
+
+    $scope.setLocalOption = function (key, value) {
+      window.localStorage.setItem(key, value);
+    };
+
+    $scope.getLocalOption = function (key) {
+      return window.localStorage.getItem(key) || '';
+    };
+
+    $scope.removeLocalOption = function (key) {
+      window.localStorage.removeItem(key);
+    };
+
+    $scope.clearLocalOptions = function () {
+      window.localStorage.clear();
+    };
+
+    $scope.log = function (text, lineNum) {
+      window.App.Debugger.log(text, lineNum);
+    };
+
+    $window.TriggerAppOrientationEvent = function () {
+      $rootScope.OnAppOrientation();
+      $rootScope.$apply();
+    };
+
+    $scope.idleStart = function (seconds) {
+
+      $scope.idleStop();
+      $rootScope.App.IdleIsIdling = false;
+
+      if($rootScope.App._IdleSeconds !== seconds) {
+        $rootScope.App._IdleSeconds = seconds;
+      }
+
+      $document.on('mousemove mousedown mousewheel keydown scroll touchstart touchmove DOMMouseScroll', $scope._resetIdle);
+
+      $rootScope.App.IdleIsRunning = true;
+
+      $rootScope.App._IdleTimer = setTimeout(function () {
+        $rootScope.App.IdleIsIdling = true;
+        $rootScope.OnAppIdleStart();
+        $scope.$apply();
+      }, $rootScope.App._IdleSeconds * 1000);
+    };
+
+    $scope._resetIdle = function () {
+      if($rootScope.App.IdleIsIdling) {
+        $rootScope.OnAppIdleEnd();
+        $rootScope.App.IdleIsIdling = false;
+        $scope.$apply();
+      }
+      $scope.idleStart($rootScope.App._IdleSeconds);
+    };
+
+    $scope.idleStop = function () {
+      $document.off('mousemove mousedown mousewheel keydown scroll touchstart touchmove DOMMouseScroll', $scope._resetIdle);
+      clearTimeout($rootScope.App._IdleTimer);
+      $rootScope.App.IdleIsRunning = false;
+    };
+
+    $scope.trustSrc = function (src) {
+      return $sce.trustAsResourceUrl(src);
+    };
+
+    $scope.openWindow = function (url, showLocation, target) {
+      var
+        options = 'location=';
+
+      if (showLocation) {
+        options += 'yes';
+      } else {
+        options += 'no';
+      }
+
+      if (window.App.Cordova) {
+        options += ', width=500, height=500, resizable=yes, scrollbars=yes';
+      }
+
+      return window.open(url, target, options);
+    };
+
+    $scope.closeWindow = function (winRef) {
+      if (angular.isObject(winRef) && angular.isFunction (winRef.close)) {
+        winRef.close();
+      }
+    };    
+    
+    $scope.fileDownload = function(url, subdir, fileName,
+     privatelly, headers, errorCallback, successCallback) {
+     
+      if (window.App.Cordova) {
+        if (angular.isFunction(errorCallback)) { 
+          errorCallback('-1'); 
+        }
+        return;
+      }
+      
+      var
+        ft = new FileTransfer(),
+        root = privatelly.toString() === 'true' ? cordova.file.dataDirectory :
+         (device.platform.toLowerCase() === 'ios') ?
+          cordova.file.documentsDirectory : cordova.file.externalRootDirectory;
+
+      window.resolveLocalFileSystemURL(root, function (dir) {
+        dir.getDirectory(subdir, { create: true, exclusive: false }, function (downloadDir) {
+          downloadDir.getFile(fileName, { create: true, exclusive: false }, function (file) {
+            ft.download(url, file.toURL(), function(entry) { 
+              if (angular.isFunction(successCallback)) { successCallback(entry.toURL(), entry); } 
+            }, 
+            function(error) {
+              if (angular.isFunction(errorCallback)) { errorCallback(4, error); }               
+            }, 
+            false, 
+            { "headers": angular.isObject(headers) ? headers : {} });
+          }, 
+          function(error) {
+            if (angular.isFunction(errorCallback)) { 
+              errorCallback(3, error); 
+            }               
+          });
+        }, 
+        function(error) {
+          if (angular.isFunction(errorCallback)) { 
+            errorCallback(2, error); 
+          }               
+        });
+      }, 
+      function(error) {
+        if (angular.isFunction(errorCallback)) { 
+          errorCallback(1, error); 
+        }               
+      });
+    };        
+
+   
+}]);
+
+window.App.Ctrls.controller
+(
+  'AppDialogsCtrl',
+
+  ['$scope', 'properties',
+
+  function ($scope, properties) {
+    $scope.Properties = properties;
+  }
+]);
+
+window.App.Ctrls.controller
+(
+  'AppEventsCtrl',
+
+  ['$scope', '$rootScope', '$location', '$uibModal', '$http', '$sce', '$timeout', '$window', '$document', 'blockUI', '$uibPosition', '$templateCache',
+
+  function ($scope, $rootScope, $location, $uibModal, $http, $sce, $timeout, $window, $document, blockUI, $uibPosition, $templateCache) {
+
+    $rootScope.OnAppClick = function () {
+      
+    };
+    
+    $rootScope.OnAppHide = function () {
+      
+    };
+    
+    $rootScope.OnAppShow = function () {
+      
+    };    
+
+    $rootScope.OnAppReady = function () {
+      
+    };
+
+    $rootScope.OnAppPause = function () {
+      
+    };
+
+    $rootScope.OnAppKeyUp = function () {
+      
+    };
+
+    $rootScope.OnAppKeyDown = function () {
+      
+    };
+
+    $rootScope.OnAppMouseUp = function () {
+      
+    };
+
+    $rootScope.OnAppMouseDown = function () {
+      
+    };
+    
+    $rootScope.OnAppMouseMove = function () {
+      
+    };    
+
+    $rootScope.OnAppError = function () {
+      
+    };
+
+    $rootScope.OnAppResize = function () {
+      
+    };
+
+    $rootScope.OnAppResume = function () {
+      
+    };
+
+    $rootScope.OnAppOnline = function () {
+      
+    };
+
+    $rootScope.OnAppOffline = function () {
+      
+    };
+
+    $rootScope.OnAppIdleEnd = function () {
+      
+    };
+
+    $rootScope.OnAppIdleStart = function () {
+      
+    };
+
+    $rootScope.OnAppBackButton = function () {
+      
+    };
+
+    $rootScope.OnAppMenuButton = function () {
+      
+    };
+
+    $rootScope.OnAppViewChange = function () {
+      
+    };
+
+    $rootScope.OnAppOrientation = function () {
+      
+    };
+
+    $rootScope.OnAppVolumeUpButton = function () {
+      
+    };
+
+    $rootScope.OnAppVolumeDownButton = function () {
+      
+    };
+    
+    $rootScope.OnAppWebExtensionMsg = function () {
+      
+    };    
+  }
+]);
+
+angular.element(window.document).ready(function () {
+  angular.bootstrap(window.document, ['AppModule']);
+});
+
+window.App.Config = {};
+window.App.Config.DefaultView = 'Login';
+
+
+
+window.App.Ctrls.controller("LoginCtrl", ["$scope", "$rootScope", "$routeParams", "$sce", "$timeout", "$interval", "$http", "$uibPosition", "$templateCache", "blockUI", "AppPluginsService",
+
+function($scope, $rootScope, $routeParams, $sce, $timeout, $interval, $http, $position, $templateCache, blockUI, AppPluginsService) {
+
+$rootScope.Login = {};
+$rootScope.Login.ABView = true;
+$rootScope.Login.Params = window.App.Utils.parseViewParams($routeParams.params);
+
+window.App.Login = {};
+window.App.Login.Scope = $scope;
+
+angular.element(window.document).ready(function(event){
+var theme = $rootScope.App.Theme.toLowerCase();
+angular.element(document.querySelector("body")).removeClass(theme).addClass(theme);
+});
+
+angular.element(window.document).ready(function(event){
+AppPluginsService.docReady();
+});
+
+$scope.Button1Click = function($event) {
+$rootScope.Button1.Event = $event;
+
+window.App.Debugger.log("Start of Button1 Click event", "info", -1);
+
+window.App.Debugger.log("If \x22[PasswordInput.Value]\x22 \x22==\x22 \x221\x22", "info", 1);
+
+if ($rootScope.PasswordInput.Value == 1) {
+
+window.App.Debugger.log("Vibrate \x2210\x22", "info", 2);
+
+$scope.vibrate(10)
+
+window.App.Debugger.log("ReplaceView \x22Main\x22", "info", 3);
+
+$scope.replaceView("Main");
+
+window.App.Debugger.log("Focus \x22LoginInput\x22", "info", 4);
+
+if (document.getElementById("LoginInput")) { document.getElementById("LoginInput").focus(); }
+
+window.App.Debugger.log("Exit", "info", 5);
+
+return null;
+
+window.App.Debugger.log("EndIf", "info", 6);
+
+}
+
+window.App.Debugger.log("End of Button1 Click event", "info", -2);
+
+};
+
+}]);
+
+window.App.Ctrls.controller("MainCtrl", ["$scope", "$rootScope", "$routeParams", "$sce", "$timeout", "$interval", "$http", "$uibPosition", "$templateCache", "blockUI", "AppPluginsService",
+
+function($scope, $rootScope, $routeParams, $sce, $timeout, $interval, $http, $position, $templateCache, blockUI, AppPluginsService) {
+
+$rootScope.Main = {};
+$rootScope.Main.ABView = true;
+$rootScope.Main.Params = window.App.Utils.parseViewParams($routeParams.params);
+
+window.App.Main = {};
+window.App.Main.Scope = $scope;
+
+angular.element(window.document).ready(function(event){
+var theme = $rootScope.App.Theme.toLowerCase();
+angular.element(document.querySelector("body")).removeClass(theme).addClass(theme);
+});
+
+angular.element(window.document).ready(function(event){
+AppPluginsService.docReady();
+});
+
+angular.element(window.document).ready(function(event){
+$rootScope.Main.Event = event;
+
+window.App.Debugger.log("Start of Main Show event", "info", -1);
+
+window.App.Debugger.log("AutoCloseAlertBox \x22Successful !\x22 \x22success\x22 \x222\x22 \x22\x22", "info", 1);
+
+$scope.autoCloseAlertBox("Successful !", "success", "2", (("".length > 0) && angular.isFunction($scope[""])) ? $scope[""] : null);
+
+window.App.Debugger.log("End of Main Show event", "info", -2);
+
+$rootScope.$apply();
+});
+
+$scope.Button3Click = function($event) {
+$rootScope.Button3.Event = $event;
+
+window.App.Debugger.log("Start of Button3 Click event", "info", -1);
+
+window.App.Debugger.log("ReplaceView \x22Location\x22", "info", 1);
+
+$scope.replaceView("Location");
+
+window.App.Debugger.log("End of Button3 Click event", "info", -2);
+
+};
+
+$scope.Button4Click = function($event) {
+$rootScope.Button4.Event = $event;
+
+window.App.Debugger.log("Start of Button4 Click event", "info", -1);
+
+window.App.Debugger.log("ReplaceView \x22Camera\x22", "info", 1);
+
+$scope.replaceView("Camera");
+
+window.App.Debugger.log("End of Button4 Click event", "info", -2);
+
+};
+
+}]);
+
+window.App.Ctrls.controller("LocationCtrl", ["$scope", "$rootScope", "$routeParams", "$sce", "$timeout", "$interval", "$http", "$uibPosition", "$templateCache", "blockUI", "AppPluginsService",
+
+function($scope, $rootScope, $routeParams, $sce, $timeout, $interval, $http, $position, $templateCache, blockUI, AppPluginsService) {
+
+$rootScope.Location = {};
+$rootScope.Location.ABView = true;
+$rootScope.Location.Params = window.App.Utils.parseViewParams($routeParams.params);
+
+window.App.Location = {};
+window.App.Location.Scope = $scope;
+
+angular.element(window.document).ready(function(event){
+var theme = $rootScope.App.Theme.toLowerCase();
+angular.element(document.querySelector("body")).removeClass(theme).addClass(theme);
+});
+
+angular.element(window.document).ready(function(event){
+AppPluginsService.docReady();
+});
+
+angular.element(window.document).ready(function(event){
+$rootScope.Location.Event = event;
+
+window.App.Debugger.log("Start of Location Show event", "info", -1);
+
+window.App.Debugger.log("Geolocation \x22Location1\x22", "info", 1);
+
+$rootScope.Location1.getGeolocation();
+
+window.App.Debugger.log("End of Location Show event", "info", -2);
+
+$rootScope.$apply();
+});
+
+$rootScope.Location1.getGeolocation = function() {
+  navigator.geolocation.getCurrentPosition($rootScope.Location1.onSuccess, $rootScope.Location1.onError, { timeout: $rootScope.Location1.Timeout, maximumAge: 3000, enableHighAccuracy: true });
+};
+
+$rootScope.Location1.onSuccess = function(position) {
+  $rootScope.Location1.Latitude = position.coords.latitude;
+  $rootScope.Location1.Altitude = position.coords.altitude;
+  $rootScope.Location1.Longitude = position.coords.longitude;
+  $rootScope.Location1.Accuracy = position.coords.accuracy;
+  $rootScope.Location1.AltitudeAccuracy = position.coords.altitudeAccuracy;
+  $rootScope.Location1.Heading = position.coords.heading;
+  $rootScope.Location1.Speed = position.coords.speed;
+  $rootScope.$apply();
+
+
+
+window.App.Debugger.log("Start of Location1 Success event", "info", -1);
+
+window.App.Debugger.log("SetVar \x22[LatitudeInput.Value]\x22 \x22[Location1.Latitude]\x22 \x22String\x22", "info", 1);
+
+$rootScope.LatitudeInput.Value = $rootScope.Location1.Latitude;
+
+window.App.Debugger.log("SetVar \x22[LongitudeInput.Value]\x22 \x22[Location1.Longitude]\x22 \x22String\x22", "info", 2);
+
+$rootScope.LongitudeInput.Value = $rootScope.Location1.Longitude;
+
+window.App.Debugger.log("SetVar \x22[MapsIFrame.Url]\x22 \x22https://www.google.com/maps/embed/v1/search?key=AIzaSyDxsY4GzmMbQZHO-ELpVNgBPE2HynZA2Qg&q=[Location1.Latitude],[Location1.Longitude]\x22 \x22String\x22", "info", 3);
+
+$rootScope.MapsIFrame.Url = "https://www.google.com/maps/embed/v1/search?key=AIzaSyDxsY4GzmMbQZHO-ELpVNgBPE2HynZA2Qg&q="+$rootScope.Location1.Latitude+","+$rootScope.Location1.Longitude+"";
+
+window.App.Debugger.log("ApplyModel", "info", 4);
+
+$timeout(function() { $rootScope.$apply(); });
+
+window.App.Debugger.log("End of Location1 Success event", "info", -2);
+
+};
+
+$rootScope.Location1.onError = function(error) {
+  $rootScope.Location1.Error = error.code;
+
+
+
+};
+
+$scope.Button2Click = function($event) {
+$rootScope.Button2.Event = $event;
+
+window.App.Debugger.log("Start of Button2 Click event", "info", -1);
+
+window.App.Debugger.log("Geolocation \x22Location1\x22", "info", 1);
+
+$rootScope.Location1.getGeolocation();
+
+window.App.Debugger.log("End of Button2 Click event", "info", -2);
+
+};
+
+}]);
+
+window.App.Ctrls.controller("CameraCtrl", ["$scope", "$rootScope", "$routeParams", "$sce", "$timeout", "$interval", "$http", "$uibPosition", "$templateCache", "blockUI", "AppPluginsService",
+
+function($scope, $rootScope, $routeParams, $sce, $timeout, $interval, $http, $position, $templateCache, blockUI, AppPluginsService) {
+
+$rootScope.Camera = {};
+$rootScope.Camera.ABView = true;
+$rootScope.Camera.Params = window.App.Utils.parseViewParams($routeParams.params);
+
+window.App.Camera = {};
+window.App.Camera.Scope = $scope;
+
+angular.element(window.document).ready(function(event){
+var theme = $rootScope.App.Theme.toLowerCase();
+angular.element(document.querySelector("body")).removeClass(theme).addClass(theme);
+});
+
+angular.element(window.document).ready(function(event){
+AppPluginsService.docReady();
+});
+
+angular.element(window.document).ready(function(event){
+$rootScope.Camera.Event = event;
+
+window.App.Debugger.log("Start of Camera Show event", "info", -1);
+
+window.App.Debugger.log("WebCamCheck \x22WebCam\x22", "info", 1);
+
+navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia || navigator.msGetUserMedia || navigator.oGetUserMedia;
+if (navigator.getUserMedia) {
+  navigator.getUserMedia({video: true}, $rootScope.WebCam.onSuccess, $rootScope.WebCam.onError);
+} else {
+  $rootScope.WebCam.onError(-1);
+}
+
+window.App.Debugger.log("End of Camera Show event", "info", -2);
+
+$rootScope.$apply();
+});
+
+$scope.PlayButtonClick = function($event) {
+$rootScope.PlayButton.Event = $event;
+
+window.App.Debugger.log("Start of PlayButton Click event", "info", -1);
+
+window.App.Debugger.log("WebCamStart \x22WebCam\x22", "info", 1);
+
+$rootScope.WebCam.Video.play();
+
+window.App.Debugger.log("End of PlayButton Click event", "info", -2);
+
+};
+
+$scope.CaptureButtonClick = function($event) {
+$rootScope.CaptureButton.Event = $event;
+
+window.App.Debugger.log("Start of CaptureButton Click event", "info", -1);
+
+window.App.Debugger.log("WebCamShot \x22WebCam\x22 \x22[Base64Img]\x22", "info", 1);
+
+$rootScope.WebCam.CanvasContext.drawImage($rootScope.WebCam.Video, 0, 0);
+$rootScope.Base64Img = $rootScope.WebCam.Canvas.toDataURL();
+
+window.App.Debugger.log("SetAttribute \x22Image\x22 \x22src\x22 \x22[Base64Img]\x22", "info", 2);
+
+document.getElementById("Image").setAttribute("src", ""+$rootScope.Base64Img+"");
+
+window.App.Debugger.log("Invalid syntax for ScaleCapturedImage at CaptureButton Click event", "error", 0);
+
+window.App.Debugger.log("End of CaptureButton Click event", "info", -2);
+
+};
+
+angular.element(window.document).ready(function(event){
+  $rootScope.WebCam.VideoStream = false;
+  $rootScope.WebCam.Video = document.getElementById("WebCam");
+  $rootScope.WebCam.Canvas = document.getElementById("WebCamCanvas");
+  $rootScope.WebCam.CanvasContext = $rootScope.WebCam.Canvas.getContext("2d");
+
+  $rootScope.WebCam.Video.onloadedmetadata = function() {
+    $rootScope.WebCam.VideoWidth = this.videoWidth;
+    $rootScope.WebCam.VideoHeight = this.videoHeight;
+    $rootScope.WebCam.Canvas.setAttribute("width", this.videoWidth);
+    $rootScope.WebCam.Canvas.setAttribute("height", this.videoHeight);
+    $rootScope.WebCam.CanvasContext.translate($rootScope.WebCam.Canvas.width, 0);
+    $rootScope.WebCam.CanvasContext.scale(-1, 1);
+  };
+});
+
+$rootScope.WebCam.onSuccess = function(stream) {
+  $rootScope.WebCam.VideoStream = stream;
+try {
+  $rootScope.WebCam.Video.srcObject = stream;
+} catch (error) {
+  $rootScope.WebCam.Video.src = window.URL.createObjectURL(stream);
+}
+window.App.Debugger.log("Start of WebCam Success event", "info", -1);
+
+window.App.Debugger.log("AlertBox \x22We have permissions!\x22 \x22success\x22", "info", 1);
+
+$scope.alertBox("We have permissions!", "success");
+
+window.App.Debugger.log("End of WebCam Success event", "info", -2);
+
+};
+
+$rootScope.WebCam.onError = function(error) {
+
+$rootScope.WebCam.Error = error;
+window.App.Debugger.log("Start of WebCam Error event", "info", -1);
+
+window.App.Debugger.log("Disable \x22PlayButton\x22", "info", 1);
+
+if ($rootScope["PlayButton"]) { $rootScope["PlayButton"].Disabled = "true"; }
+
+window.App.Debugger.log("Disable \x22CaptureButton\x22", "info", 2);
+
+if ($rootScope["CaptureButton"]) { $rootScope["CaptureButton"].Disabled = "true"; }
+
+window.App.Debugger.log("If \x22[WebCam.Error]\x22 \x22==\x22 \x22-1\x22", "info", 3);
+
+if ($rootScope.WebCam.Error == -1) {
+
+window.App.Debugger.log("AlertBox \x22Error. Webcam is not supported in this browser.\x22 \x22warning\x22", "info", 4);
+
+$scope.alertBox("Error. Webcam is not supported in this browser.", "warning");
+
+window.App.Debugger.log("Else", "info", 5);
+
+} else {
+
+window.App.Debugger.log("AlertBox \x22Error: [WebCam.Error]\x22 \x22warning\x22", "info", 6);
+
+$scope.alertBox("Error: "+$rootScope.WebCam.Error+"", "warning");
+
+window.App.Debugger.log("EndIf", "info", 7);
+
+}
+
+window.App.Debugger.log("End of WebCam Error event", "info", -2);
+
+};
+
+}]);
+
+window.App.Ctrls.controller("LuncherCtrl", ["$scope", "$rootScope", "$routeParams", "$sce", "$timeout", "$interval", "$http", "$uibPosition", "$templateCache", "blockUI", "AppPluginsService",
+
+function($scope, $rootScope, $routeParams, $sce, $timeout, $interval, $http, $position, $templateCache, blockUI, AppPluginsService) {
+
+$rootScope.Luncher = {};
+$rootScope.Luncher.ABView = true;
+$rootScope.Luncher.Params = window.App.Utils.parseViewParams($routeParams.params);
+
+window.App.Luncher = {};
+window.App.Luncher.Scope = $scope;
+
+angular.element(window.document).ready(function(event){
+var theme = $rootScope.App.Theme.toLowerCase();
+angular.element(document.querySelector("body")).removeClass(theme).addClass(theme);
+});
+
+angular.element(window.document).ready(function(event){
+AppPluginsService.docReady();
+});
+
+angular.element(window.document).ready(function(event){
+$rootScope.Luncher.Event = event;
+
+window.App.Debugger.log("Start of Luncher Show event", "info", -1);
+
+window.App.Debugger.log("If \x22[App.Cordova]\x22 \x22==\x22 \x22false\x22", "info", 1);
+
+if ($rootScope.App.Cordova ==  "false" ) {
+
+window.App.Debugger.log("Disable \x22Input1\x22", "info", 2);
+
+if ($rootScope["Input1"]) { $rootScope["Input1"].Disabled = "true"; }
+
+window.App.Debugger.log("Disable \x22Button1\x22", "info", 3);
+
+if ($rootScope["Button1"]) { $rootScope["Button1"].Disabled = "true"; }
+
+window.App.Debugger.log("Disable \x22Button2\x22", "info", 4);
+
+if ($rootScope["Button2"]) { $rootScope["Button2"].Disabled = "true"; }
+
+window.App.Debugger.log("Disable \x22Button3\x22", "info", 5);
+
+if ($rootScope["Button3"]) { $rootScope["Button3"].Disabled = "true"; }
+
+window.App.Debugger.log("EndIf", "info", 6);
+
+}
+
+window.App.Debugger.log("End of Luncher Show event", "info", -2);
+
+$rootScope.$apply();
+});
+
+$scope.Button6Click = function($event) {
+$rootScope.Button6.Event = $event;
+
+window.App.Debugger.log("Start of Button6 Click event", "info", -1);
+
+window.App.Debugger.log("StartJS", "info", 1);
+
+
+startApp.set({
+"package": window.App.RootScope.Input1.Value
+}).check(window.App.Scope.CheckSuccess, window.App.Scope.CheckError);
+
+window.App.Debugger.log("End of Button6 Click event", "info", -2);
+
+};
+
+$scope.Button7Click = function($event) {
+$rootScope.Button7.Event = $event;
+
+window.App.Debugger.log("Start of Button7 Click event", "info", -1);
+
+window.App.Debugger.log("StartJS", "info", 1);
+
+
+startApp.set({
+"application": window.App.RootScope.Input1.Value
+}).start(angular.noop, window.App.Scope.LaunchError);
+
+window.App.Debugger.log("End of Button7 Click event", "info", -2);
+
+};
+
+}]);

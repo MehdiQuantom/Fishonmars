@@ -1,30 +1,28 @@
-﻿
-/*!
-This file is part of DecSoft App Builder.
-Visit our website for license information.
-Copyright ©2021 DecSoft. All rights reserved.
-Visit our website at: https://www.decsoftutils.com/
-
-*/
-
-
+﻿/*!
+ * This file is part of App Builder
+ *
+ * ©2019 App Builder - https://www.davidesperalta.com
+ */
+/* App auto generated CSS */
 html, body { width: 320px; height: 480px; }
+#PasswordInput { position: absolute; top: 50.00%; left: 17.50%; width: 62.50%; height: 8.33%; font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;}
+#Button1 { position: absolute; top: 63.33%; left: 17.50%; width: 62.50%; height: 8.33%; font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;}
 
-#view1 #input1 { position: absolute; top: 61.67%; left: 17.50%; width: 62.50%; height: 6.67%; }
+#Button3 { position: absolute; top: 1.67%; left: 2.50%; width: 62.50%; height: 8.33%; }
+#Button4 { position: absolute; top: 11.67%; left: 2.50%; width: 62.50%; height: 8.33%; }
+#Button5 { position: absolute; top: 21.67%; left: 2.50%; width: 62.50%; height: 8.33%; }
 
-#view1 #input2 { position: absolute; top: 48.33%; left: 17.50%; width: 62.50%; height: 6.67%; }
+#LatitudeInput { position: absolute; top: 5.00%; left: 2.50%; width: 62.50%; height: 8.33%; }
+#LongitudeInput { position: absolute; top: 18.33%; left: 2.50%; width: 62.50%; height: 8.33%; }
+#MapsIFrame { position: absolute; top: 30.00%; left: 2.50%; width: 62.50%; height: 41.67%; }
+#Button2 { position: absolute; top: 75.00%; left: 2.50%; width: 62.50%; height: 8.33%; }
 
-#view1 #label2 { position: absolute; top: 43.33%; left: 17.50%; width: 62.50%; height: 4.17%; }
-#view1 #label2 {font-family: Arial, Helvetica, sans-serif;}
+#PlayButton { position: absolute; top: 88.33%; left: 2.50%; width: 35.00%; height: 8.33%; }
+#CaptureButton { position: absolute; top: 88.33%; left: 62.50%; width: 35.00%; height: 8.33%; }
+#WebCam { position: absolute; top: 1.67%; left: 2.50%; width: 95.00%; height: 41.67%; }
+#WebCamHtml { position: absolute; top: 45.00%; left: 2.50%; width: 95.00%; height: 41.67%; }
 
-#view1 #label3 { position: absolute; top: 56.67%; left: 17.50%; width: 62.50%; height: 4.17%; }
-#view1 #label3 {font-family: Arial, Helvetica, sans-serif;}
-
-#view1 #button2 { position: absolute; top: 78.33%; left: 50.00%; width: 30.00%; height: 6.67%; }
-
-#view1 #progress1 { position: absolute; top: 71.67%; left: 17.50%; width: 62.50%; height: 4.17%; }
-
-#view1 #button1 { position: absolute; top: 78.33%; left: 17.50%; width: 27.50%; height: 6.67%; }
-#view1 #image1 { position: absolute; top: 11.67%; left: 32.50%; width: 31.25%; height: 38.54%; }
-
-#view2 #button1 { position: absolute; top: 26.67%; left: 22.50%; width: 43.75%; height: 6.67%; }
+#Button6 { position: absolute; top: 28.33%; left: 15.00%; width: 70.00%; height: 11.67%; }
+#Input1 { position: absolute; top: 11.67%; left: 15.00%; width: 70.00%; height: 8.33%; }
+#Button7 { position: absolute; top: 45.00%; left: 15.00%; width: 70.00%; height: 11.67%; }
+#Label1 { position: absolute; top: 6.67%; left: 15.00%; width: 70.00%; height: 4.17%; }
