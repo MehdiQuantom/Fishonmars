@@ -9,7 +9,7 @@ html, body { width: 360px; height: 640px; }
 #Button1 { position: absolute; top: 21.25%; left: 4.44%; width: 91.11%; height: 6.25%; font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;}
 #Label7 { position: absolute; top: 3.75%; left: 4.44%; width: 91.11%; height: 3.13%; font-family: "Arial Black", Gadget, sans-serif; font-size: 40; font-style: normal; font-weight: bold;}
 #Progressbar1 { position: absolute; top: 17.50%; left: 4.44%; width: 91.11%; height: 2.50%; }
-#Button13 { position: absolute; top: 27.50%; left: 4.44%; width: 13.33%; height: 2.50%; }
+#Button13 { position: absolute; top: 27.50%; left: 2.22%; width: 13.33%; height: 2.50%; }
 
 #Button3 { position: absolute; top: 10.00%; left: 2.22%; width: 40.00%; height: 5.00%; }
 #Button4 { position: absolute; top: 17.50%; left: 2.22%; width: 40.00%; height: 5.00%; }
@@ -17,6 +17,7 @@ html, body { width: 360px; height: 640px; }
 #Button9 { position: absolute; top: 32.50%; left: 2.22%; width: 40.00%; height: 5.00%; }
 #Button10 { position: absolute; top: 40.00%; left: 2.22%; width: 40.00%; height: 5.00%; }
 #Button11 { position: absolute; top: 47.50%; left: 2.22%; width: 40.00%; height: 5.00%; }
+
 #LatitudeInput { position: absolute; top: 3.75%; left: 2.22%; width: 95.56%; height: 7.50%; }
 #LongitudeInput { position: absolute; top: 13.75%; left: 2.22%; width: 95.56%; height: 7.50%; }
 #MapsIFrame { position: absolute; top: 22.50%; left: 2.22%; width: 95.56%; height: 41.25%; }
@@ -34,13 +35,14 @@ html, body { width: 360px; height: 640px; }
 
 #HtmlContent1 { position: absolute; top: 1.25%; left: 2.22%; width: 84.44%; height: 72.50%; background-color: #fff; border-radius: 0.2em; overflow: auto; padding: 0.5em;}
 
-#IFrame1 { position: absolute; top: 67.50%; left: 0.00%; width: 100.00%; height: 30.00%; }
-#Input8 { position: absolute; top: 0.00%; left: 2.22%; width: 95.56%; height: 7.50%; }
-#Input9 { position: absolute; top: 8.75%; left: 2.22%; width: 95.56%; height: 7.50%; }
-#IFrame2 { position: absolute; top: 20.00%; left: 0.00%; width: 100.00%; height: 42.50%; }
-#Button14 { position: absolute; top: 63.75%; left: 37.78%; width: 24.44%; height: 2.50%; }
-#Label2 { position: absolute; top: 16.25%; left: 0.00%; width: 15.56%; height: 3.13%; font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;}
-#Label3 { position: absolute; top: 63.75%; left: 0.00%; width: 15.56%; height: 3.13%; font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;}
+#Progressbar2 { position: absolute; top: 0.00%; left: 0.00%; width: 100.00%; height: 100.00%; }
+#IFrame1 { position: absolute; top: 57.50%; left: 0.00%; width: 100.00%; height: 42.50%; }
+#Input8 { position: absolute; top: 0.00%; left: 0.00%; width: 11.11%; height: 2.50%; }
+#Input9 { position: absolute; top: 0.00%; left: 88.89%; width: 11.11%; height: 2.50%; }
+#IFrame2 { position: absolute; top: 5.00%; left: 0.00%; width: 100.00%; height: 48.75%; }
+#Button14 { position: absolute; top: 53.75%; left: 35.56%; width: 24.44%; height: 1.25%; }
+#Label2 { position: absolute; top: 2.50%; left: 0.00%; width: 15.56%; height: 3.13%; font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;}
+#Label3 { position: absolute; top: 55.00%; left: 0.00%; width: 15.56%; height: 2.50%; font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;}
 
 /* App inline CSS */
 .block-ui-message

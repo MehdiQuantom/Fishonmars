@@ -10,7 +10,7 @@ html, body, .appView { width: 360px; height: 640px; }
 #Button1 { position: absolute; top: 136px; left: 16px; width: 328px; height: 40px; font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;}
 #Label7 { position: absolute; top: 24px; left: 16px; width: 328px; height: 20px; font-family: "Arial Black", Gadget, sans-serif; font-size: 40; font-style: normal; font-weight: bold;}
 #Progressbar1 { position: absolute; top: 112px; left: 16px; width: 328px; height: 16px; }
-#Button13 { position: absolute; top: 176px; left: 16px; width: 48px; height: 16px; }
+#Button13 { position: absolute; top: 176px; left: 8px; width: 48px; height: 16px; }
 
 #Button3 { position: absolute; top: 64px; left: 8px; width: 144px; height: 32px; }
 #Button4 { position: absolute; top: 112px; left: 8px; width: 144px; height: 32px; }
@@ -18,6 +18,7 @@ html, body, .appView { width: 360px; height: 640px; }
 #Button9 { position: absolute; top: 208px; left: 8px; width: 144px; height: 32px; }
 #Button10 { position: absolute; top: 256px; left: 8px; width: 144px; height: 32px; }
 #Button11 { position: absolute; top: 304px; left: 8px; width: 144px; height: 32px; }
+
 #LatitudeInput { position: absolute; top: 24px; left: 8px; width: 344px; height: 48px; }
 #LongitudeInput { position: absolute; top: 88px; left: 8px; width: 344px; height: 48px; }
 #MapsIFrame { position: absolute; top: 144px; left: 8px; width: 344px; height: 264px; }
@@ -35,13 +36,14 @@ html, body, .appView { width: 360px; height: 640px; }
 
 #HtmlContent1 { position: absolute; top: 8px; left: 8px; width: 304px; height: 464px; background-color: #fff; border-radius: 0.2em; overflow: auto; padding: 0.5em;}
 
-#IFrame1 { position: absolute; top: 432px; left: 0px; width: 360px; height: 192px; }
-#Input8 { position: absolute; top: 0px; left: 8px; width: 344px; height: 48px; }
-#Input9 { position: absolute; top: 56px; left: 8px; width: 344px; height: 48px; }
-#IFrame2 { position: absolute; top: 128px; left: 0px; width: 360px; height: 272px; }
-#Button14 { position: absolute; top: 408px; left: 136px; width: 88px; height: 16px; }
-#Label2 { position: absolute; top: 104px; left: 0px; width: 56px; height: 20px; font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;}
-#Label3 { position: absolute; top: 408px; left: 0px; width: 56px; height: 20px; font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;}
+#Progressbar2 { position: absolute; top: 0px; left: 0px; width: 360px; height: 640px; }
+#IFrame1 { position: absolute; top: 368px; left: 0px; width: 360px; height: 272px; }
+#Input8 { position: absolute; top: 0px; left: 0px; width: 40px; height: 16px; }
+#Input9 { position: absolute; top: 0px; left: 320px; width: 40px; height: 16px; }
+#IFrame2 { position: absolute; top: 32px; left: 0px; width: 360px; height: 312px; }
+#Button14 { position: absolute; top: 344px; left: 128px; width: 88px; height: 8px; }
+#Label2 { position: absolute; top: 16px; left: 0px; width: 56px; height: 20px; font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;}
+#Label3 { position: absolute; top: 352px; left: 0px; width: 56px; height: 16px; font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;}
 
 /* App inline CSS */
 .block-ui-message
