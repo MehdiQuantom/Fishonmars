@@ -1,0 +1,38 @@
+
+body{
+    background-color: #323B55;
+}
+@font-face{
+    font-family: "yekan";
+    font-style: normal;
+    font-weight: normal;
+    src: url('../fonts/yekanweb-regular.eot')format("embedded-opentype"), url('../fonts/yekanweb-regular.woff') format("woff"),url('../fonts/yekanweb-regular.ttf') format("truetype"),url('../fonts/yekanweb-regular.svg')format("svg");
+
+}
+#sub{
+    width: 100%;
+    margin-top: 5px;
+}
+.login{
+    margin: 0 auto;
+    margin-top: 5%;
+    width: 230px;
+}
+.tab{
+
+margin: 0 auto;
+margin-top: 0px;
+width: 230px;
+}
+.tab a{
+    font-size: 15px;
+    width: 100%;
+    margin-top: 5px;
+}
+.tab a:hover{
+    margin-top: 6px;
+}
+.form-control{
+    margin-top: 3px;
+   
+}
