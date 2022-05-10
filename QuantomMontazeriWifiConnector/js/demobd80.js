@@ -492,8 +492,8 @@ $(".trigger-inputs").on('click', function (event) {
 $(document).ready(function($){
     event.preventDefault();
 
-    iziToast.error({
-        id: 'ifno',
+    iziToast.info({
+        id: 'info',
         title: '✔️',
         message: 'Connected !',
         position: 'topRight',
