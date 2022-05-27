@@ -494,8 +494,8 @@ $(document).ready(function($){
 
     iziToast.info({
         id: 'info',
-        title: '✔️',
-        message: 'Connected !',
+        title: '[Status]',
+        message: 'Connecting !',
         position: 'topRight',
         transitionIn: 'fadeInDown'
     });
