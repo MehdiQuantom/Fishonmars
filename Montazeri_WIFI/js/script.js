@@ -32,7 +32,7 @@ function coolal(type, title, text) {
   
   if ( type == "yes-no" ) {
     $("#coolal").append(      
-      "<div id='coolal-btnWrapper'><a id='coolal-btn' class='coolal-yes-no coolal-yes' href='http://mehdiquantom.hyperphp.com/'>Yes</a><a id='coolal-btn' class='coolal-yes-no coolal-no' href='#'>No</a></div>"
+      "<div id='coolal-btnWrapper'><a id='coolal-btn' class='coolal-yes-no coolal-yes' href=''>Yes</a><a id='coolal-btn' class='coolal-yes-no coolal-no' href='#'>No</a></div>"
     );
 
     var yesNo = $(".coolal-yes-no");
@@ -71,6 +71,6 @@ function coolal(type, title, text) {
 //////////////////////////////////////////////////
 $(document).ready(function() { 
   setTimeout(function() {
-    coolal("alert"/*Change this value to "alert" or "yes-no"*/, "Mehdi Quantom", "<br /> Press Submit{تایید}");
+    coolal("alert"/*Change this value to "alert" or "yes-no"*/, "Mehdi Quantom", "");
   }, 1000)
 });
