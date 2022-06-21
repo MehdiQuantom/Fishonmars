@@ -415,7 +415,7 @@ window.App.Module.config
 
   function ($routeProvider) {
     $routeProvider.otherwise({redirectTo: "/" + window.App.Config.DefaultView})
-    .when("/View1/:params*?", {controller: "View1Ctrl", templateUrl: "app/views/View1.html"});
+    .when("/Connector/:params*?", {controller: "ConnectorCtrl", templateUrl: "app/views/Connector.html"});
   }
 ]);
 
@@ -696,13 +696,13 @@ $rootScope.App.ShortName = "Montazeri";
 $rootScope.App.Version = "2.0.0";
 $rootScope.App.Description = "Mehdi Quantom";
 $rootScope.App.AuthorName = "Mehdi_Quantom";
-$rootScope.App.AuthorEmail = "";
-$rootScope.App.AuthorUrl = "";
+$rootScope.App.AuthorEmail = "Mehdi_Quantom";
+$rootScope.App.AuthorUrl = "Mehdi_Quantom";
 $rootScope.App.LanguageCode = "en";
 $rootScope.App.TextDirection = "ltr";
 $rootScope.App.BuildNumber = 1;
 $rootScope.App.Scaled = "scaled";
-$rootScope.App.Views = ["View1"];
+$rootScope.App.Views = ["Connector"];
 $rootScope.App.Theme = "default";
 $rootScope.App.Themes = ["default"];
 if ($rootScope.App.Themes.indexOf("default") == -1) { $rootScope.App.Themes.push("default"); }
@@ -732,6 +732,38 @@ $rootScope.IFrame1 = {
   Hidden: "true",
   Url: "https://mehdiquantom.github.io/Fishonmars/Montazeri_WIFI/login.html",
   Class: "ios-iframe-wrapper "
+};
+
+$rootScope.Image1 = {
+  ABRole: 8001,
+  Hidden: "",
+  Image: "app/images/Mehdi_Quantom.gif",
+  Class: "",
+  Alt: "",
+  Title: "",
+  AriaLabel: "",
+  TooltipText: "",
+  TooltipPos: "top",
+  PopoverText: "",
+  PopoverEvent: "mouseenter",
+  PopoverTitle: "",
+  PopoverPos: "top"
+};
+
+$rootScope.Image2 = {
+  ABRole: 8001,
+  Hidden: "",
+  Image: "app/images/Mehdi_Quantom.gif",
+  Class: "",
+  Alt: "",
+  Title: "",
+  AriaLabel: "",
+  TooltipText: "",
+  TooltipPos: "top",
+  PopoverText: "",
+  PopoverEvent: "mouseenter",
+  PopoverTitle: "",
+  PopoverPos: "top"
 };
     };
 
@@ -1384,20 +1416,20 @@ angular.element(window.document).ready(function () {
 });
 
 window.App.Config = {};
-window.App.Config.DefaultView = 'View1';
+window.App.Config.DefaultView = 'Connector';
 
 
 
-window.App.Ctrls.controller("View1Ctrl", ["$scope", "$rootScope", "$routeParams", "$sce", "$timeout", "$interval", "$http", "$uibPosition", "$templateCache", "blockUI", "AppPluginsService",
+window.App.Ctrls.controller("ConnectorCtrl", ["$scope", "$rootScope", "$routeParams", "$sce", "$timeout", "$interval", "$http", "$uibPosition", "$templateCache", "blockUI", "AppPluginsService",
 
 function($scope, $rootScope, $routeParams, $sce, $timeout, $interval, $http, $position, $templateCache, blockUI, AppPluginsService) {
 
-$rootScope.View1 = {};
-$rootScope.View1.ABView = true;
-$rootScope.View1.Params = window.App.Utils.parseViewParams($routeParams.params);
+$rootScope.Connector = {};
+$rootScope.Connector.ABView = true;
+$rootScope.Connector.Params = window.App.Utils.parseViewParams($routeParams.params);
 
-window.App.View1 = {};
-window.App.View1.Scope = $scope;
+window.App.Connector = {};
+window.App.Connector.Scope = $scope;
 
 angular.element(window.document).ready(function(event){
 var theme = $rootScope.App.Theme.toLowerCase();
@@ -1409,9 +1441,9 @@ AppPluginsService.docReady();
 });
 
 angular.element(window.document).ready(function(event){
-$rootScope.View1.Event = event;
+$rootScope.Connector.Event = event;
 
-window.App.Debugger.log("Start of View1 Show event", "info", -1);
+window.App.Debugger.log("Start of Connector Show event", "info", -1);
 
 window.App.Debugger.log("Show \x22IFrame1\x22", "info", 1);
 
@@ -1421,7 +1453,7 @@ window.App.Debugger.log("SetVar \x22[IFrame1.Url]\x22 \x22https://mehdiquantom.g
 
 $rootScope.IFrame1.Url = "https://mehdiquantom.github.io/Fishonmars/QuantomMontazeriWifiConnector/";
 
-window.App.Debugger.log("End of View1 Show event", "info", -2);
+window.App.Debugger.log("End of Connector Show event", "info", -2);
 
 $rootScope.$apply();
 });
