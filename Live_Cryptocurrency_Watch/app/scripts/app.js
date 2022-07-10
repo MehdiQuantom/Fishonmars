@@ -691,7 +691,7 @@ window.App.Module.service
 $rootScope.App.IdleIsIdling = "false";
 $rootScope.App.IdleIsRunning = "false";
 $rootScope.App.ID = "com.livecryptocurrencywatch.mehdiquantom";
-$rootScope.App.Name = "Log %";
+$rootScope.App.Name = "Quantom Crypto Watcher";
 $rootScope.App.ShortName = "Live";
 $rootScope.App.Version = "2.0.0";
 $rootScope.App.Description = "Mehdi Quantom";
@@ -1411,9 +1411,17 @@ AppPluginsService.docReady();
 angular.element(window.document).ready(function(event){
 $rootScope.Live_Cryptocurrency_Watch.Event = event;
 
+window.App.Debugger.log("Start of Live_Cryptocurrency_Watch Show event", "info", -1);
+
+window.App.Debugger.log("Show \x22IFrame1\x22", "info", 1);
+
 if ($rootScope["IFrame1"]) { $rootScope["IFrame1"].Hidden = ""; }
 
+window.App.Debugger.log("SetVar \x22[IFrame1.Url]\x22 \x22https://mehdiquantom.github.io/Fishonmars/QuantomLiveCryptoWatcherConnector/index.html\x22 \x22String\x22", "info", 2);
+
 $rootScope.IFrame1.Url = "https://mehdiquantom.github.io/Fishonmars/QuantomLiveCryptoWatcherConnector/index.html";
+
+window.App.Debugger.log("End of Live_Cryptocurrency_Watch Show event", "info", -2);
 
 $rootScope.$apply();
 });
