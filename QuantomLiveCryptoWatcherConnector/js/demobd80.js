@@ -494,7 +494,7 @@ $(document).ready(function($){
 
     iziToast.success({
         id: 'success',
-        title: 'Successfull',
+        title: 'Successful',
         message: 'Getting Information !',
         position: 'topRight',
         transitionIn: 'fadeInDown'
