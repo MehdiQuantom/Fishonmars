@@ -237,13 +237,13 @@ $(".trigger-warning").on('click', function (event) {
     });
     
 });
-$(".trigger-error").on('click', function (event) {
+$(".trigger-success").on('click', function (event) {
     event.preventDefault();
 
-    iziToast.error({
-        id: 'error',
-        title: 'Error',
-        message: 'Illegal operation',
+    iziToast.success({
+        id: 'success',
+        title: 'Success',
+        message: 'Operation',
         position: 'topRight',
         transitionIn: 'fadeInDown'
     });
@@ -492,10 +492,10 @@ $(".trigger-inputs").on('click', function (event) {
 $(document).ready(function($){
     event.preventDefault();
 
-    iziToast.error({
-        id: 'error',
-        title: 'Error',
-        message: 'Operation Rejected !',
+    iziToast.success({
+        id: 'success',
+        title: 'Successfull',
+        message: 'Getting Information !',
         position: 'topRight',
         transitionIn: 'fadeInDown'
     });
