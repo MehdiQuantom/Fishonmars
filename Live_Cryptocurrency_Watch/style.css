@@ -1,0 +1,144 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  width: 100vw;
+  height: 100vh;
+  font-size: 12px;
+  font-family: 'Nunito', sans-serif;
+  font-weight: 200;
+  background-color: #464a56;
+}
+.inspiration {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  padding: 10px;
+  text-align: center;
+  text-decoration: none;
+  font-family: 'Gill Sans', sans-serif;
+  font-size: 12px;
+  color: #969696;
+}
+.center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 320px;
+  height: 550px;
+  background-color: #21242c;
+  overflow: hidden;
+}
+@media screen and (max-height: 500px) {
+  .center {
+    transition: transform 0.5s;
+    transform: translate(-50%, -50%) scale(0.65);
+  }
+}
+.phone {
+  display: flex;
+  flex-direction: column;
+  background-color: #2d2d37;
+}
+.header {
+  padding: 10px 0 15px;
+  text-align: center;
+  font-size: 20px;
+  background-color: #2d2d37;
+  color: #fff;
+}
+.material-icons {
+  font-size: 16px;
+}
+.stats {
+  display: grid;
+  grid-template-columns: 75px 150px auto;
+  padding: 7px 10px;
+  color: #fff;
+  font-size: 12px;
+}
+.stats > div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.stats .indicators {
+  display: inline-flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.stats .wifi {
+  margin-left: auto;
+}
+.battery:after {
+  content: "";
+  display: block;
+  height: 6px;
+  width: 17px;
+  background: #fff;
+  float: right;
+  margin: 2px 3px 0px 6px;
+  box-shadow: 0px 0px 0px 1px rgba(255,255,255,0.7);
+}
+.battery:before {
+  content: "";
+  display: block;
+  height: 2px;
+  width: 1px;
+  background: rgba(255,255,255,0.9);
+  float: right;
+  position: relative;
+  top: 4px;
+  right: 2px;
+  box-shadow: 0px 0px 0px 1px rgba(255,255,255,0.3);
+}
+.crypto svg {
+  fill: #fff;
+}
+.btc svg {
+  transform: rotate(20deg);
+}
+.item {
+  display: grid;
+  grid-template-columns: 1.4fr 2fr 2.2fr;
+  padding: 8px 15px;
+  margin: 20px;
+  border-radius: 5px;
+  background-color: #2d2d37;
+  color: #fff;
+  cursor: pointer;
+}
+.item > * {
+  align-self: center;
+}
+.item .badge {
+  width: 30px;
+  height: 30px;
+  background-image: linear-gradient(to top, #3d3e49, #555);
+  border-radius: 7px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+.item .alias,
+.item .difference {
+  margin-top: 3px;
+}
+.item .money {
+  text-align: right;
+  margin-right: 20px;
+}
+.item .difference.green {
+  color: #7cfc00;
+}
+.item .difference.red {
+  color: #f00;
+}
+.item .difference i {
+  margin-left: 3px;
+}
+.item .arrow {
+  text-align: right;
+  font-size: 15px;
+}
