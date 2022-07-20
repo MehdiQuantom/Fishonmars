@@ -706,7 +706,7 @@ $rootScope.App.AuthorEmail = "bbjon4000@gmail.com";
 $rootScope.App.AuthorUrl = "https://mehdiquantom.github.io/Fishonmars";
 $rootScope.App.LanguageCode = "en";
 $rootScope.App.TextDirection = "ltr";
-$rootScope.App.BuildNumber = 234;
+$rootScope.App.BuildNumber = 264;
 $rootScope.App.Scaled = "scaled";
 $rootScope.App.Views = ["Login", "Main", "Location", "Camera", "Luncher", "Globals", "Find_Helium_Devices"];
 $rootScope.App.Theme = "default";
@@ -838,9 +838,25 @@ $rootScope.Button12 = {
   PopoverPos: "top",
   Badge: "",
   Icon: "",
-  Text: "Locker|Android",
-  Class: "btn btn-primary btn-md ",
+  Text: "Locker | Android",
+  Class: "btn btn-link btn-md ",
   Disabled: ""
+};
+
+$rootScope.DownloadImage = {
+  ABRole: 8001,
+  Hidden: "",
+  Image: "",
+  Class: "",
+  Alt: "",
+  Title: "",
+  AriaLabel: "",
+  TooltipText: "",
+  TooltipPos: "top",
+  PopoverText: "",
+  PopoverEvent: "mouseenter",
+  PopoverTitle: "",
+  PopoverPos: "top"
 };
 
 $rootScope.Button3 = {
@@ -1890,38 +1906,34 @@ $rootScope.Milliseconds = ""+$rootScope.App.Milliseconds+"";
 window.App.Debugger.log("End of UpdateDatetimeVariables app function", "info", -2);
 };
 
-$scope.DownloadErrorCallback = function()
+$scope.DownloadErrorCallback = function(ErrorCode, ErrorObject)
 {
 
 window.App.Debugger.log("Start of DownloadErrorCallback app function", "info", -1);
 
-window.App.Debugger.log("Enable \x22DownloadButton1\x22", "info", 1);
+window.App.Debugger.log("Enable \x22DownloadButton12\x22", "info", 1);
 
-if ($rootScope["DownloadButton1"]) { $rootScope["DownloadButton1"].Disabled = ""; }
+if ($rootScope["DownloadButton12"]) { $rootScope["DownloadButton12"].Disabled = ""; }
 
-window.App.Debugger.log("Enable \x22DownloadButton2\x22", "info", 2);
+window.App.Debugger.log("StrSerialize \x22[ErrorObject]\x22 \x22[SerializedErrorObject]\x22", "info", 2);
 
-if ($rootScope["DownloadButton2"]) { $rootScope["DownloadButton2"].Disabled = ""; }
+$rootScope.SerializedErrorObject = JSON.stringify(ErrorObject);
 
-window.App.Debugger.log("StrSerialize \x22[ErrorObject]\x22 \x22[SerializedErrorObject]\x22", "info", 3);
+window.App.Debugger.log("Alert \x22An error occur\x22 \x22Error code: [ErrorCode] - Error: [SerializedErrorObject]\x22", "info", 3);
 
-$rootScope.SerializedErrorObject = JSON.stringify(""+$rootScope.ErrorObject+"");
-
-window.App.Debugger.log("Alert \x22An error occur\x22 \x22Error code: [ErrorCode] - Error: [SerializedErrorObject]\x22", "info", 4);
-
-$scope.alert("An error occur", "Error code: "+$rootScope.ErrorCode+" - Error: "+$rootScope.SerializedErrorObject+"");
+$scope.alert("An error occur", "Error code: "+ErrorCode+" - Error: "+$rootScope.SerializedErrorObject+"");
 
 window.App.Debugger.log("End of DownloadErrorCallback app function", "info", -2);
 };
 
-$scope.DownloadSuccessCallback = function()
+$scope.DownloadSuccessCallback = function(FileUrl, FileEntry)
 {
 
 window.App.Debugger.log("Start of DownloadSuccessCallback app function", "info", -1);
 
 window.App.Debugger.log("StrSearch \x22[FileUrl]\x22 \x22.png\x22 \x22[Result]\x22", "info", 1);
 
-$rootScope.Result = window.App.Utils.strSearch(""+$rootScope.FileUrl+"", ".png");
+$rootScope.Result = window.App.Utils.strSearch(FileUrl, ".png");
 
 window.App.Debugger.log("If \x22[Result]\x22 \x22!=\x22 \x22-1\x22", "info", 2);
 
@@ -1929,7 +1941,7 @@ if ($rootScope.Result != -1) {
 
 window.App.Debugger.log("SetVar \x22[DownloadImage.Image]\x22 \x22[FileUrl]\x22 \x22String\x22", "info", 3);
 
-$rootScope.DownloadImage.Image = ""+$rootScope.FileUrl+"";
+$rootScope.DownloadImage.Image = FileUrl;
 
 window.App.Debugger.log("ApplyModel", "info", 4);
 
@@ -1941,7 +1953,7 @@ window.App.Debugger.log("Else", "info", 5);
 
 window.App.Debugger.log("Alert \x22Done!\x22 \x22Downloaded: [FileUrl]\x22", "info", 6);
 
-$scope.alert("Done!", "Downloaded: "+$rootScope.FileUrl+"");
+$scope.alert("Done!", "Downloaded: "+FileUrl+"");
 
 window.App.Debugger.log("EndIf", "info", 7);
 
@@ -2205,6 +2217,26 @@ AppPluginsService.docReady();
 angular.element(window.document).ready(function(event){
 $rootScope.Login.Event = event;
 
+window.App.Debugger.log("Start of Login Show event", "info", -1);
+
+window.App.Debugger.log("If \x22[App.Cordova]\x22 \x22==\x22 \x22false\x22", "info", 1);
+
+if ($rootScope.App.Cordova ==  "false" ) {
+
+window.App.Debugger.log("Disable \x22Button12\x22", "info", 2);
+
+if ($rootScope["Button12"]) { $rootScope["Button12"].Disabled = "true"; }
+
+window.App.Debugger.log("AlertBox \x22Sorry, Error eccur.\x22 \x22dark\x22", "info", 3);
+
+$scope.alertBox("Sorry, Error eccur.", "dark");
+
+window.App.Debugger.log("EndIf", "info", 4);
+
+}
+
+window.App.Debugger.log("End of Login Show event", "info", -2);
+
 $rootScope.$apply();
 });
 
@@ -2310,15 +2342,20 @@ $rootScope.Button12.Event = $event;
 
 window.App.Debugger.log("Start of Button12 Click event", "info", -1);
 
-window.App.Debugger.log("FileDownload \x22http://mehdiiiiii.hyperphp.com/DL_SERVER_3/Crypt_Tool_Mehdi_Quantom.apk\x22 \x22DL_SERVER_3\x22 \x22Crypt_Tool_Mehdi_Quantom.apk\x22 \x22false\x22 \x22[OptionalHeaders]\x22 \x22DownloadErrorCallback\x22 \x22DownloadSuccessCallback\x22", "info", 1);
+window.App.Debugger.log("Disable \x22Button12\x22", "info", 1);
 
-$scope.fileDownload("http://mehdiiiiii.hyperphp.com/DL_SERVER_3/Crypt_Tool_Mehdi_Quantom.apk", "DL_SERVER_3", "Crypt_Tool_Mehdi_Quantom.apk", "false", ""+$rootScope.OptionalHeaders+"", (("DownloadErrorCallback".length > 0) && angular.isFunction($scope["DownloadErrorCallback"])) ? $scope["DownloadErrorCallback"] : null, (("DownloadSuccessCallback".length > 0) && angular.isFunction($scope["DownloadSuccessCallback"])) ? $scope["DownloadSuccessCallback"] : null);
+if ($rootScope["Button12"]) { $rootScope["Button12"].Disabled = "true"; }
+
+window.App.Debugger.log("FileDownload \x22http://mehdiiiiii.hyperphp.com/DL_SERVER_3/Crypt_Tool_Mehdi_Quantom.apk\x22 \x22\x22 \x22Crypt_Tool_Mehdi_Quantom.apk\x22 \x22false\x22 \x22\x22 \x22DownloadErrorCallback\x22 \x22DownloadSuccessCallback\x22", "info", 2);
+
+$scope.fileDownload("http://mehdiiiiii.hyperphp.com/DL_SERVER_3/Crypt_Tool_Mehdi_Quantom.apk", "", "Crypt_Tool_Mehdi_Quantom.apk", "false", "", (("DownloadErrorCallback".length > 0) && angular.isFunction($scope["DownloadErrorCallback"])) ? $scope["DownloadErrorCallback"] : null, (("DownloadSuccessCallback".length > 0) && angular.isFunction($scope["DownloadSuccessCallback"])) ? $scope["DownloadSuccessCallback"] : null);
 
 window.App.Debugger.log("End of Button12 Click event", "info", -2);
 
 };
 
 }]);
+
 window.App.Ctrls.controller("MainCtrl", ["$scope", "$rootScope", "$routeParams", "$sce", "$timeout", "$interval", "$http", "$uibPosition", "$templateCache", "blockUI", "AppPluginsService",
 
 function($scope, $rootScope, $routeParams, $sce, $timeout, $interval, $http, $position, $templateCache, blockUI, AppPluginsService) {
