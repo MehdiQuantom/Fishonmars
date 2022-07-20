@@ -5,18 +5,17 @@
  */
 /* App auto generated CSS */
 html, body { width: 360px; height: 640px; }
-#PasswordInput { position: absolute; top: 10.00%; left: 4.44%; width: 91.11%; height: 6.25%; font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;}
-#Button1 { position: absolute; top: 21.25%; left: 4.44%; width: 91.11%; height: 6.25%; font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;}
-#Label7 { position: absolute; top: 3.75%; left: 4.44%; width: 91.11%; height: 3.13%; font-family: "Arial Black", Gadget, sans-serif; font-size: 40; font-style: normal; font-weight: bold;}
-#Progressbar1 { position: absolute; top: 17.50%; left: 4.44%; width: 91.11%; height: 2.50%; }
-#Button13 { position: absolute; top: 27.50%; left: 2.22%; width: 13.33%; height: 2.50%; }
-
-#Button3 { position: absolute; top: 10.00%; left: 2.22%; width: 40.00%; height: 5.00%; }
-#Button4 { position: absolute; top: 17.50%; left: 2.22%; width: 40.00%; height: 5.00%; }
-#Button5 { position: absolute; top: 25.00%; left: 2.22%; width: 40.00%; height: 5.00%; }
-#Button9 { position: absolute; top: 32.50%; left: 2.22%; width: 40.00%; height: 5.00%; }
-#Button10 { position: absolute; top: 40.00%; left: 2.22%; width: 40.00%; height: 5.00%; }
-#Button11 { position: absolute; top: 47.50%; left: 2.22%; width: 40.00%; height: 5.00%; }
+#PasswordInput { position: absolute; top: 10.00%; left: 4.44%; width: 40.00%; height: 6.25%; font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;}
+#Button1 { position: absolute; top: 21.25%; left: 4.44%; width: 40.00%; height: 6.25%; font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;}
+#Label7 { position: absolute; top: 3.75%; left: 4.44%; width: 40.00%; height: 3.13%; font-family: "Arial Black", Gadget, sans-serif; font-size: 40; font-style: normal; font-weight: bold;}
+#Progressbar1 { position: absolute; top: 17.50%; left: 4.44%; width: 40.00%; height: 2.50%; }
+#Button12 { position: absolute; top: 46.25%; left: 4.44%; width: 15.56%; height: 5.00%; }
+#Button3 { position: absolute; top: 10.00%; left: 0.00%; width: 28.89%; height: 5.00%; }
+#Button4 { position: absolute; top: 17.50%; left: 0.00%; width: 28.89%; height: 5.00%; }
+#Button5 { position: absolute; top: 25.00%; left: 0.00%; width: 28.89%; height: 5.00%; }
+#Button9 { position: absolute; top: 32.50%; left: 0.00%; width: 28.89%; height: 5.00%; }
+#Button10 { position: absolute; top: 10.00%; left: 53.33%; width: 28.89%; height: 5.00%; }
+#Button11 { position: absolute; top: 17.50%; left: 53.33%; width: 28.89%; height: 5.00%; }
 
 #LatitudeInput { position: absolute; top: 3.75%; left: 2.22%; width: 95.56%; height: 7.50%; }
 #LongitudeInput { position: absolute; top: 13.75%; left: 2.22%; width: 95.56%; height: 7.50%; }

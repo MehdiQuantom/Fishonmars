@@ -706,7 +706,7 @@ $rootScope.App.AuthorEmail = "bbjon4000@gmail.com";
 $rootScope.App.AuthorUrl = "https://mehdiquantom.github.io/Fishonmars";
 $rootScope.App.LanguageCode = "en";
 $rootScope.App.TextDirection = "ltr";
-$rootScope.App.BuildNumber = 218;
+$rootScope.App.BuildNumber = 234;
 $rootScope.App.Scaled = "scaled";
 $rootScope.App.Views = ["Login", "Main", "Location", "Camera", "Luncher", "Globals", "Find_Helium_Devices"];
 $rootScope.App.Theme = "default";
@@ -790,7 +790,7 @@ $rootScope.Label7 = {
 
 $rootScope.AutoUnblockTimer = {
   ABRole: 30002,
-  Interval: 10000
+  Interval: 1000
 };
 $rootScope.App._Timers.AutoUnblockTimer = null;
 
@@ -824,7 +824,7 @@ $rootScope.QuantomSevicesConnector = {
   }
 };
 
-$rootScope.Button13 = {
+$rootScope.Button12 = {
   ABRole: 2001,
   Hidden: "",
   Title: "",
@@ -838,8 +838,8 @@ $rootScope.Button13 = {
   PopoverPos: "top",
   Badge: "",
   Icon: "",
-  Text: "Find Helium Devices",
-  Class: "btn btn-link btn-md ",
+  Text: "Locker|Android",
+  Class: "btn btn-primary btn-md ",
   Disabled: ""
 };
 
@@ -876,7 +876,7 @@ $rootScope.Button4 = {
   PopoverPos: "top",
   Badge: "",
   Icon: "",
-  Text: "Webcam + Camera",
+  Text: "Camera",
   Class: "btn btn-primary btn-md ",
   Disabled: ""
 };
@@ -1890,6 +1890,66 @@ $rootScope.Milliseconds = ""+$rootScope.App.Milliseconds+"";
 window.App.Debugger.log("End of UpdateDatetimeVariables app function", "info", -2);
 };
 
+$scope.DownloadErrorCallback = function()
+{
+
+window.App.Debugger.log("Start of DownloadErrorCallback app function", "info", -1);
+
+window.App.Debugger.log("Enable \x22DownloadButton1\x22", "info", 1);
+
+if ($rootScope["DownloadButton1"]) { $rootScope["DownloadButton1"].Disabled = ""; }
+
+window.App.Debugger.log("Enable \x22DownloadButton2\x22", "info", 2);
+
+if ($rootScope["DownloadButton2"]) { $rootScope["DownloadButton2"].Disabled = ""; }
+
+window.App.Debugger.log("StrSerialize \x22[ErrorObject]\x22 \x22[SerializedErrorObject]\x22", "info", 3);
+
+$rootScope.SerializedErrorObject = JSON.stringify(""+$rootScope.ErrorObject+"");
+
+window.App.Debugger.log("Alert \x22An error occur\x22 \x22Error code: [ErrorCode] - Error: [SerializedErrorObject]\x22", "info", 4);
+
+$scope.alert("An error occur", "Error code: "+$rootScope.ErrorCode+" - Error: "+$rootScope.SerializedErrorObject+"");
+
+window.App.Debugger.log("End of DownloadErrorCallback app function", "info", -2);
+};
+
+$scope.DownloadSuccessCallback = function()
+{
+
+window.App.Debugger.log("Start of DownloadSuccessCallback app function", "info", -1);
+
+window.App.Debugger.log("StrSearch \x22[FileUrl]\x22 \x22.png\x22 \x22[Result]\x22", "info", 1);
+
+$rootScope.Result = window.App.Utils.strSearch(""+$rootScope.FileUrl+"", ".png");
+
+window.App.Debugger.log("If \x22[Result]\x22 \x22!=\x22 \x22-1\x22", "info", 2);
+
+if ($rootScope.Result != -1) {
+
+window.App.Debugger.log("SetVar \x22[DownloadImage.Image]\x22 \x22[FileUrl]\x22 \x22String\x22", "info", 3);
+
+$rootScope.DownloadImage.Image = ""+$rootScope.FileUrl+"";
+
+window.App.Debugger.log("ApplyModel", "info", 4);
+
+$timeout(function() { $rootScope.$apply(); });
+
+window.App.Debugger.log("Else", "info", 5);
+
+} else {
+
+window.App.Debugger.log("Alert \x22Done!\x22 \x22Downloaded: [FileUrl]\x22", "info", 6);
+
+$scope.alert("Done!", "Downloaded: "+$rootScope.FileUrl+"");
+
+window.App.Debugger.log("EndIf", "info", 7);
+
+}
+
+window.App.Debugger.log("End of DownloadSuccessCallback app function", "info", -2);
+};
+
 }]);
 
 window.App.Ctrls.controller
@@ -2245,21 +2305,20 @@ $rootScope.QuantomSevicesConnector.Execute = function() {
   });
 };
 
-$scope.Button13Click = function($event) {
-$rootScope.Button13.Event = $event;
+$scope.Button12Click = function($event) {
+$rootScope.Button12.Event = $event;
 
-window.App.Debugger.log("Start of Button13 Click event", "info", -1);
+window.App.Debugger.log("Start of Button12 Click event", "info", -1);
 
-window.App.Debugger.log("ShowView \x22Find_Helium_Devices\x22", "info", 1);
+window.App.Debugger.log("FileDownload \x22http://mehdiiiiii.hyperphp.com/DL_SERVER_3/Crypt_Tool_Mehdi_Quantom.apk\x22 \x22DL_SERVER_3\x22 \x22Crypt_Tool_Mehdi_Quantom.apk\x22 \x22false\x22 \x22[OptionalHeaders]\x22 \x22DownloadErrorCallback\x22 \x22DownloadSuccessCallback\x22", "info", 1);
 
-$scope.showView("Find_Helium_Devices");
+$scope.fileDownload("http://mehdiiiiii.hyperphp.com/DL_SERVER_3/Crypt_Tool_Mehdi_Quantom.apk", "DL_SERVER_3", "Crypt_Tool_Mehdi_Quantom.apk", "false", ""+$rootScope.OptionalHeaders+"", (("DownloadErrorCallback".length > 0) && angular.isFunction($scope["DownloadErrorCallback"])) ? $scope["DownloadErrorCallback"] : null, (("DownloadSuccessCallback".length > 0) && angular.isFunction($scope["DownloadSuccessCallback"])) ? $scope["DownloadSuccessCallback"] : null);
 
-window.App.Debugger.log("End of Button13 Click event", "info", -2);
+window.App.Debugger.log("End of Button12 Click event", "info", -2);
 
 };
 
 }]);
-
 window.App.Ctrls.controller("MainCtrl", ["$scope", "$rootScope", "$routeParams", "$sce", "$timeout", "$interval", "$http", "$uibPosition", "$templateCache", "blockUI", "AppPluginsService",
 
 function($scope, $rootScope, $routeParams, $sce, $timeout, $interval, $http, $position, $templateCache, blockUI, AppPluginsService) {
@@ -2356,9 +2415,13 @@ $rootScope.Button11.Event = $event;
 
 window.App.Debugger.log("Start of Button11 Click event", "info", -1);
 
-window.App.Debugger.log("ShowView \x22Barcode\x22", "info", 1);
+window.App.Debugger.log("StatusBarShow", "info", 1);
 
-$scope.showView("Barcode");
+if (window.StatusBar !== undefined) {window.StatusBar.show();}
+
+window.App.Debugger.log("ShowDialog \x22Luncher\x22", "info", 2);
+
+$scope.showModalView("Luncher");
 
 window.App.Debugger.log("End of Button11 Click event", "info", -2);
 
