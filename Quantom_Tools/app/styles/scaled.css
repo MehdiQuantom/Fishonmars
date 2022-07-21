@@ -5,12 +5,12 @@
  */
 /* App auto generated CSS */
 html, body { width: 360px; height: 640px; }
-#PasswordInput { position: absolute; top: 10.00%; left: 4.44%; width: 40.00%; height: 6.25%; font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;}
-#Button1 { position: absolute; top: 21.25%; left: 4.44%; width: 40.00%; height: 6.25%; font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;}
+#MediaPlayer1 { position: absolute; top: 0.00%; left: 0.00%; width: 100.00%; height: 112.50%; }
+#PasswordInput { position: absolute; top: 10.00%; left: 4.44%; width: 28.89%; height: 6.25%; font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;}
+#Button1 { position: absolute; top: 21.25%; left: 4.44%; width: 13.33%; height: 6.25%; font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;}
 #Label7 { position: absolute; top: 3.75%; left: 4.44%; width: 40.00%; height: 3.13%; font-family: "Arial Black", Gadget, sans-serif; font-size: 40; font-style: normal; font-weight: bold;}
-#Progressbar1 { position: absolute; top: 17.50%; left: 4.44%; width: 40.00%; height: 2.50%; }
+#Progressbar1 { position: absolute; top: 17.50%; left: 4.44%; width: 13.33%; height: 2.50%; }
 #Button12 { position: absolute; top: 40.00%; left: 4.44%; width: 15.56%; height: 5.00%; }
-#DownloadImage { position: absolute; top: 33.75%; left: 24.44%; width: 20.00%; height: 11.25%; object-fit: contain;}
 
 #Button3 { position: absolute; top: 10.00%; left: 0.00%; width: 28.89%; height: 5.00%; }
 #Button4 { position: absolute; top: 17.50%; left: 0.00%; width: 28.89%; height: 5.00%; }

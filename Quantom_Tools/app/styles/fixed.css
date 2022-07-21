@@ -6,12 +6,12 @@
 /* App auto generated CSS */
 html, body, .appView { width: 360px; height: 640px; }
 .dialogView .modal-dialog { width: 360px; margin: 0 auto; }
-#PasswordInput { position: absolute; top: 64px; left: 16px; width: 144px; height: 40px; font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;}
-#Button1 { position: absolute; top: 136px; left: 16px; width: 144px; height: 40px; font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;}
+#MediaPlayer1 { position: absolute; top: 0px; left: 0px; width: 360px; height: 720px; }
+#PasswordInput { position: absolute; top: 64px; left: 16px; width: 104px; height: 40px; font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;}
+#Button1 { position: absolute; top: 136px; left: 16px; width: 48px; height: 40px; font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;}
 #Label7 { position: absolute; top: 24px; left: 16px; width: 144px; height: 20px; font-family: "Arial Black", Gadget, sans-serif; font-size: 40; font-style: normal; font-weight: bold;}
-#Progressbar1 { position: absolute; top: 112px; left: 16px; width: 144px; height: 16px; }
+#Progressbar1 { position: absolute; top: 112px; left: 16px; width: 48px; height: 16px; }
 #Button12 { position: absolute; top: 256px; left: 16px; width: 56px; height: 32px; }
-#DownloadImage { position: absolute; top: 216px; left: 88px; width: 72px; height: 72px; object-fit: contain;}
 
 #Button3 { position: absolute; top: 64px; left: 0px; width: 104px; height: 32px; }
 #Button4 { position: absolute; top: 112px; left: 0px; width: 104px; height: 32px; }

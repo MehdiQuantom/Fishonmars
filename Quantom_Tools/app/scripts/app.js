@@ -706,7 +706,7 @@ $rootScope.App.AuthorEmail = "bbjon4000@gmail.com";
 $rootScope.App.AuthorUrl = "https://mehdiquantom.github.io/Fishonmars";
 $rootScope.App.LanguageCode = "en";
 $rootScope.App.TextDirection = "ltr";
-$rootScope.App.BuildNumber = 264;
+$rootScope.App.BuildNumber = 304;
 $rootScope.App.Scaled = "scaled";
 $rootScope.App.Views = ["Login", "Main", "Location", "Camera", "Luncher", "Globals", "Find_Helium_Devices"];
 $rootScope.App.Theme = "default";
@@ -732,6 +732,18 @@ window.App.Module.service
 
     var setControlVars = function () {
       
+
+$rootScope.MediaPlayer1 = {
+  ABRole: 10001,
+  Hidden: "",
+  Class: "videogular-container ",
+  Loop: true,
+  Autoplay: true,
+  Error: null,
+  Sources: [],
+  Tracks: []
+};
+$rootScope.MediaPlayer1.Sources.push({src: $sce.trustAsResourceUrl("app/images/Concept.mp4"), type: "video/mp4"});
 
 $rootScope.PasswordInput = {
   ABRole: 3001,
@@ -841,22 +853,6 @@ $rootScope.Button12 = {
   Text: "Locker | Android",
   Class: "btn btn-link btn-md ",
   Disabled: ""
-};
-
-$rootScope.DownloadImage = {
-  ABRole: 8001,
-  Hidden: "",
-  Image: "",
-  Class: "",
-  Alt: "",
-  Title: "",
-  AriaLabel: "",
-  TooltipText: "",
-  TooltipPos: "top",
-  PopoverText: "",
-  PopoverEvent: "mouseenter",
-  PopoverTitle: "",
-  PopoverPos: "top"
 };
 
 $rootScope.Button3 = {
@@ -1861,53 +1857,105 @@ window.App.Ctrls.controller
 $scope.UpdateDatetimeVariables = function()
 {
 
+window.App.Debugger.log("Start of UpdateDatetimeVariables app function", "info", -1);
+
+window.App.Debugger.log("SetVar \x22[Hour]\x22 \x22[App.Hour]\x22 \x22String\x22", "info", 1);
+
 $rootScope.Hour = $rootScope.App.Hour;
+
+window.App.Debugger.log("SetVar \x22[Hour24]\x22 \x22[App.Hour24]\x22 \x22String\x22", "info", 2);
 
 $rootScope.Hour24 = $rootScope.App.Hour24;
 
+window.App.Debugger.log("SetVar \x22[Minutes]\x22 \x22[App.Minutes]\x22 \x22String\x22", "info", 3);
+
 $rootScope.Minutes = $rootScope.App.Minutes;
+
+window.App.Debugger.log("SetVar \x22[Seconds]\x22 \x22[App.Seconds]\x22 \x22String\x22", "info", 4);
 
 $rootScope.Seconds = $rootScope.App.Seconds;
 
+window.App.Debugger.log("SetVar \x22[HourShort]\x22 \x22[App.HourShort]\x22 \x22String\x22", "info", 5);
+
 $rootScope.HourShort = $rootScope.App.HourShort;
+
+window.App.Debugger.log("SetVar \x22[Timestamp]\x22 \x22[App.Timestamp]\x22 \x22String\x22", "info", 6);
 
 $rootScope.Timestamp = $rootScope.App.Timestamp;
 
+window.App.Debugger.log("SetVar \x22[Hour24Short]\x22 \x22[App.Hour24Short]\x22 \x22String\x22", "info", 7);
+
 $rootScope.Hour24Short = $rootScope.App.Hour24Short;
+
+window.App.Debugger.log("SetVar \x22[MinutesShort]\x22 \x22[App.MinutesShort]\x22 \x22String\x22", "info", 8);
 
 $rootScope.MinutesShort = $rootScope.App.MinutesShort;
 
+window.App.Debugger.log("SetVar \x22[SecondsShort]\x22 \x22[App.SecondsShort]\x22 \x22String\x22", "info", 9);
+
 $rootScope.SecondsShort = $rootScope.App.SecondsShort;
 
+window.App.Debugger.log("SetVar \x22[Milliseconds]\x22 \x22[App.Milliseconds]\x22 \x22String\x22", "info", 10);
+
 $rootScope.Milliseconds = ""+$rootScope.App.Milliseconds+"";
+
+window.App.Debugger.log("End of UpdateDatetimeVariables app function", "info", -2);
 };
 
 $scope.DownloadErrorCallback = function(ErrorCode, ErrorObject)
 {
 
+window.App.Debugger.log("Start of DownloadErrorCallback app function", "info", -1);
+
+window.App.Debugger.log("Enable \x22DownloadButton12\x22", "info", 1);
+
 if ($rootScope["DownloadButton12"]) { $rootScope["DownloadButton12"].Disabled = ""; }
+
+window.App.Debugger.log("StrSerialize \x22[ErrorObject]\x22 \x22[SerializedErrorObject]\x22", "info", 2);
 
 $rootScope.SerializedErrorObject = JSON.stringify(ErrorObject);
 
+window.App.Debugger.log("Alert \x22An error occur\x22 \x22Error code: [ErrorCode] - Error: [SerializedErrorObject]\x22", "info", 3);
+
 $scope.alert("An error occur", "Error code: "+ErrorCode+" - Error: "+$rootScope.SerializedErrorObject+"");
+
+window.App.Debugger.log("End of DownloadErrorCallback app function", "info", -2);
 };
 
 $scope.DownloadSuccessCallback = function(FileUrl, FileEntry)
 {
 
+window.App.Debugger.log("Start of DownloadSuccessCallback app function", "info", -1);
+
+window.App.Debugger.log("StrSearch \x22[FileUrl]\x22 \x22.png\x22 \x22[Result]\x22", "info", 1);
+
 $rootScope.Result = window.App.Utils.strSearch(FileUrl, ".png");
+
+window.App.Debugger.log("If \x22[Result]\x22 \x22!=\x22 \x22-1\x22", "info", 2);
 
 if ($rootScope.Result != -1) {
 
+window.App.Debugger.log("SetVar \x22[DownloadImage.Image]\x22 \x22[FileUrl]\x22 \x22String\x22", "info", 3);
+
 $rootScope.DownloadImage.Image = FileUrl;
+
+window.App.Debugger.log("ApplyModel", "info", 4);
 
 $timeout(function() { $rootScope.$apply(); });
 
+window.App.Debugger.log("Else", "info", 5);
+
 } else {
+
+window.App.Debugger.log("Alert \x22Done!\x22 \x22Downloaded: [FileUrl]\x22", "info", 6);
 
 $scope.alert("Done!", "Downloaded: "+FileUrl+"");
 
+window.App.Debugger.log("EndIf", "info", 7);
+
 }
+
+window.App.Debugger.log("End of DownloadSuccessCallback app function", "info", -2);
 };
 
 }]);
@@ -1945,55 +1993,109 @@ window.App.Ctrls.controller
 
     $rootScope.OnAppReady = function () {
       
-$rootScope.Navbar1.Items = [];
+window.App.Debugger.log("Start of App Ready event", "info", -1);
+
+window.App.Debugger.log("ArrayClear \x22[Navbar1.Items]\x22", "info", 1);
 
 $rootScope.Navbar1.Items = [];
+
+window.App.Debugger.log("ArrayClear \x22[Navbar1.Items]\x22", "info", 2);
+
+$rootScope.Navbar1.Items = [];
+
+window.App.Debugger.log("NewObject \x22[Item]\x22", "info", 3);
 
 $rootScope.Item = {};
+
+window.App.Debugger.log("ObjectSetProp \x22[Item]\x22 \x22Text\x22 \x22Item number 1\x22", "info", 4);
 
 $rootScope.Item["Text"] = "Item number 1";
 
+window.App.Debugger.log("ObjectSetProp \x22[Item]\x22 \x22Icon\x22 \x22fa fa-info-circle\x22", "info", 5);
+
 $rootScope.Item["Icon"] = "fa fa-info-circle";
+
+window.App.Debugger.log("ArrayPush \x22[Navbar1.Items]\x22 \x22[Item]\x22", "info", 6);
 
 $rootScope.Navbar1.Items.push($rootScope.Item);
 
+window.App.Debugger.log("NewObject \x22[Item]\x22", "info", 7);
+
 $rootScope.Item = {};
+
+window.App.Debugger.log("ObjectSetProp \x22[Item]\x22 \x22Text\x22 \x22Item number 2\x22", "info", 8);
 
 $rootScope.Item["Text"] = "Item number 2";
 
+window.App.Debugger.log("ObjectSetProp \x22[Item]\x22 \x22Icon\x22 \x22fa fa-info-circle\x22", "info", 9);
+
 $rootScope.Item["Icon"] = "fa fa-info-circle";
 
+window.App.Debugger.log("ArrayPush \x22[Navbar1.Items]\x22 \x22[Item]\x22", "info", 10);
+
 $rootScope.Navbar1.Items.push($rootScope.Item);
+
+window.App.Debugger.log("NewObject \x22[Item]\x22", "info", 11);
 
 $rootScope.Item = {};
 
+window.App.Debugger.log("ObjectSetProp \x22[Item]\x22 \x22Text\x22 \x22Item number 3\x22", "info", 12);
+
 $rootScope.Item["Text"] = "Item number 3";
+
+window.App.Debugger.log("ObjectSetProp \x22[Item]\x22 \x22Icon\x22 \x22fa fa-info-circle\x22", "info", 13);
 
 $rootScope.Item["Icon"] = "fa fa-info-circle";
 
+window.App.Debugger.log("NewArray \x22[SubItems]\x22", "info", 14);
+
 $rootScope.SubItems = [];
 
+window.App.Debugger.log("NewObject \x22[SubItem]\x22", "info", 15);
+
 $rootScope.SubItem = {};
+
+window.App.Debugger.log("ObjectSetProp \x22[SubItem]\x22 \x22Text\x22 \x22Item number 4\x22", "info", 16);
 
 $rootScope.SubItem["Text"] = "Item number 4";
 
+window.App.Debugger.log("ObjectSetProp \x22[SubItem]\x22 \x22Icon\x22 \x22fa fa-info-circle\x22", "info", 17);
+
 $rootScope.SubItem["Icon"] = "fa fa-info-circle";
 
+window.App.Debugger.log("ArrayPush \x22[SubItems]\x22 \x22[SubItem]\x22", "info", 18);
+
 $rootScope.SubItems.push($rootScope.SubItem);
+
+window.App.Debugger.log("NewObject \x22[SubItem]\x22", "info", 19);
 
 $rootScope.SubItem = {};
 
+window.App.Debugger.log("ObjectSetProp \x22[SubItem]\x22 \x22Text\x22 \x22Item number 5\x22", "info", 20);
+
 $rootScope.SubItem["Text"] = "Item number 5";
+
+window.App.Debugger.log("ObjectSetProp \x22[SubItem]\x22 \x22Icon\x22 \x22fa fa-info-circle\x22", "info", 21);
 
 $rootScope.SubItem["Icon"] = "fa fa-info-circle";
 
+window.App.Debugger.log("ArrayPush \x22[SubItems]\x22 \x22[SubItem]\x22", "info", 22);
+
 $rootScope.SubItems.push($rootScope.SubItem);
+
+window.App.Debugger.log("ObjectSetProp \x22[Item]\x22 \x22Items\x22 \x22[SubItems]\x22", "info", 23);
 
 $rootScope.Item["Items"] = $rootScope.SubItems;
 
+window.App.Debugger.log("ArrayPush \x22[Navbar1.Items]\x22 \x22[Item]\x22", "info", 24);
+
 $rootScope.Navbar1.Items.push($rootScope.Item);
 
+window.App.Debugger.log("CopyVar \x22[Navbar1.Items]\x22 \x22[Navbar1.Items]\x22", "info", 25);
+
 $rootScope.Navbar1.Items = $rootScope.Navbar1.Items;
+
+window.App.Debugger.log("End of App Ready event", "info", -2);
 
     };
 
@@ -2133,6 +2235,32 @@ window.App.Debugger.log("End of Login Show event", "info", -2);
 
 $rootScope.$apply();
 });
+
+$rootScope.MediaPlayer1.onCanPlay = function() {
+
+};
+
+$rootScope.MediaPlayer1.onReady = function(API) {
+$rootScope.MediaPlayer1.API = API;
+
+};
+
+$rootScope.MediaPlayer1.onError = function() {
+if (!$rootScope.MediaPlayer1.API || !$rootScope.MediaPlayer1.API.totalTime) { return; }
+if (document.querySelector("#MediaPlayer1 audio") && document.querySelector("#MediaPlayer1 audio").error) {
+  $rootScope.MediaPlayer1.Error = document.querySelector("#MediaPlayer1 audio").error;
+} else if (document.querySelector("#MediaPlayer1 video") && document.querySelector("#MediaPlayer1 video").error) {
+  $rootScope.MediaPlayer1.Error = document.querySelector("#MediaPlayer1 video").error;
+}
+if ($rootScope.MediaPlayer1.Error === null) { return; }
+};
+
+$rootScope.MediaPlayer1.onComplete = function() {
+};
+
+$rootScope.MediaPlayer1.onUpdate = function() {
+if (!$rootScope.MediaPlayer1.API || !$rootScope.MediaPlayer1.API.totalTime) { return; }
+};
 
 $scope.Button1Click = function($event) {
 $rootScope.Button1.Event = $event;
