@@ -4,14 +4,23 @@
  * ©2019 App Builder - https://www.davidesperalta.com
  */
 /* App auto generated CSS */
+body { border-radius: 0.2em; }
 html, body { width: 360px; height: 640px; }
-#MediaPlayer1 { position: absolute; top: 0.00%; left: 0.00%; width: 100.00%; height: 112.50%; }
+#Login { cursor: auto; }
+#MediaPlayer1 { position: absolute; top: 0.00%; left: 0.00%; width: 100.00%; height: 112.50%; animation-fill-mode: 100;}
 #PasswordInput { position: absolute; top: 10.00%; left: 4.44%; width: 28.89%; height: 6.25%; font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;}
 #Button1 { position: absolute; top: 21.25%; left: 4.44%; width: 13.33%; height: 6.25%; font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;}
 #Label7 { position: absolute; top: 3.75%; left: 4.44%; width: 40.00%; height: 3.13%; font-family: "Arial Black", Gadget, sans-serif; font-size: 40; font-style: normal; font-weight: bold;}
 #Progressbar1 { position: absolute; top: 17.50%; left: 4.44%; width: 13.33%; height: 2.50%; }
-#Button12 { position: absolute; top: 40.00%; left: 4.44%; width: 15.56%; height: 5.00%; }
-
+#Button12 { position: absolute; top: 21.25%; left: 20.00%; width: 13.33%; height: 6.25%; }
+#HtmlContent2 { position: absolute; top: 28.75%; left: 4.44%; width: 28.89%; height: 17.50%; }
+#Input3 { position: absolute; top: 3.75%; left: 73.33%; width: 20.00%; height: 4.06%; }
+#HtmlContent3 { position: absolute; top: 8.75%; left: 73.33%; width: 20.00%; height: 6.25%; }
+#Textarea2 { position: absolute; top: 22.50%; left: 73.33%; width: 20.00%; height: 11.56%; }
+#Label6 { position: absolute; top: 18.75%; left: 73.33%; width: 20.00%; height: 1.88%; }
+#Button8 { position: absolute; top: 33.75%; left: 73.33%; width: 20.00%; height: 3.75%; }
+#Button15 { position: absolute; top: 57.50%; left: 42.22%; width: 15.56%; height: 3.75%; }
+#Button16 { position: absolute; top: 57.50%; left: 60.00%; width: 15.56%; height: 3.75%; }
 #Button3 { position: absolute; top: 10.00%; left: 0.00%; width: 28.89%; height: 5.00%; }
 #Button4 { position: absolute; top: 17.50%; left: 0.00%; width: 28.89%; height: 5.00%; }
 #Button5 { position: absolute; top: 25.00%; left: 0.00%; width: 28.89%; height: 5.00%; }
@@ -44,6 +53,25 @@ html, body { width: 360px; height: 640px; }
 #Button14 { position: absolute; top: 53.75%; left: 35.56%; width: 24.44%; height: 1.25%; }
 #Label2 { position: absolute; top: 2.50%; left: 0.00%; width: 15.56%; height: 3.13%; font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;}
 #Label3 { position: absolute; top: 55.00%; left: 0.00%; width: 15.56%; height: 2.50%; font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;}
+
+#MediaPlayer2 { position: absolute; top: 0.00%; left: 0.00%; width: 100.00%; height: 88.75%; }
+#Textarea1 { position: absolute; top: 92.50%; left: 77.78%; width: 22.22%; height: 7.50%; color: #fff; background-color: #000;}
+#Range1 { position: absolute; top: 91.25%; left: 2.22%; width: 66.67%; height: 2.50%; background-color: #000;}
+#Input2 { position: absolute; top: 97.50%; left: 2.22%; width: 66.67%; height: 2.50%; background-color: #000;}
+#HtmlContent4 { position: absolute; top: 87.50%; left: 11.11%; width: 75.56%; height: 2.50%; }
+#EventsLabel { position: absolute; top: 88.75%; left: 2.22%; width: 35.56%; height: 3.13%; }
+#Label4 { position: absolute; top: 95.00%; left: 2.22%; width: 35.56%; height: 3.13%; }
+#Label5 { position: absolute; top: 90.00%; left: 77.78%; width: 17.78%; height: 3.13%; }
+
+#Button13 { position: absolute; top: 0.00%; left: 2.22%; width: 95.56%; height: 48.75%; }
+#TextTextarea { position: absolute; top: 50.00%; left: 2.22%; width: 95.56%; height: 48.75%; }
+
+#QrCodeTarget { position: absolute; top: 31.25%; left: 22.50%; width: 41.67%; height: 23.44%; }
+#QrCodeButton { position: absolute; top: 65.00%; left: 15.56%; width: 55.56%; height: 5.47%; }
+#QrCodeInput { position: absolute; top: 57.50%; left: 15.56%; width: 55.56%; height: 4.69%; }
+#Image1 { position: absolute; top: 13.75%; left: 26.67%; width: 31.11%; height: 16.25%; }
+
+#IFrame3 { position: absolute; top: 0.00%; left: 0.00%; width: 100.00%; height: 100.00%; }
 
 /* App inline CSS */
 .block-ui-message

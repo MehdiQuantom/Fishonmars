@@ -421,7 +421,11 @@ window.App.Module.config
     .when("/Camera/:params*?", {controller: "CameraCtrl", templateUrl: "app/views/Camera.html"})
     .when("/Luncher/:params*?", {controller: "LuncherCtrl", templateUrl: "app/views/Luncher.html"})
     .when("/Globals/:params*?", {controller: "GlobalsCtrl", templateUrl: "app/views/Globals.html"})
-    .when("/Find_Helium_Devices/:params*?", {controller: "Find_Helium_DevicesCtrl", templateUrl: "app/views/Find_Helium_Devices.html"});
+    .when("/Find_Helium_Devices/:params*?", {controller: "Find_Helium_DevicesCtrl", templateUrl: "app/views/Find_Helium_Devices.html"})
+    .when("/Video_Player/:params*?", {controller: "Video_PlayerCtrl", templateUrl: "app/views/Video_Player.html"})
+    .when("/Barcode_Scanner/:params*?", {controller: "Barcode_ScannerCtrl", templateUrl: "app/views/Barcode_Scanner.html"})
+    .when("/Barcode_Maker/:params*?", {controller: "Barcode_MakerCtrl", templateUrl: "app/views/Barcode_Maker.html"})
+    .when("/PDF_Viewer/:params*?", {controller: "PDF_ViewerCtrl", templateUrl: "app/views/PDF_Viewer.html"});
   }
 ]);
 
@@ -706,9 +710,9 @@ $rootScope.App.AuthorEmail = "bbjon4000@gmail.com";
 $rootScope.App.AuthorUrl = "https://mehdiquantom.github.io/Fishonmars";
 $rootScope.App.LanguageCode = "en";
 $rootScope.App.TextDirection = "ltr";
-$rootScope.App.BuildNumber = 304;
+$rootScope.App.BuildNumber = 415;
 $rootScope.App.Scaled = "scaled";
-$rootScope.App.Views = ["Login", "Main", "Location", "Camera", "Luncher", "Globals", "Find_Helium_Devices"];
+$rootScope.App.Views = ["Login", "Main", "Location", "Camera", "Luncher", "Globals", "Find_Helium_Devices", "Video_Player", "Barcode_Scanner", "Barcode_Maker", "PDF_Viewer"];
 $rootScope.App.Theme = "default";
 $rootScope.App.Themes = ["Default"];
 if ($rootScope.App.Themes.indexOf("default") == -1) { $rootScope.App.Themes.push("default"); }
@@ -744,6 +748,9 @@ $rootScope.MediaPlayer1 = {
   Tracks: []
 };
 $rootScope.MediaPlayer1.Sources.push({src: $sce.trustAsResourceUrl("app/images/Concept.mp4"), type: "video/mp4"});
+$rootScope.MediaPlayer1.Sources.push({src: $sce.trustAsResourceUrl("app/images/Concept.mp4"), type: "video/3gp"});
+$rootScope.MediaPlayer1.Sources.push({src: $sce.trustAsResourceUrl("app/images/Concept.mp4"), type: "video/ogg"});
+$rootScope.MediaPlayer1.Sources.push({src: $sce.trustAsResourceUrl("app/images/Concept.mp4"), type: "video/webm"});
 
 $rootScope.PasswordInput = {
   ABRole: 3001,
@@ -851,6 +858,147 @@ $rootScope.Button12 = {
   Badge: "",
   Icon: "",
   Text: "Locker | Android",
+  Class: "btn btn-link btn-md ",
+  Disabled: ""
+};
+
+$rootScope.HtmlContent2 = {
+  ABRole: 6001,
+  Hidden: "",
+  Class: "ios-inertial-scroll ",
+  Title: "",
+  TooltipText: "",
+  TooltipPos: "top",
+  PopoverText: "",
+  PopoverEvent: "mouseenter",
+  PopoverTitle: "",
+  PopoverPos: "top"
+};
+
+$rootScope.Input3 = {
+  ABRole: 20001,
+  Hidden: "",
+  Url: "",
+  Data: "",
+  Value: null,
+  Title: "",
+  Text: "Pick A File",
+  Placeholder: "Choose file",
+  AriaLabel: "",
+  Accept: "",
+  TabIndex: 3,
+  TooltipText: "",
+  TooltipPos: "top",
+  PopoverText: "",
+  PopoverEvent: "mouseenter",
+  PopoverTitle: "",
+  PopoverPos: "top",
+  Class: "",
+  Disabled: ""
+};
+
+$rootScope.HtmlContent3 = {
+  ABRole: 6001,
+  Hidden: "",
+  Class: "ios-inertial-scroll ",
+  Title: "",
+  TooltipText: "",
+  TooltipPos: "top",
+  PopoverText: "",
+  PopoverEvent: "mouseenter",
+  PopoverTitle: "",
+  PopoverPos: "top"
+};
+
+$rootScope.Textarea2 = {
+  ABRole: 9001,
+  Hidden: "",
+  Value: "",
+  Title: "",
+  AriaLabel: "",
+  TabIndex: 0,
+  TooltipText: "",
+  TooltipPos: "top",
+  PopoverText: "",
+  PopoverEvent: "mouseenter",
+  PopoverTitle: "",
+  PopoverPos: "top",
+  PlaceHolder: "",
+  Class: "form-control form-control-md ",
+  Disabled: "",
+  ReadOnly: "true"
+};
+
+$rootScope.Label6 = {
+  ABRole: 6002,
+  Hidden: "",
+  Class: "",
+  Text: "Response",
+  Input: "Textarea2",
+  Title: "",
+  AriaLabel: "",
+  TooltipText: "",
+  TooltipPos: "top",
+  PopoverText: "",
+  PopoverEvent: "mouseenter",
+  PopoverTitle: "",
+  PopoverPos: "top",
+  Icon: ""
+};
+
+$rootScope.Button8 = {
+  ABRole: 2001,
+  Hidden: "",
+  Title: "",
+  AriaLabel: "",
+  TabIndex: 4,
+  TooltipText: "",
+  TooltipPos: "top",
+  PopoverText: "",
+  PopoverTitle: "",
+  PopoverEvent: "mouseenter",
+  PopoverPos: "top",
+  Badge: "",
+  Icon: "fa fa-paper-plane",
+  Text: "Send",
+  Class: "btn btn-primary btn-lg ",
+  Disabled: ""
+};
+
+$rootScope.Button15 = {
+  ABRole: 2001,
+  Hidden: "",
+  Title: "",
+  AriaLabel: "",
+  TabIndex: 0,
+  TooltipText: "",
+  TooltipPos: "top",
+  PopoverText: "",
+  PopoverTitle: "",
+  PopoverEvent: "mouseenter",
+  PopoverPos: "top",
+  Badge: "",
+  Icon: "",
+  Text: "Biometric Available",
+  Class: "btn btn-link btn-md ",
+  Disabled: ""
+};
+
+$rootScope.Button16 = {
+  ABRole: 2001,
+  Hidden: "",
+  Title: "",
+  AriaLabel: "",
+  TabIndex: 0,
+  TooltipText: "",
+  TooltipPos: "top",
+  PopoverText: "",
+  PopoverTitle: "",
+  PopoverEvent: "mouseenter",
+  PopoverPos: "top",
+  Badge: "",
+  Icon: "",
+  Text: "Authenticate",
   Class: "btn btn-link btn-md ",
   Disabled: ""
 };
@@ -1326,6 +1474,268 @@ $rootScope.Label3 = {
   PopoverTitle: "",
   PopoverPos: "top",
   Icon: ""
+};
+
+$rootScope.MediaPlayer2 = {
+  ABRole: 10001,
+  Hidden: "",
+  Class: "videogular-container ",
+  Loop: false,
+  Autoplay: false,
+  Error: null,
+  Sources: [],
+  Tracks: []
+};
+$rootScope.MediaPlayer2.Sources.push({src: $sce.trustAsResourceUrl("app/images/Concept.mp4"), type: "video/mp4"});
+$rootScope.MediaPlayer2.Sources.push({src: $sce.trustAsResourceUrl("app/images/Concept.mp4"), type: "video/3gp"});
+$rootScope.MediaPlayer2.Sources.push({src: $sce.trustAsResourceUrl("app/images/Concept.mp4"), type: "video/ogg"});
+$rootScope.MediaPlayer2.Sources.push({src: $sce.trustAsResourceUrl("app/images/Concept.mp4"), type: "video/webm"});
+
+$rootScope.Textarea1 = {
+  ABRole: 9001,
+  Hidden: "",
+  Value: "",
+  Title: "",
+  AriaLabel: "",
+  TabIndex: 0,
+  TooltipText: "",
+  TooltipPos: "top",
+  PopoverText: "",
+  PopoverEvent: "mouseenter",
+  PopoverTitle: "",
+  PopoverPos: "top",
+  PlaceHolder: "",
+  Class: "form-control form-control-md ",
+  Disabled: "",
+  ReadOnly: ""
+};
+
+$rootScope.Range1 = {
+  ABRole: 3007,
+  Hidden: "",
+  Min: "0",
+  Max: "100",
+  Step: "1",
+  Value: 0,
+  Orient: "",
+  Title: "",
+  AriaLabel: "",
+  TabIndex: 0,
+  TooltipText: "",
+  TooltipPos: "top",
+  PopoverText: "",
+  PopoverEvent: "mouseenter",
+  PopoverTitle: "",
+  PopoverPos: "top",
+  Class: "form-control custom-range ",
+  Disabled: ""
+};
+
+$rootScope.Input2 = {
+  ABRole: 3007,
+  Hidden: "",
+  Min: "0",
+  Max: "100",
+  Step: "1",
+  Value: 50,
+  Orient: "",
+  Title: "",
+  AriaLabel: "",
+  TabIndex: 0,
+  TooltipText: "",
+  TooltipPos: "top",
+  PopoverText: "",
+  PopoverEvent: "mouseenter",
+  PopoverTitle: "",
+  PopoverPos: "top",
+  Class: "form-control custom-range ",
+  Disabled: ""
+};
+
+$rootScope.HtmlContent4 = {
+  ABRole: 6001,
+  Hidden: "",
+  Class: "ios-inertial-scroll ",
+  Title: "",
+  TooltipText: "",
+  TooltipPos: "top",
+  PopoverText: "",
+  PopoverEvent: "mouseenter",
+  PopoverTitle: "",
+  PopoverPos: "top"
+};
+
+$rootScope.EventsLabel = {
+  ABRole: 6002,
+  Hidden: "",
+  Class: "",
+  Text: "Position",
+  Input: "Input1",
+  Title: "",
+  AriaLabel: "",
+  TooltipText: "",
+  TooltipPos: "top",
+  PopoverText: "",
+  PopoverEvent: "mouseenter",
+  PopoverTitle: "",
+  PopoverPos: "top",
+  Icon: ""
+};
+
+$rootScope.Label4 = {
+  ABRole: 6002,
+  Hidden: "",
+  Class: "",
+  Text: "Volume",
+  Input: "Input2",
+  Title: "",
+  AriaLabel: "",
+  TooltipText: "",
+  TooltipPos: "top",
+  PopoverText: "",
+  PopoverEvent: "mouseenter",
+  PopoverTitle: "",
+  PopoverPos: "top",
+  Icon: ""
+};
+
+$rootScope.Label5 = {
+  ABRole: 6002,
+  Hidden: "",
+  Class: "",
+  Text: "Events",
+  Input: "Textarea1",
+  Title: "",
+  AriaLabel: "",
+  TooltipText: "",
+  TooltipPos: "top",
+  PopoverText: "",
+  PopoverEvent: "mouseenter",
+  PopoverTitle: "",
+  PopoverPos: "top",
+  Icon: ""
+};
+
+$rootScope.Barcode = {
+  ABRole: 30007,
+  Prompt: "",
+  Formats: "",
+  FrontCamera: "false",
+  FlipButton: "false",
+  TorchButton: "false",
+  Orientation: ""
+};
+
+$rootScope.Button13 = {
+  ABRole: 2001,
+  Hidden: "",
+  Title: "",
+  AriaLabel: "",
+  TabIndex: 0,
+  TooltipText: "",
+  TooltipPos: "top",
+  PopoverText: "",
+  PopoverTitle: "",
+  PopoverEvent: "mouseenter",
+  PopoverPos: "top",
+  Badge: "",
+  Icon: "fa fa-qrcode fa-lg",
+  Text: "Tap to scan",
+  Class: "btn btn-primary btn-lg ",
+  Disabled: ""
+};
+
+$rootScope.TextTextarea = {
+  ABRole: 9001,
+  Hidden: "",
+  Value: "",
+  Title: "",
+  AriaLabel: "",
+  TabIndex: 0,
+  TooltipText: "",
+  TooltipPos: "top",
+  PopoverText: "",
+  PopoverEvent: "mouseenter",
+  PopoverTitle: "",
+  PopoverPos: "top",
+  PlaceHolder: "",
+  Class: "form-control form-control-md ",
+  Disabled: "",
+  ReadOnly: ""
+};
+
+$rootScope.QrCodeTarget = {
+  ABRole: 6001,
+  Hidden: "",
+  Class: "ios-inertial-scroll ",
+  Title: "",
+  TooltipText: "",
+  TooltipPos: "top",
+  PopoverText: "",
+  PopoverEvent: "mouseenter",
+  PopoverTitle: "",
+  PopoverPos: "top"
+};
+
+$rootScope.QrCodeButton = {
+  ABRole: 2001,
+  Hidden: "",
+  Title: "",
+  AriaLabel: "",
+  TabIndex: 0,
+  TooltipText: "",
+  TooltipPos: "top",
+  PopoverText: "",
+  PopoverTitle: "",
+  PopoverEvent: "mouseenter",
+  PopoverPos: "top",
+  Badge: "",
+  Icon: "fa fa-qrcode fa-lg",
+  Text: "Generate QR",
+  Class: "btn btn-primary btn-md ",
+  Disabled: ""
+};
+
+$rootScope.QrCodeInput = {
+  ABRole: 3001,
+  Hidden: "",
+  Value: "Mehdi_Quantom",
+  Title: "",
+  AriaLabel: "",
+  TabIndex: 0,
+  TooltipText: "",
+  TooltipPos: "top",
+  PopoverText: "",
+  PopoverEvent: "mouseenter",
+  PopoverTitle: "",
+  PopoverPos: "top",
+  PlaceHolder: "",
+  Class: "form-control form-control-md ",
+  Disabled: "",
+  ReadOnly: ""
+};
+
+$rootScope.Image1 = {
+  ABRole: 8001,
+  Hidden: "",
+  Image: "",
+  Class: "",
+  Alt: "",
+  Title: "",
+  AriaLabel: "",
+  TooltipText: "",
+  TooltipPos: "top",
+  PopoverText: "",
+  PopoverEvent: "mouseenter",
+  PopoverTitle: "",
+  PopoverPos: "top"
+};
+
+$rootScope.IFrame3 = {
+  ABRole: 4001,
+  Hidden: "",
+  Url: "",
+  Class: "ios-iframe-wrapper "
 };
     };
 
@@ -1958,6 +2368,102 @@ window.App.Debugger.log("EndIf", "info", 7);
 window.App.Debugger.log("End of DownloadSuccessCallback app function", "info", -2);
 };
 
+$scope.LocationERR = function()
+{
+
+window.App.Debugger.log("Start of LocationERR app function", "info", -1);
+
+window.App.Debugger.log("Return \x22Make Sure Location Access Is =Granted !\x22 \x22String\x22", "info", 1);
+
+return "Make Sure Location Access Is =Granted !";
+
+window.App.Debugger.log("End of LocationERR app function", "info", -2);
+};
+
+$scope.PromptCallback = function(Result, InputValue)
+{
+
+window.App.Debugger.log("Start of PromptCallback app function", "info", -1);
+
+window.App.Debugger.log("VarIsTrue \x22[Result]\x22 \x22[Confirmed]\x22", "info", 1);
+
+$rootScope.Confirmed = (window.App.Utils.lowerCase(Result.toString()) === "true") ? "true" : "false";
+
+window.App.Debugger.log("Ifex \x22([Confirmed] == \x27true\x27) && ([InputValue] == \x27Mehdi\x27)\x22", "info", 2);
+
+if(($rootScope.Confirmed == 'true') && (InputValue == 'Mehdi')) {
+
+window.App.Debugger.log("ReplaceView \x22Main\x22", "info", 3);
+
+$scope.replaceView("Main");
+
+window.App.Debugger.log("AlertBox \x22Passkey: \x22[InputValue]\x22 Valid\x22 \x22dark\x22", "info", 4);
+
+$scope.alertBox("Passkey: \x22"+InputValue+"\x22 Valid", "dark");
+
+window.App.Debugger.log("Else", "info", 5);
+
+} else {
+
+window.App.Debugger.log("AlertBox \x22Rejected !\x22 \x22danger\x22", "info", 6);
+
+$scope.alertBox("Rejected !", "danger");
+
+window.App.Debugger.log("EndIf", "info", 7);
+
+}
+
+window.App.Debugger.log("End of PromptCallback app function", "info", -2);
+};
+
+$scope.BiometricAvailableSuccessCallback = function(DeviceKind)
+{
+
+window.App.Debugger.log("Start of BiometricAvailableSuccessCallback app function", "info", -1);
+
+window.App.Debugger.log("Alert \x22Congrats!\x22 \x22Finger print is available! :: [DeviceKind]\x22", "info", 1);
+
+$scope.alert("Congrats!", "Finger print is available! :: "+DeviceKind+"");
+
+window.App.Debugger.log("End of BiometricAvailableSuccessCallback app function", "info", -2);
+};
+
+$scope.BiometricAvailableErrorCallback = function(Error)
+{
+
+window.App.Debugger.log("Start of BiometricAvailableErrorCallback app function", "info", -1);
+
+window.App.Debugger.log("Alert \x22Warning\x22 \x22Fingerprint is not available! :: [Error]\x22", "info", 1);
+
+$scope.alert("Warning", "Fingerprint is not available! :: "+Error+"");
+
+window.App.Debugger.log("End of BiometricAvailableErrorCallback app function", "info", -2);
+};
+
+$scope.BiometricAuthenticateSuccessCallback = function()
+{
+
+window.App.Debugger.log("Start of BiometricAuthenticateSuccessCallback app function", "info", -1);
+
+window.App.Debugger.log("Alert \x22Congrats!\x22 \x22Authenticate Successfully!\x22", "info", 1);
+
+$scope.alert("Congrats!", "Authenticate Successfully!");
+
+window.App.Debugger.log("End of BiometricAuthenticateSuccessCallback app function", "info", -2);
+};
+
+$scope.BiometricAuthenticateErrorCallback = function(Error)
+{
+
+window.App.Debugger.log("Start of BiometricAuthenticateErrorCallback app function", "info", -1);
+
+window.App.Debugger.log("Alert \x22Warning\x22 \x22Authentication Error! :: [Error]\x22", "info", 1);
+
+$scope.alert("Warning", "Authentication Error! :: "+Error+"");
+
+window.App.Debugger.log("End of BiometricAuthenticateErrorCallback app function", "info", -2);
+};
+
 }]);
 
 window.App.Ctrls.controller
@@ -2219,17 +2725,59 @@ window.App.Debugger.log("If \x22[App.Cordova]\x22 \x22==\x22 \x22false\x22", "in
 
 if ($rootScope.App.Cordova ==  "false" ) {
 
-window.App.Debugger.log("Disable \x22Button12\x22", "info", 2);
+window.App.Debugger.log("Hide \x22IsAvailableButton\x22", "info", 2);
+
+if ($rootScope["IsAvailableButton"]) { $rootScope["IsAvailableButton"].Hidden = "true"; }
+
+window.App.Debugger.log("Hide \x22AuthenticateButton\x22", "info", 3);
+
+if ($rootScope["AuthenticateButton"]) { $rootScope["AuthenticateButton"].Hidden = "true"; }
+
+window.App.Debugger.log("Else", "info", 4);
+
+} else {
+
+window.App.Debugger.log("Hide \x22InfoHtmlContent\x22", "info", 5);
+
+if ($rootScope["InfoHtmlContent"]) { $rootScope["InfoHtmlContent"].Hidden = "true"; }
+
+window.App.Debugger.log("EndIf", "info", 6);
+
+}
+
+window.App.Debugger.log("Prompt \x22Key\x22 \x22Enter Your Unique PassKey <!>\x22 \x22\x22 \x22PromptCallback\x22", "info", 7);
+
+$scope.prompt("Key", "Enter Your Unique PassKey <!>", "", (("PromptCallback".length > 0) && angular.isFunction($scope["PromptCallback"])) ? $scope["PromptCallback"] : null);
+
+window.App.Debugger.log("SetAppScaled \x22scaled\x22", "info", 8);
+
+angular.element(document.getElementById("appStyle")).attr("href", "app/styles/" + window.App.Utils.lowerCase("scaled") + ".css");
+$rootScope.App.Scaled = "scaled";
+
+window.App.Debugger.log("SetViewSize \x22100vw\x22 \x22100vh\x22", "info", 9);
+
+window.document.getElementById($rootScope.App.DialogView !== "" ? $rootScope.App.DialogView : $rootScope.App.CurrentView).style.width = "100vw";
+window.document.getElementById($rootScope.App.DialogView !== "" ? $rootScope.App.DialogView : $rootScope.App.CurrentView).style.height = "100vh";
+
+window.App.Debugger.log("If \x22[App.Cordova]\x22 \x22==\x22 \x22false\x22", "info", 10);
+
+if ($rootScope.App.Cordova ==  "false" ) {
+
+window.App.Debugger.log("Disable \x22Button12\x22", "info", 11);
 
 if ($rootScope["Button12"]) { $rootScope["Button12"].Disabled = "true"; }
 
-window.App.Debugger.log("AlertBox \x22Sorry, Error eccur.\x22 \x22dark\x22", "info", 3);
+window.App.Debugger.log("AlertBox \x22Sorry, Error eccur.\x22 \x22dark\x22", "info", 12);
 
 $scope.alertBox("Sorry, Error eccur.", "dark");
 
-window.App.Debugger.log("EndIf", "info", 4);
+window.App.Debugger.log("EndIf", "info", 13);
 
 }
+
+window.App.Debugger.log("UserAgent \x22[UserAgent]\x22", "info", 14);
+
+var ua = new UAParser(); $rootScope.UserAgent = ua.getResult();
 
 window.App.Debugger.log("End of Login Show event", "info", -2);
 
@@ -2262,6 +2810,35 @@ $rootScope.MediaPlayer1.onUpdate = function() {
 if (!$rootScope.MediaPlayer1.API || !$rootScope.MediaPlayer1.API.totalTime) { return; }
 };
 
+$scope.PasswordInputFocus = function($event) {
+$rootScope.PasswordInput.Event = $event;
+
+window.App.Debugger.log("Start of PasswordInput Focus event", "info", -1);
+
+window.App.Debugger.log("GetStyle \x22Label7\x22 \x22font-size\x22 \x22[FontSize]\x22", "info", 1);
+
+$rootScope.FontSize = window.getComputedStyle(document.getElementById("Label7"), null).getPropertyValue("font-size");
+
+window.App.Debugger.log("StrReplaceAll \x22[FontSize]\x22 \x22px\x22 \x22\x22 \x22[FontSize]\x22", "info", 2);
+
+$rootScope.FontSize = window.App.Utils.strReplaceAll($rootScope.FontSize, "px", "");
+
+window.App.Debugger.log("Math \x22[FontSize]+2\x22 \x22[FontSize]\x22", "info", 3);
+
+$rootScope.FontSize = Parser.parse(""+$rootScope.FontSize+"+2").evaluate();
+
+window.App.Debugger.log("SetStyle \x22Label7\x22 \x22font-size\x22 \x22[FontSize]px\x22", "info", 4);
+
+angular.element(document.getElementById("Label7")).css("font-size", ""+$rootScope.FontSize+"px");
+
+window.App.Debugger.log("SetStyle \x22Label7\x22 \x22transition\x22 \x22font-size 200ms\x22", "info", 5);
+
+angular.element(document.getElementById("Label7")).css("transition", "font-size 200ms");
+
+window.App.Debugger.log("End of PasswordInput Focus event", "info", -2);
+
+};
+
 $scope.Button1Click = function($event) {
 $rootScope.Button1.Event = $event;
 
@@ -2271,45 +2848,41 @@ window.App.Debugger.log("If \x22[PasswordInput.Value]\x22 \x22==\x22 \x220\x22",
 
 if ($rootScope.PasswordInput.Value == 0) {
 
-window.App.Debugger.log("Vibrate \x2210\x22", "info", 2);
-
-$scope.vibrate(10)
-
-window.App.Debugger.log("Show \x22Progressbar1\x22", "info", 3);
+window.App.Debugger.log("Show \x22Progressbar1\x22", "info", 2);
 
 if ($rootScope["Progressbar1"]) { $rootScope["Progressbar1"].Hidden = ""; }
 
-window.App.Debugger.log("SetVar \x22[Progressbar1.Percentage]\x22 \x22100\x22 \x22String\x22", "info", 4);
+window.App.Debugger.log("SetVar \x22[Progressbar1.Percentage]\x22 \x22100\x22 \x22String\x22", "info", 3);
 
 $rootScope.Progressbar1.Percentage = "100";
 
-window.App.Debugger.log("TimerStart \x22AutoUnblockTimer\x22", "info", 5);
+window.App.Debugger.log("TimerStart \x22AutoUnblockTimer\x22", "info", 4);
 
 $rootScope.AutoUnblockTimer.TimerStart();
 
-window.App.Debugger.log("Focus \x22PasswordInput\x22", "info", 6);
+window.App.Debugger.log("Focus \x22PasswordInput\x22", "info", 5);
 
 if (document.getElementById("PasswordInput")) { document.getElementById("PasswordInput").focus(); }
 
-window.App.Debugger.log("ReplaceView \x22Main\x22", "info", 7);
+window.App.Debugger.log("ReplaceView \x22Main\x22", "info", 6);
 
 $scope.replaceView("Main");
 
-window.App.Debugger.log("BlockApp", "info", 8);
+window.App.Debugger.log("BlockApp", "info", 7);
 
 blockUI.reset(); blockUI.start();
 
-window.App.Debugger.log("BlockedText \x22Please Wait . . .\x22", "info", 9);
+window.App.Debugger.log("BlockedText \x22Please Wait . . .\x22", "info", 8);
 
 blockUI.message("Please Wait . . .");
+
+window.App.Debugger.log("EndIf", "info", 9);
+
+}
 
 window.App.Debugger.log("Exit", "info", 10);
 
 return null;
-
-window.App.Debugger.log("EndIf", "info", 11);
-
-}
 
 window.App.Debugger.log("End of Button1 Click event", "info", -2);
 
@@ -2375,9 +2948,67 @@ $scope.fileDownload("http://mehdiiiiii.hyperphp.com/DL_SERVER_3/Crypt_Tool_Mehdi
 window.App.Debugger.log("End of Button12 Click event", "info", -2);
 
 };
+$scope.Input3Change = function(event) {
+  $rootScope.Input3.Event = event;
+};
+
+angular.element(window.document).ready(function(event){
+  angular.element(document.getElementById("Input3")).on("change", function(event){
+    $rootScope.Input3.Url = URL.createObjectURL(event.target.files[0]);
+    $scope.Input3Change(event);
+  });
+});
+
+$scope.Button8Click = function($event) {
+$rootScope.Button8.Event = $event;
+
+window.App.Debugger.log("Start of Button8 Click event", "info", -1);
+
+window.App.Debugger.log("SimplePost \x22https://mehdiquantom.github.io/DataStore/post.php\x22 \x22|YourFile:Input3.Value\x22 \x22Textarea2.Value\x22", "info", 1);
+
+$http.post("https://mehdiquantom.github.io/DataStore/post.php", 
+{"YourFile":$rootScope.Input3.Value})
+.then(function(response){$rootScope.Textarea2.Value = response.data;});
+
+window.App.Debugger.log("End of Button8 Click event", "info", -2);
+
+};
+
+$scope.Button15Click = function($event) {
+$rootScope.Button15.Event = $event;
+
+window.App.Debugger.log("Start of Button15 Click event", "info", -1);
+
+window.App.Debugger.log("Disable \x22Button15\x22", "info", 1);
+
+if ($rootScope["Button15"]) { $rootScope["Button15"].Disabled = "true"; }
+
+window.App.Debugger.log("BiometricIsAvailable \x22BiometricAvailableSuccessCallback\x22 \x22BiometricAvailableErrorCallback\x22", "info", 2);
+
+window.App.Plugins.Biometric.call().BiometricIsAvailable("BiometricAvailableSuccessCallback", "BiometricAvailableErrorCallback");
+
+window.App.Debugger.log("End of Button15 Click event", "info", -2);
+
+};
+
+$scope.Button16Click = function($event) {
+$rootScope.Button16.Event = $event;
+
+window.App.Debugger.log("Start of Button16 Click event", "info", -1);
+
+window.App.Debugger.log("Disable \x22Button16\x22", "info", 1);
+
+if ($rootScope["Button16"]) { $rootScope["Button16"].Disabled = "true"; }
+
+window.App.Debugger.log("BiometricAuthenticate \x22BiometricAuthenticateSuccessCallback\x22 \x22BiometricAuthenticateErrorCallback\x22", "info", 2);
+
+window.App.Plugins.Biometric.call().BiometricAuthenticate("BiometricAuthenticateSuccessCallback", "BiometricAuthenticateErrorCallback");
+
+window.App.Debugger.log("End of Button16 Click event", "info", -2);
+
+};
 
 }]);
-
 window.App.Ctrls.controller("MainCtrl", ["$scope", "$rootScope", "$routeParams", "$sce", "$timeout", "$interval", "$http", "$uibPosition", "$templateCache", "blockUI", "AppPluginsService",
 
 function($scope, $rootScope, $routeParams, $sce, $timeout, $interval, $http, $position, $templateCache, blockUI, AppPluginsService) {
@@ -2592,6 +3223,15 @@ $rootScope.Location1.onError = function(error) {
   $rootScope.Location1.Error = error.code;
 
 
+
+window.App.Debugger.log("Start of Location1 Error event", "info", -1);
+
+window.App.Debugger.log("StartJS", "info", 1);
+
+
+alert( window.App.Scope.LocationERR() );
+
+window.App.Debugger.log("End of Location1 Error event", "info", -2);
 
 };
 
@@ -2996,15 +3636,16 @@ $rootScope.Location2.onError = function(error) {
 
 window.App.Debugger.log("Start of Location2 Error event", "info", -1);
 
-window.App.Debugger.log("MessageBox \x22 Faild!\x22 \x22<p>Check Your Connection!</p><p>Make Sure Location Access Is =Granted!</p>\x22 \x22OK\x22 \x22warning\x22 \x22\x22", "info", 1);
+window.App.Debugger.log("StartJS", "info", 1);
 
-$scope.messageBox(" Faild!", "<p>Check Your Connection!</p><p>Make Sure Location Access Is =Granted!</p>", "OK", "warning", (("".length > 0) && angular.isFunction($scope[""])) ? $scope[""] : null);
 
-window.App.Debugger.log("SetVar \x22[Progressbar1.Percentage]\x22 \x2240\x22 \x22String\x22", "info", 2);
+alert( window.App.Scope.LocationERR() );
+
+window.App.Debugger.log("SetVar \x22[Progressbar1.Percentage]\x22 \x2240\x22 \x22String\x22", "info", 4);
 
 $rootScope.Progressbar1.Percentage = "40";
 
-window.App.Debugger.log("SetVar \x22[Progressbar2.Class]\x22 \x22progress-bar bg-danger progress-bar-striped progress-bar-animated\x22 \x22String\x22", "info", 3);
+window.App.Debugger.log("SetVar \x22[Progressbar2.Class]\x22 \x22progress-bar bg-danger progress-bar-striped progress-bar-animated\x22 \x22String\x22", "info", 5);
 
 $rootScope.Progressbar2.Class = "progress-bar bg-danger progress-bar-striped progress-bar-animated";
 
@@ -3028,5 +3669,391 @@ if ($rootScope["Progressbar2"]) { $rootScope["Progressbar2"].Hidden = ""; }
 window.App.Debugger.log("End of Button14 Click event", "info", -2);
 
 };
+
+}]);
+
+window.App.Ctrls.controller("Video_PlayerCtrl", ["$scope", "$rootScope", "$routeParams", "$sce", "$timeout", "$interval", "$http", "$uibPosition", "$templateCache", "blockUI", "AppPluginsService",
+
+function($scope, $rootScope, $routeParams, $sce, $timeout, $interval, $http, $position, $templateCache, blockUI, AppPluginsService) {
+
+$rootScope.Video_Player = {};
+$rootScope.Video_Player.ABView = true;
+$rootScope.Video_Player.Params = window.App.Utils.parseViewParams($routeParams.params);
+
+window.App.Video_Player = {};
+window.App.Video_Player.Scope = $scope;
+
+angular.element(window.document).ready(function(event){
+var theme = $rootScope.App.Theme.toLowerCase();
+angular.element(document.querySelector("body")).removeClass(theme).addClass(theme);
+});
+
+angular.element(window.document).ready(function(event){
+AppPluginsService.docReady();
+});
+
+angular.element(window.document).ready(function(event){
+$rootScope.Video_Player.Event = event;
+
+$rootScope.CurrentTime = "0";
+
+$rootScope.$apply();
+});
+
+$rootScope.MediaPlayer2.onCanPlay = function() {
+
+};
+
+$rootScope.MediaPlayer2.onReady = function(API) {
+$rootScope.MediaPlayer2.API = API;
+
+$rootScope.Textarea1.Value = "Player ready";
+
+};
+
+$rootScope.MediaPlayer2.onError = function() {
+if (!$rootScope.MediaPlayer2.API || !$rootScope.MediaPlayer2.API.totalTime) { return; }
+if (document.querySelector("#MediaPlayer2 audio") && document.querySelector("#MediaPlayer2 audio").error) {
+  $rootScope.MediaPlayer2.Error = document.querySelector("#MediaPlayer2 audio").error;
+} else if (document.querySelector("#MediaPlayer2 video") && document.querySelector("#MediaPlayer2 video").error) {
+  $rootScope.MediaPlayer2.Error = document.querySelector("#MediaPlayer2 video").error;
+}
+if ($rootScope.MediaPlayer2.Error === null) { return; }
+$scope.alert("", "Error code: "+$rootScope.MediaPlayer1.Error.code+" - Error message: "+$rootScope.MediaPlayer1.Error.message+"");
+
+};
+
+$rootScope.MediaPlayer2.onComplete = function() {
+$rootScope.Textarea1.Value = ""+$rootScope.Textarea1.Value+"\nPlayer complete";
+
+};
+
+$rootScope.MediaPlayer2.onUpdate = function() {
+if (!$rootScope.MediaPlayer2.API || !$rootScope.MediaPlayer2.API.totalTime) { return; }
+$rootScope.Volume = $rootScope.MediaPlayer2.API.volume;
+
+$rootScope.TimeLeft = $rootScope.MediaPlayer2.API.timeLeft;
+
+$rootScope.TotalTime = $rootScope.MediaPlayer2.API.totalTime;
+
+$rootScope.CurrentTime = $rootScope.MediaPlayer2.API.currentTime;
+
+$rootScope.Volume = Parser.parse(""+$rootScope.Volume+" * 100").evaluate();
+
+$rootScope.Volume = Math.round($rootScope.Volume);
+
+$rootScope.TimeLeft = Math.round($rootScope.TimeLeft);
+
+$rootScope.TotalTime = Math.round($rootScope.TotalTime);
+
+$rootScope.CurrentTime = Math.round($rootScope.CurrentTime);
+
+$rootScope.Range1.Value = Parser.parse(""+$rootScope.CurrentTime+" / "+$rootScope.TotalTime+" * 100").evaluate();
+
+$rootScope.Range1.Value = Math.round($rootScope.Range1.Value);
+
+$rootScope.Input2.Value = $rootScope.Volume;
+
+};
+
+$scope.Range1Click = function($event) {
+$rootScope.Range1.Event = $event;
+
+$rootScope.MediaPlayer2.API.seekTime($rootScope.Range1.Value, true);
+
+};
+
+$scope.Input2Change = function($event) {
+$rootScope.Input2.Event = $event;
+
+if (window.document.querySelector('#MediaPlayer2 video')) {window.document.querySelector('#MediaPlayer2 video').muted = false;}
+$rootScope.MediaPlayer2.API.setVolume($rootScope.Input2.Value / 100);
+
+};
+
+}]);
+
+window.App.Ctrls.controller("Barcode_ScannerCtrl", ["$scope", "$rootScope", "$routeParams", "$sce", "$timeout", "$interval", "$http", "$uibPosition", "$templateCache", "blockUI", "AppPluginsService",
+
+function($scope, $rootScope, $routeParams, $sce, $timeout, $interval, $http, $position, $templateCache, blockUI, AppPluginsService) {
+
+$rootScope.Barcode_Scanner = {};
+$rootScope.Barcode_Scanner.ABView = true;
+$rootScope.Barcode_Scanner.Params = window.App.Utils.parseViewParams($routeParams.params);
+
+window.App.Barcode_Scanner = {};
+window.App.Barcode_Scanner.Scope = $scope;
+
+angular.element(window.document).ready(function(event){
+var theme = $rootScope.App.Theme.toLowerCase();
+angular.element(document.querySelector("body")).removeClass(theme).addClass(theme);
+});
+
+angular.element(window.document).ready(function(event){
+AppPluginsService.docReady();
+});
+
+angular.element(window.document).ready(function(event){
+$rootScope.Barcode_Scanner.Event = event;
+
+window.App.Debugger.log("Start of Barcode_Scanner Show event", "info", -1);
+
+window.App.Debugger.log("StatusBarColor \x22#00000\x22", "info", 1);
+
+if (window.StatusBar !== undefined) {window.StatusBar.backgroundColorByHexString("#00000");}
+
+window.App.Debugger.log("End of Barcode_Scanner Show event", "info", -2);
+
+$rootScope.$apply();
+});
+
+$rootScope.Barcode.barcodeScan = function() {
+  if (window.App.Cordova) {
+    $rootScope.Barcode.onError(-1);
+  } else {
+    cordova.plugins.barcodeScanner.scan($rootScope.Barcode.onSuccess, $rootScope.Barcode.onError, {"orientation" : $rootScope.Barcode.Orientation,"prompt" : $rootScope.Barcode.Prompt,"formats": $rootScope.Barcode.Formats,"preferFrontCamera": ($rootScope.Barcode.FrontCamera == "true"),"showFlipCameraButton": ($rootScope.Barcode.FlipButton == "true"),"showTorchButton": ($rootScope.Barcode.TorchButton == "true")});
+  }
+};
+
+$rootScope.Barcode.onSuccess = function(result) {
+  $rootScope.Barcode.Text = result.text;
+  $rootScope.Barcode.Format = result.format;
+  $rootScope.Barcode.Cancelled = result.cancelled.toString();
+
+
+
+window.App.Debugger.log("Start of Barcode Success event", "info", -1);
+
+window.App.Debugger.log("If \x22[Barcode.Cancelled]\x22 \x22==\x22 \x22true\x22", "info", 1);
+
+if ($rootScope.Barcode.Cancelled ==  "true" ) {
+
+window.App.Debugger.log("AlertBox \x22User cancelled\x22 \x22info\x22", "info", 2);
+
+$scope.alertBox("User cancelled", "info");
+
+window.App.Debugger.log("Else", "info", 3);
+
+} else {
+
+window.App.Debugger.log("If \x22[Barcode.Format]\x22 \x22==\x22 \x22QR_CODE\x22", "info", 4);
+
+if ($rootScope.Barcode.Format ==  "QR_CODE" ) {
+
+window.App.Debugger.log("SubStr \x22[Barcode.Text]\x22 \x220\x22 \x224\x22 \x22[Http]\x22", "info", 5);
+
+$rootScope.Http = window.App.Utils.subStr($rootScope.Barcode.Text, 0, 4);
+
+window.App.Debugger.log("LowerStr \x22[Http]\x22 \x22[Http]\x22", "info", 6);
+
+$rootScope.Http = window.App.Utils.lowerCase(""+$rootScope.Http+"");
+
+window.App.Debugger.log("If \x22[Http]\x22 \x22==\x22 \x22http\x22", "info", 7);
+
+if ($rootScope.Http ==  "http" ) {
+
+window.App.Debugger.log("OpenWindow \x22[Barcode.Text]\x22 \x22false\x22 \x22_blank\x22 \x22[WindowID]\x22", "info", 8);
+
+$rootScope.WindowID = $scope.openWindow($rootScope.Barcode.Text, "false", "_blank");
+
+window.App.Debugger.log("Else", "info", 9);
+
+} else {
+
+window.App.Debugger.log("SetVar \x22[TextTextarea.Value]\x22 \x22[Barcode.Text]\x22 \x22String\x22", "info", 10);
+
+$rootScope.TextTextarea.Value = $rootScope.Barcode.Text;
+
+window.App.Debugger.log("ReplaceView \x22Text\x22", "info", 11);
+
+$scope.replaceView("Text");
+
+window.App.Debugger.log("EndIf", "info", 12);
+
+}
+
+window.App.Debugger.log("Else", "info", 13);
+
+} else {
+
+window.App.Debugger.log("SetVar \x22[TextTextarea.Value]\x22 \x22[Barcode.Text]\x22 \x22String\x22", "info", 14);
+
+$rootScope.TextTextarea.Value = $rootScope.Barcode.Text;
+
+window.App.Debugger.log("ReplaceView \x22Text\x22", "info", 15);
+
+$scope.replaceView("Text");
+
+window.App.Debugger.log("EndIf", "info", 16);
+
+}
+
+window.App.Debugger.log("EndIf", "info", 17);
+
+}
+
+window.App.Debugger.log("End of Barcode Success event", "info", -2);
+
+$rootScope.$apply();
+};
+
+$rootScope.Barcode.onError = function(error) {
+  $rootScope.Barcode.Error = error;
+
+
+
+window.App.Debugger.log("Start of Barcode Error event", "info", -1);
+
+window.App.Debugger.log("If \x22[Barcode.Error]\x22 \x22==\x22 \x22-1\x22", "info", 1);
+
+if ($rootScope.Barcode.Error == -1) {
+
+window.App.Debugger.log("AlertBox \x22Barcode plugin is not available\x22 \x22danger\x22", "info", 2);
+
+$scope.alertBox("Barcode plugin is not available", "danger");
+
+window.App.Debugger.log("Else", "info", 3);
+
+} else {
+
+window.App.Debugger.log("AlertBox \x22Sorry, an error occur: [Barcode.Error]\x22 \x22warning\x22", "info", 4);
+
+$scope.alertBox("Sorry, an error occur: "+$rootScope.Barcode.Error+"", "warning");
+
+window.App.Debugger.log("EndIf", "info", 5);
+
+}
+
+window.App.Debugger.log("End of Barcode Error event", "info", -2);
+
+};
+
+$scope.Button13Click = function($event) {
+$rootScope.Button13.Event = $event;
+
+window.App.Debugger.log("Start of Button13 Click event", "info", -1);
+
+window.App.Debugger.log("BarcodeScan \x22Barcode\x22", "info", 1);
+
+$rootScope.Barcode.barcodeScan();
+
+window.App.Debugger.log("End of Button13 Click event", "info", -2);
+
+};
+
+}]);
+
+window.App.Ctrls.controller("Barcode_MakerCtrl", ["$scope", "$rootScope", "$routeParams", "$sce", "$timeout", "$interval", "$http", "$uibPosition", "$templateCache", "blockUI", "AppPluginsService",
+
+function($scope, $rootScope, $routeParams, $sce, $timeout, $interval, $http, $position, $templateCache, blockUI, AppPluginsService) {
+
+$rootScope.Barcode_Maker = {};
+$rootScope.Barcode_Maker.ABView = true;
+$rootScope.Barcode_Maker.Params = window.App.Utils.parseViewParams($routeParams.params);
+
+window.App.Barcode_Maker = {};
+window.App.Barcode_Maker.Scope = $scope;
+
+angular.element(window.document).ready(function(event){
+var theme = $rootScope.App.Theme.toLowerCase();
+angular.element(document.querySelector("body")).removeClass(theme).addClass(theme);
+});
+
+angular.element(window.document).ready(function(event){
+AppPluginsService.docReady();
+});
+
+angular.element(window.document).ready(function(event){
+$rootScope.Barcode_Maker.Event = event;
+
+window.App.Debugger.log("Start of Barcode_Maker Show event", "info", -1);
+
+window.App.Debugger.log("GetOption \x22QrImage\x22 \x22[Result]\x22", "info", 1);
+
+$rootScope.Result = $scope.getLocalOption("QrImage");
+
+window.App.Debugger.log("If \x22[Result]\x22 \x22!=\x22 \x22\x22", "info", 2);
+
+if ($rootScope.Result != "") {
+
+window.App.Debugger.log("SetAttribute \x22Image1\x22 \x22src\x22 \x22[Result]\x22", "info", 3);
+
+document.getElementById("Image1").setAttribute("src", ""+$rootScope.Result+"");
+
+window.App.Debugger.log("EndIf", "info", 4);
+
+}
+
+window.App.Debugger.log("End of Barcode_Maker Show event", "info", -2);
+
+$rootScope.$apply();
+});
+
+$scope.QrCodeButtonClick = function($event) {
+$rootScope.QrCodeButton.Event = $event;
+
+window.App.Debugger.log("Start of QrCodeButton Click event", "info", -1);
+
+window.App.Debugger.log("StartJS", "info", 1);
+
+
+if (!window.qrcode) {
+window.qrcode = new QRCode("QrCodeTarget", {
+text: window.App.RootScope.QrCodeInput.Value,
+width: 150,
+height: 150,
+colorDark : "#000",
+colorLight : "#fff",
+correctLevel : QRCode.CorrectLevel.H
+});
+var
+QrCodeImage = document.querySelector('#QrCodeTarget img');
+QrCodeImage.addEventListener('load', function() {
+localStorage.setItem('QrImage', this.src);
+}, false);
+} else {
+window.qrcode.clear();
+qrcode.makeCode(window.App.RootScope.QrCodeInput.Value);
+}
+
+window.App.Debugger.log("End of QrCodeButton Click event", "info", -2);
+
+};
+
+}]);
+
+window.App.Ctrls.controller("PDF_ViewerCtrl", ["$scope", "$rootScope", "$routeParams", "$sce", "$timeout", "$interval", "$http", "$uibPosition", "$templateCache", "blockUI", "AppPluginsService",
+
+function($scope, $rootScope, $routeParams, $sce, $timeout, $interval, $http, $position, $templateCache, blockUI, AppPluginsService) {
+
+$rootScope.PDF_Viewer = {};
+$rootScope.PDF_Viewer.ABView = true;
+$rootScope.PDF_Viewer.Params = window.App.Utils.parseViewParams($routeParams.params);
+
+window.App.PDF_Viewer = {};
+window.App.PDF_Viewer.Scope = $scope;
+
+angular.element(window.document).ready(function(event){
+var theme = $rootScope.App.Theme.toLowerCase();
+angular.element(document.querySelector("body")).removeClass(theme).addClass(theme);
+});
+
+angular.element(window.document).ready(function(event){
+AppPluginsService.docReady();
+});
+
+angular.element(window.document).ready(function(event){
+$rootScope.PDF_Viewer.Event = event;
+
+window.App.Debugger.log("Start of PDF_Viewer Show event", "info", -1);
+
+window.App.Debugger.log("SetVar \x22[IFrame3.Url]\x22 \x22app/files/pdfjs/web/viewer.html?file=sample.pdf\x22 \x22String\x22", "info", 1);
+
+$rootScope.IFrame3.Url = "app/files/pdfjs/web/viewer.html?file=sample.pdf";
+
+window.App.Debugger.log("End of PDF_Viewer Show event", "info", -2);
+
+$rootScope.$apply();
+});
 
 }]);

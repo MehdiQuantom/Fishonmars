@@ -4,15 +4,24 @@
  * ©2019 App Builder - https://www.davidesperalta.com
  */
 /* App auto generated CSS */
+body { border-radius: 0.2em; }
 html, body, .appView { width: 360px; height: 640px; }
 .dialogView .modal-dialog { width: 360px; margin: 0 auto; }
-#MediaPlayer1 { position: absolute; top: 0px; left: 0px; width: 360px; height: 720px; }
+#Login { cursor: auto; }
+#MediaPlayer1 { position: absolute; top: 0px; left: 0px; width: 360px; height: 720px; animation-fill-mode: 100;}
 #PasswordInput { position: absolute; top: 64px; left: 16px; width: 104px; height: 40px; font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;}
 #Button1 { position: absolute; top: 136px; left: 16px; width: 48px; height: 40px; font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;}
 #Label7 { position: absolute; top: 24px; left: 16px; width: 144px; height: 20px; font-family: "Arial Black", Gadget, sans-serif; font-size: 40; font-style: normal; font-weight: bold;}
 #Progressbar1 { position: absolute; top: 112px; left: 16px; width: 48px; height: 16px; }
-#Button12 { position: absolute; top: 256px; left: 16px; width: 56px; height: 32px; }
-
+#Button12 { position: absolute; top: 136px; left: 72px; width: 48px; height: 40px; }
+#HtmlContent2 { position: absolute; top: 184px; left: 16px; width: 104px; height: 112px; }
+#Input3 { position: absolute; top: 24px; left: 264px; width: 72px; height: 26px; }
+#HtmlContent3 { position: absolute; top: 56px; left: 264px; width: 72px; height: 40px; }
+#Textarea2 { position: absolute; top: 144px; left: 264px; width: 72px; height: 74px; }
+#Label6 { position: absolute; top: 120px; left: 264px; width: 72px; height: 12px; }
+#Button8 { position: absolute; top: 216px; left: 264px; width: 72px; height: 24px; }
+#Button15 { position: absolute; top: 368px; left: 152px; width: 56px; height: 24px; }
+#Button16 { position: absolute; top: 368px; left: 216px; width: 56px; height: 24px; }
 #Button3 { position: absolute; top: 64px; left: 0px; width: 104px; height: 32px; }
 #Button4 { position: absolute; top: 112px; left: 0px; width: 104px; height: 32px; }
 #Button5 { position: absolute; top: 160px; left: 0px; width: 104px; height: 32px; }
@@ -45,6 +54,25 @@ html, body, .appView { width: 360px; height: 640px; }
 #Button14 { position: absolute; top: 344px; left: 128px; width: 88px; height: 8px; }
 #Label2 { position: absolute; top: 16px; left: 0px; width: 56px; height: 20px; font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;}
 #Label3 { position: absolute; top: 352px; left: 0px; width: 56px; height: 16px; font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;}
+
+#MediaPlayer2 { position: absolute; top: 0px; left: 0px; width: 360px; height: 568px; }
+#Textarea1 { position: absolute; top: 592px; left: 280px; width: 80px; height: 48px; color: #fff; background-color: #000;}
+#Range1 { position: absolute; top: 584px; left: 8px; width: 240px; height: 16px; background-color: #000;}
+#Input2 { position: absolute; top: 624px; left: 8px; width: 240px; height: 16px; background-color: #000;}
+#HtmlContent4 { position: absolute; top: 560px; left: 40px; width: 272px; height: 16px; }
+#EventsLabel { position: absolute; top: 568px; left: 8px; width: 128px; height: 20px; }
+#Label4 { position: absolute; top: 608px; left: 8px; width: 128px; height: 20px; }
+#Label5 { position: absolute; top: 576px; left: 280px; width: 64px; height: 20px; }
+
+#Button13 { position: absolute; top: 0px; left: 8px; width: 344px; height: 312px; }
+#TextTextarea { position: absolute; top: 320px; left: 8px; width: 344px; height: 312px; }
+
+#QrCodeTarget { position: absolute; top: 200px; left: 81px; width: 150px; height: 150px; }
+#QrCodeButton { position: absolute; top: 416px; left: 56px; width: 200px; height: 35px; }
+#QrCodeInput { position: absolute; top: 368px; left: 56px; width: 200px; height: 30px; }
+#Image1 { position: absolute; top: 88px; left: 96px; width: 112px; height: 104px; }
+
+#IFrame3 { position: absolute; top: 0px; left: 0px; width: 360px; height: 640px; }
 
 /* App inline CSS */
 .block-ui-message
