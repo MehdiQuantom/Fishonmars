@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <title>Mehdi Quantom</title>
+  <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./style1.css">
+
+  <link href="https://fonts.googleapis.com/css?family=Aldrich" rel="stylesheet" type="text/css">
+<style>
+ #typing-text {
+     color: #050000;
+     border: solid 5px #ffffff;
+     font-weight: bold;
+     text-align: left;
+     font-family: Aldrich;
+     overflow: auto;
+     background-color: #ffffff;
+     font-size: 25px;
+     height: 500px;
+     width: 439px;
+     transform: rotateX(10deg);
+     transform-origin: 50% 50% 0px;
+     outline: none;
+     resize: none;
+     box-sizing: border-box;
+}
+
+</style>
+</head>
+<body>
+<div class="type_box" style="perspective:400px;-webkit-perspective:400px;">
+   <textarea id="typing-text" aria-label="typing text" readonly></textarea>
+</div>
+</head>
+<script>
+(function () {
+   var CharacterPos = 0;
+   var MsgBuffer = "";
+   var TypeDelay = 30; 
+   var NxtMsgDelay = 1000;
+   var MsgIndex = 0;
+   var delay;
+   var MsgArray = ["برای جدید شدن پروکسی ها صفحه را رفرش کنید"];
+
+   function StartTyping() {
+      var id = document.getElementById("typing-text");
+      if (CharacterPos != MsgArray[MsgIndex].length) {
+         MsgBuffer  = MsgBuffer + MsgArray[MsgIndex].charAt(CharacterPos);
+         id.value = MsgBuffer+"_";
+         delay = TypeDelay;
+         id.scrollTop = id.scrollHeight; 
+      } else {
+         delay = NxtMsgDelay;
+         MsgBuffer   = "";
+         CharacterPos = -1;
+         if (MsgIndex!=MsgArray.length-1){
+           MsgIndex++;
+         }else {
+           MsgIndex = 0;
+         }
+       }
+       CharacterPos++;
+       setTimeout(StartTyping,delay);
+   }
+StartTyping();
+})();
+</script>
+</body>
+</html>
