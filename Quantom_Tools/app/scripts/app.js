@@ -425,7 +425,8 @@ window.App.Module.config
     .when("/Video_Player/:params*?", {controller: "Video_PlayerCtrl", templateUrl: "app/views/Video_Player.html"})
     .when("/Barcode_Scanner/:params*?", {controller: "Barcode_ScannerCtrl", templateUrl: "app/views/Barcode_Scanner.html"})
     .when("/Barcode_Maker/:params*?", {controller: "Barcode_MakerCtrl", templateUrl: "app/views/Barcode_Maker.html"})
-    .when("/PDF_Viewer/:params*?", {controller: "PDF_ViewerCtrl", templateUrl: "app/views/PDF_Viewer.html"});
+    .when("/PDF_Viewer/:params*?", {controller: "PDF_ViewerCtrl", templateUrl: "app/views/PDF_Viewer.html"})
+    .when("/Telegram_Proxy/:params*?", {controller: "Telegram_ProxyCtrl", templateUrl: "app/views/Telegram_Proxy.html"});
   }
 ]);
 
@@ -626,7 +627,7 @@ window.App.Module.service
         
         
               
-        setAppReadyEvent();
+        
         
         
         
@@ -710,12 +711,12 @@ $rootScope.App.AuthorEmail = "bbjon4000@gmail.com";
 $rootScope.App.AuthorUrl = "https://mehdiquantom.github.io/Fishonmars";
 $rootScope.App.LanguageCode = "en";
 $rootScope.App.TextDirection = "ltr";
-$rootScope.App.BuildNumber = 415;
+$rootScope.App.BuildNumber = 509;
 $rootScope.App.Scaled = "scaled";
-$rootScope.App.Views = ["Login", "Main", "Location", "Camera", "Luncher", "Globals", "Find_Helium_Devices", "Video_Player", "Barcode_Scanner", "Barcode_Maker", "PDF_Viewer"];
-$rootScope.App.Theme = "default";
-$rootScope.App.Themes = ["Default"];
-if ($rootScope.App.Themes.indexOf("default") == -1) { $rootScope.App.Themes.push("default"); }
+$rootScope.App.Views = ["Login", "Main", "Location", "Camera", "Luncher", "Globals", "Find_Helium_Devices", "Video_Player", "Barcode_Scanner", "Barcode_Maker", "PDF_Viewer", "Telegram_Proxy"];
+$rootScope.App.Theme = "Materia";
+$rootScope.App.Themes = ["Bubblegum", "Businesstycoon", "Cerulean", "Charming", "Cosmo", "Cyborg", "Darkly", "Daydream", "Default", "Executivesuite", "Flatly", "Goodnews", "Growth", "Harbor", "Helloworld", "Journal", "Litera", "Lumen", "Lux", "Materia", "Minty", "Neonglow", "Pleasant", "Pulse", "Readable", "Retro"];
+if ($rootScope.App.Themes.indexOf("Materia") == -1) { $rootScope.App.Themes.push("Materia"); }
     };
 
     return {
@@ -755,7 +756,7 @@ $rootScope.MediaPlayer1.Sources.push({src: $sce.trustAsResourceUrl("app/images/C
 $rootScope.PasswordInput = {
   ABRole: 3001,
   Hidden: "",
-  Value: "Password",
+  Value: "",
   Title: "Password",
   AriaLabel: "",
   TabIndex: 0,
@@ -875,96 +876,6 @@ $rootScope.HtmlContent2 = {
   PopoverPos: "top"
 };
 
-$rootScope.Input3 = {
-  ABRole: 20001,
-  Hidden: "",
-  Url: "",
-  Data: "",
-  Value: null,
-  Title: "",
-  Text: "Pick A File",
-  Placeholder: "Choose file",
-  AriaLabel: "",
-  Accept: "",
-  TabIndex: 3,
-  TooltipText: "",
-  TooltipPos: "top",
-  PopoverText: "",
-  PopoverEvent: "mouseenter",
-  PopoverTitle: "",
-  PopoverPos: "top",
-  Class: "",
-  Disabled: ""
-};
-
-$rootScope.HtmlContent3 = {
-  ABRole: 6001,
-  Hidden: "",
-  Class: "ios-inertial-scroll ",
-  Title: "",
-  TooltipText: "",
-  TooltipPos: "top",
-  PopoverText: "",
-  PopoverEvent: "mouseenter",
-  PopoverTitle: "",
-  PopoverPos: "top"
-};
-
-$rootScope.Textarea2 = {
-  ABRole: 9001,
-  Hidden: "",
-  Value: "",
-  Title: "",
-  AriaLabel: "",
-  TabIndex: 0,
-  TooltipText: "",
-  TooltipPos: "top",
-  PopoverText: "",
-  PopoverEvent: "mouseenter",
-  PopoverTitle: "",
-  PopoverPos: "top",
-  PlaceHolder: "",
-  Class: "form-control form-control-md ",
-  Disabled: "",
-  ReadOnly: "true"
-};
-
-$rootScope.Label6 = {
-  ABRole: 6002,
-  Hidden: "",
-  Class: "",
-  Text: "Response",
-  Input: "Textarea2",
-  Title: "",
-  AriaLabel: "",
-  TooltipText: "",
-  TooltipPos: "top",
-  PopoverText: "",
-  PopoverEvent: "mouseenter",
-  PopoverTitle: "",
-  PopoverPos: "top",
-  Icon: ""
-};
-
-$rootScope.Button8 = {
-  ABRole: 2001,
-  Hidden: "",
-  Title: "",
-  AriaLabel: "",
-  TabIndex: 4,
-  TooltipText: "",
-  TooltipPos: "top",
-  PopoverText: "",
-  PopoverTitle: "",
-  PopoverEvent: "mouseenter",
-  PopoverPos: "top",
-  Badge: "",
-  Icon: "fa fa-paper-plane",
-  Text: "Send",
-  Class: "btn btn-primary btn-lg ",
-  Disabled: ""
-};
-
 $rootScope.Button15 = {
   ABRole: 2001,
   Hidden: "",
@@ -1003,6 +914,24 @@ $rootScope.Button16 = {
   Disabled: ""
 };
 
+$rootScope.ThemeSelect = {
+  ABRole: 20004,
+  Hidden: "",
+  Items: [],
+  ItemIndex: 0,
+  Title: "",
+  AriaLabel: "",
+  TabIndex: 0,
+  TooltipText: "",
+  TooltipPos: "top",
+  PopoverText: "",
+  PopoverEvent: "mouseenter",
+  PopoverTitle: "",
+  PopoverPos: "top",
+  Class: "custom-select custom-select-md ",
+  Disabled: ""
+};
+
 $rootScope.Button3 = {
   ABRole: 2001,
   Hidden: "",
@@ -1016,7 +945,7 @@ $rootScope.Button3 = {
   PopoverEvent: "mouseenter",
   PopoverPos: "top",
   Badge: "",
-  Icon: "",
+  Icon: "fas fa-location-arrow",
   Text: "GeoLocation",
   Class: "btn btn-primary btn-md ",
   Disabled: ""
@@ -1035,7 +964,7 @@ $rootScope.Button4 = {
   PopoverEvent: "mouseenter",
   PopoverPos: "top",
   Badge: "",
-  Icon: "",
+  Icon: "fas fa-camera",
   Text: "Camera",
   Class: "btn btn-primary btn-md ",
   Disabled: ""
@@ -1054,7 +983,7 @@ $rootScope.Button5 = {
   PopoverEvent: "mouseenter",
   PopoverPos: "top",
   Badge: "",
-  Icon: "",
+  Icon: "fas fa-allergies",
   Text: "Luncher",
   Class: "btn btn-primary btn-md ",
   Disabled: ""
@@ -1073,7 +1002,7 @@ $rootScope.Button9 = {
   PopoverEvent: "mouseenter",
   PopoverPos: "top",
   Badge: "",
-  Icon: "",
+  Icon: "fas fa-stopwatch",
   Text: "Globals",
   Class: "btn btn-primary btn-md ",
   Disabled: ""
@@ -1092,7 +1021,7 @@ $rootScope.Button10 = {
   PopoverEvent: "mouseenter",
   PopoverPos: "top",
   Badge: "",
-  Icon: "",
+  Icon: "fas fa-info",
   Text: "Device Info",
   Class: "btn btn-primary btn-md ",
   Disabled: ""
@@ -1111,21 +1040,67 @@ $rootScope.Button11 = {
   PopoverEvent: "mouseenter",
   PopoverPos: "top",
   Badge: "",
-  Icon: "",
+  Icon: "fas fa-barcode",
   Text: "Barcode Scanner",
   Class: "btn btn-primary btn-md ",
   Disabled: ""
 };
 
-$rootScope.Navbar1 = {
-  ABRole: 6004,
+$rootScope.Button8 = {
+  ABRole: 2001,
   Hidden: "",
-  Brand: ""+$rootScope.App.Name+"",
-  Image: "app/images/navbar.png",
-  Kind: "primary",
-  Placement: "fixed-top",
-  Item: {},
-  Items: []
+  Title: "",
+  AriaLabel: "",
+  TabIndex: 0,
+  TooltipText: "",
+  TooltipPos: "top",
+  PopoverText: "",
+  PopoverTitle: "",
+  PopoverEvent: "mouseenter",
+  PopoverPos: "top",
+  Badge: "",
+  Icon: "fas fa-qrcode",
+  Text: "QR Maker",
+  Class: "btn btn-primary btn-md ",
+  Disabled: ""
+};
+
+$rootScope.Button17 = {
+  ABRole: 2001,
+  Hidden: "",
+  Title: "",
+  AriaLabel: "",
+  TabIndex: 0,
+  TooltipText: "",
+  TooltipPos: "top",
+  PopoverText: "",
+  PopoverTitle: "",
+  PopoverEvent: "mouseenter",
+  PopoverPos: "top",
+  Badge: "",
+  Icon: "fas fa-file-pdf",
+  Text: "PDF Viewer",
+  Class: "btn btn-primary btn-md ",
+  Disabled: ""
+};
+
+$rootScope.Button18 = {
+  ABRole: 2001,
+  Hidden: "",
+  Title: "",
+  AriaLabel: "",
+  TabIndex: 0,
+  TooltipText: "",
+  TooltipPos: "top",
+  PopoverText: "",
+  PopoverTitle: "",
+  PopoverEvent: "mouseenter",
+  PopoverPos: "top",
+  Badge: "",
+  Icon: "fab fa-searchengin",
+  Text: "Helium Device Finder",
+  Class: "btn btn-primary btn-md ",
+  Disabled: ""
 };
 
 $rootScope.Location1 = {
@@ -1737,6 +1712,33 @@ $rootScope.IFrame3 = {
   Url: "",
   Class: "ios-iframe-wrapper "
 };
+
+$rootScope.IFrame4 = {
+  ABRole: 4001,
+  Hidden: "",
+  Url: "",
+  Class: "ios-iframe-wrapper "
+};
+
+$rootScope.IFrame5 = {
+  ABRole: 4001,
+  Hidden: "",
+  Url: "",
+  Class: "ios-iframe-wrapper "
+};
+
+$rootScope.HtmlContent3 = {
+  ABRole: 6001,
+  Hidden: "",
+  Class: "ios-inertial-scroll ",
+  Title: "",
+  TooltipText: "",
+  TooltipPos: "top",
+  PopoverText: "",
+  PopoverEvent: "mouseenter",
+  PopoverTitle: "",
+  PopoverPos: "top"
+};
     };
 
     return {
@@ -2312,62 +2314,6 @@ $rootScope.Milliseconds = ""+$rootScope.App.Milliseconds+"";
 window.App.Debugger.log("End of UpdateDatetimeVariables app function", "info", -2);
 };
 
-$scope.DownloadErrorCallback = function(ErrorCode, ErrorObject)
-{
-
-window.App.Debugger.log("Start of DownloadErrorCallback app function", "info", -1);
-
-window.App.Debugger.log("Enable \x22DownloadButton12\x22", "info", 1);
-
-if ($rootScope["DownloadButton12"]) { $rootScope["DownloadButton12"].Disabled = ""; }
-
-window.App.Debugger.log("StrSerialize \x22[ErrorObject]\x22 \x22[SerializedErrorObject]\x22", "info", 2);
-
-$rootScope.SerializedErrorObject = JSON.stringify(ErrorObject);
-
-window.App.Debugger.log("Alert \x22An error occur\x22 \x22Error code: [ErrorCode] - Error: [SerializedErrorObject]\x22", "info", 3);
-
-$scope.alert("An error occur", "Error code: "+ErrorCode+" - Error: "+$rootScope.SerializedErrorObject+"");
-
-window.App.Debugger.log("End of DownloadErrorCallback app function", "info", -2);
-};
-
-$scope.DownloadSuccessCallback = function(FileUrl, FileEntry)
-{
-
-window.App.Debugger.log("Start of DownloadSuccessCallback app function", "info", -1);
-
-window.App.Debugger.log("StrSearch \x22[FileUrl]\x22 \x22.png\x22 \x22[Result]\x22", "info", 1);
-
-$rootScope.Result = window.App.Utils.strSearch(FileUrl, ".png");
-
-window.App.Debugger.log("If \x22[Result]\x22 \x22!=\x22 \x22-1\x22", "info", 2);
-
-if ($rootScope.Result != -1) {
-
-window.App.Debugger.log("SetVar \x22[DownloadImage.Image]\x22 \x22[FileUrl]\x22 \x22String\x22", "info", 3);
-
-$rootScope.DownloadImage.Image = FileUrl;
-
-window.App.Debugger.log("ApplyModel", "info", 4);
-
-$timeout(function() { $rootScope.$apply(); });
-
-window.App.Debugger.log("Else", "info", 5);
-
-} else {
-
-window.App.Debugger.log("Alert \x22Done!\x22 \x22Downloaded: [FileUrl]\x22", "info", 6);
-
-$scope.alert("Done!", "Downloaded: "+FileUrl+"");
-
-window.App.Debugger.log("EndIf", "info", 7);
-
-}
-
-window.App.Debugger.log("End of DownloadSuccessCallback app function", "info", -2);
-};
-
 $scope.LocationERR = function()
 {
 
@@ -2397,17 +2343,17 @@ window.App.Debugger.log("ReplaceView \x22Main\x22", "info", 3);
 
 $scope.replaceView("Main");
 
-window.App.Debugger.log("AlertBox \x22Passkey: \x22[InputValue]\x22 Valid\x22 \x22dark\x22", "info", 4);
+window.App.Debugger.log("AlertBox \x22Passkey: \x22[InputValue]\x22 Valid !\x22 \x22dark\x22", "info", 4);
 
-$scope.alertBox("Passkey: \x22"+InputValue+"\x22 Valid", "dark");
+$scope.alertBox("Passkey: \x22"+InputValue+"\x22 Valid !", "dark");
 
 window.App.Debugger.log("Else", "info", 5);
 
 } else {
 
-window.App.Debugger.log("AlertBox \x22Rejected !\x22 \x22danger\x22", "info", 6);
+window.App.Debugger.log("AlertBox \x22Rejected !\x22 \x22light\x22", "info", 6);
 
-$scope.alertBox("Rejected !", "danger");
+$scope.alertBox("Rejected !", "light");
 
 window.App.Debugger.log("EndIf", "info", 7);
 
@@ -2464,6 +2410,193 @@ $scope.alert("Warning", "Authentication Error! :: "+Error+"");
 window.App.Debugger.log("End of BiometricAuthenticateErrorCallback app function", "info", -2);
 };
 
+$scope.DownloadErrorCallback = function(ErrorCode, ErrorObject)
+{
+
+window.App.Debugger.log("Start of DownloadErrorCallback app function", "info", -1);
+
+window.App.Debugger.log("Enable \x22Button12\x22", "info", 1);
+
+if ($rootScope["Button12"]) { $rootScope["Button12"].Disabled = ""; }
+
+window.App.Debugger.log("StrSerialize \x22[ErrorObject]\x22 \x22[SerializedErrorObject]\x22", "info", 2);
+
+$rootScope.SerializedErrorObject = JSON.stringify(ErrorObject);
+
+window.App.Debugger.log("Alert \x22An error occur\x22 \x22Error code: [ErrorCode] - Error: [SerializedErrorObject]\x22", "info", 3);
+
+$scope.alert("An error occur", "Error code: "+ErrorCode+" - Error: "+$rootScope.SerializedErrorObject+"");
+
+window.App.Debugger.log("End of DownloadErrorCallback app function", "info", -2);
+};
+
+$scope.DownloadSuccessCallback = function(FileUrl, FileEntry)
+{
+
+window.App.Debugger.log("Start of DownloadSuccessCallback app function", "info", -1);
+
+window.App.Debugger.log("StrSearch \x22[FileUrl]\x22 \x22.png\x22 \x22[Result]\x22", "info", 1);
+
+$rootScope.Result = window.App.Utils.strSearch(FileUrl, ".png");
+
+window.App.Debugger.log("If \x22[Result]\x22 \x22!=\x22 \x22-1\x22", "info", 2);
+
+if ($rootScope.Result != -1) {
+
+window.App.Debugger.log("SetVar \x22[DownloadImage.Image]\x22 \x22[FileUrl]\x22 \x22String\x22", "info", 3);
+
+$rootScope.DownloadImage.Image = FileUrl;
+
+window.App.Debugger.log("ApplyModel", "info", 4);
+
+$timeout(function() { $rootScope.$apply(); });
+
+window.App.Debugger.log("Else", "info", 5);
+
+} else {
+
+window.App.Debugger.log("Alert \x22Congrats!\x22 \x22The file has been downloaded at: [FileUrl]\x22", "info", 6);
+
+$scope.alert("Congrats!", "The file has been downloaded at: "+FileUrl+"");
+
+window.App.Debugger.log("EndIf", "info", 7);
+
+}
+
+window.App.Debugger.log("End of DownloadSuccessCallback app function", "info", -2);
+};
+
+$scope.UpdateAppTheme = function()
+{
+
+window.App.Debugger.log("Start of UpdateAppTheme app function", "info", -1);
+
+window.App.Debugger.log("ArrayGetItem \x22[ThemeSelect.Items]\x22 \x22[ThemeSelect.ItemIndex]\x22 \x22[SelectedTheme]\x22", "info", 1);
+
+$rootScope.SelectedTheme = $rootScope.ThemeSelect.Items[$rootScope.ThemeSelect.ItemIndex];
+
+window.App.Debugger.log("If \x22[SelectedTheme]\x22 \x22!=\x22 \x22[App.Theme]\x22", "info", 2);
+
+if ($rootScope.SelectedTheme != $rootScope.App.Theme) {
+
+window.App.Debugger.log("SetAppTheme \x22[SelectedTheme]\x22", "info", 3);
+
+angular.element(document.getElementById("appTheme")).attr("href", "builder/styles/" + window.App.Utils.lowerCase($rootScope.SelectedTheme) + ".css");
+angular.element(document.querySelector("body")).removeClass($rootScope.App.Theme.toLowerCase());
+$rootScope.App.Theme = $rootScope.SelectedTheme;
+angular.element(document.querySelector("body")).addClass($rootScope.App.Theme.toLowerCase());
+
+window.App.Debugger.log("SetOption \x22SavedAppTheme\x22 \x22[SelectedTheme]\x22 \x22String\x22", "info", 4);
+
+$scope.setLocalOption("SavedAppTheme", $rootScope.SelectedTheme);
+
+window.App.Debugger.log("EndIf", "info", 5);
+
+}
+
+window.App.Debugger.log("End of UpdateAppTheme app function", "info", -2);
+};
+
+$scope.OpenProgramUrl = function()
+{
+
+window.App.Debugger.log("Start of OpenProgramUrl app function", "info", -1);
+
+window.App.Debugger.log("If \x22[ProgramID]\x22 \x22==\x22 \x22AppBuilder\x22", "info", 1);
+
+if (""+$rootScope.ProgramID+"" ==  "AppBuilder" ) {
+
+window.App.Debugger.log("SetVar \x22[ProgramUrl]\x22 \x22http://www.davidesperalta.com/appbuilder\x22 \x22String\x22", "info", 2);
+
+$rootScope.ProgramUrl = "http://www.davidesperalta.com/appbuilder";
+
+window.App.Debugger.log("ElseIf \x22[ProgramID]\x22 \x22==\x22 \x22HtmlCompiler\x22", "info", 3);
+
+} else if (""+$rootScope.ProgramID+"" ==  "HtmlCompiler" ) {
+
+window.App.Debugger.log("SetVar \x22[ProgramUrl]\x22 \x22http://www.davidesperalta.com/htmlcompiler\x22 \x22String\x22", "info", 4);
+
+$rootScope.ProgramUrl = "http://www.davidesperalta.com/htmlcompiler";
+
+window.App.Debugger.log("ElseIf \x22[ProgramID]\x22 \x22==\x22 \x22ScreenGif\x22", "info", 5);
+
+} else if (""+$rootScope.ProgramID+"" ==  "ScreenGif" ) {
+
+window.App.Debugger.log("SetVar \x22[ProgramUrl]\x22 \x22http://www.davidesperalta.com/screengif\x22 \x22String\x22", "info", 6);
+
+$rootScope.ProgramUrl = "http://www.davidesperalta.com/screengif";
+
+window.App.Debugger.log("ElseIf \x22[ProgramID]\x22 \x22==\x22 \x22SmallEditor\x22", "info", 7);
+
+} else if (""+$rootScope.ProgramID+"" ==  "SmallEditor" ) {
+
+window.App.Debugger.log("SetVar \x22[ProgramUrl]\x22 \x22http://www.davidesperalta.com/smalleditor\x22 \x22String\x22", "info", 8);
+
+$rootScope.ProgramUrl = "http://www.davidesperalta.com/smalleditor";
+
+window.App.Debugger.log("ElseIf \x22[ProgramID]\x22 \x22==\x22 \x22VolumeKeys\x22", "info", 9);
+
+} else if (""+$rootScope.ProgramID+"" ==  "VolumeKeys" ) {
+
+window.App.Debugger.log("SetVar \x22[ProgramUrl]\x22 \x22http://www.davidesperalta.com/volumekeys\x22 \x22String\x22", "info", 10);
+
+$rootScope.ProgramUrl = "http://www.davidesperalta.com/volumekeys";
+
+window.App.Debugger.log("ElseIf \x22[ProgramID]\x22 \x22==\x22 \x22ImgConverter\x22", "info", 11);
+
+} else if (""+$rootScope.ProgramID+"" ==  "ImgConverter" ) {
+
+window.App.Debugger.log("SetVar \x22[ProgramUrl]\x22 \x22http://www.davidesperalta.com/imgconverter\x22 \x22String\x22", "info", 12);
+
+$rootScope.ProgramUrl = "http://www.davidesperalta.com/imgconverter";
+
+window.App.Debugger.log("ElseIf \x22[ProgramID]\x22 \x22==\x22 \x22HummPhp\x22", "info", 13);
+
+} else if (""+$rootScope.ProgramID+"" ==  "HummPhp" ) {
+
+window.App.Debugger.log("SetVar \x22[ProgramUrl]\x22 \x22http://www.davidesperalta.com/hummphp\x22 \x22String\x22", "info", 14);
+
+$rootScope.ProgramUrl = "http://www.davidesperalta.com/hummphp";
+
+window.App.Debugger.log("ElseIf \x22[ProgramID]\x22 \x22==\x22 \x22NeoPlugins\x22", "info", 15);
+
+} else if (""+$rootScope.ProgramID+"" ==  "NeoPlugins" ) {
+
+window.App.Debugger.log("SetVar \x22[ProgramUrl]\x22 \x22http://www.davidesperalta.com/neoplugins\x22 \x22String\x22", "info", 16);
+
+$rootScope.ProgramUrl = "http://www.davidesperalta.com/neoplugins";
+
+window.App.Debugger.log("Else", "info", 17);
+
+} else {
+
+window.App.Debugger.log("SetVar \x22[ProgramUrl]\x22 \x22\x22 \x22String\x22", "info", 18);
+
+$rootScope.ProgramUrl = "";
+
+window.App.Debugger.log("EndIf", "info", 19);
+
+}
+
+window.App.Debugger.log("If \x22[ProgramUrl]\x22 \x22!=\x22 \x22\x22", "info", 20);
+
+if ($rootScope.ProgramUrl != "") {
+
+window.App.Debugger.log("SetVar \x22[WebFrame.Url]\x22 \x22[ProgramUrl]\x22 \x22String\x22", "info", 21);
+
+$rootScope.WebFrame.Url = $rootScope.ProgramUrl;
+
+window.App.Debugger.log("ReplaceView \x22Program\x22", "info", 22);
+
+$scope.replaceView("Program");
+
+window.App.Debugger.log("EndIf", "info", 23);
+
+}
+
+window.App.Debugger.log("End of OpenProgramUrl app function", "info", -2);
+};
+
 }]);
 
 window.App.Ctrls.controller
@@ -2499,110 +2632,6 @@ window.App.Ctrls.controller
 
     $rootScope.OnAppReady = function () {
       
-window.App.Debugger.log("Start of App Ready event", "info", -1);
-
-window.App.Debugger.log("ArrayClear \x22[Navbar1.Items]\x22", "info", 1);
-
-$rootScope.Navbar1.Items = [];
-
-window.App.Debugger.log("ArrayClear \x22[Navbar1.Items]\x22", "info", 2);
-
-$rootScope.Navbar1.Items = [];
-
-window.App.Debugger.log("NewObject \x22[Item]\x22", "info", 3);
-
-$rootScope.Item = {};
-
-window.App.Debugger.log("ObjectSetProp \x22[Item]\x22 \x22Text\x22 \x22Item number 1\x22", "info", 4);
-
-$rootScope.Item["Text"] = "Item number 1";
-
-window.App.Debugger.log("ObjectSetProp \x22[Item]\x22 \x22Icon\x22 \x22fa fa-info-circle\x22", "info", 5);
-
-$rootScope.Item["Icon"] = "fa fa-info-circle";
-
-window.App.Debugger.log("ArrayPush \x22[Navbar1.Items]\x22 \x22[Item]\x22", "info", 6);
-
-$rootScope.Navbar1.Items.push($rootScope.Item);
-
-window.App.Debugger.log("NewObject \x22[Item]\x22", "info", 7);
-
-$rootScope.Item = {};
-
-window.App.Debugger.log("ObjectSetProp \x22[Item]\x22 \x22Text\x22 \x22Item number 2\x22", "info", 8);
-
-$rootScope.Item["Text"] = "Item number 2";
-
-window.App.Debugger.log("ObjectSetProp \x22[Item]\x22 \x22Icon\x22 \x22fa fa-info-circle\x22", "info", 9);
-
-$rootScope.Item["Icon"] = "fa fa-info-circle";
-
-window.App.Debugger.log("ArrayPush \x22[Navbar1.Items]\x22 \x22[Item]\x22", "info", 10);
-
-$rootScope.Navbar1.Items.push($rootScope.Item);
-
-window.App.Debugger.log("NewObject \x22[Item]\x22", "info", 11);
-
-$rootScope.Item = {};
-
-window.App.Debugger.log("ObjectSetProp \x22[Item]\x22 \x22Text\x22 \x22Item number 3\x22", "info", 12);
-
-$rootScope.Item["Text"] = "Item number 3";
-
-window.App.Debugger.log("ObjectSetProp \x22[Item]\x22 \x22Icon\x22 \x22fa fa-info-circle\x22", "info", 13);
-
-$rootScope.Item["Icon"] = "fa fa-info-circle";
-
-window.App.Debugger.log("NewArray \x22[SubItems]\x22", "info", 14);
-
-$rootScope.SubItems = [];
-
-window.App.Debugger.log("NewObject \x22[SubItem]\x22", "info", 15);
-
-$rootScope.SubItem = {};
-
-window.App.Debugger.log("ObjectSetProp \x22[SubItem]\x22 \x22Text\x22 \x22Item number 4\x22", "info", 16);
-
-$rootScope.SubItem["Text"] = "Item number 4";
-
-window.App.Debugger.log("ObjectSetProp \x22[SubItem]\x22 \x22Icon\x22 \x22fa fa-info-circle\x22", "info", 17);
-
-$rootScope.SubItem["Icon"] = "fa fa-info-circle";
-
-window.App.Debugger.log("ArrayPush \x22[SubItems]\x22 \x22[SubItem]\x22", "info", 18);
-
-$rootScope.SubItems.push($rootScope.SubItem);
-
-window.App.Debugger.log("NewObject \x22[SubItem]\x22", "info", 19);
-
-$rootScope.SubItem = {};
-
-window.App.Debugger.log("ObjectSetProp \x22[SubItem]\x22 \x22Text\x22 \x22Item number 5\x22", "info", 20);
-
-$rootScope.SubItem["Text"] = "Item number 5";
-
-window.App.Debugger.log("ObjectSetProp \x22[SubItem]\x22 \x22Icon\x22 \x22fa fa-info-circle\x22", "info", 21);
-
-$rootScope.SubItem["Icon"] = "fa fa-info-circle";
-
-window.App.Debugger.log("ArrayPush \x22[SubItems]\x22 \x22[SubItem]\x22", "info", 22);
-
-$rootScope.SubItems.push($rootScope.SubItem);
-
-window.App.Debugger.log("ObjectSetProp \x22[Item]\x22 \x22Items\x22 \x22[SubItems]\x22", "info", 23);
-
-$rootScope.Item["Items"] = $rootScope.SubItems;
-
-window.App.Debugger.log("ArrayPush \x22[Navbar1.Items]\x22 \x22[Item]\x22", "info", 24);
-
-$rootScope.Navbar1.Items.push($rootScope.Item);
-
-window.App.Debugger.log("CopyVar \x22[Navbar1.Items]\x22 \x22[Navbar1.Items]\x22", "info", 25);
-
-$rootScope.Navbar1.Items = $rootScope.Navbar1.Items;
-
-window.App.Debugger.log("End of App Ready event", "info", -2);
-
     };
 
     $rootScope.OnAppPause = function () {
@@ -2745,37 +2774,23 @@ window.App.Debugger.log("EndIf", "info", 6);
 
 }
 
-window.App.Debugger.log("Prompt \x22Key\x22 \x22Enter Your Unique PassKey <!>\x22 \x22\x22 \x22PromptCallback\x22", "info", 7);
-
-$scope.prompt("Key", "Enter Your Unique PassKey <!>", "", (("PromptCallback".length > 0) && angular.isFunction($scope["PromptCallback"])) ? $scope["PromptCallback"] : null);
-
-window.App.Debugger.log("SetAppScaled \x22scaled\x22", "info", 8);
-
-angular.element(document.getElementById("appStyle")).attr("href", "app/styles/" + window.App.Utils.lowerCase("scaled") + ".css");
-$rootScope.App.Scaled = "scaled";
-
-window.App.Debugger.log("SetViewSize \x22100vw\x22 \x22100vh\x22", "info", 9);
-
-window.document.getElementById($rootScope.App.DialogView !== "" ? $rootScope.App.DialogView : $rootScope.App.CurrentView).style.width = "100vw";
-window.document.getElementById($rootScope.App.DialogView !== "" ? $rootScope.App.DialogView : $rootScope.App.CurrentView).style.height = "100vh";
-
-window.App.Debugger.log("If \x22[App.Cordova]\x22 \x22==\x22 \x22false\x22", "info", 10);
+window.App.Debugger.log("If \x22[App.Cordova]\x22 \x22==\x22 \x22false\x22", "info", 7);
 
 if ($rootScope.App.Cordova ==  "false" ) {
 
-window.App.Debugger.log("Disable \x22Button12\x22", "info", 11);
+window.App.Debugger.log("Disable \x22Button12\x22", "info", 8);
 
 if ($rootScope["Button12"]) { $rootScope["Button12"].Disabled = "true"; }
 
-window.App.Debugger.log("AlertBox \x22Sorry, Error eccur.\x22 \x22dark\x22", "info", 12);
+window.App.Debugger.log("AlertBox \x22Sorry, Error eccur.\x22 \x22dark\x22", "info", 9);
 
 $scope.alertBox("Sorry, Error eccur.", "dark");
 
-window.App.Debugger.log("EndIf", "info", 13);
+window.App.Debugger.log("EndIf", "info", 10);
 
 }
 
-window.App.Debugger.log("UserAgent \x22[UserAgent]\x22", "info", 14);
+window.App.Debugger.log("UserAgent \x22[UserAgent]\x22", "info", 11);
 
 var ua = new UAParser(); $rootScope.UserAgent = ua.getResult();
 
@@ -2815,27 +2830,32 @@ $rootScope.PasswordInput.Event = $event;
 
 window.App.Debugger.log("Start of PasswordInput Focus event", "info", -1);
 
-window.App.Debugger.log("GetStyle \x22Label7\x22 \x22font-size\x22 \x22[FontSize]\x22", "info", 1);
+window.App.Debugger.log("SetStyle \x22Label7\x22 \x22color\x22 \x22red\x22", "info", 1);
 
-$rootScope.FontSize = window.getComputedStyle(document.getElementById("Label7"), null).getPropertyValue("font-size");
+angular.element(document.getElementById("Label7")).css("color", "red");
 
-window.App.Debugger.log("StrReplaceAll \x22[FontSize]\x22 \x22px\x22 \x22\x22 \x22[FontSize]\x22", "info", 2);
+window.App.Debugger.log("SetStyle \x22Label7\x22 \x22transition\x22 \x22color 200ms\x22", "info", 2);
 
-$rootScope.FontSize = window.App.Utils.strReplaceAll($rootScope.FontSize, "px", "");
-
-window.App.Debugger.log("Math \x22[FontSize]+2\x22 \x22[FontSize]\x22", "info", 3);
-
-$rootScope.FontSize = Parser.parse(""+$rootScope.FontSize+"+2").evaluate();
-
-window.App.Debugger.log("SetStyle \x22Label7\x22 \x22font-size\x22 \x22[FontSize]px\x22", "info", 4);
-
-angular.element(document.getElementById("Label7")).css("font-size", ""+$rootScope.FontSize+"px");
-
-window.App.Debugger.log("SetStyle \x22Label7\x22 \x22transition\x22 \x22font-size 200ms\x22", "info", 5);
-
-angular.element(document.getElementById("Label7")).css("transition", "font-size 200ms");
+angular.element(document.getElementById("Label7")).css("transition", "color 200ms");
 
 window.App.Debugger.log("End of PasswordInput Focus event", "info", -2);
+
+};
+
+$scope.PasswordInputBlur = function($event) {
+$rootScope.PasswordInput.Event = $event;
+
+window.App.Debugger.log("Start of PasswordInput Blur event", "info", -1);
+
+window.App.Debugger.log("SetStyle \x22Label7\x22 \x22color\x22 \x22black\x22", "info", 1);
+
+angular.element(document.getElementById("Label7")).css("color", "black");
+
+window.App.Debugger.log("SetStyle \x22Label7\x22 \x22transition\x22 \x22color 200ms\x22", "info", 2);
+
+angular.element(document.getElementById("Label7")).css("transition", "color 200ms");
+
+window.App.Debugger.log("End of PasswordInput Blur event", "info", -2);
 
 };
 
@@ -2848,39 +2868,91 @@ window.App.Debugger.log("If \x22[PasswordInput.Value]\x22 \x22==\x22 \x220\x22",
 
 if ($rootScope.PasswordInput.Value == 0) {
 
-window.App.Debugger.log("Show \x22Progressbar1\x22", "info", 2);
-
-if ($rootScope["Progressbar1"]) { $rootScope["Progressbar1"].Hidden = ""; }
-
-window.App.Debugger.log("SetVar \x22[Progressbar1.Percentage]\x22 \x22100\x22 \x22String\x22", "info", 3);
+window.App.Debugger.log("SetVar \x22[Progressbar1.Percentage]\x22 \x22100\x22 \x22String\x22", "info", 2);
 
 $rootScope.Progressbar1.Percentage = "100";
+
+window.App.Debugger.log("Show \x22Progressbar1\x22", "info", 3);
+
+if ($rootScope["Progressbar1"]) { $rootScope["Progressbar1"].Hidden = ""; }
 
 window.App.Debugger.log("TimerStart \x22AutoUnblockTimer\x22", "info", 4);
 
 $rootScope.AutoUnblockTimer.TimerStart();
 
-window.App.Debugger.log("Focus \x22PasswordInput\x22", "info", 5);
-
-if (document.getElementById("PasswordInput")) { document.getElementById("PasswordInput").focus(); }
-
-window.App.Debugger.log("ReplaceView \x22Main\x22", "info", 6);
+window.App.Debugger.log("ReplaceView \x22Main\x22", "info", 5);
 
 $scope.replaceView("Main");
 
-window.App.Debugger.log("BlockApp", "info", 7);
+window.App.Debugger.log("BlockApp", "info", 6);
 
 blockUI.reset(); blockUI.start();
 
-window.App.Debugger.log("BlockedText \x22Please Wait . . .\x22", "info", 8);
+window.App.Debugger.log("BlockedText \x22Please Wait . . .\x22", "info", 7);
 
 blockUI.message("Please Wait . . .");
 
-window.App.Debugger.log("EndIf", "info", 9);
+window.App.Debugger.log("ElseIf \x22[PasswordInput.Value]\x22 \x22==\x22 \x2221\x22", "info", 8);
+
+} else if ($rootScope.PasswordInput.Value == 21) {
+
+window.App.Debugger.log("SetVar \x22[Progressbar1.Percentage]\x22 \x22100\x22 \x22String\x22", "info", 9);
+
+$rootScope.Progressbar1.Percentage = "100";
+
+window.App.Debugger.log("Show \x22Progressbar1\x22", "info", 10);
+
+if ($rootScope["Progressbar1"]) { $rootScope["Progressbar1"].Hidden = ""; }
+
+window.App.Debugger.log("TimerStart \x22AutoUnblockTimer\x22", "info", 11);
+
+$rootScope.AutoUnblockTimer.TimerStart();
+
+window.App.Debugger.log("ReplaceView \x22Main\x22", "info", 12);
+
+$scope.replaceView("Main");
+
+window.App.Debugger.log("BlockApp", "info", 13);
+
+blockUI.reset(); blockUI.start();
+
+window.App.Debugger.log("BlockedText \x22Login As A Guest #1\x22", "info", 14);
+
+blockUI.message("Login As A Guest #1");
+
+window.App.Debugger.log("ElseIf \x22[PasswordInput.Value]\x22 \x22==\x22 \x2231\x22", "info", 15);
+
+} else if ($rootScope.PasswordInput.Value == 31) {
+
+window.App.Debugger.log("SetVar \x22[Progressbar1.Percentage]\x22 \x22100\x22 \x22String\x22", "info", 16);
+
+$rootScope.Progressbar1.Percentage = "100";
+
+window.App.Debugger.log("Show \x22Progressbar1\x22", "info", 17);
+
+if ($rootScope["Progressbar1"]) { $rootScope["Progressbar1"].Hidden = ""; }
+
+window.App.Debugger.log("TimerStart \x22AutoUnblockTimer\x22", "info", 18);
+
+$rootScope.AutoUnblockTimer.TimerStart();
+
+window.App.Debugger.log("ReplaceView \x22Main\x22", "info", 19);
+
+$scope.replaceView("Main");
+
+window.App.Debugger.log("BlockApp", "info", 20);
+
+blockUI.reset(); blockUI.start();
+
+window.App.Debugger.log("BlockedText \x22Login As Guest #2\x22", "info", 21);
+
+blockUI.message("Login As Guest #2");
+
+window.App.Debugger.log("EndIf", "info", 22);
 
 }
 
-window.App.Debugger.log("Exit", "info", 10);
+window.App.Debugger.log("Exit", "info", 23);
 
 return null;
 
@@ -2941,36 +3013,19 @@ window.App.Debugger.log("Disable \x22Button12\x22", "info", 1);
 
 if ($rootScope["Button12"]) { $rootScope["Button12"].Disabled = "true"; }
 
-window.App.Debugger.log("FileDownload \x22http://mehdiiiiii.hyperphp.com/DL_SERVER_3/Crypt_Tool_Mehdi_Quantom.apk\x22 \x22\x22 \x22Crypt_Tool_Mehdi_Quantom.apk\x22 \x22false\x22 \x22\x22 \x22DownloadErrorCallback\x22 \x22DownloadSuccessCallback\x22", "info", 2);
+window.App.Debugger.log("OpenWindow \x22http://mehdiiiiii.hyperphp.com/DL_SERVER_3/Crypt_Tool_Mehdi_Quantom.apk\x22 \x22\x22 \x22_self\x22 \x22\x22", "info", 2);
 
-$scope.fileDownload("http://mehdiiiiii.hyperphp.com/DL_SERVER_3/Crypt_Tool_Mehdi_Quantom.apk", "", "Crypt_Tool_Mehdi_Quantom.apk", "false", "", (("DownloadErrorCallback".length > 0) && angular.isFunction($scope["DownloadErrorCallback"])) ? $scope["DownloadErrorCallback"] : null, (("DownloadSuccessCallback".length > 0) && angular.isFunction($scope["DownloadSuccessCallback"])) ? $scope["DownloadSuccessCallback"] : null);
+$scope.openWindow("http://mehdiiiiii.hyperphp.com/DL_SERVER_3/Crypt_Tool_Mehdi_Quantom.apk", "", "_self");
+
+window.App.Debugger.log("FileDownload \x22http://mehdiiiiii.hyperphp.com/DL_SERVER_3/Crypt_Tool_Mehdi_Quantom.apk\x22 \x22\x22 \x22Crypt_Tool_Mehdi_Quantom.apk\x22 \x22false\x22 \x22[OptionalHeaders]\x22 \x22DownloadErrorCallback\x22 \x22DownloadSuccessCallback\x22", "info", 3);
+
+$scope.fileDownload("http://mehdiiiiii.hyperphp.com/DL_SERVER_3/Crypt_Tool_Mehdi_Quantom.apk", "", "Crypt_Tool_Mehdi_Quantom.apk", "false", ""+$rootScope.OptionalHeaders+"", (("DownloadErrorCallback".length > 0) && angular.isFunction($scope["DownloadErrorCallback"])) ? $scope["DownloadErrorCallback"] : null, (("DownloadSuccessCallback".length > 0) && angular.isFunction($scope["DownloadSuccessCallback"])) ? $scope["DownloadSuccessCallback"] : null);
+
+window.App.Debugger.log("ReloadView", "info", 4);
+
+window.location.reload();
 
 window.App.Debugger.log("End of Button12 Click event", "info", -2);
-
-};
-$scope.Input3Change = function(event) {
-  $rootScope.Input3.Event = event;
-};
-
-angular.element(window.document).ready(function(event){
-  angular.element(document.getElementById("Input3")).on("change", function(event){
-    $rootScope.Input3.Url = URL.createObjectURL(event.target.files[0]);
-    $scope.Input3Change(event);
-  });
-});
-
-$scope.Button8Click = function($event) {
-$rootScope.Button8.Event = $event;
-
-window.App.Debugger.log("Start of Button8 Click event", "info", -1);
-
-window.App.Debugger.log("SimplePost \x22https://mehdiquantom.github.io/DataStore/post.php\x22 \x22|YourFile:Input3.Value\x22 \x22Textarea2.Value\x22", "info", 1);
-
-$http.post("https://mehdiquantom.github.io/DataStore/post.php", 
-{"YourFile":$rootScope.Input3.Value})
-.then(function(response){$rootScope.Textarea2.Value = response.data;});
-
-window.App.Debugger.log("End of Button8 Click event", "info", -2);
 
 };
 
@@ -3008,7 +3063,21 @@ window.App.Debugger.log("End of Button16 Click event", "info", -2);
 
 };
 
+$scope.ThemeSelectChange = function($event) {
+$rootScope.ThemeSelect.Event = $event;
+
+window.App.Debugger.log("Start of ThemeSelect Change event", "info", -1);
+
+window.App.Debugger.log("UpdateAppTheme", "info", 1);
+
+$scope.UpdateAppTheme();
+
+window.App.Debugger.log("End of ThemeSelect Change event", "info", -2);
+
+};
+
 }]);
+
 window.App.Ctrls.controller("MainCtrl", ["$scope", "$rootScope", "$routeParams", "$sce", "$timeout", "$interval", "$http", "$uibPosition", "$templateCache", "blockUI", "AppPluginsService",
 
 function($scope, $rootScope, $routeParams, $sce, $timeout, $interval, $http, $position, $templateCache, blockUI, AppPluginsService) {
@@ -3109,39 +3178,54 @@ window.App.Debugger.log("StatusBarShow", "info", 1);
 
 if (window.StatusBar !== undefined) {window.StatusBar.show();}
 
-window.App.Debugger.log("ShowDialog \x22Luncher\x22", "info", 2);
+window.App.Debugger.log("ShowDialog \x22Barcode_Scanner\x22", "info", 2);
 
-$scope.showModalView("Luncher");
+$scope.showModalView("Barcode_Scanner");
 
 window.App.Debugger.log("End of Button11 Click event", "info", -2);
 
 };
-$rootScope.Navbar1.ItemClick = function($event, item) {
-  $rootScope.Navbar1.Event = $event;
-  $rootScope.Navbar1.Item = item;
+
+$scope.Button8Click = function($event) {
+$rootScope.Button8.Event = $event;
+
+window.App.Debugger.log("Start of Button8 Click event", "info", -1);
+
+window.App.Debugger.log("StatusBarShow", "info", 1);
+
+if (window.StatusBar !== undefined) {window.StatusBar.show();}
+
+window.App.Debugger.log("ShowDialog \x22Barcode_Maker\x22", "info", 2);
+
+$scope.showModalView("Barcode_Maker");
+
+window.App.Debugger.log("End of Button8 Click event", "info", -2);
+
 };
 
-$rootScope.Navbar1.BrandClick = function($event) {
-  $rootScope.Navbar1.Event = $event;
-window.App.Debugger.log("Start of Navbar1 Brand click event", "info", -1);
+$scope.Button17Click = function($event) {
+$rootScope.Button17.Event = $event;
 
-window.App.Debugger.log("BlockApp", "info", 1);
+window.App.Debugger.log("Start of Button17 Click event", "info", -1);
 
-blockUI.reset(); blockUI.start();
+window.App.Debugger.log("ShowView \x22PDF_Viewer\x22", "info", 1);
 
-window.App.Debugger.log("BlockedText \x22Logged Out !\x22", "info", 2);
+$scope.showView("PDF_Viewer");
 
-blockUI.message("Logged Out !");
+window.App.Debugger.log("End of Button17 Click event", "info", -2);
 
-window.App.Debugger.log("TimerStart \x22AutoUnblockTimer\x22", "info", 3);
+};
 
-$rootScope.AutoUnblockTimer.TimerStart();
+$scope.Button18Click = function($event) {
+$rootScope.Button18.Event = $event;
 
-window.App.Debugger.log("ShowView \x22Login\x22", "info", 4);
+window.App.Debugger.log("Start of Button18 Click event", "info", -1);
 
-$scope.showView("Login");
+window.App.Debugger.log("ShowView \x22Find_Helium_Devices\x22", "info", 1);
 
-window.App.Debugger.log("End of Navbar1 Brand click event", "info", -2);
+$scope.showView("Find_Helium_Devices");
+
+window.App.Debugger.log("End of Button18 Click event", "info", -2);
 
 };
 
@@ -3695,7 +3779,13 @@ AppPluginsService.docReady();
 angular.element(window.document).ready(function(event){
 $rootScope.Video_Player.Event = event;
 
+window.App.Debugger.log("Start of Video_Player Show event", "info", -1);
+
+window.App.Debugger.log("SetVar \x22[CurrentTime]\x22 \x220\x22 \x22String\x22", "info", 1);
+
 $rootScope.CurrentTime = "0";
+
+window.App.Debugger.log("End of Video_Player Show event", "info", -2);
 
 $rootScope.$apply();
 });
@@ -3707,7 +3797,13 @@ $rootScope.MediaPlayer2.onCanPlay = function() {
 $rootScope.MediaPlayer2.onReady = function(API) {
 $rootScope.MediaPlayer2.API = API;
 
-$rootScope.Textarea1.Value = "Player ready";
+window.App.Debugger.log("Start of MediaPlayer2 Ready event", "info", -1);
+
+window.App.Debugger.log("SetVar \x22[Textarea1.Value]\x22 \x22Ready ✔️\x22 \x22String\x22", "info", 1);
+
+$rootScope.Textarea1.Value = "Ready ✔️";
+
+window.App.Debugger.log("End of MediaPlayer2 Ready event", "info", -2);
 
 };
 
@@ -3719,55 +3815,107 @@ if (document.querySelector("#MediaPlayer2 audio") && document.querySelector("#Me
   $rootScope.MediaPlayer2.Error = document.querySelector("#MediaPlayer2 video").error;
 }
 if ($rootScope.MediaPlayer2.Error === null) { return; }
+window.App.Debugger.log("Start of MediaPlayer2 Error event", "info", -1);
+
+window.App.Debugger.log("Alert \x22\x22 \x22Error code: [MediaPlayer1.Error.code] - Error message: [MediaPlayer1.Error.message]\x22", "info", 1);
+
 $scope.alert("", "Error code: "+$rootScope.MediaPlayer1.Error.code+" - Error message: "+$rootScope.MediaPlayer1.Error.message+"");
+
+window.App.Debugger.log("End of MediaPlayer2 Error event", "info", -2);
 
 };
 
 $rootScope.MediaPlayer2.onComplete = function() {
-$rootScope.Textarea1.Value = ""+$rootScope.Textarea1.Value+"\nPlayer complete";
+window.App.Debugger.log("Start of MediaPlayer2 Complete event", "info", -1);
+
+window.App.Debugger.log("SetVar \x22[Textarea1.Value]\x22 \x22[Textarea1.Value]\nComplete 🤘🏻\x22 \x22String\x22", "info", 1);
+
+$rootScope.Textarea1.Value = ""+$rootScope.Textarea1.Value+"\nComplete 🤘🏻";
+
+window.App.Debugger.log("End of MediaPlayer2 Complete event", "info", -2);
 
 };
 
 $rootScope.MediaPlayer2.onUpdate = function() {
 if (!$rootScope.MediaPlayer2.API || !$rootScope.MediaPlayer2.API.totalTime) { return; }
+window.App.Debugger.log("Start of MediaPlayer2 Update event", "info", -1);
+
+window.App.Debugger.log("MediaProperty \x22MediaPlayer2\x22 \x22volume\x22 \x22[Volume]\x22", "info", 1);
+
 $rootScope.Volume = $rootScope.MediaPlayer2.API.volume;
+
+window.App.Debugger.log("MediaProperty \x22MediaPlayer2\x22 \x22timeLeft\x22 \x22[TimeLeft]\x22", "info", 2);
 
 $rootScope.TimeLeft = $rootScope.MediaPlayer2.API.timeLeft;
 
+window.App.Debugger.log("MediaProperty \x22MediaPlayer2\x22 \x22totalTime\x22 \x22[TotalTime]\x22", "info", 3);
+
 $rootScope.TotalTime = $rootScope.MediaPlayer2.API.totalTime;
+
+window.App.Debugger.log("MediaProperty \x22MediaPlayer2\x22 \x22currentTime\x22 \x22[CurrentTime]\x22", "info", 4);
 
 $rootScope.CurrentTime = $rootScope.MediaPlayer2.API.currentTime;
 
+window.App.Debugger.log("Math \x22[Volume] * 100\x22 \x22[Volume]\x22", "info", 5);
+
 $rootScope.Volume = Parser.parse(""+$rootScope.Volume+" * 100").evaluate();
+
+window.App.Debugger.log("Round \x22[Volume]\x22 \x22[Volume]\x22", "info", 6);
 
 $rootScope.Volume = Math.round($rootScope.Volume);
 
+window.App.Debugger.log("Round \x22[TimeLeft]\x22 \x22[TimeLeft]\x22", "info", 7);
+
 $rootScope.TimeLeft = Math.round($rootScope.TimeLeft);
+
+window.App.Debugger.log("Round \x22[TotalTime]\x22 \x22[TotalTime]\x22", "info", 8);
 
 $rootScope.TotalTime = Math.round($rootScope.TotalTime);
 
+window.App.Debugger.log("Round \x22[CurrentTime]\x22 \x22[CurrentTime]\x22", "info", 9);
+
 $rootScope.CurrentTime = Math.round($rootScope.CurrentTime);
+
+window.App.Debugger.log("Math \x22[CurrentTime] / [TotalTime] * 100\x22 \x22[Range1.Value]\x22", "info", 10);
 
 $rootScope.Range1.Value = Parser.parse(""+$rootScope.CurrentTime+" / "+$rootScope.TotalTime+" * 100").evaluate();
 
+window.App.Debugger.log("Round \x22[Range1.Value]\x22 \x22[Range1.Value]\x22", "info", 11);
+
 $rootScope.Range1.Value = Math.round($rootScope.Range1.Value);
 
+window.App.Debugger.log("SetVar \x22[Input2.Value]\x22 \x22[Volume]\x22 \x22String\x22", "info", 12);
+
 $rootScope.Input2.Value = $rootScope.Volume;
+
+window.App.Debugger.log("End of MediaPlayer2 Update event", "info", -2);
 
 };
 
 $scope.Range1Click = function($event) {
 $rootScope.Range1.Event = $event;
 
+window.App.Debugger.log("Start of Range1 Click event", "info", -1);
+
+window.App.Debugger.log("MediaSeekPercent \x22MediaPlayer2\x22 \x22Range1.Value\x22", "info", 1);
+
 $rootScope.MediaPlayer2.API.seekTime($rootScope.Range1.Value, true);
+
+window.App.Debugger.log("End of Range1 Click event", "info", -2);
 
 };
 
 $scope.Input2Change = function($event) {
 $rootScope.Input2.Event = $event;
 
+window.App.Debugger.log("Start of Input2 Change event", "info", -1);
+
+window.App.Debugger.log("MediaSetVolume \x22MediaPlayer2\x22 \x22Input2.Value\x22", "info", 1);
+
 if (window.document.querySelector('#MediaPlayer2 video')) {window.document.querySelector('#MediaPlayer2 video').muted = false;}
 $rootScope.MediaPlayer2.API.setVolume($rootScope.Input2.Value / 100);
+
+window.App.Debugger.log("End of Input2 Change event", "info", -2);
 
 };
 
@@ -4052,6 +4200,50 @@ window.App.Debugger.log("SetVar \x22[IFrame3.Url]\x22 \x22app/files/pdfjs/web/vi
 $rootScope.IFrame3.Url = "app/files/pdfjs/web/viewer.html?file=sample.pdf";
 
 window.App.Debugger.log("End of PDF_Viewer Show event", "info", -2);
+
+$rootScope.$apply();
+});
+
+}]);
+
+window.App.Ctrls.controller("Telegram_ProxyCtrl", ["$scope", "$rootScope", "$routeParams", "$sce", "$timeout", "$interval", "$http", "$uibPosition", "$templateCache", "blockUI", "AppPluginsService",
+
+function($scope, $rootScope, $routeParams, $sce, $timeout, $interval, $http, $position, $templateCache, blockUI, AppPluginsService) {
+
+$rootScope.Telegram_Proxy = {};
+$rootScope.Telegram_Proxy.ABView = true;
+$rootScope.Telegram_Proxy.Params = window.App.Utils.parseViewParams($routeParams.params);
+
+window.App.Telegram_Proxy = {};
+window.App.Telegram_Proxy.Scope = $scope;
+
+angular.element(window.document).ready(function(event){
+var theme = $rootScope.App.Theme.toLowerCase();
+angular.element(document.querySelector("body")).removeClass(theme).addClass(theme);
+});
+
+angular.element(window.document).ready(function(event){
+AppPluginsService.docReady();
+});
+
+angular.element(window.document).ready(function(event){
+$rootScope.Telegram_Proxy.Event = event;
+
+window.App.Debugger.log("Start of Telegram_Proxy Show event", "info", -1);
+
+window.App.Debugger.log("UserAgent \x22[UserAgent]\x22", "info", 1);
+
+var ua = new UAParser(); $rootScope.UserAgent = ua.getResult();
+
+window.App.Debugger.log("SetVar \x22[IFrame5.Url]\x22 \x22https://mrpooya.xyz/api/TeleFay.php\x22 \x22String\x22", "info", 2);
+
+$rootScope.IFrame5.Url = "https://mrpooya.xyz/api/TeleFay.php";
+
+window.App.Debugger.log("SetVar \x22[IFrame4.Url]\x22 \x22https://mehdiquantom.github.io/Fishonmars/Quantom_Telegram_Proxy/Info.html\x22 \x22String\x22", "info", 3);
+
+$rootScope.IFrame4.Url = "https://mehdiquantom.github.io/Fishonmars/Quantom_Telegram_Proxy/Info.html";
+
+window.App.Debugger.log("End of Telegram_Proxy Show event", "info", -2);
 
 $rootScope.$apply();
 });

@@ -1,0 +1,39 @@
+﻿<div id="Telegram_Proxy" block-ui="main" class="appView animated"><div id="IFrame4" ng-hide="IFrame4.Hidden" ng-class="IFrame4.Class"><iframe ng-src="{{trustSrc(IFrame4.Url)}}"></iframe></div><div id="IFrame5" ng-hide="IFrame5.Hidden" ng-class="IFrame5.Class"><iframe ng-src="{{trustSrc(IFrame5.Url)}}"></iframe></div><div id="HtmlContent3" ng-class="HtmlContent3.Class" ng-hide="HtmlContent3.Hidden" title="{{HtmlContent3.Title}}" tooltip-placement="{{HtmlContent3.TooltipPos}}" uib-tooltip="{{HtmlContent3.TooltipText}}" popover-trigger="'{{HtmlContent3.PopoverEvent}}'" popover-placement="{{HtmlContent3.PopoverPos}}" popover-title="{{HtmlContent3.PopoverTitle}}" uib-popover="{{HtmlContent3.PopoverText}}">
+<strong>Browser name:</strong> <span ng-bind-html="UserAgent.browser.name"></span>
+
+<br />
+
+<strong>Browser version:</strong> <span ng-bind-html="UserAgent.browser.version"></span>
+
+<br />
+
+<strong>Engine name:</strong> <span ng-bind-html="UserAgent.engine.name"></span>
+
+<br />
+
+<strong>Engine version:</strong> <span ng-bind-html="UserAgent.engine.version"></span>
+
+<br />
+
+<strong>Operating System name:</strong> <span ng-bind-html="UserAgent.os.name"></span>
+
+<br />
+
+<strong>Operating System version:</strong> <span ng-bind-html="UserAgent.os.version"></span>
+
+<br />
+
+<strong>CPU architecture:</strong> <span ng-bind-html="UserAgent.cpu.architecture"></span>
+
+<br />
+
+<strong>Device type:</strong> <span ng-bind-html="UserAgent.device.type"></span>
+
+<br />
+
+<strong>Device vendor:</strong> <span ng-bind-html="UserAgent.device.vendor"></span>
+
+<br />
+
+<strong>Device model:</strong> <span ng-bind-html="UserAgent.device.model"></span>
+</div></div>
