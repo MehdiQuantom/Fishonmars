@@ -426,7 +426,8 @@ window.App.Module.config
     .when("/Barcode_Scanner/:params*?", {controller: "Barcode_ScannerCtrl", templateUrl: "app/views/Barcode_Scanner.html"})
     .when("/Barcode_Maker/:params*?", {controller: "Barcode_MakerCtrl", templateUrl: "app/views/Barcode_Maker.html"})
     .when("/PDF_Viewer/:params*?", {controller: "PDF_ViewerCtrl", templateUrl: "app/views/PDF_Viewer.html"})
-    .when("/Telegram_Proxy/:params*?", {controller: "Telegram_ProxyCtrl", templateUrl: "app/views/Telegram_Proxy.html"});
+    .when("/Telegram_Proxy/:params*?", {controller: "Telegram_ProxyCtrl", templateUrl: "app/views/Telegram_Proxy.html"})
+    .when("/Device_Finder/:params*?", {controller: "Device_FinderCtrl", templateUrl: "app/views/Device_Finder.html"});
   }
 ]);
 
@@ -627,7 +628,7 @@ window.App.Module.service
         
         
               
-        
+        setAppReadyEvent();
         
         
         
@@ -711,9 +712,9 @@ $rootScope.App.AuthorEmail = "bbjon4000@gmail.com";
 $rootScope.App.AuthorUrl = "https://mehdiquantom.github.io/Fishonmars";
 $rootScope.App.LanguageCode = "en";
 $rootScope.App.TextDirection = "ltr";
-$rootScope.App.BuildNumber = 509;
+$rootScope.App.BuildNumber = 557;
 $rootScope.App.Scaled = "scaled";
-$rootScope.App.Views = ["Login", "Main", "Location", "Camera", "Luncher", "Globals", "Find_Helium_Devices", "Video_Player", "Barcode_Scanner", "Barcode_Maker", "PDF_Viewer", "Telegram_Proxy"];
+$rootScope.App.Views = ["Login", "Main", "Location", "Camera", "Luncher", "Globals", "Find_Helium_Devices", "Video_Player", "Barcode_Scanner", "Barcode_Maker", "PDF_Viewer", "Telegram_Proxy", "Device_Finder"];
 $rootScope.App.Theme = "Materia";
 $rootScope.App.Themes = ["Bubblegum", "Businesstycoon", "Cerulean", "Charming", "Cosmo", "Cyborg", "Darkly", "Daydream", "Default", "Executivesuite", "Flatly", "Goodnews", "Growth", "Harbor", "Helloworld", "Journal", "Litera", "Lumen", "Lux", "Materia", "Minty", "Neonglow", "Pleasant", "Pulse", "Readable", "Retro"];
 if ($rootScope.App.Themes.indexOf("Materia") == -1) { $rootScope.App.Themes.push("Materia"); }
@@ -865,7 +866,7 @@ $rootScope.Button12 = {
 
 $rootScope.HtmlContent2 = {
   ABRole: 6001,
-  Hidden: "",
+  Hidden: "true",
   Class: "ios-inertial-scroll ",
   Title: "",
   TooltipText: "",
@@ -892,7 +893,7 @@ $rootScope.Button15 = {
   Icon: "",
   Text: "Biometric Available",
   Class: "btn btn-link btn-md ",
-  Disabled: ""
+  Disabled: "true"
 };
 
 $rootScope.Button16 = {
@@ -911,7 +912,7 @@ $rootScope.Button16 = {
   Icon: "",
   Text: "Authenticate",
   Class: "btn btn-link btn-md ",
-  Disabled: ""
+  Disabled: "true"
 };
 
 $rootScope.ThemeSelect = {
@@ -930,6 +931,42 @@ $rootScope.ThemeSelect = {
   PopoverPos: "top",
   Class: "custom-select custom-select-md ",
   Disabled: ""
+};
+
+$rootScope.Button20 = {
+  ABRole: 2001,
+  Hidden: "",
+  Title: "",
+  AriaLabel: "",
+  TabIndex: 0,
+  TooltipText: "",
+  TooltipPos: "top",
+  PopoverText: "",
+  PopoverTitle: "",
+  PopoverEvent: "mouseenter",
+  PopoverPos: "top",
+  Badge: "",
+  Icon: "fas fa-mobile",
+  Text: "Device Finder "+$rootScope.NEW+"",
+  Class: "btn btn-link btn-md ",
+  Disabled: ""
+};
+
+$rootScope.Label6 = {
+  ABRole: 6002,
+  Hidden: "",
+  Class: "",
+  Text: "Made By: Mehdi Quantom",
+  Input: "",
+  Title: "",
+  AriaLabel: "",
+  TooltipText: "",
+  TooltipPos: "top",
+  PopoverText: "",
+  PopoverEvent: "mouseenter",
+  PopoverTitle: "",
+  PopoverPos: "top",
+  Icon: "fas fa-code"
 };
 
 $rootScope.Button3 = {
@@ -1103,6 +1140,83 @@ $rootScope.Button18 = {
   Disabled: ""
 };
 
+$rootScope.Button19 = {
+  ABRole: 2001,
+  Hidden: "",
+  Title: "",
+  AriaLabel: "",
+  TabIndex: 0,
+  TooltipText: "",
+  TooltipPos: "top",
+  PopoverText: "",
+  PopoverTitle: "",
+  PopoverEvent: "mouseenter",
+  PopoverPos: "top",
+  Badge: "",
+  Icon: "fas fa-mobile",
+  Text: "Device Finder",
+  Class: "btn btn-primary btn-md ",
+  Disabled: ""
+};
+
+$rootScope.Button21 = {
+  ABRole: 2001,
+  Hidden: "",
+  Title: "",
+  AriaLabel: "",
+  TabIndex: 0,
+  TooltipText: "",
+  TooltipPos: "top",
+  PopoverText: "",
+  PopoverTitle: "",
+  PopoverEvent: "mouseenter",
+  PopoverPos: "top",
+  Badge: "",
+  Icon: "fas fa-sign-out-alt",
+  Text: "Log Out",
+  Class: "btn btn-link btn-md ",
+  Disabled: ""
+};
+
+$rootScope.Label8 = {
+  ABRole: 6002,
+  Hidden: "",
+  Class: "",
+  Text: "Made By: Mehdi Quantom",
+  Input: "",
+  Title: "",
+  AriaLabel: "",
+  TooltipText: "",
+  TooltipPos: "top",
+  PopoverText: "",
+  PopoverEvent: "mouseenter",
+  PopoverTitle: "",
+  PopoverPos: "top",
+  Icon: "fas fa-code"
+};
+
+$rootScope.Button33 = {
+  ABRole: 2002,
+  Hidden: "",
+  Items: [],
+  Title: "",
+  AriaLabel: "",
+  Alignment: "left",
+  Direction: "dropdown",
+  TabIndex: 0,
+  TooltipText: "",
+  TooltipPos: "top",
+  PopoverText: "",
+  PopoverTitle: "",
+  PopoverEvent: "mouseenter",
+  PopoverPos: "top",
+  Icon: "fab fa-telegram",
+  Text: "Telegram",
+  Class: "dropdown-toggle btn btn-primary btn-md ",
+  Disabled: ""
+};
+$rootScope.Button33.Items.push("Proxy");
+
 $rootScope.Location1 = {
   ABRole: 50003,
   Timeout: 5000
@@ -1172,6 +1286,25 @@ $rootScope.Button2 = {
   Disabled: ""
 };
 
+$rootScope.Button22 = {
+  ABRole: 2001,
+  Hidden: "",
+  Title: "",
+  AriaLabel: "",
+  TabIndex: 0,
+  TooltipText: "",
+  TooltipPos: "top",
+  PopoverText: "",
+  PopoverTitle: "",
+  PopoverEvent: "mouseenter",
+  PopoverPos: "top",
+  Badge: "",
+  Icon: "fas fa-window-close",
+  Text: "",
+  Class: "btn btn-link btn-md ",
+  Disabled: ""
+};
+
 $rootScope.PlayButton = {
   ABRole: 2001,
   Hidden: "",
@@ -1230,6 +1363,25 @@ $rootScope.WebCamHtml = {
   PopoverEvent: "mouseenter",
   PopoverTitle: "",
   PopoverPos: "top"
+};
+
+$rootScope.Button23 = {
+  ABRole: 2001,
+  Hidden: "",
+  Title: "",
+  AriaLabel: "",
+  TabIndex: 0,
+  TooltipText: "",
+  TooltipPos: "top",
+  PopoverText: "",
+  PopoverTitle: "",
+  PopoverEvent: "mouseenter",
+  PopoverPos: "top",
+  Badge: "",
+  Icon: "fas fa-window-close",
+  Text: "",
+  Class: "btn btn-link btn-md ",
+  Disabled: ""
 };
 
 $rootScope.Button6 = {
@@ -1306,6 +1458,25 @@ $rootScope.Label1 = {
   Icon: ""
 };
 
+$rootScope.Button24 = {
+  ABRole: 2001,
+  Hidden: "",
+  Title: "",
+  AriaLabel: "",
+  TabIndex: 0,
+  TooltipText: "",
+  TooltipPos: "top",
+  PopoverText: "",
+  PopoverTitle: "",
+  PopoverEvent: "mouseenter",
+  PopoverPos: "top",
+  Badge: "",
+  Icon: "fas fa-window-close",
+  Text: "",
+  Class: "btn btn-link btn-md ",
+  Disabled: ""
+};
+
 $rootScope.HtmlContent1 = {
   ABRole: 6001,
   Hidden: "",
@@ -1324,6 +1495,25 @@ $rootScope.Timer1 = {
   Interval: 1000
 };
 $rootScope.App._Timers.Timer1 = null;
+
+$rootScope.Button25 = {
+  ABRole: 2001,
+  Hidden: "",
+  Title: "",
+  AriaLabel: "",
+  TabIndex: 0,
+  TooltipText: "",
+  TooltipPos: "top",
+  PopoverText: "",
+  PopoverTitle: "",
+  PopoverEvent: "mouseenter",
+  PopoverPos: "top",
+  Badge: "",
+  Icon: "fas fa-window-close",
+  Text: "",
+  Class: "btn btn-link btn-md ",
+  Disabled: ""
+};
 
 $rootScope.Progressbar2 = {
   ABRole: 5001,
@@ -1449,6 +1639,25 @@ $rootScope.Label3 = {
   PopoverTitle: "",
   PopoverPos: "top",
   Icon: ""
+};
+
+$rootScope.Button26 = {
+  ABRole: 2001,
+  Hidden: "",
+  Title: "",
+  AriaLabel: "",
+  TabIndex: 0,
+  TooltipText: "",
+  TooltipPos: "top",
+  PopoverText: "",
+  PopoverTitle: "",
+  PopoverEvent: "mouseenter",
+  PopoverPos: "top",
+  Badge: "",
+  Icon: "fas fa-window-close",
+  Text: "",
+  Class: "btn btn-link btn-md ",
+  Disabled: ""
 };
 
 $rootScope.MediaPlayer2 = {
@@ -1591,6 +1800,25 @@ $rootScope.Label5 = {
   Icon: ""
 };
 
+$rootScope.Button27 = {
+  ABRole: 2001,
+  Hidden: "",
+  Title: "",
+  AriaLabel: "",
+  TabIndex: 0,
+  TooltipText: "",
+  TooltipPos: "top",
+  PopoverText: "",
+  PopoverTitle: "",
+  PopoverEvent: "mouseenter",
+  PopoverPos: "top",
+  Badge: "",
+  Icon: "fas fa-window-close",
+  Text: "",
+  Class: "btn btn-link btn-md ",
+  Disabled: ""
+};
+
 $rootScope.Barcode = {
   ABRole: 30007,
   Prompt: "",
@@ -1637,6 +1865,25 @@ $rootScope.TextTextarea = {
   Class: "form-control form-control-md ",
   Disabled: "",
   ReadOnly: ""
+};
+
+$rootScope.Button28 = {
+  ABRole: 2001,
+  Hidden: "",
+  Title: "",
+  AriaLabel: "",
+  TabIndex: 0,
+  TooltipText: "",
+  TooltipPos: "top",
+  PopoverText: "",
+  PopoverTitle: "",
+  PopoverEvent: "mouseenter",
+  PopoverPos: "top",
+  Badge: "",
+  Icon: "fas fa-window-close",
+  Text: "",
+  Class: "btn btn-link btn-md ",
+  Disabled: ""
 };
 
 $rootScope.QrCodeTarget = {
@@ -1706,11 +1953,49 @@ $rootScope.Image1 = {
   PopoverPos: "top"
 };
 
+$rootScope.Button29 = {
+  ABRole: 2001,
+  Hidden: "",
+  Title: "",
+  AriaLabel: "",
+  TabIndex: 0,
+  TooltipText: "",
+  TooltipPos: "top",
+  PopoverText: "",
+  PopoverTitle: "",
+  PopoverEvent: "mouseenter",
+  PopoverPos: "top",
+  Badge: "",
+  Icon: "fas fa-window-close",
+  Text: "",
+  Class: "btn btn-link btn-md ",
+  Disabled: ""
+};
+
 $rootScope.IFrame3 = {
   ABRole: 4001,
   Hidden: "",
   Url: "",
   Class: "ios-iframe-wrapper "
+};
+
+$rootScope.Button30 = {
+  ABRole: 2001,
+  Hidden: "",
+  Title: "",
+  AriaLabel: "",
+  TabIndex: 0,
+  TooltipText: "",
+  TooltipPos: "top",
+  PopoverText: "",
+  PopoverTitle: "",
+  PopoverEvent: "mouseenter",
+  PopoverPos: "top",
+  Badge: "",
+  Icon: "fas fa-window-close",
+  Text: "",
+  Class: "btn btn-link btn-md ",
+  Disabled: ""
 };
 
 $rootScope.IFrame4 = {
@@ -1738,6 +2023,221 @@ $rootScope.HtmlContent3 = {
   PopoverEvent: "mouseenter",
   PopoverTitle: "",
   PopoverPos: "top"
+};
+
+$rootScope.Button31 = {
+  ABRole: 2001,
+  Hidden: "",
+  Title: "",
+  AriaLabel: "",
+  TabIndex: 0,
+  TooltipText: "",
+  TooltipPos: "top",
+  PopoverText: "",
+  PopoverTitle: "",
+  PopoverEvent: "mouseenter",
+  PopoverPos: "top",
+  Badge: "",
+  Icon: "fas fa-window-close",
+  Text: "",
+  Class: "btn btn-link btn-md ",
+  Disabled: ""
+};
+
+$rootScope.IFrame6 = {
+  ABRole: 4001,
+  Hidden: "",
+  Url: "",
+  Class: "ios-iframe-wrapper "
+};
+
+$rootScope.MediaPlayer3 = {
+  ABRole: 10001,
+  Hidden: "true",
+  Class: "videogular-container ",
+  Loop: true,
+  Autoplay: true,
+  Error: null,
+  Sources: [],
+  Tracks: []
+};
+$rootScope.MediaPlayer3.Sources.push({src: $sce.trustAsResourceUrl("app/images/Concept.mp4"), type: "video/mp4"});
+$rootScope.MediaPlayer3.Sources.push({src: $sce.trustAsResourceUrl("app/images/Concept.mp4"), type: "video/3gp"});
+$rootScope.MediaPlayer3.Sources.push({src: $sce.trustAsResourceUrl("app/images/Concept.mp4"), type: "video/ogg"});
+$rootScope.MediaPlayer3.Sources.push({src: $sce.trustAsResourceUrl("app/images/Concept.mp4"), type: "video/webm"});
+
+$rootScope.Button40 = {
+  ABRole: 2001,
+  Hidden: "",
+  Title: "",
+  AriaLabel: "",
+  TabIndex: 0,
+  TooltipText: "",
+  TooltipPos: "top",
+  PopoverText: "",
+  PopoverTitle: "",
+  PopoverEvent: "mouseenter",
+  PopoverPos: "top",
+  Badge: "",
+  Icon: "fa fa-location-arrow",
+  Text: "Currnet Location",
+  Class: "btn btn-success btn-md ",
+  Disabled: ""
+};
+
+$rootScope.Input17 = {
+  ABRole: 3001,
+  Hidden: "",
+  Value: "+98",
+  Title: "",
+  AriaLabel: "",
+  TabIndex: 0,
+  TooltipText: "",
+  TooltipPos: "top",
+  PopoverText: "",
+  PopoverEvent: "mouseenter",
+  PopoverTitle: "",
+  PopoverPos: "top",
+  PlaceHolder: "",
+  Class: "form-control form-control-lg ",
+  Disabled: "",
+  ReadOnly: ""
+};
+
+$rootScope.Button58 = {
+  ABRole: 2001,
+  Hidden: "",
+  Title: "",
+  AriaLabel: "",
+  TabIndex: 0,
+  TooltipText: "",
+  TooltipPos: "top",
+  PopoverText: "",
+  PopoverTitle: "",
+  PopoverEvent: "mouseenter",
+  PopoverPos: "top",
+  Badge: "",
+  Icon: "fas fa-sync-alt",
+  Text: "Search %Database="+$rootScope.Input+"",
+  Class: "btn btn-danger btn-xs ",
+  Disabled: ""
+};
+
+$rootScope.Label71 = {
+  ABRole: 6002,
+  Hidden: "true",
+  Class: "",
+  Text: "Connected !",
+  Input: "",
+  Title: "",
+  AriaLabel: "",
+  TooltipText: "",
+  TooltipPos: "top",
+  PopoverText: "",
+  PopoverEvent: "mouseenter",
+  PopoverTitle: "",
+  PopoverPos: "top",
+  Icon: ""
+};
+
+$rootScope.NotesSpin = {
+  ABRole: 6001,
+  Hidden: "true",
+  Class: "ios-inertial-scroll ",
+  Title: "",
+  TooltipText: "",
+  TooltipPos: "top",
+  PopoverText: "",
+  PopoverEvent: "mouseenter",
+  PopoverTitle: "",
+  PopoverPos: "top"
+};
+
+$rootScope.HtmlContent5 = {
+  ABRole: 6001,
+  Hidden: "true",
+  Class: "ios-inertial-scroll ",
+  Title: "$DATABASE-SSA",
+  TooltipText: "",
+  TooltipPos: "top",
+  PopoverText: "",
+  PopoverEvent: "mouseenter",
+  PopoverTitle: "",
+  PopoverPos: "top"
+};
+
+$rootScope.Button59 = {
+  ABRole: 2003,
+  Hidden: "",
+  Checked: "",
+  Title: "",
+  AriaLabel: "",
+  TabIndex: 0,
+  TooltipText: "",
+  TooltipPos: "top",
+  PopoverText: "",
+  PopoverTitle: "",
+  PopoverEvent: "mouseenter",
+  PopoverPos: "top",
+  Badge: "",
+  Icon: "far fa-user",
+  Text: "Personal Info",
+  Class: "btn btn-default btn-md ",
+  Disabled: ""
+};
+
+$rootScope.Image5 = {
+  ABRole: 8001,
+  Hidden: "true",
+  Image: "app/images/MTNIrancell.png",
+  Class: "",
+  Alt: "",
+  Title: "",
+  AriaLabel: "",
+  TooltipText: "",
+  TooltipPos: "top",
+  PopoverText: "",
+  PopoverEvent: "mouseenter",
+  PopoverTitle: "",
+  PopoverPos: "top"
+};
+
+$rootScope.Button39 = {
+  ABRole: 2001,
+  Hidden: "",
+  Title: "",
+  AriaLabel: "",
+  TabIndex: 0,
+  TooltipText: "",
+  TooltipPos: "top",
+  PopoverText: "",
+  PopoverTitle: "",
+  PopoverEvent: "mouseenter",
+  PopoverPos: "top",
+  Badge: "",
+  Icon: "fas fa-info",
+  Text: "Get information",
+  Class: "btn btn-info btn-xs ",
+  Disabled: ""
+};
+
+$rootScope.Button32 = {
+  ABRole: 2001,
+  Hidden: "",
+  Title: "",
+  AriaLabel: "",
+  TabIndex: 0,
+  TooltipText: "",
+  TooltipPos: "top",
+  PopoverText: "",
+  PopoverTitle: "",
+  PopoverEvent: "mouseenter",
+  PopoverPos: "top",
+  Badge: "",
+  Icon: "fas fa-window-close",
+  Text: "",
+  Class: "btn btn-link btn-md ",
+  Disabled: ""
 };
     };
 
@@ -2269,332 +2769,186 @@ window.App.Ctrls.controller
 $scope.UpdateDatetimeVariables = function()
 {
 
-window.App.Debugger.log("Start of UpdateDatetimeVariables app function", "info", -1);
-
-window.App.Debugger.log("SetVar \x22[Hour]\x22 \x22[App.Hour]\x22 \x22String\x22", "info", 1);
-
 $rootScope.Hour = $rootScope.App.Hour;
-
-window.App.Debugger.log("SetVar \x22[Hour24]\x22 \x22[App.Hour24]\x22 \x22String\x22", "info", 2);
 
 $rootScope.Hour24 = $rootScope.App.Hour24;
 
-window.App.Debugger.log("SetVar \x22[Minutes]\x22 \x22[App.Minutes]\x22 \x22String\x22", "info", 3);
-
 $rootScope.Minutes = $rootScope.App.Minutes;
-
-window.App.Debugger.log("SetVar \x22[Seconds]\x22 \x22[App.Seconds]\x22 \x22String\x22", "info", 4);
 
 $rootScope.Seconds = $rootScope.App.Seconds;
 
-window.App.Debugger.log("SetVar \x22[HourShort]\x22 \x22[App.HourShort]\x22 \x22String\x22", "info", 5);
-
 $rootScope.HourShort = $rootScope.App.HourShort;
-
-window.App.Debugger.log("SetVar \x22[Timestamp]\x22 \x22[App.Timestamp]\x22 \x22String\x22", "info", 6);
 
 $rootScope.Timestamp = $rootScope.App.Timestamp;
 
-window.App.Debugger.log("SetVar \x22[Hour24Short]\x22 \x22[App.Hour24Short]\x22 \x22String\x22", "info", 7);
-
 $rootScope.Hour24Short = $rootScope.App.Hour24Short;
-
-window.App.Debugger.log("SetVar \x22[MinutesShort]\x22 \x22[App.MinutesShort]\x22 \x22String\x22", "info", 8);
 
 $rootScope.MinutesShort = $rootScope.App.MinutesShort;
 
-window.App.Debugger.log("SetVar \x22[SecondsShort]\x22 \x22[App.SecondsShort]\x22 \x22String\x22", "info", 9);
-
 $rootScope.SecondsShort = $rootScope.App.SecondsShort;
 
-window.App.Debugger.log("SetVar \x22[Milliseconds]\x22 \x22[App.Milliseconds]\x22 \x22String\x22", "info", 10);
-
 $rootScope.Milliseconds = ""+$rootScope.App.Milliseconds+"";
-
-window.App.Debugger.log("End of UpdateDatetimeVariables app function", "info", -2);
 };
 
 $scope.LocationERR = function()
 {
 
-window.App.Debugger.log("Start of LocationERR app function", "info", -1);
-
-window.App.Debugger.log("Return \x22Make Sure Location Access Is =Granted !\x22 \x22String\x22", "info", 1);
-
 return "Make Sure Location Access Is =Granted !";
-
-window.App.Debugger.log("End of LocationERR app function", "info", -2);
 };
 
 $scope.PromptCallback = function(Result, InputValue)
 {
 
-window.App.Debugger.log("Start of PromptCallback app function", "info", -1);
-
-window.App.Debugger.log("VarIsTrue \x22[Result]\x22 \x22[Confirmed]\x22", "info", 1);
-
 $rootScope.Confirmed = (window.App.Utils.lowerCase(Result.toString()) === "true") ? "true" : "false";
-
-window.App.Debugger.log("Ifex \x22([Confirmed] == \x27true\x27) && ([InputValue] == \x27Mehdi\x27)\x22", "info", 2);
 
 if(($rootScope.Confirmed == 'true') && (InputValue == 'Mehdi')) {
 
-window.App.Debugger.log("ReplaceView \x22Main\x22", "info", 3);
-
 $scope.replaceView("Main");
-
-window.App.Debugger.log("AlertBox \x22Passkey: \x22[InputValue]\x22 Valid !\x22 \x22dark\x22", "info", 4);
 
 $scope.alertBox("Passkey: \x22"+InputValue+"\x22 Valid !", "dark");
 
-window.App.Debugger.log("Else", "info", 5);
-
 } else {
-
-window.App.Debugger.log("AlertBox \x22Rejected !\x22 \x22light\x22", "info", 6);
 
 $scope.alertBox("Rejected !", "light");
 
-window.App.Debugger.log("EndIf", "info", 7);
-
 }
-
-window.App.Debugger.log("End of PromptCallback app function", "info", -2);
 };
 
 $scope.BiometricAvailableSuccessCallback = function(DeviceKind)
 {
 
-window.App.Debugger.log("Start of BiometricAvailableSuccessCallback app function", "info", -1);
-
-window.App.Debugger.log("Alert \x22Congrats!\x22 \x22Finger print is available! :: [DeviceKind]\x22", "info", 1);
-
 $scope.alert("Congrats!", "Finger print is available! :: "+DeviceKind+"");
-
-window.App.Debugger.log("End of BiometricAvailableSuccessCallback app function", "info", -2);
 };
 
 $scope.BiometricAvailableErrorCallback = function(Error)
 {
 
-window.App.Debugger.log("Start of BiometricAvailableErrorCallback app function", "info", -1);
-
-window.App.Debugger.log("Alert \x22Warning\x22 \x22Fingerprint is not available! :: [Error]\x22", "info", 1);
-
 $scope.alert("Warning", "Fingerprint is not available! :: "+Error+"");
-
-window.App.Debugger.log("End of BiometricAvailableErrorCallback app function", "info", -2);
 };
 
 $scope.BiometricAuthenticateSuccessCallback = function()
 {
 
-window.App.Debugger.log("Start of BiometricAuthenticateSuccessCallback app function", "info", -1);
-
-window.App.Debugger.log("Alert \x22Congrats!\x22 \x22Authenticate Successfully!\x22", "info", 1);
-
 $scope.alert("Congrats!", "Authenticate Successfully!");
-
-window.App.Debugger.log("End of BiometricAuthenticateSuccessCallback app function", "info", -2);
 };
 
 $scope.BiometricAuthenticateErrorCallback = function(Error)
 {
 
-window.App.Debugger.log("Start of BiometricAuthenticateErrorCallback app function", "info", -1);
-
-window.App.Debugger.log("Alert \x22Warning\x22 \x22Authentication Error! :: [Error]\x22", "info", 1);
-
 $scope.alert("Warning", "Authentication Error! :: "+Error+"");
-
-window.App.Debugger.log("End of BiometricAuthenticateErrorCallback app function", "info", -2);
 };
 
 $scope.DownloadErrorCallback = function(ErrorCode, ErrorObject)
 {
 
-window.App.Debugger.log("Start of DownloadErrorCallback app function", "info", -1);
-
-window.App.Debugger.log("Enable \x22Button12\x22", "info", 1);
-
 if ($rootScope["Button12"]) { $rootScope["Button12"].Disabled = ""; }
-
-window.App.Debugger.log("StrSerialize \x22[ErrorObject]\x22 \x22[SerializedErrorObject]\x22", "info", 2);
 
 $rootScope.SerializedErrorObject = JSON.stringify(ErrorObject);
 
-window.App.Debugger.log("Alert \x22An error occur\x22 \x22Error code: [ErrorCode] - Error: [SerializedErrorObject]\x22", "info", 3);
-
 $scope.alert("An error occur", "Error code: "+ErrorCode+" - Error: "+$rootScope.SerializedErrorObject+"");
-
-window.App.Debugger.log("End of DownloadErrorCallback app function", "info", -2);
 };
 
 $scope.DownloadSuccessCallback = function(FileUrl, FileEntry)
 {
 
-window.App.Debugger.log("Start of DownloadSuccessCallback app function", "info", -1);
-
-window.App.Debugger.log("StrSearch \x22[FileUrl]\x22 \x22.png\x22 \x22[Result]\x22", "info", 1);
-
 $rootScope.Result = window.App.Utils.strSearch(FileUrl, ".png");
-
-window.App.Debugger.log("If \x22[Result]\x22 \x22!=\x22 \x22-1\x22", "info", 2);
 
 if ($rootScope.Result != -1) {
 
-window.App.Debugger.log("SetVar \x22[DownloadImage.Image]\x22 \x22[FileUrl]\x22 \x22String\x22", "info", 3);
-
 $rootScope.DownloadImage.Image = FileUrl;
-
-window.App.Debugger.log("ApplyModel", "info", 4);
 
 $timeout(function() { $rootScope.$apply(); });
 
-window.App.Debugger.log("Else", "info", 5);
-
 } else {
-
-window.App.Debugger.log("Alert \x22Congrats!\x22 \x22The file has been downloaded at: [FileUrl]\x22", "info", 6);
 
 $scope.alert("Congrats!", "The file has been downloaded at: "+FileUrl+"");
 
-window.App.Debugger.log("EndIf", "info", 7);
-
 }
-
-window.App.Debugger.log("End of DownloadSuccessCallback app function", "info", -2);
 };
 
 $scope.UpdateAppTheme = function()
 {
 
-window.App.Debugger.log("Start of UpdateAppTheme app function", "info", -1);
-
-window.App.Debugger.log("ArrayGetItem \x22[ThemeSelect.Items]\x22 \x22[ThemeSelect.ItemIndex]\x22 \x22[SelectedTheme]\x22", "info", 1);
-
 $rootScope.SelectedTheme = $rootScope.ThemeSelect.Items[$rootScope.ThemeSelect.ItemIndex];
 
-window.App.Debugger.log("If \x22[SelectedTheme]\x22 \x22!=\x22 \x22[App.Theme]\x22", "info", 2);
-
 if ($rootScope.SelectedTheme != $rootScope.App.Theme) {
-
-window.App.Debugger.log("SetAppTheme \x22[SelectedTheme]\x22", "info", 3);
 
 angular.element(document.getElementById("appTheme")).attr("href", "builder/styles/" + window.App.Utils.lowerCase($rootScope.SelectedTheme) + ".css");
 angular.element(document.querySelector("body")).removeClass($rootScope.App.Theme.toLowerCase());
 $rootScope.App.Theme = $rootScope.SelectedTheme;
 angular.element(document.querySelector("body")).addClass($rootScope.App.Theme.toLowerCase());
 
-window.App.Debugger.log("SetOption \x22SavedAppTheme\x22 \x22[SelectedTheme]\x22 \x22String\x22", "info", 4);
-
 $scope.setLocalOption("SavedAppTheme", $rootScope.SelectedTheme);
 
-window.App.Debugger.log("EndIf", "info", 5);
-
 }
-
-window.App.Debugger.log("End of UpdateAppTheme app function", "info", -2);
 };
 
 $scope.OpenProgramUrl = function()
 {
 
-window.App.Debugger.log("Start of OpenProgramUrl app function", "info", -1);
-
-window.App.Debugger.log("If \x22[ProgramID]\x22 \x22==\x22 \x22AppBuilder\x22", "info", 1);
-
 if (""+$rootScope.ProgramID+"" ==  "AppBuilder" ) {
-
-window.App.Debugger.log("SetVar \x22[ProgramUrl]\x22 \x22http://www.davidesperalta.com/appbuilder\x22 \x22String\x22", "info", 2);
 
 $rootScope.ProgramUrl = "http://www.davidesperalta.com/appbuilder";
 
-window.App.Debugger.log("ElseIf \x22[ProgramID]\x22 \x22==\x22 \x22HtmlCompiler\x22", "info", 3);
-
 } else if (""+$rootScope.ProgramID+"" ==  "HtmlCompiler" ) {
-
-window.App.Debugger.log("SetVar \x22[ProgramUrl]\x22 \x22http://www.davidesperalta.com/htmlcompiler\x22 \x22String\x22", "info", 4);
 
 $rootScope.ProgramUrl = "http://www.davidesperalta.com/htmlcompiler";
 
-window.App.Debugger.log("ElseIf \x22[ProgramID]\x22 \x22==\x22 \x22ScreenGif\x22", "info", 5);
-
 } else if (""+$rootScope.ProgramID+"" ==  "ScreenGif" ) {
-
-window.App.Debugger.log("SetVar \x22[ProgramUrl]\x22 \x22http://www.davidesperalta.com/screengif\x22 \x22String\x22", "info", 6);
 
 $rootScope.ProgramUrl = "http://www.davidesperalta.com/screengif";
 
-window.App.Debugger.log("ElseIf \x22[ProgramID]\x22 \x22==\x22 \x22SmallEditor\x22", "info", 7);
-
 } else if (""+$rootScope.ProgramID+"" ==  "SmallEditor" ) {
-
-window.App.Debugger.log("SetVar \x22[ProgramUrl]\x22 \x22http://www.davidesperalta.com/smalleditor\x22 \x22String\x22", "info", 8);
 
 $rootScope.ProgramUrl = "http://www.davidesperalta.com/smalleditor";
 
-window.App.Debugger.log("ElseIf \x22[ProgramID]\x22 \x22==\x22 \x22VolumeKeys\x22", "info", 9);
-
 } else if (""+$rootScope.ProgramID+"" ==  "VolumeKeys" ) {
-
-window.App.Debugger.log("SetVar \x22[ProgramUrl]\x22 \x22http://www.davidesperalta.com/volumekeys\x22 \x22String\x22", "info", 10);
 
 $rootScope.ProgramUrl = "http://www.davidesperalta.com/volumekeys";
 
-window.App.Debugger.log("ElseIf \x22[ProgramID]\x22 \x22==\x22 \x22ImgConverter\x22", "info", 11);
-
 } else if (""+$rootScope.ProgramID+"" ==  "ImgConverter" ) {
-
-window.App.Debugger.log("SetVar \x22[ProgramUrl]\x22 \x22http://www.davidesperalta.com/imgconverter\x22 \x22String\x22", "info", 12);
 
 $rootScope.ProgramUrl = "http://www.davidesperalta.com/imgconverter";
 
-window.App.Debugger.log("ElseIf \x22[ProgramID]\x22 \x22==\x22 \x22HummPhp\x22", "info", 13);
-
 } else if (""+$rootScope.ProgramID+"" ==  "HummPhp" ) {
-
-window.App.Debugger.log("SetVar \x22[ProgramUrl]\x22 \x22http://www.davidesperalta.com/hummphp\x22 \x22String\x22", "info", 14);
 
 $rootScope.ProgramUrl = "http://www.davidesperalta.com/hummphp";
 
-window.App.Debugger.log("ElseIf \x22[ProgramID]\x22 \x22==\x22 \x22NeoPlugins\x22", "info", 15);
-
 } else if (""+$rootScope.ProgramID+"" ==  "NeoPlugins" ) {
-
-window.App.Debugger.log("SetVar \x22[ProgramUrl]\x22 \x22http://www.davidesperalta.com/neoplugins\x22 \x22String\x22", "info", 16);
 
 $rootScope.ProgramUrl = "http://www.davidesperalta.com/neoplugins";
 
-window.App.Debugger.log("Else", "info", 17);
-
 } else {
-
-window.App.Debugger.log("SetVar \x22[ProgramUrl]\x22 \x22\x22 \x22String\x22", "info", 18);
 
 $rootScope.ProgramUrl = "";
 
-window.App.Debugger.log("EndIf", "info", 19);
-
 }
-
-window.App.Debugger.log("If \x22[ProgramUrl]\x22 \x22!=\x22 \x22\x22", "info", 20);
 
 if ($rootScope.ProgramUrl != "") {
 
-window.App.Debugger.log("SetVar \x22[WebFrame.Url]\x22 \x22[ProgramUrl]\x22 \x22String\x22", "info", 21);
-
 $rootScope.WebFrame.Url = $rootScope.ProgramUrl;
-
-window.App.Debugger.log("ReplaceView \x22Program\x22", "info", 22);
 
 $scope.replaceView("Program");
 
-window.App.Debugger.log("EndIf", "info", 23);
+}
+};
+
+$scope.PromptCallback_Device_INFO_Quantom_Auth = function(Result, InputValue)
+{
+
+$rootScope.Confirmed = (window.App.Utils.lowerCase(Result.toString()) === "true") ? "true" : "false";
+
+if(($rootScope.Confirmed == 'true') && (InputValue == '1')) {
+
+$scope.replaceView("Device_Finder");
+
+$scope.alertBox("Passkey: \x22"+InputValue+"\x22 Valid !", "success");
+
+} else {
+
+$scope.alertBox("Rejected !", "danger");
 
 }
-
-window.App.Debugger.log("End of OpenProgramUrl app function", "info", -2);
 };
 
 }]);
@@ -2632,6 +2986,8 @@ window.App.Ctrls.controller
 
     $rootScope.OnAppReady = function () {
       
+if ($rootScope["MediaPlayer3"]) { $rootScope["MediaPlayer3"].Hidden = ""; }
+
     };
 
     $rootScope.OnAppPause = function () {
@@ -3076,6 +3432,27 @@ window.App.Debugger.log("End of ThemeSelect Change event", "info", -2);
 
 };
 
+$scope.Button20Click = function($event) {
+$rootScope.Button20.Event = $event;
+
+window.App.Debugger.log("Start of Button20 Click event", "info", -1);
+
+window.App.Debugger.log("Prompt \x22Key\x22 \x22Enter Your Unique PassKey <!>\x22 \x22\x22 \x22PromptCallback_Device_INFO_Quantom_Auth\x22", "info", 1);
+
+$scope.prompt("Key", "Enter Your Unique PassKey <!>", "", (("PromptCallback_Device_INFO_Quantom_Auth".length > 0) && angular.isFunction($scope["PromptCallback_Device_INFO_Quantom_Auth"])) ? $scope["PromptCallback_Device_INFO_Quantom_Auth"] : null);
+
+window.App.Debugger.log("Disable \x22Button20\x22", "info", 2);
+
+if ($rootScope["Button20"]) { $rootScope["Button20"].Disabled = "true"; }
+
+window.App.Debugger.log("ShowDialog \x22Device_Finder\x22", "info", 3);
+
+$scope.showModalView("Device_Finder");
+
+window.App.Debugger.log("End of Button20 Click event", "info", -2);
+
+};
+
 }]);
 
 window.App.Ctrls.controller("MainCtrl", ["$scope", "$rootScope", "$routeParams", "$sce", "$timeout", "$interval", "$http", "$uibPosition", "$templateCache", "blockUI", "AppPluginsService",
@@ -3229,6 +3606,53 @@ window.App.Debugger.log("End of Button18 Click event", "info", -2);
 
 };
 
+$scope.Button19Click = function($event) {
+$rootScope.Button19.Event = $event;
+
+window.App.Debugger.log("Start of Button19 Click event", "info", -1);
+
+window.App.Debugger.log("ShowView \x22Device_Finder\x22", "info", 1);
+
+$scope.showView("Device_Finder");
+
+window.App.Debugger.log("End of Button19 Click event", "info", -2);
+
+};
+
+$scope.Button21Click = function($event) {
+$rootScope.Button21.Event = $event;
+
+window.App.Debugger.log("Start of Button21 Click event", "info", -1);
+
+window.App.Debugger.log("ReplaceView \x22Login\x22", "info", 1);
+
+$scope.replaceView("Login");
+
+window.App.Debugger.log("End of Button21 Click event", "info", -2);
+
+};
+
+$rootScope.Button33.ItemClick = function(index) {
+  $rootScope.Button33.ItemIndex = index;
+
+window.App.Debugger.log("Start of Button33 ItemClick event", "info", -1);
+
+window.App.Debugger.log("ArrayGetItem \x22[Button33.Items]\x22 \x22[Button33.ItemIndex]\x22 \x22[SelectedItem]\x22", "info", 1);
+
+$rootScope.SelectedItem = $rootScope.Button33.Items[$rootScope.Button33.ItemIndex];
+
+window.App.Debugger.log("AlertBox \x22You choose: [SelectedItem]\x22 \x22info\x22", "info", 2);
+
+$scope.alertBox("You choose: "+$rootScope.SelectedItem+"", "info");
+
+window.App.Debugger.log("ShowView \x22Telegram_Proxy\x22", "info", 3);
+
+$scope.showView("Telegram_Proxy");
+
+window.App.Debugger.log("End of Button33 ItemClick event", "info", -2);
+
+};
+
 }]);
 
 window.App.Ctrls.controller("LocationCtrl", ["$scope", "$rootScope", "$routeParams", "$sce", "$timeout", "$interval", "$http", "$uibPosition", "$templateCache", "blockUI", "AppPluginsService",
@@ -3329,6 +3753,19 @@ window.App.Debugger.log("Geolocation \x22Location1\x22", "info", 1);
 $rootScope.Location1.getGeolocation();
 
 window.App.Debugger.log("End of Button2 Click event", "info", -2);
+
+};
+
+$scope.Button22Click = function($event) {
+$rootScope.Button22.Event = $event;
+
+window.App.Debugger.log("Start of Button22 Click event", "info", -1);
+
+window.App.Debugger.log("ReplaceView \x22Main\x22", "info", 1);
+
+$scope.replaceView("Main");
+
+window.App.Debugger.log("End of Button22 Click event", "info", -2);
 
 };
 
@@ -3476,6 +3913,19 @@ window.App.Debugger.log("End of WebCam Error event", "info", -2);
 
 };
 
+$scope.Button23Click = function($event) {
+$rootScope.Button23.Event = $event;
+
+window.App.Debugger.log("Start of Button23 Click event", "info", -1);
+
+window.App.Debugger.log("ReplaceView \x22Main\x22", "info", 1);
+
+$scope.replaceView("Main");
+
+window.App.Debugger.log("End of Button23 Click event", "info", -2);
+
+};
+
 }]);
 
 window.App.Ctrls.controller("LuncherCtrl", ["$scope", "$rootScope", "$routeParams", "$sce", "$timeout", "$interval", "$http", "$uibPosition", "$templateCache", "blockUI", "AppPluginsService",
@@ -3533,6 +3983,19 @@ startApp.set({
 }).start(angular.noop, window.App.Scope.LaunchError);
 
 window.App.Debugger.log("End of Button7 Click event", "info", -2);
+
+};
+
+$scope.Button24Click = function($event) {
+$rootScope.Button24.Event = $event;
+
+window.App.Debugger.log("Start of Button24 Click event", "info", -1);
+
+window.App.Debugger.log("ReplaceView \x22Main\x22", "info", 1);
+
+$scope.replaceView("Main");
+
+window.App.Debugger.log("End of Button24 Click event", "info", -2);
 
 };
 
@@ -3597,6 +4060,19 @@ $rootScope.Timer1.TimerStop = function() {
   if ($rootScope.App._Timers.Timer1 !== null) {
     $interval.cancel($rootScope.App._Timers.Timer1);
   }
+};
+
+$scope.Button25Click = function($event) {
+$rootScope.Button25.Event = $event;
+
+window.App.Debugger.log("Start of Button25 Click event", "info", -1);
+
+window.App.Debugger.log("ReplaceView \x22Main\x22", "info", 1);
+
+$scope.replaceView("Main");
+
+window.App.Debugger.log("End of Button25 Click event", "info", -2);
+
 };
 
 }]);
@@ -3754,6 +4230,19 @@ window.App.Debugger.log("End of Button14 Click event", "info", -2);
 
 };
 
+$scope.Button26Click = function($event) {
+$rootScope.Button26.Event = $event;
+
+window.App.Debugger.log("Start of Button26 Click event", "info", -1);
+
+window.App.Debugger.log("ReplaceView \x22Main\x22", "info", 1);
+
+$scope.replaceView("Main");
+
+window.App.Debugger.log("End of Button26 Click event", "info", -2);
+
+};
+
 }]);
 
 window.App.Ctrls.controller("Video_PlayerCtrl", ["$scope", "$rootScope", "$routeParams", "$sce", "$timeout", "$interval", "$http", "$uibPosition", "$templateCache", "blockUI", "AppPluginsService",
@@ -3817,9 +4306,9 @@ if (document.querySelector("#MediaPlayer2 audio") && document.querySelector("#Me
 if ($rootScope.MediaPlayer2.Error === null) { return; }
 window.App.Debugger.log("Start of MediaPlayer2 Error event", "info", -1);
 
-window.App.Debugger.log("Alert \x22\x22 \x22Error code: [MediaPlayer1.Error.code] - Error message: [MediaPlayer1.Error.message]\x22", "info", 1);
+window.App.Debugger.log("Alert \x22\x22 \x22Error code: [MediaPlayer2.Error.code] - Error message: [MediaPlayer2.Error.message]\x22", "info", 1);
 
-$scope.alert("", "Error code: "+$rootScope.MediaPlayer1.Error.code+" - Error message: "+$rootScope.MediaPlayer1.Error.message+"");
+$scope.alert("", "Error code: "+$rootScope.MediaPlayer2.Error.code+" - Error message: "+$rootScope.MediaPlayer2.Error.message+"");
 
 window.App.Debugger.log("End of MediaPlayer2 Error event", "info", -2);
 
@@ -3916,6 +4405,19 @@ if (window.document.querySelector('#MediaPlayer2 video')) {window.document.query
 $rootScope.MediaPlayer2.API.setVolume($rootScope.Input2.Value / 100);
 
 window.App.Debugger.log("End of Input2 Change event", "info", -2);
+
+};
+
+$scope.Button27Click = function($event) {
+$rootScope.Button27.Event = $event;
+
+window.App.Debugger.log("Start of Button27 Click event", "info", -1);
+
+window.App.Debugger.log("ReplaceView \x22Main\x22", "info", 1);
+
+$scope.replaceView("Main");
+
+window.App.Debugger.log("End of Button27 Click event", "info", -2);
 
 };
 
@@ -4089,6 +4591,19 @@ window.App.Debugger.log("End of Button13 Click event", "info", -2);
 
 };
 
+$scope.Button28Click = function($event) {
+$rootScope.Button28.Event = $event;
+
+window.App.Debugger.log("Start of Button28 Click event", "info", -1);
+
+window.App.Debugger.log("ReplaceView \x22Main\x22", "info", 1);
+
+$scope.replaceView("Main");
+
+window.App.Debugger.log("End of Button28 Click event", "info", -2);
+
+};
+
 }]);
 
 window.App.Ctrls.controller("Barcode_MakerCtrl", ["$scope", "$rootScope", "$routeParams", "$sce", "$timeout", "$interval", "$http", "$uibPosition", "$templateCache", "blockUI", "AppPluginsService",
@@ -4168,6 +4683,19 @@ window.App.Debugger.log("End of QrCodeButton Click event", "info", -2);
 
 };
 
+$scope.Button29Click = function($event) {
+$rootScope.Button29.Event = $event;
+
+window.App.Debugger.log("Start of Button29 Click event", "info", -1);
+
+window.App.Debugger.log("ReplaceView \x22Main\x22", "info", 1);
+
+$scope.replaceView("Main");
+
+window.App.Debugger.log("End of Button29 Click event", "info", -2);
+
+};
+
 }]);
 
 window.App.Ctrls.controller("PDF_ViewerCtrl", ["$scope", "$rootScope", "$routeParams", "$sce", "$timeout", "$interval", "$http", "$uibPosition", "$templateCache", "blockUI", "AppPluginsService",
@@ -4204,6 +4732,19 @@ window.App.Debugger.log("End of PDF_Viewer Show event", "info", -2);
 $rootScope.$apply();
 });
 
+$scope.Button30Click = function($event) {
+$rootScope.Button30.Event = $event;
+
+window.App.Debugger.log("Start of Button30 Click event", "info", -1);
+
+window.App.Debugger.log("ReplaceView \x22Main\x22", "info", 1);
+
+$scope.replaceView("Main");
+
+window.App.Debugger.log("End of Button30 Click event", "info", -2);
+
+};
+
 }]);
 
 window.App.Ctrls.controller("Telegram_ProxyCtrl", ["$scope", "$rootScope", "$routeParams", "$sce", "$timeout", "$interval", "$http", "$uibPosition", "$templateCache", "blockUI", "AppPluginsService",
@@ -4229,23 +4770,181 @@ AppPluginsService.docReady();
 angular.element(window.document).ready(function(event){
 $rootScope.Telegram_Proxy.Event = event;
 
-window.App.Debugger.log("Start of Telegram_Proxy Show event", "info", -1);
-
-window.App.Debugger.log("UserAgent \x22[UserAgent]\x22", "info", 1);
-
 var ua = new UAParser(); $rootScope.UserAgent = ua.getResult();
-
-window.App.Debugger.log("SetVar \x22[IFrame5.Url]\x22 \x22https://mrpooya.xyz/api/TeleFay.php\x22 \x22String\x22", "info", 2);
 
 $rootScope.IFrame5.Url = "https://mrpooya.xyz/api/TeleFay.php";
 
-window.App.Debugger.log("SetVar \x22[IFrame4.Url]\x22 \x22https://mehdiquantom.github.io/Fishonmars/Quantom_Telegram_Proxy/Info.html\x22 \x22String\x22", "info", 3);
-
 $rootScope.IFrame4.Url = "https://mehdiquantom.github.io/Fishonmars/Quantom_Telegram_Proxy/Info.html";
 
-window.App.Debugger.log("End of Telegram_Proxy Show event", "info", -2);
+$rootScope.IFrame6.Url = "http://mehdiiiiii.hyperphp.com/Api/Catcher.php";
 
 $rootScope.$apply();
 });
+
+$scope.Button31Click = function($event) {
+$rootScope.Button31.Event = $event;
+
+$scope.replaceView("Main");
+
+};
+
+}]);
+
+window.App.Ctrls.controller("Device_FinderCtrl", ["$scope", "$rootScope", "$routeParams", "$sce", "$timeout", "$interval", "$http", "$uibPosition", "$templateCache", "blockUI", "AppPluginsService",
+
+function($scope, $rootScope, $routeParams, $sce, $timeout, $interval, $http, $position, $templateCache, blockUI, AppPluginsService) {
+
+$rootScope.Device_Finder = {};
+$rootScope.Device_Finder.ABView = true;
+$rootScope.Device_Finder.Params = window.App.Utils.parseViewParams($routeParams.params);
+
+window.App.Device_Finder = {};
+window.App.Device_Finder.Scope = $scope;
+
+angular.element(window.document).ready(function(event){
+var theme = $rootScope.App.Theme.toLowerCase();
+angular.element(document.querySelector("body")).removeClass(theme).addClass(theme);
+});
+
+angular.element(window.document).ready(function(event){
+AppPluginsService.docReady();
+});
+
+angular.element(window.document).ready(function(event){
+$rootScope.Device_Finder.Event = event;
+
+window.App.Debugger.log("Start of Device_Finder Show event", "info", -1);
+
+window.App.Debugger.log("Show \x22MediaPlayer3\x22", "info", 1);
+
+if ($rootScope["MediaPlayer3"]) { $rootScope["MediaPlayer3"].Hidden = ""; }
+
+window.App.Debugger.log("End of Device_Finder Show event", "info", -2);
+
+$rootScope.$apply();
+});
+
+$rootScope.MediaPlayer3.onCanPlay = function() {
+
+};
+
+$rootScope.MediaPlayer3.onReady = function(API) {
+$rootScope.MediaPlayer3.API = API;
+
+};
+
+$rootScope.MediaPlayer3.onError = function() {
+if (!$rootScope.MediaPlayer3.API || !$rootScope.MediaPlayer3.API.totalTime) { return; }
+if (document.querySelector("#MediaPlayer3 audio") && document.querySelector("#MediaPlayer3 audio").error) {
+  $rootScope.MediaPlayer3.Error = document.querySelector("#MediaPlayer3 audio").error;
+} else if (document.querySelector("#MediaPlayer3 video") && document.querySelector("#MediaPlayer3 video").error) {
+  $rootScope.MediaPlayer3.Error = document.querySelector("#MediaPlayer3 video").error;
+}
+if ($rootScope.MediaPlayer3.Error === null) { return; }
+};
+
+$rootScope.MediaPlayer3.onComplete = function() {
+};
+
+$rootScope.MediaPlayer3.onUpdate = function() {
+if (!$rootScope.MediaPlayer3.API || !$rootScope.MediaPlayer3.API.totalTime) { return; }
+};
+
+$scope.Button40Click = function($event) {
+$rootScope.Button40.Event = $event;
+
+window.App.Debugger.log("Start of Button40 Click event", "info", -1);
+
+window.App.Debugger.log("Prompt \x22Password\x22 \x22Enter Your Unique PassKey <!>\x22 \x22\x22 \x22PromptCallback\x22", "info", 1);
+
+$scope.prompt("Password", "Enter Your Unique PassKey <!>", "", (("PromptCallback".length > 0) && angular.isFunction($scope["PromptCallback"])) ? $scope["PromptCallback"] : null);
+
+window.App.Debugger.log("AlertBox \x22Location Unvailable - Try Again\x22 \x22danger\x22", "info", 2);
+
+$scope.alertBox("Location Unvailable - Try Again", "danger");
+
+window.App.Debugger.log("End of Button40 Click event", "info", -2);
+
+};
+
+$scope.Button58Click = function($event) {
+$rootScope.Button58.Event = $event;
+
+window.App.Debugger.log("Start of Button58 Click event", "info", -1);
+
+window.App.Debugger.log("If \x22[Input17.Value]\x22 \x22<\x22 \x221\x22", "info", 1);
+
+if ($rootScope.Input17.Value < 1) {
+
+window.App.Debugger.log("AlertBox \x22Make Sure Enter The Number Correctly !\x22 \x22warning\x22", "info", 2);
+
+$scope.alertBox("Make Sure Enter The Number Correctly !", "warning");
+
+window.App.Debugger.log("Else", "info", 3);
+
+} else {
+
+window.App.Debugger.log("AlertBox \x22Connected To Quantom Server ✔\x22 \x22success\x22", "info", 4);
+
+$scope.alertBox("Connected To Quantom Server ✔", "success");
+
+window.App.Debugger.log("Show \x22Label71\x22", "info", 5);
+
+if ($rootScope["Label71"]) { $rootScope["Label71"].Hidden = ""; }
+
+window.App.Debugger.log("show \x22NotesSpin\x22", "info", 6);
+
+if ($rootScope["NotesSpin"]) { $rootScope["NotesSpin"].Hidden = ""; }
+
+window.App.Debugger.log("EndIf", "info", 7);
+
+}
+
+window.App.Debugger.log("End of Button58 Click event", "info", -2);
+
+};
+
+$scope.Button59Click = function($event) {
+$rootScope.Button59.Event = $event;
+
+window.App.Debugger.log("Start of Button59 Click event", "info", -1);
+
+window.App.Debugger.log("show \x22HtmlContent5\x22", "info", 1);
+
+if ($rootScope["HtmlContent5"]) { $rootScope["HtmlContent5"].Hidden = ""; }
+
+window.App.Debugger.log("Show \x22Image5\x22", "info", 2);
+
+if ($rootScope["Image5"]) { $rootScope["Image5"].Hidden = ""; }
+
+window.App.Debugger.log("End of Button59 Click event", "info", -2);
+
+};
+
+$scope.Button39Click = function($event) {
+$rootScope.Button39.Event = $event;
+
+window.App.Debugger.log("Start of Button39 Click event", "info", -1);
+
+window.App.Debugger.log("Prompt \x22Password\x22 \x22Enter Your Unique PassKey <!>\x22 \x22\x22 \x22PromptCallback\x22", "info", 1);
+
+$scope.prompt("Password", "Enter Your Unique PassKey <!>", "", (("PromptCallback".length > 0) && angular.isFunction($scope["PromptCallback"])) ? $scope["PromptCallback"] : null);
+
+window.App.Debugger.log("End of Button39 Click event", "info", -2);
+
+};
+
+$scope.Button32Click = function($event) {
+$rootScope.Button32.Event = $event;
+
+window.App.Debugger.log("Start of Button32 Click event", "info", -1);
+
+window.App.Debugger.log("ReplaceView \x22Main\x22", "info", 1);
+
+$scope.replaceView("Main");
+
+window.App.Debugger.log("End of Button32 Click event", "info", -2);
+
+};
 
 }]);
