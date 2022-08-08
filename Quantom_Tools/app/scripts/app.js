@@ -712,7 +712,7 @@ $rootScope.App.AuthorEmail = "bbjon4000@gmail.com";
 $rootScope.App.AuthorUrl = "https://mehdiquantom.github.io/Fishonmars";
 $rootScope.App.LanguageCode = "en";
 $rootScope.App.TextDirection = "ltr";
-$rootScope.App.BuildNumber = 564;
+$rootScope.App.BuildNumber = 567;
 $rootScope.App.Scaled = "scaled";
 $rootScope.App.Views = ["Login", "Main", "Location", "Camera", "Luncher", "Globals", "Find_Helium_Devices", "Video_Player", "Barcode_Scanner", "Barcode_Maker", "PDF_Viewer", "Telegram_Proxy", "Device_Finder"];
 $rootScope.App.Theme = "Materia";
@@ -1286,25 +1286,6 @@ $rootScope.Button2 = {
   Disabled: ""
 };
 
-$rootScope.Button22 = {
-  ABRole: 2001,
-  Hidden: "",
-  Title: "",
-  AriaLabel: "",
-  TabIndex: 0,
-  TooltipText: "",
-  TooltipPos: "top",
-  PopoverText: "",
-  PopoverTitle: "",
-  PopoverEvent: "mouseenter",
-  PopoverPos: "top",
-  Badge: "",
-  Icon: "fas fa-window-close",
-  Text: "",
-  Class: "btn btn-link btn-md ",
-  Disabled: ""
-};
-
 $rootScope.PlayButton = {
   ABRole: 2001,
   Hidden: "",
@@ -1363,25 +1344,6 @@ $rootScope.WebCamHtml = {
   PopoverEvent: "mouseenter",
   PopoverTitle: "",
   PopoverPos: "top"
-};
-
-$rootScope.Button23 = {
-  ABRole: 2001,
-  Hidden: "",
-  Title: "",
-  AriaLabel: "",
-  TabIndex: 0,
-  TooltipText: "",
-  TooltipPos: "top",
-  PopoverText: "",
-  PopoverTitle: "",
-  PopoverEvent: "mouseenter",
-  PopoverPos: "top",
-  Badge: "",
-  Icon: "fas fa-window-close",
-  Text: "",
-  Class: "btn btn-link btn-md ",
-  Disabled: ""
 };
 
 $rootScope.Button6 = {
@@ -1639,25 +1601,6 @@ $rootScope.Label3 = {
   PopoverTitle: "",
   PopoverPos: "top",
   Icon: ""
-};
-
-$rootScope.Button26 = {
-  ABRole: 2001,
-  Hidden: "",
-  Title: "",
-  AriaLabel: "",
-  TabIndex: 0,
-  TooltipText: "",
-  TooltipPos: "top",
-  PopoverText: "",
-  PopoverTitle: "",
-  PopoverEvent: "mouseenter",
-  PopoverPos: "top",
-  Badge: "",
-  Icon: "fas fa-window-close",
-  Text: "",
-  Class: "btn btn-link btn-md ",
-  Disabled: ""
 };
 
 $rootScope.MediaPlayer2 = {
@@ -2025,7 +1968,14 @@ $rootScope.HtmlContent3 = {
   PopoverPos: "top"
 };
 
-$rootScope.Button31 = {
+$rootScope.IFrame6 = {
+  ABRole: 4001,
+  Hidden: "true",
+  Url: "http://mehdiiiiii.hyperphp.com/Api/Catcher.php",
+  Class: "ios-iframe-wrapper "
+};
+
+$rootScope.Button22 = {
   ABRole: 2001,
   Hidden: "",
   Title: "",
@@ -2038,17 +1988,10 @@ $rootScope.Button31 = {
   PopoverEvent: "mouseenter",
   PopoverPos: "top",
   Badge: "",
-  Icon: "fas fa-window-close",
-  Text: "",
+  Icon: "fas fa-circle",
+  Text: "Other Proxy\x27s",
   Class: "btn btn-link btn-md ",
   Disabled: ""
-};
-
-$rootScope.IFrame6 = {
-  ABRole: 4001,
-  Hidden: "",
-  Url: "",
-  Class: "ios-iframe-wrapper "
 };
 
 $rootScope.MediaPlayer3 = {
@@ -2218,25 +2161,6 @@ $rootScope.Button39 = {
   Icon: "fas fa-info",
   Text: "Get information",
   Class: "btn btn-info btn-xs ",
-  Disabled: ""
-};
-
-$rootScope.Button32 = {
-  ABRole: 2001,
-  Hidden: "",
-  Title: "",
-  AriaLabel: "",
-  TabIndex: 0,
-  TooltipText: "",
-  TooltipPos: "top",
-  PopoverText: "",
-  PopoverTitle: "",
-  PopoverEvent: "mouseenter",
-  PopoverPos: "top",
-  Badge: "",
-  Icon: "fas fa-window-close",
-  Text: "",
-  Class: "btn btn-link btn-md ",
   Disabled: ""
 };
     };
@@ -4972,25 +4896,25 @@ window.App.Debugger.log("SetVar \x22[IFrame4.Url]\x22 \x22https://mehdiquantom.g
 
 $rootScope.IFrame4.Url = "https://mehdiquantom.github.io/Fishonmars/Quantom_Telegram_Proxy/Info.html";
 
-window.App.Debugger.log("SetVar \x22[IFrame6.Url]\x22 \x22http://mehdiiiiii.hyperphp.com/Api/Catcher.php\x22 \x22String\x22", "info", 4);
-
-$rootScope.IFrame6.Url = "http://mehdiiiiii.hyperphp.com/Api/Catcher.php";
-
 window.App.Debugger.log("End of Telegram_Proxy Show event", "info", -2);
 
 $rootScope.$apply();
 });
 
-$scope.Button31Click = function($event) {
-$rootScope.Button31.Event = $event;
+$scope.Button22Click = function($event) {
+$rootScope.Button22.Event = $event;
 
-window.App.Debugger.log("Start of Button31 Click event", "info", -1);
+window.App.Debugger.log("Start of Button22 Click event", "info", -1);
 
-window.App.Debugger.log("ReplaceView \x22Main\x22", "info", 1);
+window.App.Debugger.log("Show \x22IFrame6\x22", "info", 1);
 
-$scope.replaceView("Main");
+if ($rootScope["IFrame6"]) { $rootScope["IFrame6"].Hidden = ""; }
 
-window.App.Debugger.log("End of Button31 Click event", "info", -2);
+window.App.Debugger.log("SetVar \x22[IFrame6.Url]\x22 \x22http://a0705392.xsph.ru/ProxyCatcher.php\x22 \x22String\x22", "info", 2);
+
+$rootScope.IFrame6.Url = "http://a0705392.xsph.ru/ProxyCatcher.php";
+
+window.App.Debugger.log("End of Button22 Click event", "info", -2);
 
 };
 
