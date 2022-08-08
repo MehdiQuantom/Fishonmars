@@ -1,0 +1,14 @@
+﻿{
+ "short_name": "Quantom Services",
+ "name": "Mehdi Quantom",
+ "icons": [{
+  "src": "app/images/icon.png",
+  "type": "image/png",
+  "sizes": "512x512"
+ }],
+ "theme_color": "#ffffff",
+ "background_color": "#ccffff",
+ "start_url": "index.html",
+ "display": "standalone",
+ "orientation": "portrait-primary"
+}
