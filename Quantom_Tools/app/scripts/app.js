@@ -712,7 +712,7 @@ $rootScope.App.AuthorEmail = "bbjon4000@gmail.com";
 $rootScope.App.AuthorUrl = "https://mehdiquantom.github.io/Fishonmars";
 $rootScope.App.LanguageCode = "en";
 $rootScope.App.TextDirection = "ltr";
-$rootScope.App.BuildNumber = 557;
+$rootScope.App.BuildNumber = 564;
 $rootScope.App.Scaled = "scaled";
 $rootScope.App.Views = ["Login", "Main", "Location", "Camera", "Luncher", "Globals", "Find_Helium_Devices", "Video_Player", "Barcode_Scanner", "Barcode_Maker", "PDF_Viewer", "Telegram_Proxy", "Device_Finder"];
 $rootScope.App.Theme = "Materia";
@@ -2014,7 +2014,7 @@ $rootScope.IFrame5 = {
 
 $rootScope.HtmlContent3 = {
   ABRole: 6001,
-  Hidden: "",
+  Hidden: "true",
   Class: "ios-inertial-scroll ",
   Title: "",
   TooltipText: "",
@@ -2769,186 +2769,368 @@ window.App.Ctrls.controller
 $scope.UpdateDatetimeVariables = function()
 {
 
+window.App.Debugger.log("Start of UpdateDatetimeVariables app function", "info", -1);
+
+window.App.Debugger.log("SetVar \x22[Hour]\x22 \x22[App.Hour]\x22 \x22String\x22", "info", 1);
+
 $rootScope.Hour = $rootScope.App.Hour;
+
+window.App.Debugger.log("SetVar \x22[Hour24]\x22 \x22[App.Hour24]\x22 \x22String\x22", "info", 2);
 
 $rootScope.Hour24 = $rootScope.App.Hour24;
 
+window.App.Debugger.log("SetVar \x22[Minutes]\x22 \x22[App.Minutes]\x22 \x22String\x22", "info", 3);
+
 $rootScope.Minutes = $rootScope.App.Minutes;
+
+window.App.Debugger.log("SetVar \x22[Seconds]\x22 \x22[App.Seconds]\x22 \x22String\x22", "info", 4);
 
 $rootScope.Seconds = $rootScope.App.Seconds;
 
+window.App.Debugger.log("SetVar \x22[HourShort]\x22 \x22[App.HourShort]\x22 \x22String\x22", "info", 5);
+
 $rootScope.HourShort = $rootScope.App.HourShort;
+
+window.App.Debugger.log("SetVar \x22[Timestamp]\x22 \x22[App.Timestamp]\x22 \x22String\x22", "info", 6);
 
 $rootScope.Timestamp = $rootScope.App.Timestamp;
 
+window.App.Debugger.log("SetVar \x22[Hour24Short]\x22 \x22[App.Hour24Short]\x22 \x22String\x22", "info", 7);
+
 $rootScope.Hour24Short = $rootScope.App.Hour24Short;
+
+window.App.Debugger.log("SetVar \x22[MinutesShort]\x22 \x22[App.MinutesShort]\x22 \x22String\x22", "info", 8);
 
 $rootScope.MinutesShort = $rootScope.App.MinutesShort;
 
+window.App.Debugger.log("SetVar \x22[SecondsShort]\x22 \x22[App.SecondsShort]\x22 \x22String\x22", "info", 9);
+
 $rootScope.SecondsShort = $rootScope.App.SecondsShort;
 
+window.App.Debugger.log("SetVar \x22[Milliseconds]\x22 \x22[App.Milliseconds]\x22 \x22String\x22", "info", 10);
+
 $rootScope.Milliseconds = ""+$rootScope.App.Milliseconds+"";
+
+window.App.Debugger.log("End of UpdateDatetimeVariables app function", "info", -2);
 };
 
 $scope.LocationERR = function()
 {
 
+window.App.Debugger.log("Start of LocationERR app function", "info", -1);
+
+window.App.Debugger.log("Return \x22Make Sure Location Access Is =Granted !\x22 \x22String\x22", "info", 1);
+
 return "Make Sure Location Access Is =Granted !";
+
+window.App.Debugger.log("End of LocationERR app function", "info", -2);
 };
 
 $scope.PromptCallback = function(Result, InputValue)
 {
 
+window.App.Debugger.log("Start of PromptCallback app function", "info", -1);
+
+window.App.Debugger.log("VarIsTrue \x22[Result]\x22 \x22[Confirmed]\x22", "info", 1);
+
 $rootScope.Confirmed = (window.App.Utils.lowerCase(Result.toString()) === "true") ? "true" : "false";
+
+window.App.Debugger.log("Ifex \x22([Confirmed] == \x27true\x27) && ([InputValue] == \x27Mehdi\x27)\x22", "info", 2);
 
 if(($rootScope.Confirmed == 'true') && (InputValue == 'Mehdi')) {
 
+window.App.Debugger.log("ReplaceView \x22Main\x22", "info", 3);
+
 $scope.replaceView("Main");
+
+window.App.Debugger.log("AlertBox \x22Passkey: \x22[InputValue]\x22 Valid !\x22 \x22dark\x22", "info", 4);
 
 $scope.alertBox("Passkey: \x22"+InputValue+"\x22 Valid !", "dark");
 
+window.App.Debugger.log("Else", "info", 5);
+
 } else {
+
+window.App.Debugger.log("AlertBox \x22Rejected !\x22 \x22light\x22", "info", 6);
 
 $scope.alertBox("Rejected !", "light");
 
+window.App.Debugger.log("EndIf", "info", 7);
+
 }
+
+window.App.Debugger.log("End of PromptCallback app function", "info", -2);
 };
 
 $scope.BiometricAvailableSuccessCallback = function(DeviceKind)
 {
 
+window.App.Debugger.log("Start of BiometricAvailableSuccessCallback app function", "info", -1);
+
+window.App.Debugger.log("Alert \x22Congrats!\x22 \x22Finger print is available! :: [DeviceKind]\x22", "info", 1);
+
 $scope.alert("Congrats!", "Finger print is available! :: "+DeviceKind+"");
+
+window.App.Debugger.log("End of BiometricAvailableSuccessCallback app function", "info", -2);
 };
 
 $scope.BiometricAvailableErrorCallback = function(Error)
 {
 
+window.App.Debugger.log("Start of BiometricAvailableErrorCallback app function", "info", -1);
+
+window.App.Debugger.log("Alert \x22Warning\x22 \x22Fingerprint is not available! :: [Error]\x22", "info", 1);
+
 $scope.alert("Warning", "Fingerprint is not available! :: "+Error+"");
+
+window.App.Debugger.log("End of BiometricAvailableErrorCallback app function", "info", -2);
 };
 
 $scope.BiometricAuthenticateSuccessCallback = function()
 {
 
+window.App.Debugger.log("Start of BiometricAuthenticateSuccessCallback app function", "info", -1);
+
+window.App.Debugger.log("Alert \x22Congrats!\x22 \x22Authenticate Successfully!\x22", "info", 1);
+
 $scope.alert("Congrats!", "Authenticate Successfully!");
+
+window.App.Debugger.log("End of BiometricAuthenticateSuccessCallback app function", "info", -2);
 };
 
 $scope.BiometricAuthenticateErrorCallback = function(Error)
 {
 
+window.App.Debugger.log("Start of BiometricAuthenticateErrorCallback app function", "info", -1);
+
+window.App.Debugger.log("Alert \x22Warning\x22 \x22Authentication Error! :: [Error]\x22", "info", 1);
+
 $scope.alert("Warning", "Authentication Error! :: "+Error+"");
+
+window.App.Debugger.log("End of BiometricAuthenticateErrorCallback app function", "info", -2);
 };
 
 $scope.DownloadErrorCallback = function(ErrorCode, ErrorObject)
 {
 
+window.App.Debugger.log("Start of DownloadErrorCallback app function", "info", -1);
+
+window.App.Debugger.log("Enable \x22Button12\x22", "info", 1);
+
 if ($rootScope["Button12"]) { $rootScope["Button12"].Disabled = ""; }
+
+window.App.Debugger.log("StrSerialize \x22[ErrorObject]\x22 \x22[SerializedErrorObject]\x22", "info", 2);
 
 $rootScope.SerializedErrorObject = JSON.stringify(ErrorObject);
 
+window.App.Debugger.log("Alert \x22An error occur\x22 \x22Error code: [ErrorCode] - Error: [SerializedErrorObject]\x22", "info", 3);
+
 $scope.alert("An error occur", "Error code: "+ErrorCode+" - Error: "+$rootScope.SerializedErrorObject+"");
+
+window.App.Debugger.log("End of DownloadErrorCallback app function", "info", -2);
 };
 
 $scope.DownloadSuccessCallback = function(FileUrl, FileEntry)
 {
 
+window.App.Debugger.log("Start of DownloadSuccessCallback app function", "info", -1);
+
+window.App.Debugger.log("StrSearch \x22[FileUrl]\x22 \x22.png\x22 \x22[Result]\x22", "info", 1);
+
 $rootScope.Result = window.App.Utils.strSearch(FileUrl, ".png");
+
+window.App.Debugger.log("If \x22[Result]\x22 \x22!=\x22 \x22-1\x22", "info", 2);
 
 if ($rootScope.Result != -1) {
 
+window.App.Debugger.log("SetVar \x22[DownloadImage.Image]\x22 \x22[FileUrl]\x22 \x22String\x22", "info", 3);
+
 $rootScope.DownloadImage.Image = FileUrl;
+
+window.App.Debugger.log("ApplyModel", "info", 4);
 
 $timeout(function() { $rootScope.$apply(); });
 
+window.App.Debugger.log("Else", "info", 5);
+
 } else {
+
+window.App.Debugger.log("Alert \x22Congrats!\x22 \x22The file has been downloaded at: [FileUrl]\x22", "info", 6);
 
 $scope.alert("Congrats!", "The file has been downloaded at: "+FileUrl+"");
 
+window.App.Debugger.log("EndIf", "info", 7);
+
 }
+
+window.App.Debugger.log("End of DownloadSuccessCallback app function", "info", -2);
 };
 
 $scope.UpdateAppTheme = function()
 {
 
+window.App.Debugger.log("Start of UpdateAppTheme app function", "info", -1);
+
+window.App.Debugger.log("ArrayGetItem \x22[ThemeSelect.Items]\x22 \x22[ThemeSelect.ItemIndex]\x22 \x22[SelectedTheme]\x22", "info", 1);
+
 $rootScope.SelectedTheme = $rootScope.ThemeSelect.Items[$rootScope.ThemeSelect.ItemIndex];
 
+window.App.Debugger.log("If \x22[SelectedTheme]\x22 \x22!=\x22 \x22[App.Theme]\x22", "info", 2);
+
 if ($rootScope.SelectedTheme != $rootScope.App.Theme) {
+
+window.App.Debugger.log("SetAppTheme \x22[SelectedTheme]\x22", "info", 3);
 
 angular.element(document.getElementById("appTheme")).attr("href", "builder/styles/" + window.App.Utils.lowerCase($rootScope.SelectedTheme) + ".css");
 angular.element(document.querySelector("body")).removeClass($rootScope.App.Theme.toLowerCase());
 $rootScope.App.Theme = $rootScope.SelectedTheme;
 angular.element(document.querySelector("body")).addClass($rootScope.App.Theme.toLowerCase());
 
+window.App.Debugger.log("SetOption \x22SavedAppTheme\x22 \x22[SelectedTheme]\x22 \x22String\x22", "info", 4);
+
 $scope.setLocalOption("SavedAppTheme", $rootScope.SelectedTheme);
 
+window.App.Debugger.log("EndIf", "info", 5);
+
 }
+
+window.App.Debugger.log("End of UpdateAppTheme app function", "info", -2);
 };
 
 $scope.OpenProgramUrl = function()
 {
 
+window.App.Debugger.log("Start of OpenProgramUrl app function", "info", -1);
+
+window.App.Debugger.log("If \x22[ProgramID]\x22 \x22==\x22 \x22AppBuilder\x22", "info", 1);
+
 if (""+$rootScope.ProgramID+"" ==  "AppBuilder" ) {
+
+window.App.Debugger.log("SetVar \x22[ProgramUrl]\x22 \x22http://www.davidesperalta.com/appbuilder\x22 \x22String\x22", "info", 2);
 
 $rootScope.ProgramUrl = "http://www.davidesperalta.com/appbuilder";
 
+window.App.Debugger.log("ElseIf \x22[ProgramID]\x22 \x22==\x22 \x22HtmlCompiler\x22", "info", 3);
+
 } else if (""+$rootScope.ProgramID+"" ==  "HtmlCompiler" ) {
+
+window.App.Debugger.log("SetVar \x22[ProgramUrl]\x22 \x22http://www.davidesperalta.com/htmlcompiler\x22 \x22String\x22", "info", 4);
 
 $rootScope.ProgramUrl = "http://www.davidesperalta.com/htmlcompiler";
 
+window.App.Debugger.log("ElseIf \x22[ProgramID]\x22 \x22==\x22 \x22ScreenGif\x22", "info", 5);
+
 } else if (""+$rootScope.ProgramID+"" ==  "ScreenGif" ) {
+
+window.App.Debugger.log("SetVar \x22[ProgramUrl]\x22 \x22http://www.davidesperalta.com/screengif\x22 \x22String\x22", "info", 6);
 
 $rootScope.ProgramUrl = "http://www.davidesperalta.com/screengif";
 
+window.App.Debugger.log("ElseIf \x22[ProgramID]\x22 \x22==\x22 \x22SmallEditor\x22", "info", 7);
+
 } else if (""+$rootScope.ProgramID+"" ==  "SmallEditor" ) {
+
+window.App.Debugger.log("SetVar \x22[ProgramUrl]\x22 \x22http://www.davidesperalta.com/smalleditor\x22 \x22String\x22", "info", 8);
 
 $rootScope.ProgramUrl = "http://www.davidesperalta.com/smalleditor";
 
+window.App.Debugger.log("ElseIf \x22[ProgramID]\x22 \x22==\x22 \x22VolumeKeys\x22", "info", 9);
+
 } else if (""+$rootScope.ProgramID+"" ==  "VolumeKeys" ) {
+
+window.App.Debugger.log("SetVar \x22[ProgramUrl]\x22 \x22http://www.davidesperalta.com/volumekeys\x22 \x22String\x22", "info", 10);
 
 $rootScope.ProgramUrl = "http://www.davidesperalta.com/volumekeys";
 
+window.App.Debugger.log("ElseIf \x22[ProgramID]\x22 \x22==\x22 \x22ImgConverter\x22", "info", 11);
+
 } else if (""+$rootScope.ProgramID+"" ==  "ImgConverter" ) {
+
+window.App.Debugger.log("SetVar \x22[ProgramUrl]\x22 \x22http://www.davidesperalta.com/imgconverter\x22 \x22String\x22", "info", 12);
 
 $rootScope.ProgramUrl = "http://www.davidesperalta.com/imgconverter";
 
+window.App.Debugger.log("ElseIf \x22[ProgramID]\x22 \x22==\x22 \x22HummPhp\x22", "info", 13);
+
 } else if (""+$rootScope.ProgramID+"" ==  "HummPhp" ) {
+
+window.App.Debugger.log("SetVar \x22[ProgramUrl]\x22 \x22http://www.davidesperalta.com/hummphp\x22 \x22String\x22", "info", 14);
 
 $rootScope.ProgramUrl = "http://www.davidesperalta.com/hummphp";
 
+window.App.Debugger.log("ElseIf \x22[ProgramID]\x22 \x22==\x22 \x22NeoPlugins\x22", "info", 15);
+
 } else if (""+$rootScope.ProgramID+"" ==  "NeoPlugins" ) {
+
+window.App.Debugger.log("SetVar \x22[ProgramUrl]\x22 \x22http://www.davidesperalta.com/neoplugins\x22 \x22String\x22", "info", 16);
 
 $rootScope.ProgramUrl = "http://www.davidesperalta.com/neoplugins";
 
+window.App.Debugger.log("Else", "info", 17);
+
 } else {
+
+window.App.Debugger.log("SetVar \x22[ProgramUrl]\x22 \x22\x22 \x22String\x22", "info", 18);
 
 $rootScope.ProgramUrl = "";
 
+window.App.Debugger.log("EndIf", "info", 19);
+
 }
+
+window.App.Debugger.log("If \x22[ProgramUrl]\x22 \x22!=\x22 \x22\x22", "info", 20);
 
 if ($rootScope.ProgramUrl != "") {
 
+window.App.Debugger.log("SetVar \x22[WebFrame.Url]\x22 \x22[ProgramUrl]\x22 \x22String\x22", "info", 21);
+
 $rootScope.WebFrame.Url = $rootScope.ProgramUrl;
+
+window.App.Debugger.log("ReplaceView \x22Program\x22", "info", 22);
 
 $scope.replaceView("Program");
 
+window.App.Debugger.log("EndIf", "info", 23);
+
 }
+
+window.App.Debugger.log("End of OpenProgramUrl app function", "info", -2);
 };
 
 $scope.PromptCallback_Device_INFO_Quantom_Auth = function(Result, InputValue)
 {
 
+window.App.Debugger.log("Start of PromptCallback_Device_INFO_Quantom_Auth app function", "info", -1);
+
+window.App.Debugger.log("VarIsTrue \x22[Result]\x22 \x22[Confirmed]\x22", "info", 1);
+
 $rootScope.Confirmed = (window.App.Utils.lowerCase(Result.toString()) === "true") ? "true" : "false";
+
+window.App.Debugger.log("IfEx \x22([Confirmed] == \x27true\x27) && ([InputValue] == \x271\x27)\x22", "info", 2);
 
 if(($rootScope.Confirmed == 'true') && (InputValue == '1')) {
 
+window.App.Debugger.log("ReplaceView \x22Device_Finder\x22", "info", 3);
+
 $scope.replaceView("Device_Finder");
+
+window.App.Debugger.log("AlertBox \x22Passkey: \x22[InputValue]\x22 Valid !\x22 \x22success\x22", "info", 4);
 
 $scope.alertBox("Passkey: \x22"+InputValue+"\x22 Valid !", "success");
 
+window.App.Debugger.log("Else", "info", 5);
+
 } else {
+
+window.App.Debugger.log("AlertBox \x22Rejected !\x22 \x22danger\x22", "info", 6);
 
 $scope.alertBox("Rejected !", "danger");
 
+window.App.Debugger.log("EndIf", "info", 7);
+
 }
+
+window.App.Debugger.log("End of PromptCallback_Device_INFO_Quantom_Auth app function", "info", -2);
 };
 
 }]);
@@ -2986,7 +3168,13 @@ window.App.Ctrls.controller
 
     $rootScope.OnAppReady = function () {
       
+window.App.Debugger.log("Start of App Ready event", "info", -1);
+
+window.App.Debugger.log("Show \x22MediaPlayer3\x22", "info", 1);
+
 if ($rootScope["MediaPlayer3"]) { $rootScope["MediaPlayer3"].Hidden = ""; }
+
+window.App.Debugger.log("End of App Ready event", "info", -2);
 
     };
 
@@ -4770,13 +4958,25 @@ AppPluginsService.docReady();
 angular.element(window.document).ready(function(event){
 $rootScope.Telegram_Proxy.Event = event;
 
+window.App.Debugger.log("Start of Telegram_Proxy Show event", "info", -1);
+
+window.App.Debugger.log("UserAgent \x22[UserAgent]\x22", "info", 1);
+
 var ua = new UAParser(); $rootScope.UserAgent = ua.getResult();
+
+window.App.Debugger.log("SetVar \x22[IFrame5.Url]\x22 \x22https://mrpooya.xyz/api/TeleFay.php\x22 \x22String\x22", "info", 2);
 
 $rootScope.IFrame5.Url = "https://mrpooya.xyz/api/TeleFay.php";
 
+window.App.Debugger.log("SetVar \x22[IFrame4.Url]\x22 \x22https://mehdiquantom.github.io/Fishonmars/Quantom_Telegram_Proxy/Info.html\x22 \x22String\x22", "info", 3);
+
 $rootScope.IFrame4.Url = "https://mehdiquantom.github.io/Fishonmars/Quantom_Telegram_Proxy/Info.html";
 
+window.App.Debugger.log("SetVar \x22[IFrame6.Url]\x22 \x22http://mehdiiiiii.hyperphp.com/Api/Catcher.php\x22 \x22String\x22", "info", 4);
+
 $rootScope.IFrame6.Url = "http://mehdiiiiii.hyperphp.com/Api/Catcher.php";
+
+window.App.Debugger.log("End of Telegram_Proxy Show event", "info", -2);
 
 $rootScope.$apply();
 });
@@ -4784,7 +4984,13 @@ $rootScope.$apply();
 $scope.Button31Click = function($event) {
 $rootScope.Button31.Event = $event;
 
+window.App.Debugger.log("Start of Button31 Click event", "info", -1);
+
+window.App.Debugger.log("ReplaceView \x22Main\x22", "info", 1);
+
 $scope.replaceView("Main");
+
+window.App.Debugger.log("End of Button31 Click event", "info", -2);
 
 };
 
