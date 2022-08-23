@@ -9,18 +9,16 @@ html, body, .appView { width: 320px; height: 480px; }
 .dialogView .modal-dialog { width: 320px; margin: 0 auto; }
 #Login { cursor: auto; }
 #MediaPlayer1 { position: absolute; top: 0px; left: 0px; width: 320px; height: 480px; animation-fill-mode: 100;}
-#PasswordInput { position: absolute; top: 104px; left: 136px; width: 104px; height: 24px; font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;}
-#Button1 { position: absolute; top: 160px; left: 136px; width: 48px; height: 32px; font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;}
-#Label7 { position: absolute; top: 80px; left: 136px; width: 128px; height: 20px; font-family: "Arial Black", Gadget, sans-serif; font-size: 40; font-style: normal; font-weight: bold;}
-#Progressbar1 { position: absolute; top: 136px; left: 136px; width: 48px; height: 16px; }
-#Button12 { position: absolute; top: 280px; left: 136px; width: 80px; height: 24px; }
+#PasswordInput { position: absolute; top: 16px; left: 328px; width: 104px; height: 24px; font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;}
+#Button1 { position: absolute; top: 72px; left: 328px; width: 48px; height: 32px; font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;}
+#Label7 { position: absolute; top: 0px; left: 328px; width: 128px; height: 20px; font-family: "Arial Black", Gadget, sans-serif; font-size: 40; font-style: normal; font-weight: bold;}
+#Progressbar1 { position: absolute; top: 48px; left: 328px; width: 48px; height: 16px; }
+#Button12 { position: absolute; top: 344px; left: 320px; width: 80px; height: 24px; }
 #HtmlContent2 { position: absolute; top: 8px; left: 8px; width: 48px; height: 8px; }
-#Button15 { position: absolute; top: 80px; left: 56px; width: 40px; height: 24px; }
-#Button16 { position: absolute; top: 112px; left: 56px; width: 40px; height: 24px; }
-#ThemeSelect { position: absolute; top: 288px; left: 488px; width: 96px; height: 24px; }
-#Button20 { position: absolute; top: 248px; left: 136px; width: 80px; height: 24px; }
-#Label6 { position: absolute; top: 448px; left: 16px; width: 200px; height: 20px; }
-
+#Button15 { position: absolute; top: 200px; left: 128px; width: 64px; height: 24px; }
+#Button16 { position: absolute; top: 376px; left: 320px; width: 40px; height: 24px; }
+#Button20 { position: absolute; top: 312px; left: 320px; width: 80px; height: 24px; }
+#Label6 { position: absolute; top: 448px; left: 8px; width: 200px; height: 20px; }
 #Button3 { position: absolute; top: 64px; left: 0px; width: 104px; height: 32px; }
 #Button4 { position: absolute; top: 112px; left: 0px; width: 104px; height: 32px; }
 #Button5 { position: absolute; top: 160px; left: 0px; width: 104px; height: 32px; }

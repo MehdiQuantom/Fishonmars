@@ -712,7 +712,7 @@ $rootScope.App.AuthorEmail = "bbjon4000@gmail.com";
 $rootScope.App.AuthorUrl = "https://mehdiquantom.github.io/Fishonmars";
 $rootScope.App.LanguageCode = "en";
 $rootScope.App.TextDirection = "ltr";
-$rootScope.App.BuildNumber = 567;
+$rootScope.App.BuildNumber = 591;
 $rootScope.App.Scaled = "scaled";
 $rootScope.App.Views = ["Login", "Main", "Location", "Camera", "Luncher", "Globals", "Find_Helium_Devices", "Video_Player", "Barcode_Scanner", "Barcode_Maker", "PDF_Viewer", "Telegram_Proxy", "Device_Finder"];
 $rootScope.App.Theme = "Materia";
@@ -741,7 +741,7 @@ window.App.Module.service
 
 $rootScope.MediaPlayer1 = {
   ABRole: 10001,
-  Hidden: "",
+  Hidden: "true",
   Class: "videogular-container ",
   Loop: true,
   Autoplay: true,
@@ -756,7 +756,7 @@ $rootScope.MediaPlayer1.Sources.push({src: $sce.trustAsResourceUrl("app/images/C
 
 $rootScope.PasswordInput = {
   ABRole: 3001,
-  Hidden: "",
+  Hidden: "true",
   Value: "",
   Title: "Password",
   AriaLabel: "",
@@ -769,13 +769,13 @@ $rootScope.PasswordInput = {
   PopoverPos: "top",
   PlaceHolder: "",
   Class: "form-control form-control-md ",
-  Disabled: "",
+  Disabled: "true",
   ReadOnly: ""
 };
 
 $rootScope.Button1 = {
   ABRole: 2001,
-  Hidden: "",
+  Hidden: "true",
   Title: "",
   AriaLabel: "",
   TabIndex: 0,
@@ -789,12 +789,12 @@ $rootScope.Button1 = {
   Icon: "",
   Text: "Login",
   Class: "btn btn-primary btn-md ",
-  Disabled: ""
+  Disabled: "true"
 };
 
 $rootScope.Label7 = {
   ABRole: 6002,
-  Hidden: "",
+  Hidden: "true",
   Class: "",
   Text: "Enter Your Unique Password:",
   Input: "",
@@ -847,7 +847,7 @@ $rootScope.QuantomSevicesConnector = {
 
 $rootScope.Button12 = {
   ABRole: 2001,
-  Hidden: "",
+  Hidden: "true",
   Title: "",
   AriaLabel: "",
   TabIndex: 0,
@@ -866,7 +866,7 @@ $rootScope.Button12 = {
 
 $rootScope.HtmlContent2 = {
   ABRole: 6001,
-  Hidden: "true",
+  Hidden: "",
   Class: "ios-inertial-scroll ",
   Title: "",
   TooltipText: "",
@@ -890,15 +890,15 @@ $rootScope.Button15 = {
   PopoverEvent: "mouseenter",
   PopoverPos: "top",
   Badge: "",
-  Icon: "",
-  Text: "Biometric Available",
+  Icon: "fas fa-lock",
+  Text: "Biometric Login",
   Class: "btn btn-link btn-md ",
-  Disabled: "true"
+  Disabled: ""
 };
 
 $rootScope.Button16 = {
   ABRole: 2001,
-  Hidden: "",
+  Hidden: "true",
   Title: "",
   AriaLabel: "",
   TabIndex: 0,
@@ -912,30 +912,12 @@ $rootScope.Button16 = {
   Icon: "",
   Text: "Authenticate",
   Class: "btn btn-link btn-md ",
-  Disabled: "true"
-};
-
-$rootScope.ThemeSelect = {
-  ABRole: 20004,
-  Hidden: "",
-  Items: [],
-  ItemIndex: 0,
-  Title: "",
-  AriaLabel: "",
-  TabIndex: 0,
-  TooltipText: "",
-  TooltipPos: "top",
-  PopoverText: "",
-  PopoverEvent: "mouseenter",
-  PopoverTitle: "",
-  PopoverPos: "top",
-  Class: "custom-select custom-select-md ",
   Disabled: ""
 };
 
 $rootScope.Button20 = {
   ABRole: 2001,
-  Hidden: "",
+  Hidden: "true",
   Title: "",
   AriaLabel: "",
   TabIndex: 0,
@@ -1971,7 +1953,7 @@ $rootScope.HtmlContent3 = {
 $rootScope.IFrame6 = {
   ABRole: 4001,
   Hidden: "true",
-  Url: "http://mehdiiiiii.hyperphp.com/Api/Catcher.php",
+  Url: "",
   Class: "ios-iframe-wrapper "
 };
 
@@ -3531,19 +3513,6 @@ window.App.Debugger.log("End of Button16 Click event", "info", -2);
 
 };
 
-$scope.ThemeSelectChange = function($event) {
-$rootScope.ThemeSelect.Event = $event;
-
-window.App.Debugger.log("Start of ThemeSelect Change event", "info", -1);
-
-window.App.Debugger.log("UpdateAppTheme", "info", 1);
-
-$scope.UpdateAppTheme();
-
-window.App.Debugger.log("End of ThemeSelect Change event", "info", -2);
-
-};
-
 $scope.Button20Click = function($event) {
 $rootScope.Button20.Event = $event;
 
@@ -3566,7 +3535,6 @@ window.App.Debugger.log("End of Button20 Click event", "info", -2);
 };
 
 }]);
-
 window.App.Ctrls.controller("MainCtrl", ["$scope", "$rootScope", "$routeParams", "$sce", "$timeout", "$interval", "$http", "$uibPosition", "$templateCache", "blockUI", "AppPluginsService",
 
 function($scope, $rootScope, $routeParams, $sce, $timeout, $interval, $http, $position, $templateCache, blockUI, AppPluginsService) {

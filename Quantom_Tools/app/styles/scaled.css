@@ -8,18 +8,16 @@ body { border-radius: 0.2em; }
 html, body { width: 320px; height: 480px; }
 #Login { cursor: auto; }
 #MediaPlayer1 { position: absolute; top: 0.00%; left: 0.00%; width: 100.00%; height: 100.00%; animation-fill-mode: 100;}
-#PasswordInput { position: absolute; top: 21.67%; left: 42.50%; width: 32.50%; height: 5.00%; font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;}
-#Button1 { position: absolute; top: 33.33%; left: 42.50%; width: 15.00%; height: 6.67%; font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;}
-#Label7 { position: absolute; top: 16.67%; left: 42.50%; width: 40.00%; height: 4.17%; font-family: "Arial Black", Gadget, sans-serif; font-size: 40; font-style: normal; font-weight: bold;}
-#Progressbar1 { position: absolute; top: 28.33%; left: 42.50%; width: 15.00%; height: 3.33%; }
-#Button12 { position: absolute; top: 58.33%; left: 42.50%; width: 25.00%; height: 5.00%; }
+#PasswordInput { position: absolute; top: 3.33%; left: 102.50%; width: 32.50%; height: 5.00%; font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;}
+#Button1 { position: absolute; top: 15.00%; left: 102.50%; width: 15.00%; height: 6.67%; font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;}
+#Label7 { position: absolute; top: 0.00%; left: 102.50%; width: 40.00%; height: 4.17%; font-family: "Arial Black", Gadget, sans-serif; font-size: 40; font-style: normal; font-weight: bold;}
+#Progressbar1 { position: absolute; top: 10.00%; left: 102.50%; width: 15.00%; height: 3.33%; }
+#Button12 { position: absolute; top: 71.67%; left: 100.00%; width: 25.00%; height: 5.00%; }
 #HtmlContent2 { position: absolute; top: 1.67%; left: 2.50%; width: 15.00%; height: 1.67%; }
-#Button15 { position: absolute; top: 16.67%; left: 17.50%; width: 12.50%; height: 5.00%; }
-#Button16 { position: absolute; top: 23.33%; left: 17.50%; width: 12.50%; height: 5.00%; }
-#ThemeSelect { position: absolute; top: 60.00%; left: 152.50%; width: 30.00%; height: 5.00%; }
-#Button20 { position: absolute; top: 51.67%; left: 42.50%; width: 25.00%; height: 5.00%; }
-#Label6 { position: absolute; top: 93.33%; left: 5.00%; width: 62.50%; height: 4.17%; }
-
+#Button15 { position: absolute; top: 41.67%; left: 40.00%; width: 20.00%; height: 5.00%; }
+#Button16 { position: absolute; top: 78.33%; left: 100.00%; width: 12.50%; height: 5.00%; }
+#Button20 { position: absolute; top: 65.00%; left: 100.00%; width: 25.00%; height: 5.00%; }
+#Label6 { position: absolute; top: 93.33%; left: 2.50%; width: 62.50%; height: 4.17%; }
 #Button3 { position: absolute; top: 13.33%; left: 0.00%; width: 32.50%; height: 6.67%; }
 #Button4 { position: absolute; top: 23.33%; left: 0.00%; width: 32.50%; height: 6.67%; }
 #Button5 { position: absolute; top: 33.33%; left: 0.00%; width: 32.50%; height: 6.67%; }
