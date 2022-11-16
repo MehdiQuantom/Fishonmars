@@ -427,7 +427,8 @@ window.App.Module.config
     .when("/Barcode_Maker/:params*?", {controller: "Barcode_MakerCtrl", templateUrl: "app/views/Barcode_Maker.html"})
     .when("/PDF_Viewer/:params*?", {controller: "PDF_ViewerCtrl", templateUrl: "app/views/PDF_Viewer.html"})
     .when("/Telegram_Proxy/:params*?", {controller: "Telegram_ProxyCtrl", templateUrl: "app/views/Telegram_Proxy.html"})
-    .when("/Device_Finder/:params*?", {controller: "Device_FinderCtrl", templateUrl: "app/views/Device_Finder.html"});
+    .when("/Device_Finder/:params*?", {controller: "Device_FinderCtrl", templateUrl: "app/views/Device_Finder.html"})
+    .when("/Inline_Browser/:params*?", {controller: "Inline_BrowserCtrl", templateUrl: "app/views/Inline_Browser.html"});
   }
 ]);
 
@@ -712,9 +713,9 @@ $rootScope.App.AuthorEmail = "bbjon4000@gmail.com";
 $rootScope.App.AuthorUrl = "https://mehdiquantom.github.io/Fishonmars";
 $rootScope.App.LanguageCode = "en";
 $rootScope.App.TextDirection = "ltr";
-$rootScope.App.BuildNumber = 591;
+$rootScope.App.BuildNumber = 596;
 $rootScope.App.Scaled = "scaled";
-$rootScope.App.Views = ["Login", "Main", "Location", "Camera", "Luncher", "Globals", "Find_Helium_Devices", "Video_Player", "Barcode_Scanner", "Barcode_Maker", "PDF_Viewer", "Telegram_Proxy", "Device_Finder"];
+$rootScope.App.Views = ["Login", "Main", "Location", "Camera", "Luncher", "Globals", "Find_Helium_Devices", "Video_Player", "Barcode_Scanner", "Barcode_Maker", "PDF_Viewer", "Telegram_Proxy", "Device_Finder", "Inline_Browser"];
 $rootScope.App.Theme = "Materia";
 $rootScope.App.Themes = ["Bubblegum", "Businesstycoon", "Cerulean", "Charming", "Cosmo", "Cyborg", "Darkly", "Daydream", "Default", "Executivesuite", "Flatly", "Goodnews", "Growth", "Harbor", "Helloworld", "Journal", "Litera", "Lumen", "Lux", "Materia", "Minty", "Neonglow", "Pleasant", "Pulse", "Readable", "Retro"];
 if ($rootScope.App.Themes.indexOf("Materia") == -1) { $rootScope.App.Themes.push("Materia"); }
@@ -2145,6 +2146,13 @@ $rootScope.Button39 = {
   Class: "btn btn-info btn-xs ",
   Disabled: ""
 };
+
+$rootScope.IFrame7 = {
+  ABRole: 4001,
+  Hidden: "",
+  Url: "",
+  Class: "ios-iframe-wrapper "
+};
     };
 
     return {
@@ -3484,11 +3492,15 @@ $rootScope.Button15.Event = $event;
 
 window.App.Debugger.log("Start of Button15 Click event", "info", -1);
 
-window.App.Debugger.log("Disable \x22Button15\x22", "info", 1);
+window.App.Debugger.log("Alert \x22%Auth\x22 \x22Rejected !\x22", "info", 1);
+
+$scope.alert("%Auth", "Rejected !");
+
+window.App.Debugger.log("Disable \x22Button15\x22", "info", 2);
 
 if ($rootScope["Button15"]) { $rootScope["Button15"].Disabled = "true"; }
 
-window.App.Debugger.log("BiometricIsAvailable \x22BiometricAvailableSuccessCallback\x22 \x22BiometricAvailableErrorCallback\x22", "info", 2);
+window.App.Debugger.log("BiometricIsAvailable \x22BiometricAvailableSuccessCallback\x22 \x22BiometricAvailableErrorCallback\x22", "info", 3);
 
 window.App.Plugins.Biometric.call().BiometricIsAvailable("BiometricAvailableSuccessCallback", "BiometricAvailableErrorCallback");
 
@@ -3535,6 +3547,7 @@ window.App.Debugger.log("End of Button20 Click event", "info", -2);
 };
 
 }]);
+
 window.App.Ctrls.controller("MainCtrl", ["$scope", "$rootScope", "$routeParams", "$sce", "$timeout", "$interval", "$http", "$uibPosition", "$templateCache", "blockUI", "AppPluginsService",
 
 function($scope, $rootScope, $routeParams, $sce, $timeout, $interval, $http, $position, $templateCache, blockUI, AppPluginsService) {
@@ -5044,5 +5057,41 @@ $scope.replaceView("Main");
 window.App.Debugger.log("End of Button32 Click event", "info", -2);
 
 };
+
+}]);
+
+window.App.Ctrls.controller("Inline_BrowserCtrl", ["$scope", "$rootScope", "$routeParams", "$sce", "$timeout", "$interval", "$http", "$uibPosition", "$templateCache", "blockUI", "AppPluginsService",
+
+function($scope, $rootScope, $routeParams, $sce, $timeout, $interval, $http, $position, $templateCache, blockUI, AppPluginsService) {
+
+$rootScope.Inline_Browser = {};
+$rootScope.Inline_Browser.ABView = true;
+$rootScope.Inline_Browser.Params = window.App.Utils.parseViewParams($routeParams.params);
+
+window.App.Inline_Browser = {};
+window.App.Inline_Browser.Scope = $scope;
+
+angular.element(window.document).ready(function(event){
+var theme = $rootScope.App.Theme.toLowerCase();
+angular.element(document.querySelector("body")).removeClass(theme).addClass(theme);
+});
+
+angular.element(window.document).ready(function(event){
+AppPluginsService.docReady();
+});
+
+angular.element(window.document).ready(function(event){
+$rootScope.Inline_Browser.Event = event;
+
+window.App.Debugger.log("Start of Inline_Browser Show event", "info", -1);
+
+window.App.Debugger.log("SetVar \x22[IFrame7.Url]\x22 \x22https://mehdiquantom.github.io/Fishonmars/QuantomInlineBrowser\x22 \x22String\x22", "info", 1);
+
+$rootScope.IFrame7.Url = "https://mehdiquantom.github.io/Fishonmars/QuantomInlineBrowser";
+
+window.App.Debugger.log("End of Inline_Browser Show event", "info", -2);
+
+$rootScope.$apply();
+});
 
 }]);

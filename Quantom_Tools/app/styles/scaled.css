@@ -18,6 +18,7 @@ html, body { width: 320px; height: 480px; }
 #Button16 { position: absolute; top: 78.33%; left: 100.00%; width: 12.50%; height: 5.00%; }
 #Button20 { position: absolute; top: 65.00%; left: 100.00%; width: 25.00%; height: 5.00%; }
 #Label6 { position: absolute; top: 93.33%; left: 2.50%; width: 62.50%; height: 4.17%; }
+
 #Button3 { position: absolute; top: 13.33%; left: 0.00%; width: 32.50%; height: 6.67%; }
 #Button4 { position: absolute; top: 23.33%; left: 0.00%; width: 32.50%; height: 6.67%; }
 #Button5 { position: absolute; top: 33.33%; left: 0.00%; width: 32.50%; height: 6.67%; }
@@ -104,6 +105,7 @@ html, body { width: 320px; height: 480px; }
 #Button39 { position: absolute; top: 63.33%; left: 15.00%; width: 17.50%; height: 8.33%; }
 #Button32 { position: absolute; top: 1.67%; left: 90.00%; width: 8.75%; height: 4.17%; }
 
+#IFrame7 { position: absolute; top: 0.00%; left: 0.00%; width: 100.00%; height: 100.00%; }
 /* App inline CSS */
 .block-ui-message
 {
