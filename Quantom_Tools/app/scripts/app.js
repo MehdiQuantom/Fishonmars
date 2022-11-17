@@ -713,7 +713,7 @@ $rootScope.App.AuthorEmail = "bbjon4000@gmail.com";
 $rootScope.App.AuthorUrl = "https://mehdiquantom.github.io/Fishonmars";
 $rootScope.App.LanguageCode = "en";
 $rootScope.App.TextDirection = "ltr";
-$rootScope.App.BuildNumber = 596;
+$rootScope.App.BuildNumber = 604;
 $rootScope.App.Scaled = "scaled";
 $rootScope.App.Views = ["Login", "Main", "Location", "Camera", "Luncher", "Globals", "Find_Helium_Devices", "Video_Player", "Barcode_Scanner", "Barcode_Maker", "PDF_Viewer", "Telegram_Proxy", "Device_Finder", "Inline_Browser"];
 $rootScope.App.Theme = "Materia";
@@ -5085,9 +5085,13 @@ $rootScope.Inline_Browser.Event = event;
 
 window.App.Debugger.log("Start of Inline_Browser Show event", "info", -1);
 
-window.App.Debugger.log("SetVar \x22[IFrame7.Url]\x22 \x22https://mehdiquantom.github.io/Fishonmars/QuantomInlineBrowser\x22 \x22String\x22", "info", 1);
+window.App.Debugger.log("UserAgent \x22[UserAgent]\x22", "info", 1);
 
-$rootScope.IFrame7.Url = "https://mehdiquantom.github.io/Fishonmars/QuantomInlineBrowser";
+var ua = new UAParser(); $rootScope.UserAgent = ua.getResult();
+
+window.App.Debugger.log("SetVar \x22[IFrame7.Url]\x22 \x22http://mehdiiiiii.hyperphp.com/QuantomInlineBrowser/BrowserSelection.php\x22 \x22String\x22", "info", 2);
+
+$rootScope.IFrame7.Url = "http://mehdiiiiii.hyperphp.com/QuantomInlineBrowser/BrowserSelection.php";
 
 window.App.Debugger.log("End of Inline_Browser Show event", "info", -2);
 
