@@ -5646,6 +5646,7 @@ $rootScope.Timer2.TimerStop = function() {
 };
 
 }]);
+
 window.App.Ctrls.controller("Auth_Biometric_TestCtrl", ["$scope", "$rootScope", "$routeParams", "$sce", "$timeout", "$interval", "$http", "$uibPosition", "$templateCache", "blockUI", "AppPluginsService",
 
 function($scope, $rootScope, $routeParams, $sce, $timeout, $interval, $http, $position, $templateCache, blockUI, AppPluginsService) {

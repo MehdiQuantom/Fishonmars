@@ -113,6 +113,7 @@ html, body, .appView { width: 320px; height: 480px; }
 #HtmlContent6 { position: absolute; top: 152px; left: 56px; width: 200px; height: 40px; }
 #HtmlContent7 { position: absolute; top: 8px; left: 8px; width: 48px; height: 8px; }
 #HtmlContent8 { position: absolute; top: 240px; left: 64px; width: 160px; height: 120px; }
+
 #AuthenticateButton { position: absolute; top: 360px; left: 56px; width: 200px; height: 40px; }
 #IsAvailableButton { position: absolute; top: 280px; left: 56px; width: 200px; height: 40px; }
 #InfoHtmlContent { position: absolute; top: 40px; left: 16px; width: 288px; height: 160px; }
