@@ -8,7 +8,7 @@ body { border-radius: 0.2em; }
 html, body, .appView { width: 320px; height: 480px; }
 .dialogView .modal-dialog { width: 320px; margin: 0 auto; }
 #Login { cursor: auto; }
-#MediaPlayer1 { position: absolute; top: 0px; left: 0px; width: 320px; height: 480px; animation-fill-mode: 100;}
+#MediaPlayer1 { position: absolute; top: 8px; left: 0px; width: 320px; height: 480px; animation-fill-mode: 100;}
 #PasswordInput { position: absolute; top: 16px; left: 328px; width: 104px; height: 24px; font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;}
 #Button1 { position: absolute; top: 72px; left: 328px; width: 48px; height: 32px; font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;}
 #Label7 { position: absolute; top: 0px; left: 328px; width: 128px; height: 20px; font-family: "Arial Black", Gadget, sans-serif; font-size: 40; font-style: normal; font-weight: bold;}
@@ -44,7 +44,6 @@ html, body, .appView { width: 320px; height: 480px; }
 #CaptureButton { position: absolute; top: 424px; left: 200px; width: 112px; height: 40px; }
 #WebCam { position: absolute; top: 8px; left: 8px; width: 304px; height: 200px; }
 #WebCamHtml { position: absolute; top: 216px; left: 8px; width: 304px; height: 200px; }
-#Button23 { position: absolute; top: 8px; left: 288px; width: 28px; height: 20px; }
 
 #Button6 { position: absolute; top: 136px; left: 48px; width: 224px; height: 56px; }
 #Input1 { position: absolute; top: 56px; left: 48px; width: 224px; height: 40px; }
@@ -107,6 +106,24 @@ html, body, .appView { width: 320px; height: 480px; }
 #Button32 { position: absolute; top: 8px; left: 288px; width: 28px; height: 20px; }
 
 #IFrame7 { position: absolute; top: 0px; left: 0px; width: 320px; height: 480px; }
+
+#Button23 { position: absolute; top: 424px; left: 8px; width: 112px; height: 40px; }
+#Button26 { position: absolute; top: 424px; left: 200px; width: 112px; height: 40px; }
+#WebCam1 { position: absolute; top: 0px; left: 56px; width: 200px; height: 152px; }
+#HtmlContent6 { position: absolute; top: 152px; left: 56px; width: 200px; height: 40px; }
+#HtmlContent7 { position: absolute; top: 8px; left: 8px; width: 48px; height: 8px; }
+#HtmlContent8 { position: absolute; top: 240px; left: 64px; width: 160px; height: 120px; }
+#AuthenticateButton { position: absolute; top: 360px; left: 56px; width: 200px; height: 40px; }
+#IsAvailableButton { position: absolute; top: 280px; left: 56px; width: 200px; height: 40px; }
+#InfoHtmlContent { position: absolute; top: 40px; left: 16px; width: 288px; height: 160px; }
+
+#TextareaLabel { position: absolute; top: 8px; left: 8px; width: 304px; height: 24px; }
+#Textarea { position: absolute; top: 32px; left: 8px; width: 304px; height: 216px; }
+#SpeechButton { position: absolute; top: 424px; left: 8px; width: 304px; height: 48px; }
+#LocaleSelect { position: absolute; top: 288px; left: 8px; width: 304px; height: 40px; }
+#LocaleLabel { position: absolute; top: 264px; left: 8px; width: 304px; height: 24px; }
+#RateLabel { position: absolute; top: 344px; left: 8px; width: 304px; height: 24px; }
+#RateRange { position: absolute; top: 368px; left: 8px; width: 304px; height: 40px; }
 
 /* App inline CSS */
 .block-ui-message
