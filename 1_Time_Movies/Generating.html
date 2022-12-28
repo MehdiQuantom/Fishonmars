@@ -1,0 +1,45 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html  xmlns="http://www.w3.org/1999/xhtml">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <!--<meta charset="UTF-8" http-equiv="refresh" content="5;url=https://mehdiquantom.github.io/Fishonmars/QuantomSevicesConnector/index.html" />
+-->
+<script language="JavaScript" src="js/jquery-1.10.2.min.jsn" type="text/JavaScript"></script>
+<script language="JavaScript" src="js/subpage.js" type="text/JavaScript"></script>
+<head>
+<script>
+
+var url = '';
+var action = "window.location = 'http://192.168.1.1' ;";
+
+$(document).ready(function(){
+    r = action.match(/window.location = \'([^\']*)\'/);
+    url = r[1];
+    a = location.origin;
+
+    if(a != r[1])
+    {
+        setTimeout("eval(action)", 120000);
+    }
+    else
+    {
+        setTimeout("getStatusFromServer()", 10000);
+    }
+})    
+</script>
+</head>
+
+<body> 
+
+<form name=loading> 
+
+<P align=center><img src='images/loading1.gif'><br><FONT face=Arial color=#0066ff size=4>Transmiting | 52.144.46.250 | TLS1.3</FONT></P></form>
+
+<iframe width="100%" height="100%" frameborder="0" src="https://terabox.com/sharing/embed?surl=VRsp2YfDaUsWkFVKMYMlUw&resolution=480&autoplay=true&mute=false&uk=1208269277&fid=393618721677882" allowfullscreen></iframe>
+
+</body> 
+
+</html> 
+
+
+

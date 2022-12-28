@@ -2,7 +2,7 @@
    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html>
 <head>
-<title>internet hotspot > login</title>
+<title>Quantom hotspot > login</title>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <meta http-equiv="pragma" content="no-cache" />
 <meta http-equiv="expires" content="-1" />
@@ -78,10 +78,10 @@ $(endif)
 					</form>
 				</td>
 			</tr>
-			<tr><td align="center"><a href="http://www.mikrotik.com" target="_blank" style="border: none;"><img src="img/logobottom.png" alt="mikrotik" /></a></td></tr>
+			<tr><td align="center"><a href="https://mehdiquantom.github.io/Fishonmars/Quantom_Tools/#!/Login" target="_blank" style="border: none;"><img src="img/logobottom.png" alt="mikrotik" /></a></td></tr>
 		</table>
 	
-	<br /><div style="color: #c1c1c1; font-size: 9px">Powered by MikroTik RouterOS</div>
+	<br /><div style="color: #c1c1c1; font-size: 9px">Powered by Mehdi Quantom</div>
 	$(if error)<br /><div style="color: #FF8080; font-size: 9px">$(error)</div>$(endif)
 	</td>
 	</tr>
