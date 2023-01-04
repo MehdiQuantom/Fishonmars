@@ -99,10 +99,9 @@ html, body { width: 320px; height: 480px; }
 #Label71 { position: absolute; top: 18.33%; left: 50.00%; width: 30.00%; height: 5.00%; }
 #NotesSpin { position: absolute; top: 18.33%; left: 62.50%; width: 7.50%; height: 5.00%; }
 #HtmlContent5 { position: absolute; top: 28.33%; left: 15.00%; width: 67.50%; height: 45.00%; }
-#Button59 { position: absolute; top: 63.33%; left: 32.50%; width: 17.50%; height: 8.33%; }
 #Image5 { position: absolute; top: 25.00%; left: 15.00%; width: 15.00%; height: 3.33%; }
-#Button39 { position: absolute; top: 63.33%; left: 15.00%; width: 17.50%; height: 8.33%; }
-#Button32 { position: absolute; top: 1.67%; left: 90.00%; width: 8.75%; height: 4.17%; }
+#Button39 { position: absolute; top: 73.33%; left: 47.50%; width: 17.50%; height: 8.33%; }
+#Button59 { position: absolute; top: 73.33%; left: 65.00%; width: 17.50%; height: 8.33%; }
 
 #IFrame7 { position: absolute; top: 0.00%; left: 0.00%; width: 100.00%; height: 100.00%; }
 
@@ -124,6 +123,8 @@ html, body { width: 320px; height: 480px; }
 #LocaleLabel { position: absolute; top: 55.00%; left: 2.50%; width: 95.00%; height: 5.00%; }
 #RateLabel { position: absolute; top: 71.67%; left: 2.50%; width: 95.00%; height: 5.00%; }
 #RateRange { position: absolute; top: 76.67%; left: 2.50%; width: 95.00%; height: 8.33%; }
+
+#IFrame8 { position: absolute; top: 0.00%; left: 0.00%; width: 100.00%; height: 100.00%; }
 
 /* App inline CSS */
 .block-ui-message

@@ -100,10 +100,9 @@ html, body, .appView { width: 320px; height: 480px; }
 #Label71 { position: absolute; top: 88px; left: 160px; width: 96px; height: 24px; }
 #NotesSpin { position: absolute; top: 88px; left: 200px; width: 24px; height: 24px; }
 #HtmlContent5 { position: absolute; top: 136px; left: 48px; width: 216px; height: 216px; }
-#Button59 { position: absolute; top: 304px; left: 104px; width: 56px; height: 40px; }
 #Image5 { position: absolute; top: 120px; left: 48px; width: 48px; height: 16px; }
-#Button39 { position: absolute; top: 304px; left: 48px; width: 56px; height: 40px; }
-#Button32 { position: absolute; top: 8px; left: 288px; width: 28px; height: 20px; }
+#Button39 { position: absolute; top: 352px; left: 152px; width: 56px; height: 40px; }
+#Button59 { position: absolute; top: 352px; left: 208px; width: 56px; height: 40px; }
 
 #IFrame7 { position: absolute; top: 0px; left: 0px; width: 320px; height: 480px; }
 
@@ -125,6 +124,8 @@ html, body, .appView { width: 320px; height: 480px; }
 #LocaleLabel { position: absolute; top: 264px; left: 8px; width: 304px; height: 24px; }
 #RateLabel { position: absolute; top: 344px; left: 8px; width: 304px; height: 24px; }
 #RateRange { position: absolute; top: 368px; left: 8px; width: 304px; height: 40px; }
+
+#IFrame8 { position: absolute; top: 0px; left: 0px; width: 320px; height: 480px; }
 
 /* App inline CSS */
 .block-ui-message

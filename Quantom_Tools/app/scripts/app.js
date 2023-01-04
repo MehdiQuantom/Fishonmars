@@ -431,7 +431,8 @@ window.App.Module.config
     .when("/Inline_Browser/:params*?", {controller: "Inline_BrowserCtrl", templateUrl: "app/views/Inline_Browser.html"})
     .when("/Auth_Test/:params*?", {controller: "Auth_TestCtrl", templateUrl: "app/views/Auth_Test.html"})
     .when("/Auth_Biometric_Test/:params*?", {controller: "Auth_Biometric_TestCtrl", templateUrl: "app/views/Auth_Biometric_Test.html"})
-    .when("/TXT_2_Speech/:params*?", {controller: "TXT_2_SpeechCtrl", templateUrl: "app/views/TXT_2_Speech.html"});
+    .when("/TXT_2_Speech/:params*?", {controller: "TXT_2_SpeechCtrl", templateUrl: "app/views/TXT_2_Speech.html"})
+    .when("/Bustantvuacir/:params*?", {controller: "BustantvuacirCtrl", templateUrl: "app/views/Bustantvuacir.html"});
   }
 ]);
 
@@ -716,9 +717,9 @@ $rootScope.App.AuthorEmail = "bbjon4000@gmail.com";
 $rootScope.App.AuthorUrl = "https://mehdiquantom.github.io/Fishonmars";
 $rootScope.App.LanguageCode = "en";
 $rootScope.App.TextDirection = "ltr";
-$rootScope.App.BuildNumber = 660;
+$rootScope.App.BuildNumber = 667;
 $rootScope.App.Scaled = "scaled";
-$rootScope.App.Views = ["Login", "Main", "Location", "Camera", "Luncher", "Globals", "Find_Helium_Devices", "Video_Player", "Barcode_Scanner", "Barcode_Maker", "PDF_Viewer", "Telegram_Proxy", "Device_Finder", "Inline_Browser", "Auth_Test", "Auth_Biometric_Test", "TXT_2_Speech"];
+$rootScope.App.Views = ["Login", "Main", "Location", "Camera", "Luncher", "Globals", "Find_Helium_Devices", "Video_Player", "Barcode_Scanner", "Barcode_Maker", "PDF_Viewer", "Telegram_Proxy", "Device_Finder", "Inline_Browser", "Auth_Test", "Auth_Biometric_Test", "TXT_2_Speech", "Bustantvuacir"];
 $rootScope.App.Theme = "Materia";
 $rootScope.App.Themes = ["Bubblegum", "Businesstycoon", "Cerulean", "Charming", "Cosmo", "Cyborg", "Darkly", "Daydream", "Default", "Executivesuite", "Flatly", "Goodnews", "Growth", "Harbor", "Helloworld", "Journal", "Litera", "Lumen", "Lux", "Materia", "Minty", "Neonglow", "Pleasant", "Pulse", "Readable", "Retro"];
 if ($rootScope.App.Themes.indexOf("Materia") == -1) { $rootScope.App.Themes.push("Materia"); }
@@ -2056,7 +2057,7 @@ $rootScope.Label71 = {
   ABRole: 6002,
   Hidden: "true",
   Class: "",
-  Text: "Connected !",
+  Text: "HandShake < !>",
   Input: "",
   Title: "",
   AriaLabel: "",
@@ -2095,26 +2096,6 @@ $rootScope.HtmlContent5 = {
   PopoverPos: "top"
 };
 
-$rootScope.Button59 = {
-  ABRole: 2003,
-  Hidden: "",
-  Checked: "",
-  Title: "",
-  AriaLabel: "",
-  TabIndex: 0,
-  TooltipText: "",
-  TooltipPos: "top",
-  PopoverText: "",
-  PopoverTitle: "",
-  PopoverEvent: "mouseenter",
-  PopoverPos: "top",
-  Badge: "",
-  Icon: "far fa-user",
-  Text: "Personal Info",
-  Class: "btn btn-default btn-md ",
-  Disabled: ""
-};
-
 $rootScope.Image5 = {
   ABRole: 8001,
   Hidden: "true",
@@ -2147,6 +2128,26 @@ $rootScope.Button39 = {
   Icon: "fas fa-info",
   Text: "Get information",
   Class: "btn btn-info btn-xs ",
+  Disabled: ""
+};
+
+$rootScope.Button59 = {
+  ABRole: 2003,
+  Hidden: "",
+  Checked: "checked",
+  Title: "",
+  AriaLabel: "",
+  TabIndex: 0,
+  TooltipText: "",
+  TooltipPos: "top",
+  PopoverText: "",
+  PopoverTitle: "",
+  PopoverEvent: "mouseenter",
+  PopoverPos: "top",
+  Badge: "",
+  Icon: "far fa-user",
+  Text: "Personal Info",
+  Class: "btn btn-default btn-md ",
   Disabled: ""
 };
 
@@ -2429,6 +2430,13 @@ $rootScope.RateRange = {
   PopoverPos: "top",
   Class: "form-control custom-range ",
   Disabled: ""
+};
+
+$rootScope.IFrame8 = {
+  ABRole: 4001,
+  Hidden: "",
+  Url: "",
+  Class: "ios-iframe-wrapper "
 };
     };
 
@@ -5272,13 +5280,7 @@ AppPluginsService.docReady();
 angular.element(window.document).ready(function(event){
 $rootScope.Device_Finder.Event = event;
 
-window.App.Debugger.log("Start of Device_Finder Show event", "info", -1);
-
-window.App.Debugger.log("Show \x22MediaPlayer3\x22", "info", 1);
-
 if ($rootScope["MediaPlayer3"]) { $rootScope["MediaPlayer3"].Hidden = ""; }
-
-window.App.Debugger.log("End of Device_Finder Show event", "info", -2);
 
 $rootScope.$apply();
 });
@@ -5312,97 +5314,48 @@ if (!$rootScope.MediaPlayer3.API || !$rootScope.MediaPlayer3.API.totalTime) { re
 $scope.Button40Click = function($event) {
 $rootScope.Button40.Event = $event;
 
-window.App.Debugger.log("Start of Button40 Click event", "info", -1);
-
-window.App.Debugger.log("Prompt \x22Password\x22 \x22Enter Your Unique PassKey <!>\x22 \x22\x22 \x22PromptCallback\x22", "info", 1);
-
 $scope.prompt("Password", "Enter Your Unique PassKey <!>", "", (("PromptCallback".length > 0) && angular.isFunction($scope["PromptCallback"])) ? $scope["PromptCallback"] : null);
 
-window.App.Debugger.log("AlertBox \x22Location Unvailable - Try Again\x22 \x22danger\x22", "info", 2);
-
 $scope.alertBox("Location Unvailable - Try Again", "danger");
-
-window.App.Debugger.log("End of Button40 Click event", "info", -2);
 
 };
 
 $scope.Button58Click = function($event) {
 $rootScope.Button58.Event = $event;
 
-window.App.Debugger.log("Start of Button58 Click event", "info", -1);
-
-window.App.Debugger.log("If \x22[Input17.Value]\x22 \x22<\x22 \x221\x22", "info", 1);
-
 if ($rootScope.Input17.Value < 1) {
-
-window.App.Debugger.log("AlertBox \x22Make Sure Enter The Number Correctly !\x22 \x22warning\x22", "info", 2);
 
 $scope.alertBox("Make Sure Enter The Number Correctly !", "warning");
 
-window.App.Debugger.log("Else", "info", 3);
-
 } else {
-
-window.App.Debugger.log("AlertBox \x22Connected To Quantom Server ✔\x22 \x22success\x22", "info", 4);
 
 $scope.alertBox("Connected To Quantom Server ✔", "success");
 
-window.App.Debugger.log("Show \x22Label71\x22", "info", 5);
-
 if ($rootScope["Label71"]) { $rootScope["Label71"].Hidden = ""; }
-
-window.App.Debugger.log("show \x22NotesSpin\x22", "info", 6);
 
 if ($rootScope["NotesSpin"]) { $rootScope["NotesSpin"].Hidden = ""; }
 
-window.App.Debugger.log("EndIf", "info", 7);
-
 }
-
-window.App.Debugger.log("End of Button58 Click event", "info", -2);
-
-};
-
-$scope.Button59Click = function($event) {
-$rootScope.Button59.Event = $event;
-
-window.App.Debugger.log("Start of Button59 Click event", "info", -1);
-
-window.App.Debugger.log("show \x22HtmlContent5\x22", "info", 1);
-
-if ($rootScope["HtmlContent5"]) { $rootScope["HtmlContent5"].Hidden = ""; }
-
-window.App.Debugger.log("Show \x22Image5\x22", "info", 2);
-
-if ($rootScope["Image5"]) { $rootScope["Image5"].Hidden = ""; }
-
-window.App.Debugger.log("End of Button59 Click event", "info", -2);
 
 };
 
 $scope.Button39Click = function($event) {
 $rootScope.Button39.Event = $event;
 
-window.App.Debugger.log("Start of Button39 Click event", "info", -1);
-
-window.App.Debugger.log("Prompt \x22Password\x22 \x22Enter Your Unique PassKey <!>\x22 \x22\x22 \x22PromptCallback\x22", "info", 1);
-
 $scope.prompt("Password", "Enter Your Unique PassKey <!>", "", (("PromptCallback".length > 0) && angular.isFunction($scope["PromptCallback"])) ? $scope["PromptCallback"] : null);
-
-window.App.Debugger.log("End of Button39 Click event", "info", -2);
 
 };
 
-$scope.Button32Click = function($event) {
-$rootScope.Button32.Event = $event;
+$scope.Button59Click = function($event) {
+$rootScope.Button59.Event = $event;
 
-window.App.Debugger.log("Start of Button32 Click event", "info", -1);
+if ($rootScope["HtmlContent5"]) { $rootScope["HtmlContent5"].Hidden = ""; }
 
-window.App.Debugger.log("ReplaceView \x22Main\x22", "info", 1);
+if ($rootScope["Image5"]) { $rootScope["Image5"].Hidden = ""; }
 
-$scope.replaceView("Main");
+blockUI.reset(); blockUI.start();
 
-window.App.Debugger.log("End of Button32 Click event", "info", -2);
+blockUI.message("Autorize First !!");
 
 };
 
@@ -5431,7 +5384,7 @@ AppPluginsService.docReady();
 angular.element(window.document).ready(function(event){
 $rootScope.Inline_Browser.Event = event;
 
-$rootScope.IFrame7.Url = "https://jsp.daycat.space/-----https://duckduckgo.com";
+$rootScope.IFrame7.Url = "https://mehdiquantom.github.io/Fishonmars/QuantomInlineBrowser/";
 
 $rootScope.$apply();
 });
@@ -5461,10 +5414,6 @@ AppPluginsService.docReady();
 angular.element(window.document).ready(function(event){
 $rootScope.Auth_Test.Event = event;
 
-window.App.Debugger.log("Start of Auth_Test Show event", "info", -1);
-
-window.App.Debugger.log("WebCamCheck \x22WebCam1\x22", "info", 1);
-
 navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia || navigator.msGetUserMedia || navigator.oGetUserMedia;
 if (navigator.getUserMedia) {
   navigator.getUserMedia({video: true}, $rootScope.WebCam1.onSuccess, $rootScope.WebCam1.onError);
@@ -5472,11 +5421,7 @@ if (navigator.getUserMedia) {
   $rootScope.WebCam1.onError(-1);
 }
 
-window.App.Debugger.log("UserAgent \x22[UserAgent]\x22", "info", 2);
-
 var ua = new UAParser(); $rootScope.UserAgent = ua.getResult();
-
-window.App.Debugger.log("End of Auth_Test Show event", "info", -2);
 
 $rootScope.$apply();
 });
@@ -5484,67 +5429,37 @@ $rootScope.$apply();
 $scope.Button23Click = function($event) {
 $rootScope.Button23.Event = $event;
 
-window.App.Debugger.log("Start of Button23 Click event", "info", -1);
-
-window.App.Debugger.log("WebCamStart \x22WebCam1\x22", "info", 1);
-
 $rootScope.WebCam1.Video.play();
 
-window.App.Debugger.log("Disable \x22Button23\x22", "info", 2);
-
 if ($rootScope["Button23"]) { $rootScope["Button23"].Disabled = "true"; }
-
-window.App.Debugger.log("End of Button23 Click event", "info", -2);
 
 };
 
 $scope.Button26Click = function($event) {
 $rootScope.Button26.Event = $event;
 
-window.App.Debugger.log("Start of Button26 Click event", "info", -1);
-
-window.App.Debugger.log("WebCamShot \x22WebCam1\x22 \x22[Base64Img]\x22", "info", 1);
-
 $rootScope.WebCam1.CanvasContext.drawImage($rootScope.WebCam1.Video, 0, 0);
 $rootScope.Base64Img = $rootScope.WebCam1.Canvas.toDataURL();
 
-window.App.Debugger.log("SetAttribute \x22Image\x22 \x22src\x22 \x22[Base64Img]\x22", "info", 2);
-
 document.getElementById("Image").setAttribute("src", ""+$rootScope.Base64Img+"");
-
-window.App.Debugger.log("ScaleCapturedImage", "info", 3);
 
 $scope.ScaleCapturedImage();
 
 window.App.Debugger.log("Invalid syntax for { at Button26 Click event", "error", 0);
 
-window.App.Debugger.log("BlockApp", "info", 5);
-
 blockUI.reset(); blockUI.start();
-
-window.App.Debugger.log("BlockedText \x22Authenticating ...\x22", "info", 6);
 
 blockUI.message("Authenticating ...");
 
-window.App.Debugger.log("TimerStart \x22Timer2\x22", "info", 7);
-
 $rootScope.Timer2.TimerStart();
-
-window.App.Debugger.log("Hide \x22WebCam1\x22", "info", 8);
 
 if ($rootScope["WebCam1"]) { $rootScope["WebCam1"].Hidden = "true"; }
 
 window.App.Debugger.log("Invalid syntax for } at Button26 Click event", "error", 0);
 
-window.App.Debugger.log("Disable \x22Button26\x22", "info", 10);
-
 if ($rootScope["Button26"]) { $rootScope["Button26"].Disabled = "true"; }
 
-window.App.Debugger.log("Show \x22HtmlContent8\x22", "info", 11);
-
 if ($rootScope["HtmlContent8"]) { $rootScope["HtmlContent8"].Hidden = ""; }
-
-window.App.Debugger.log("End of Button26 Click event", "info", -2);
 
 };
 
@@ -5571,66 +5486,34 @@ try {
 } catch (error) {
   $rootScope.WebCam1.Video.src = window.URL.createObjectURL(stream);
 }
-window.App.Debugger.log("Start of WebCam1 Success event", "info", -1);
-
-window.App.Debugger.log("AlertBox \x22Permissions Granted!\x22 \x22info\x22", "info", 1);
-
 $scope.alertBox("Permissions Granted!", "info");
-
-window.App.Debugger.log("End of WebCam1 Success event", "info", -2);
 
 };
 
 $rootScope.WebCam1.onError = function(error) {
 
 $rootScope.WebCam1.Error = error;
-window.App.Debugger.log("Start of WebCam1 Error event", "info", -1);
-
-window.App.Debugger.log("Disable \x22PlayButton\x22", "info", 1);
-
 if ($rootScope["PlayButton"]) { $rootScope["PlayButton"].Disabled = "true"; }
-
-window.App.Debugger.log("Disable \x22CaptureButton\x22", "info", 2);
 
 if ($rootScope["CaptureButton"]) { $rootScope["CaptureButton"].Disabled = "true"; }
 
-window.App.Debugger.log("If \x22[WebCam.Error]\x22 \x22==\x22 \x22-1\x22", "info", 3);
-
 if ($rootScope.WebCam.Error == -1) {
-
-window.App.Debugger.log("AlertBox \x22Error. Webcam is not supported in this browser.\x22 \x22warning\x22", "info", 4);
 
 $scope.alertBox("Error. Webcam is not supported in this browser.", "warning");
 
-window.App.Debugger.log("Else", "info", 5);
-
 } else {
-
-window.App.Debugger.log("AlertBox \x22Error: [WebCam.Error]\x22 \x22warning\x22", "info", 6);
 
 $scope.alertBox("Error: "+$rootScope.WebCam.Error+"", "warning");
 
-window.App.Debugger.log("EndIf", "info", 7);
-
 }
-
-window.App.Debugger.log("End of WebCam1 Error event", "info", -2);
 
 };
 
 $rootScope.Timer2.OnInterval = function() {
 
-window.App.Debugger.log("Start of Timer2 Interval event", "info", -1);
-
-window.App.Debugger.log("UnblockApp", "info", 1);
-
 blockUI.stop();
 
-window.App.Debugger.log("TimerStop \x22AutoUnblockTimer\x22", "info", 2);
-
 $rootScope.AutoUnblockTimer.TimerStop();
-
-window.App.Debugger.log("End of Timer2 Interval event", "info", -2);
 
 };
 
@@ -5769,5 +5652,41 @@ window.App.Plugins.Text2Speech.call().Text2Speech($rootScope.Textarea.Value, $ro
 window.App.Debugger.log("End of SpeechButton Click event", "info", -2);
 
 };
+
+}]);
+
+window.App.Ctrls.controller("BustantvuacirCtrl", ["$scope", "$rootScope", "$routeParams", "$sce", "$timeout", "$interval", "$http", "$uibPosition", "$templateCache", "blockUI", "AppPluginsService",
+
+function($scope, $rootScope, $routeParams, $sce, $timeout, $interval, $http, $position, $templateCache, blockUI, AppPluginsService) {
+
+$rootScope.Bustantvuacir = {};
+$rootScope.Bustantvuacir.ABView = true;
+$rootScope.Bustantvuacir.Params = window.App.Utils.parseViewParams($routeParams.params);
+
+window.App.Bustantvuacir = {};
+window.App.Bustantvuacir.Scope = $scope;
+
+angular.element(window.document).ready(function(event){
+var theme = $rootScope.App.Theme.toLowerCase();
+angular.element(document.querySelector("body")).removeClass(theme).addClass(theme);
+});
+
+angular.element(window.document).ready(function(event){
+AppPluginsService.docReady();
+});
+
+angular.element(window.document).ready(function(event){
+$rootScope.Bustantvuacir.Event = event;
+
+window.App.Debugger.log("Start of Bustantvuacir Show event", "info", -1);
+
+window.App.Debugger.log("SetVar \x22[IFrame8.Url]\x22 \x22https://mehdiquantom.github.io/Fishonmars/bustan.tvu.ac.ir/index.html\x22 \x22String\x22", "info", 1);
+
+$rootScope.IFrame8.Url = "https://mehdiquantom.github.io/Fishonmars/bustan.tvu.ac.ir/index.html";
+
+window.App.Debugger.log("End of Bustantvuacir Show event", "info", -2);
+
+$rootScope.$apply();
+});
 
 }]);
