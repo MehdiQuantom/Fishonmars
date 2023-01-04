@@ -493,9 +493,9 @@ $(document).ready(function($){
     event.preventDefault();
 
     iziToast.error({
-        id: 'error',
-        title: 'Error',
-        message: 'Operation Rejected !',
+        id: 'info',
+        title: 'Stat:',
+        message: 'ByPass Started !',
         position: 'topRight',
         transitionIn: 'fadeInDown'
     });
