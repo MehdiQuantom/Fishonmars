@@ -494,8 +494,8 @@ $(document).ready(function($){
 
     iziToast.error({
         id: 'info',
-        title: 'Stat:',
-        message: 'ByPass Started !',
+        title: 'Log:',
+        message: 'Rejected [/] !',
         position: 'topRight',
         transitionIn: 'fadeInDown'
     });
