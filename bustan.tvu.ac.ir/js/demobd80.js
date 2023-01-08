@@ -462,7 +462,7 @@ $(".trigger-custom1").on('click', function (event) {
 
 
 
-$(document).ready(function($){
+/*$(document).ready(function($){
     event.preventDefault();
 
     iziToast.info({
@@ -485,7 +485,7 @@ $(document).ready(function($){
             }],
         ]
     });
-});
+});*/
 
 $(document).ready(function($){
     event.preventDefault();
