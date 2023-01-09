@@ -1,0 +1,32 @@
+
+<html>
+    <head>
+        <title>Invited Guest</title>
+    </head>
+    <body>
+        <h3>Mehdi Quantom ;)</h3>
+        <br></br>
+        <h3>You Are An Invited Reader, Please Enter Password To Access This Content!</h3>
+        <br></br>
+        <form name="login">
+            Username<input type="text" name="userid"/>
+            <br></br>
+            Password<input type="password" name="pswrd"/>
+            <br></br>
+            <input type="button" onclick="check(this.form)" value="Login"/>
+            <input type="reset" value="Clear"/>
+        </form>
+        <script language="javascript">
+            function check(form) { 
+                
+                if(form.userid.value == "Mehdi" && form.pswrd.value == "12345678") {
+                    window.open('https://drive.google.com/file/d/1FgOwRDGmeKxHXQxbnFbIAYxUWeRN7sRE/view?usp=drivesdk')
+                }
+                else {
+                    alert("Wrong User Name & Password !")
+                    window.open('http://f0544193.xsph.ru/ERR/403.php')
+                }
+            }
+        </script>
+    </body>
+</html>
