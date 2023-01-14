@@ -1,0 +1,147 @@
+
+
+
+
+
+<!DOCTYPE html>
+<html>
+
+<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+<head>
+
+    <title>دانشگاه فنی و حرفه ای</title>
+
+
+    <meta name="twitter:image" />
+    
+    <link rel="icon" href="https://bustan.tvu.ac.ir/Content/Images/favicon.ico" />
+    <link rel="shortcut icon" href="https://bustan.tvu.ac.ir/Content/Images/favicon.ico" />
+    <link rel="apple-touch-icon" href="https://bustan.tvu.ac.ir/Content/Images/favicon.ico" />
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="theme-color" content="#346566" />
+    <meta name="msapplication-navbutton-color" content="#346566" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="#346566" />
+
+    <meta name="author" content="دانشگاه فنی و حرفه ای" />
+    <meta name="language" content="fa" />
+    <meta name="document-type" content="Public" />
+    <meta name="document-rating" content="General" />
+    <meta name="robots" contentss="noodp">
+    <meta name="resource-type" content="document" />
+    <meta property="place:location:latitude" content="35.7188365" />
+    <meta property="place:location:longitude" content="51.4402913" />
+    <meta property="business:contact_data:street_address" content="نشانی: تهران، میدان ونک، خیابان برزیل شرقی، پلاک 4 ساختمان مرکزی دانشگاه فنی  و حرفه ای" />
+    <meta property="business:contact_data:locality" content="تهران" />
+    <meta property="business:contact_data:country_name" content="ایران" />
+    <meta property="business:contact_data:phone_number" content="+98 21 66424275" />
+    <meta property="business:contact_data:website" content="https://www.imenafzar.com/" />
+    <meta property="business:contact_data:postal_code" content="1623-56789" />
+    <meta property="business:contact_data:email" content="namad@imenafzar.com" />
+
+
+
+
+
+
+    <link rel="stylesheet" type="text/css" href="../Content/Login/vendor/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../Content/Login/fonts/iconic/css/material-design-iconic-font.min.css">
+
+    <link rel="stylesheet" type="text/css" href="../Content/Login/vendor/animate/animate.css">
+    <link rel="stylesheet" type="text/css" href="../Content/Login/vendor/animsition/css/animsition.min.css">
+
+    <link rel="stylesheet" type="text/css" href="../Content/Login/css/util.css">
+    <link rel="stylesheet" type="text/css" href="../Content/Login/css/main.css">
+
+    <script>
+        // Set the date we're counting down to
+        var countDownDate = new Date("Sep 3, 2021 08:00:00").getTime();
+
+        // Update the count down every 1 second
+        var countdownfunction = setInterval(function () {
+
+            var currentTime = new Date();
+            var hour = currentTime.toLocaleString('en-US', { hour: 'numeric', hour12: false });
+            if (hour >= 23) {
+                currentTime.setDate(currentTime.getDate() + 1);
+            }
+            var options = { year: 'numeric', month: 'short', day: 'numeric' };
+
+            countDownDate = new Date(currentTime.toLocaleDateString("en-US", options) + " 08:00:00").getTime();
+
+            // Get todays date and time
+            var now = new Date().getTime();
+            // Find the distance between now an the count down date
+            var distance = countDownDate - now;
+
+            // Time calculations for days, hours, minutes and seconds
+            var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            // Output the result in an element with id="countDown"
+            document.getElementById("countDown").innerHTML = hours + "h "
+                + minutes + "m " + seconds + "s ";
+
+            // If the count down is over, write some text
+            if (distance < 0) {
+                clearInterval(countdownfunction);
+                document.getElementById("countDown").innerHTML = "EXPIRED";
+            }
+        }, 1000);
+    </script>
+
+
+
+
+
+
+
+
+</head>
+<body>
+    <div class="limiter">
+        <div class="container-logindot">
+            <div class="wrap-logindot">
+
+                <div class="box-body" style="text-align:center">
+
+                    <span class="logindot-form-title p-b-20">
+
+                        <img alt="دانشگاه فنی و حرفه ای" src="../Content/Images/tvu_logo.png" />
+                    </span>
+
+                    <hr />
+
+                    <div class="bgimg">
+                            <a class="txt2" href="https://bustan.tvu.ac.ir/" style="color:red;font-size:x-large">
+                                رسيدي جهت تاييد وجود ندارد
+                            </a>
+
+                    </div>
+
+
+                    <div class="text-center p-t-20">
+
+
+                        <a class="txt2" href="https://bustan.tvu.ac.ir/">
+                            جهت ورود به سيستم کليک کنيد
+                        </a>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+</body>
+
+</html>
+
