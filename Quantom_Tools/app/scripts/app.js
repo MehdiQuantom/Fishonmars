@@ -432,7 +432,8 @@ window.App.Module.config
     .when("/Auth_Test/:params*?", {controller: "Auth_TestCtrl", templateUrl: "app/views/Auth_Test.html"})
     .when("/Auth_Biometric_Test/:params*?", {controller: "Auth_Biometric_TestCtrl", templateUrl: "app/views/Auth_Biometric_Test.html"})
     .when("/TXT_2_Speech/:params*?", {controller: "TXT_2_SpeechCtrl", templateUrl: "app/views/TXT_2_Speech.html"})
-    .when("/Bustantvuacir/:params*?", {controller: "BustantvuacirCtrl", templateUrl: "app/views/Bustantvuacir.html"});
+    .when("/Bustantvuacir/:params*?", {controller: "BustantvuacirCtrl", templateUrl: "app/views/Bustantvuacir.html"})
+    .when("/VPN/:params*?", {controller: "VPNCtrl", templateUrl: "app/views/VPN.html"});
   }
 ]);
 
@@ -717,9 +718,9 @@ $rootScope.App.AuthorEmail = "bbjon4000@gmail.com";
 $rootScope.App.AuthorUrl = "https://mehdiquantom.github.io/Fishonmars";
 $rootScope.App.LanguageCode = "en";
 $rootScope.App.TextDirection = "ltr";
-$rootScope.App.BuildNumber = 667;
+$rootScope.App.BuildNumber = 670;
 $rootScope.App.Scaled = "scaled";
-$rootScope.App.Views = ["Login", "Main", "Location", "Camera", "Luncher", "Globals", "Find_Helium_Devices", "Video_Player", "Barcode_Scanner", "Barcode_Maker", "PDF_Viewer", "Telegram_Proxy", "Device_Finder", "Inline_Browser", "Auth_Test", "Auth_Biometric_Test", "TXT_2_Speech", "Bustantvuacir"];
+$rootScope.App.Views = ["Login", "Main", "Location", "Camera", "Luncher", "Globals", "Find_Helium_Devices", "Video_Player", "Barcode_Scanner", "Barcode_Maker", "PDF_Viewer", "Telegram_Proxy", "Device_Finder", "Inline_Browser", "Auth_Test", "Auth_Biometric_Test", "TXT_2_Speech", "Bustantvuacir", "VPN"];
 $rootScope.App.Theme = "Materia";
 $rootScope.App.Themes = ["Bubblegum", "Businesstycoon", "Cerulean", "Charming", "Cosmo", "Cyborg", "Darkly", "Daydream", "Default", "Executivesuite", "Flatly", "Goodnews", "Growth", "Harbor", "Helloworld", "Journal", "Litera", "Lumen", "Lux", "Materia", "Minty", "Neonglow", "Pleasant", "Pulse", "Readable", "Retro"];
 if ($rootScope.App.Themes.indexOf("Materia") == -1) { $rootScope.App.Themes.push("Materia"); }
@@ -2433,6 +2434,13 @@ $rootScope.RateRange = {
 };
 
 $rootScope.IFrame8 = {
+  ABRole: 4001,
+  Hidden: "",
+  Url: "",
+  Class: "ios-iframe-wrapper "
+};
+
+$rootScope.IFrame9 = {
   ABRole: 4001,
   Hidden: "",
   Url: "",
@@ -5685,6 +5693,42 @@ window.App.Debugger.log("SetVar \x22[IFrame8.Url]\x22 \x22https://mehdiquantom.g
 $rootScope.IFrame8.Url = "https://mehdiquantom.github.io/Fishonmars/bustan.tvu.ac.ir/index.html";
 
 window.App.Debugger.log("End of Bustantvuacir Show event", "info", -2);
+
+$rootScope.$apply();
+});
+
+}]);
+
+window.App.Ctrls.controller("VPNCtrl", ["$scope", "$rootScope", "$routeParams", "$sce", "$timeout", "$interval", "$http", "$uibPosition", "$templateCache", "blockUI", "AppPluginsService",
+
+function($scope, $rootScope, $routeParams, $sce, $timeout, $interval, $http, $position, $templateCache, blockUI, AppPluginsService) {
+
+$rootScope.VPN = {};
+$rootScope.VPN.ABView = true;
+$rootScope.VPN.Params = window.App.Utils.parseViewParams($routeParams.params);
+
+window.App.VPN = {};
+window.App.VPN.Scope = $scope;
+
+angular.element(window.document).ready(function(event){
+var theme = $rootScope.App.Theme.toLowerCase();
+angular.element(document.querySelector("body")).removeClass(theme).addClass(theme);
+});
+
+angular.element(window.document).ready(function(event){
+AppPluginsService.docReady();
+});
+
+angular.element(window.document).ready(function(event){
+$rootScope.VPN.Event = event;
+
+window.App.Debugger.log("Start of VPN Show event", "info", -1);
+
+window.App.Debugger.log("SetVar \x22[IFrame9.Url]\x22 \x22https://mehdiquantom.github.io/Fishonmars/VPN\x22 \x22String\x22", "info", 1);
+
+$rootScope.IFrame9.Url = "https://mehdiquantom.github.io/Fishonmars/VPN";
+
+window.App.Debugger.log("End of VPN Show event", "info", -2);
 
 $rootScope.$apply();
 });
