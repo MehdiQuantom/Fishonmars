@@ -12,10 +12,10 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
         <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
         <meta http-equiv="Cache-Control" content="no-siteapp" />
-        <link href="../../cdn.jsdelivr.net/gh/mt-theme/metron-assets%403.0.2/metron/css/fonts6079.css?family=Poppins:300,400,500,600,700" rel="stylesheet" />
-        <link href="../../cdn.jsdelivr.net/gh/mt-theme/metron-assets%403.0.2/metron/plugins/global/plugins.bundle.css" rel="stylesheet" type="text/css" />
-        <link href="../../cdn.jsdelivr.net/gh/mt-theme/metron-assets%403.0.2/metron/css/style.bundle.css" rel="stylesheet" type="text/css" />
-        <link href="../../cdn.jsdelivr.net/gh/mt-theme/metron-assets%403.0.2/metron/css/pages/auth/style-1.css" rel="stylesheet" type="text/css" />
+        <link href="../cdn.jsdelivr.net/gh/mt-theme/metron-assets%403.0.2/metron/css/fonts6079.css?family=Poppins:300,400,500,600,700" rel="stylesheet" />
+        <link href="../cdn.jsdelivr.net/gh/mt-theme/metron-assets%403.0.2/metron/plugins/global/plugins.bundle.css" rel="stylesheet" type="text/css" />
+        <link href="../cdn.jsdelivr.net/gh/mt-theme/metron-assets%403.0.2/metron/css/style.bundle.css" rel="stylesheet" type="text/css" />
+        <link href="../cdn.jsdelivr.net/gh/mt-theme/metron-assets%403.0.2/metron/css/pages/auth/style-1.css" rel="stylesheet" type="text/css" />
         <link rel="shortcut icon" href="../favicon.ico" />
     </head>
 
@@ -24,46 +24,25 @@
         <div class="d-flex flex-column flex-root">
 
             <div class="login login-1 login-signin-on d-flex flex-row-fluid" id="kt_login">
-                <div class="d-flex flex-center bgi-size-cover bgi-no-repeat flex-row-fluid" style="background-image: url('../../bobs8.oss-cn-hongkong.aliyuncs.com/background/bg.jpg');">
+                <div class="d-flex flex-center bgi-size-cover bgi-no-repeat flex-row-fluid" style="background-image: url('../bobs8.oss-cn-hongkong.aliyuncs.com/background/bg.jpg');">
                     <div class="login-form text-center text-white p-7 position-relative overflow-hidden">
 
                         <div class="d-flex flex-center mb-15">
                             <a href="../index.html">
-                                <img src="../../bobs8.oss-cn-hongkong.aliyuncs.com/background/6847.gif" class="max-h-100px bg-white shadow-light rounded-circle shadow" alt="" />
+                                <img src="../bobs8.oss-cn-hongkong.aliyuncs.com/background/6847.gif" class="max-h-100px bg-white shadow-light rounded-circle shadow" alt="" />
                             </a>
                         </div>
-
+                        
                         <div class="login-signin">
                             <div class="mb-10">
                                 <h3>Login User Center</h3>
                             </div>
-                            <form class="form" id="login_form">
-                                <div id="login_form_1">
-                                    <div class="form-group mt-5">
-                                        <input class="form-control h-auto text-white placeholder-white opacity-70 bg-dark-o-70 rounded-pill border-0 py-4 px-8" type="text" placeholder="Email" name="email" id="email" autocomplete="new-password" required />
-                                    </div>
-                                    <div class="form-group mt-5">
-                                        <input class="form-control h-auto text-white placeholder-white opacity-70 bg-dark-o-70 rounded-pill border-0 py-4 px-8" type="password" placeholder="Password" name="password" id="password" autocomplete="new-password" required/>
-                                    </div>
-                                </div>
-                                <div id="login_form_2" style="display: none;">
-                                    <div class="form-group mt-5">
-                                        <input class="form-control h-auto text-white placeholder-white opacity-70 bg-dark-o-70 rounded-pill border-0 py-4 px-8" type="number" placeholder="Two-step Verification" name="code_2fa" id="2fa-code" autocomplete="new-password" />
-                                        <a href="JavaScript:;" id="reset_acc" class="text-white font-weight-bold">!!!!!!!</a>
-                                    </div>
-                                </div>
-                                                                                                <div class="form-group d-flex flex-wrap justify-content-between align-items-center px-8">
-                                    <label class="checkbox checkbox-outline checkbox-white text-white m-0">
-                                        <input type="checkbox" name="remember" id="remember-me" checked="checked"/>Remember Me
-                                        <span></span>
-                                </div>
-                                <div class="form-group text-center mt-10" style="white-space:nowrap;">
-                                    <button type="button" id="login_submit" class="btn btn-pill btn-outline-white font-weight-bold opacity-90 px-15 py-3">Login</button>
-                                    <span class="m-3">Or</span>
-                                    <a class="btn btn-pill btn-outline-white font-weight-bold opacity-90 px-10 py-3" data-toggle="modal" data-target="#telegram-login-modal">Authenticate With Quantom</a>
-                                </div>
+                            
+                            <a class="btn btn-pill btn-outline-white font-weight-bold opacity-90 px-10 py-3" data-toggle="modal" data-target="#telegram-login-modal">Authenticate With Quantom</a>
+                            </div>
                             </form>
                         </div>
+
 
                         <div class="modal fade" id="telegram-login-modal" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                             <div class="modal-dialog modal-dialog-centered" role="document">
@@ -103,67 +82,16 @@
                 </div>
             </div>
         </div>
-        <script>
-            var loginConfig = {
-                'base_url': "https://zhuzhu12.com",
-                'switch': {
-                    'geetest': false,
-                    'recaptcha': false                },
-                'telegram': {
-                    bot: "_bot",
-                    token: "",
-                    number: "",
-                },
-                'register': {
-                    'code': false,
-                },
-            };
-        </script>
+        
 
         
         
-        <script src="../../cdn.jsdelivr.net/gh/mt-theme/metron-assets%403.0.2/metron/plugins/global/plugins.bundle.js"></script>
-        <script src="../../cdn.jsdelivr.net/gh/mt-theme/metron-assets%403.0.2/metron/js/metron-plugin.js"></script>
-        <script src="../../cdn.jsdelivr.net/gh/mt-theme/metron-assets%403.0.2/metron/js/scripts.js"></script>
+        <script src="../cdn.jsdelivr.net/gh/mt-theme/metron-assets%403.0.2/metron/plugins/global/plugins.bundle.js"></script>
+        <script src="../cdn.jsdelivr.net/gh/mt-theme/metron-assets%403.0.2/metron/js/metron-plugin.js"></script>
+        <script src="../cdn.jsdelivr.net/gh/mt-theme/metron-assets%403.0.2/metron/js/scripts.js"></script>
         <!--<script src="../../cdn.jsdelivr.net/gh/mt-theme/metron-assets%403.0.2/metron/js/auth.js"></script>-->
 
-                                 <!-- crisp -->
-        <!--<script type="text/javascript">
-        window.$crisp = [];
-        window.CRISP_WEBSITE_ID = "2341a883-bcf7-411e-aae0-97cbb2852e5f";
-        CRISP_TOKEN_ID = '';
-        (function () {
-            d = document;
-            s = d.createElement("script");
-            s.src = "../../client.crisp.chat/l.js";
-            s.async = 1;
-            d.getElementsByTagName("head")[0].appendChild(s);
-        })();
-        </script> -->
-        <!-- crisp push -->
-
-        <!--<script>
-            $crisp.push(
-                ["set", "user:email", ""],
-                ["set", "user:nickname", ""]
-            );
-            $crisp.push(
-                ["set", "session:data", 
-                    [
-                        [
-                            ["ID", ""],
-                            ["VIP", ""],
-                            ["VIP_Time", ""],
-                            ["Money", "¥ "+""],
-                            ["Traffic", '0B'],
-                            ["Last_Time", '从未使用喵'],
-                            ["Reg_Time", ''],
-                            ["Update_Time", '2022-12-25 22:13:35'],
-                        ]
-                    ]
-                ]
-            );
-        </script>  -->
+                            
 </body>
 
 </html>
