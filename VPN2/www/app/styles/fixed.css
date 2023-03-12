@@ -1,0 +1,47 @@
+﻿/*!
+ * This file is part of App Builder
+ *
+ * ©2019 App Builder - https://www.davidesperalta.com
+ */
+/* App auto generated CSS */
+html, body, .appView { width: 320px; height: 480px; }
+.dialogView .modal-dialog { width: 320px; margin: 0 auto; }
+#Image3 { position: absolute; top: 0px; left: 0px; width: 320px; height: 528px; }
+#codedbymq { position: absolute; top: 464px; left: 0px; width: 120px; height: 20px; }
+#PasswordInput { position: absolute; top: 80px; left: 184px; width: 104px; height: 24px; font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;}
+#Button1 { position: absolute; top: 136px; left: 184px; width: 48px; height: 32px; font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;}
+#PasswordLabel { position: absolute; top: 64px; left: 184px; width: 128px; height: 20px; font-family: "Arial Black", Gadget, sans-serif; font-size: 40; font-style: normal; font-weight: bold;}
+#Progressbar1 { position: absolute; top: 112px; left: 184px; width: 48px; height: 16px; }
+#HtmlContent2 { position: absolute; top: 0px; left: 0px; width: 48px; height: 8px; }
+#Label1 { position: absolute; top: 272px; left: 0px; width: 56px; height: 24px; }
+#Label2 { position: absolute; top: 304px; left: 0px; width: 56px; height: 24px; }
+#Label3 { position: absolute; top: 336px; left: 0px; width: 56px; height: 24px; }
+#Label4 { position: absolute; top: 368px; left: 0px; width: 56px; height: 24px; }
+#Label5 { position: absolute; top: 392px; left: 0px; width: 56px; height: 24px; }
+#Label8 { position: absolute; top: 424px; left: 0px; width: 56px; height: 24px; }
+#Label16 { position: absolute; top: 304px; left: 56px; width: 88px; height: 16px; }
+#Label17 { position: absolute; top: 344px; left: 56px; width: 88px; height: 16px; }
+#Label18 { position: absolute; top: 376px; left: 56px; width: 88px; height: 16px; }
+#Label19 { position: absolute; top: 400px; left: 56px; width: 88px; height: 16px; }
+#Label20 { position: absolute; top: 432px; left: 56px; width: 88px; height: 16px; }
+#Label15 { position: absolute; top: 272px; left: 56px; width: 152px; height: 16px; }
+
+#Progressbar2 { position: absolute; top: 160px; left: 0px; width: 320px; height: 16px; }
+#Button2 { position: absolute; top: 272px; left: 72px; width: 176px; height: 40px; }
+#Textarea1 { position: absolute; top: 0px; left: 0px; width: 152px; height: 160px; }
+#Textarea2 { position: absolute; top: 0px; left: 160px; width: 160px; height: 160px; }
+#HtmlContent1 { position: absolute; top: 392px; left: 0px; width: 320px; height: 88px; }
+
+/* App inline CSS */
+.block-ui-message
+{
+  color: #000;
+  width: 250px;
+  height: 250px;
+  border-radius: 6px;
+  border: solid #999 1px;
+  background-color: #fff;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-image: url('../images/backblue.gif');
+}
