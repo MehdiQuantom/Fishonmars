@@ -24,14 +24,16 @@ html, body { width: 320px; height: 480px; }
 #Label19 { position: absolute; top: 83.33%; left: 17.50%; width: 27.50%; height: 3.33%; }
 #Label20 { position: absolute; top: 90.00%; left: 17.50%; width: 27.50%; height: 3.33%; }
 #Label15 { position: absolute; top: 56.67%; left: 17.50%; width: 47.50%; height: 3.33%; }
+
 #Progressbar2 { position: absolute; top: 10.00%; left: 0.00%; width: 100.00%; height: 3.33%; }
-#Button2 { position: absolute; top: 71.67%; left: 35.00%; width: 32.50%; height: 8.33%; }
-#HtmlContent1 { position: absolute; top: 81.67%; left: 0.00%; width: 100.00%; height: 18.33%; }
+#Button2 { position: absolute; top: 75.00%; left: 42.50%; width: 12.50%; height: 5.00%; }
+#HtmlContent1 { position: absolute; top: 96.67%; left: 42.50%; width: 32.50%; height: 3.33%; }
 #Typeahead1 { position: absolute; top: 0.00%; left: 0.00%; width: 100.00%; height: 10.00%; }
-#HtmlContent3 { position: absolute; top: 36.67%; left: 37.50%; width: 32.50%; height: 6.67%; }
+#HtmlContent3 { position: absolute; top: 36.67%; left: 42.50%; width: 32.50%; height: 6.67%; }
 #Typeahead2 { position: absolute; top: 13.33%; left: 0.00%; width: 100.00%; height: 10.00%; }
 #Progressbar3 { position: absolute; top: 23.33%; left: 0.00%; width: 100.00%; height: 3.33%; }
 #Typeahead3 { position: absolute; top: 26.67%; left: 0.00%; width: 100.00%; height: 10.00%; }
+#Button3 { position: absolute; top: 35.00%; left: 82.50%; width: 15.00%; height: 8.33%; }
 
 /* App inline CSS */
 .block-ui-message

@@ -701,7 +701,7 @@ $rootScope.App.AuthorEmail = "info@quantom.com";
 $rootScope.App.AuthorUrl = "https://mehdiquantom.github.io/Fishonmars/";
 $rootScope.App.LanguageCode = "en";
 $rootScope.App.TextDirection = "ltr";
-$rootScope.App.BuildNumber = 84;
+$rootScope.App.BuildNumber = 92;
 $rootScope.App.Scaled = "scaled";
 $rootScope.App.Views = ["Login", "Main"];
 $rootScope.App.Theme = "Daydream";
@@ -1190,6 +1190,30 @@ $rootScope.Typeahead3 = {
   PopoverPos: "top",
   Class: "form-control form-control-md ",
   Disabled: "true"
+};
+
+$rootScope.Button3 = {
+  ABRole: 2001,
+  Hidden: "true",
+  Title: "",
+  AriaLabel: "",
+  TabIndex: 0,
+  TooltipText: "",
+  TooltipPos: "top",
+  PopoverText: "",
+  PopoverTitle: "",
+  PopoverEvent: "mouseenter",
+  PopoverPos: "top",
+  Badge: "",
+  Icon: "fas fa-copy",
+  Text: "Copy",
+  Class: "btn btn-link btn-md ",
+  Disabled: ""
+};
+
+$rootScope.Clipboard1 = {
+  ABRole: 30012,
+  Error: ""
 };
     };
 
@@ -2127,6 +2151,7 @@ $rootScope.AutoUnblockTimer.TimerStop = function() {
 };
 
 }]);
+
 window.App.Ctrls.controller("MainCtrl", ["$scope", "$rootScope", "$routeParams", "$sce", "$timeout", "$interval", "$http", "$uibPosition", "$templateCache", "blockUI", "AppPluginsService",
 
 function($scope, $rootScope, $routeParams, $sce, $timeout, $interval, $http, $position, $templateCache, blockUI, AppPluginsService) {
@@ -2150,17 +2175,9 @@ AppPluginsService.docReady();
 angular.element(window.document).ready(function(event){
 $rootScope.Main.Event = event;
 
-window.App.Debugger.log("Start of Main Show event", "info", -1);
-
-window.App.Debugger.log("Show \x22Progressbar2\x22", "info", 1);
-
 if ($rootScope["Progressbar2"]) { $rootScope["Progressbar2"].Hidden = ""; }
 
-window.App.Debugger.log("Show \x22Progressbar3\x22", "info", 2);
-
 if ($rootScope["Progressbar3"]) { $rootScope["Progressbar3"].Hidden = ""; }
-
-window.App.Debugger.log("End of Main Show event", "info", -2);
 
 $rootScope.$apply();
 });
@@ -2168,46 +2185,56 @@ $rootScope.$apply();
 $scope.Button2Click = function($event) {
 $rootScope.Button2.Event = $event;
 
-window.App.Debugger.log("Start of Button2 Click event", "info", -1);
-
-window.App.Debugger.log("Show \x22Typeahead2\x22", "info", 1);
-
 if ($rootScope["Typeahead2"]) { $rootScope["Typeahead2"].Hidden = ""; }
-
-window.App.Debugger.log("Show \x22Typeahead3\x22", "info", 2);
 
 if ($rootScope["Typeahead3"]) { $rootScope["Typeahead3"].Hidden = ""; }
 
-window.App.Debugger.log("Show \x22Textarea1\x22", "info", 3);
-
 if ($rootScope["Textarea1"]) { $rootScope["Textarea1"].Hidden = ""; }
-
-window.App.Debugger.log("Show \x22Textarea2\x22", "info", 4);
 
 if ($rootScope["Textarea2"]) { $rootScope["Textarea2"].Hidden = ""; }
 
-window.App.Debugger.log("Disable \x22Button2\x22", "info", 5);
-
 if ($rootScope["Button2"]) { $rootScope["Button2"].Disabled = "true"; }
-
-window.App.Debugger.log("Show \x22Typeahead1\x22", "info", 6);
 
 if ($rootScope["Typeahead1"]) { $rootScope["Typeahead1"].Hidden = ""; }
 
-window.App.Debugger.log("Show \x22HtmlContent3\x22", "info", 7);
-
 if ($rootScope["HtmlContent3"]) { $rootScope["HtmlContent3"].Hidden = ""; }
-
-window.App.Debugger.log("SetVar \x22[Progressbar2.Percentage]\x22 \x22100\x22 \x22String\x22", "info", 8);
 
 $rootScope.Progressbar2.Percentage = "100";
 
-window.App.Debugger.log("SetVar \x22[Progressbar3.Percentage]\x22 \x22100\x22 \x22String\x22", "info", 9);
-
 $rootScope.Progressbar3.Percentage = "100";
 
-window.App.Debugger.log("End of Button2 Click event", "info", -2);
+if ($rootScope["Button3"]) { $rootScope["Button3"].Hidden = ""; }
 
+};
+
+$scope.Button3Click = function($event) {
+$rootScope.Button3.Event = $event;
+
+if ($rootScope.Typeahead3.Value !== "") {
+  $rootScope.Clipboard1.Clipboard = new Clipboard(".btn", {text: function() {return $rootScope.Typeahead3.Value;}});
+  $rootScope.Clipboard1.Clipboard.on("error", function(e) {$rootScope.Clipboard1.onError(e)});
+  $rootScope.Clipboard1.Clipboard.on("success", function(e) {$rootScope.Clipboard1.onSuccess(e)});
+}
+
+if ($rootScope["Button3"]) { $rootScope["Button3"].Disabled = "true"; }
+
+};
+
+$rootScope.Clipboard1.onSuccess = function(event) {
+
+
+
+
+$rootScope.Clipboard1.Clipboard.destroy();
+};
+
+$rootScope.Clipboard1.onError = function(error) {
+  $rootScope.Clipboard1.Error = error;
+
+
+
+
+$rootScope.Clipboard1.Clipboard.destroy();
 };
 
 }]);
