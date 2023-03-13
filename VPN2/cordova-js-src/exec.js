@@ -1,4 +1,4 @@
-/*
+﻿/*
  *
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -41,24 +41,38 @@ var execProxy = require('cordova/exec/proxy');
  */
 module.exports = function (success, fail, service, action, args) {
 
-    var proxy = execProxy.get(service, action);
+    // Handle the case when we have an old version of splashscreen plugin to avoid the API calls failures
+    if (service === 'SplashScreen') {
+        var pluginsVersions = require("cordova/plugin_list").metadata;
+        var splashscreenVersion = pluginsVersions['cordova-plugin-splashscreen'];
+        var MIN_SPLASHSCREEN_SUPPORTED_VER = 4;
+        if (splashscreenVersion && ((parseInt(splashscreenVersion.split('.')[0], 10) || 0) < MIN_SPLASHSCREEN_SUPPORTED_VER)) {
+            console.log('Warning: A more recent version of cordova-plugin-splashscreen has been hooked into for compatibility reasons. Update the plugin to version >= 4.');
+
+            var platformSplashscreen = require('cordova/splashscreen');
+            // Replace old plugin proxy with the platform's one
+            require('cordova/exec/proxy').add(service, platformSplashscreen);
+        }
+    }
+
+    var proxy = execProxy.get(service, action),
+        callbackId,
+        onSuccess,
+        onError;
 
     args = args || [];
 
     if (proxy) {
-        
-        var callbackId = service + cordova.callbackId++;
-        
+        callbackId = service + cordova.callbackId++;
+        // console.log("EXEC:" + service + " : " + action);
         if (typeof success === "function" || typeof fail === "function") {
             cordova.callbacks[callbackId] = {success: success, fail: fail};
         }
         try {
-
-            
-
             // callbackOptions param represents additional optional parameters command could pass back, like keepCallback or
             // custom callbackId, for example {callbackId: id, keepCallback: true, status: cordova.callbackStatus.JSON_EXCEPTION }
-            var onSuccess = function (result, callbackOptions) {
+            // CB-5806 [Windows8] Add keepCallback support to proxy
+            onSuccess = function (result, callbackOptions) {
                 callbackOptions = callbackOptions || {};
                 var callbackStatus;
                 // covering both undefined and null.
@@ -78,13 +92,13 @@ module.exports = function (success, fail, service, action, args) {
                         keepCallback: callbackOptions.keepCallback || false
                     });
             };
-            var onError = function (err, callbackOptions) {
+            onError = function (err, callbackOptions) {
                 callbackOptions = callbackOptions || {};
                 var callbackStatus;
                 // covering both undefined and null.
                 // strict null comparison was causing callbackStatus to be undefined
                 // and then no callback was called because of the check in cordova.callbackFromNative
-                // note: status can be 0
+                // see CB-8996 Mobilespec app hang on windows
                 if (callbackOptions.status !== undefined && callbackOptions.status !== null) {
                     callbackStatus = callbackOptions.status;
                 }
@@ -92,11 +106,11 @@ module.exports = function (success, fail, service, action, args) {
                     callbackStatus = cordova.callbackStatus.OK;
                 }
                 cordova.callbackError(callbackOptions.callbackId || callbackId,
-                {
-                    status: callbackStatus,
-                    message: err,
-                    keepCallback: callbackOptions.keepCallback || false
-                });
+                    {
+                        status: callbackStatus,
+                        message: err,
+                        keepCallback: callbackOptions.keepCallback || false
+                    });
             };
             proxy(onSuccess, onError, args);
 
@@ -104,10 +118,7 @@ module.exports = function (success, fail, service, action, args) {
             console.log("Exception calling native with command :: " + service + " :: " + action  + " ::exception=" + e);
         }
     } else {
-
-        console.log("Error: exec proxy not found for :: " + service + " :: " + action);
-        
-        if(typeof fail === "function" ) {
+        if (typeof fail === "function") {
             fail("Missing Command Error");
         }
     }

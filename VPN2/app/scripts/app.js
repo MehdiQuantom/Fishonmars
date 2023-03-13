@@ -701,7 +701,7 @@ $rootScope.App.AuthorEmail = "info@quantom.com";
 $rootScope.App.AuthorUrl = "https://mehdiquantom.github.io/Fishonmars/";
 $rootScope.App.LanguageCode = "en";
 $rootScope.App.TextDirection = "ltr";
-$rootScope.App.BuildNumber = 65;
+$rootScope.App.BuildNumber = 84;
 $rootScope.App.Scaled = "scaled";
 $rootScope.App.Views = ["Login", "Main"];
 $rootScope.App.Theme = "Daydream";
@@ -1068,7 +1068,7 @@ $rootScope.Progressbar2 = {
   PopoverTitle: "",
   PopoverPos: "top",
   Class: "progress-bar bg-success progress-bar-striped progress-bar-animated ",
-  Percentage: 100
+  Percentage: 0
 };
 
 $rootScope.Button2 = {
@@ -1090,44 +1090,6 @@ $rootScope.Button2 = {
   Disabled: ""
 };
 
-$rootScope.Textarea1 = {
-  ABRole: 9001,
-  Hidden: "true",
-  Value: "vmess://ew0KICAidiI6ICIyIiwNCiAgInBzIjogIkRlIHvwk4KAfSBRdWFudG9tIiwNCiAgImFkZCI6ICJmcmVlZGVseGMuYXJnb3R1cy5saXZlIiwNCiAgInBvcnQiOiAiNDQzIiwNCiAgImlkIjogImE5YzY0ZTc5LTA1MDktNGViOC1iZDczLTA0MmUzOGI2MWQyMSIsDQogICJhaWQiOiAiMCIsDQogICJzY3kiOiAiYXV0byIsDQogICJuZXQiOiAid3MiLA0KICAidHlwZSI6ICJub25lIiwNCiAgImhvc3QiOiAiZnJlZWRlbHhjLmFyZ290dXMubGl2ZSIsDQogICJwYXRoIjogIi91aXRzcnQiLA0KICAidGxzIjogInRscyIsDQogICJzbmkiOiAiIiwNCiAgImFscG4iOiAiIg0KfQ==",
-  Title: "",
-  AriaLabel: "",
-  TabIndex: 0,
-  TooltipText: "",
-  TooltipPos: "top",
-  PopoverText: "",
-  PopoverEvent: "mouseenter",
-  PopoverTitle: "",
-  PopoverPos: "top",
-  PlaceHolder: "",
-  Class: "form-control form-control-md ",
-  Disabled: "",
-  ReadOnly: "true"
-};
-
-$rootScope.Textarea2 = {
-  ABRole: 9001,
-  Hidden: "true",
-  Value: "vmess://ew0KICAidiI6ICIyIiwNCiAgInBzIjogIk9yYWNsZSB78JOCgH0gUXVhbnRvbSIsDQogICJhZGQiOiAiZnJlZW9yYWNsZS1hLmFyZ290dXMubGl2ZSIsDQogICJwb3J0IjogIjgwODAiLA0KICAiaWQiOiAiYTljNjRlNzktMDUwOS00ZWI4LWJkNzMtMDQyZTM4YjYxZDIxIiwNCiAgImFpZCI6ICIwIiwNCiAgInNjeSI6ICJhdXRvIiwNCiAgIm5ldCI6ICJ3cyIsDQogICJ0eXBlIjogIm5vbmUiLA0KICAiaG9zdCI6ICJmcmVlb3JhY2xlLWEuYXJnb3R1cy5saXZlIiwNCiAgInBhdGgiOiAiL3VpdHNydCIsDQogICJ0bHMiOiAiIiwNCiAgInNuaSI6ICIiLA0KICAiYWxwbiI6ICIiDQp9",
-  Title: "",
-  AriaLabel: "",
-  TabIndex: 0,
-  TooltipText: "",
-  TooltipPos: "top",
-  PopoverText: "",
-  PopoverEvent: "mouseenter",
-  PopoverTitle: "",
-  PopoverPos: "top",
-  PlaceHolder: "",
-  Class: "form-control form-control-md ",
-  Disabled: "",
-  ReadOnly: "true"
-};
-
 $rootScope.HtmlContent1 = {
   ABRole: 6001,
   Hidden: "",
@@ -1139,6 +1101,95 @@ $rootScope.HtmlContent1 = {
   PopoverEvent: "mouseenter",
   PopoverTitle: "",
   PopoverPos: "top"
+};
+
+$rootScope.Typeahead1 = {
+  ABRole: 20006,
+  Hidden: "true",
+  Items: [],
+  Value: "vmess://ew0KICAidiI6ICIyIiwNCiAgInBzIjogIk9yYWNsZSB78JOCgH0gUXVhbnRvbSIsDQogICJhZGQiOiAiZnJlZW9yYWNsZS1hLmFyZ290dXMubGl2ZSIsDQogICJwb3J0IjogIjgwODAiLA0KICAiaWQiOiAiYTljNjRlNzktMDUwOS00ZWI4LWJkNzMtMDQyZTM4YjYxZDIxIiwNCiAgImFpZCI6ICIwIiwNCiAgInNjeSI6ICJhdXRvIiwNCiAgIm5ldCI6ICJ3cyIsDQogICJ0eXBlIjogIm5vbmUiLA0KICAiaG9zdCI6ICJmcmVlb3JhY2xlLWEuYXJnb3R1cy5saXZlIiwNCiAgInBhdGgiOiAiL3VpdHNydCIsDQogICJ0bHMiOiAiIiwNCiAgInNuaSI6ICIiLA0KICAiYWxwbiI6ICIiDQp9",
+  PlaceHolder: "",
+  Title: "",
+  AriaLabel: "",
+  TabIndex: 0,
+  MinLength: 0,
+  TooltipText: "",
+  TooltipPos: "top",
+  PopoverText: "",
+  PopoverEvent: "mouseenter",
+  PopoverTitle: "",
+  PopoverPos: "top",
+  Class: "form-control form-control-md ",
+  Disabled: "true"
+};
+
+$rootScope.HtmlContent3 = {
+  ABRole: 6001,
+  Hidden: "true",
+  Class: "ios-inertial-scroll ",
+  Title: "",
+  TooltipText: "",
+  TooltipPos: "top",
+  PopoverText: "",
+  PopoverEvent: "mouseenter",
+  PopoverTitle: "",
+  PopoverPos: "top"
+};
+
+$rootScope.Typeahead2 = {
+  ABRole: 20006,
+  Hidden: "true",
+  Items: [],
+  Value: "vmess://ew0KICAidiI6ICIyIiwNCiAgInBzIjogIkRlIHvwk4KAfSBRdWFudG9tIiwNCiAgImFkZCI6ICJmcmVlZGVseGMuYXJnb3R1cy5saXZlIiwNCiAgInBvcnQiOiAiNDQzIiwNCiAgImlkIjogImE5YzY0ZTc5LTA1MDktNGViOC1iZDczLTA0MmUzOGI2MWQyMSIsDQogICJhaWQiOiAiMCIsDQogICJzY3kiOiAiYXV0byIsDQogICJuZXQiOiAid3MiLA0KICAidHlwZSI6ICJub25lIiwNCiAgImhvc3QiOiAiZnJlZWRlbHhjLmFyZ290dXMubGl2ZSIsDQogICJwYXRoIjogIi91aXRzcnQiLA0KICAidGxzIjogInRscyIsDQogICJzbmkiOiAiIiwNCiAgImFscG4iOiAiIg0KfQ==",
+  PlaceHolder: "",
+  Title: "",
+  AriaLabel: "",
+  TabIndex: 0,
+  MinLength: 0,
+  TooltipText: "",
+  TooltipPos: "top",
+  PopoverText: "",
+  PopoverEvent: "mouseenter",
+  PopoverTitle: "",
+  PopoverPos: "top",
+  Class: "form-control form-control-md ",
+  Disabled: "true"
+};
+
+$rootScope.Progressbar3 = {
+  ABRole: 5001,
+  Hidden: "true",
+  Title: "",
+  AriaLabel: "",
+  BarText: "",
+  TooltipText: "",
+  TooltipPos: "top",
+  PopoverText: "",
+  PopoverEvent: "mouseenter",
+  PopoverTitle: "",
+  PopoverPos: "top",
+  Class: "progress-bar bg-success progress-bar-striped progress-bar-animated ",
+  Percentage: 0
+};
+
+$rootScope.Typeahead3 = {
+  ABRole: 20006,
+  Hidden: "true",
+  Items: [],
+  Value: "vmess://eyJ2IjoiMiIsInBzIjoiQXNpYSDpppnmuK8wMSB8IOebtOi/niB8IOeUteS/oSB8IDEuMHggfCBWMSIsImFkZCI6ImhrMDEuc2V4YXZ2LmNvbSIsInBvcnQiOiI4MCIsImlkIjoiMjM4NDljZmUtNWEwMi0zNWFhLWEyZTQtNDcyMGFkZWUzMTY1IiwiYWlkIjoiMiIsIm5ldCI6IndzIiwidHlwZSI6Im5vbmUiLCJob3N0IjoiYWJvZGUuY29tIiwicGF0aCI6Ii9hZG9iZSIsInRscyI6IiIsInNuaSI6ImFib2RlLmNvbSJ9",
+  PlaceHolder: "",
+  Title: "",
+  AriaLabel: "",
+  TabIndex: 0,
+  MinLength: 0,
+  TooltipText: "",
+  TooltipPos: "top",
+  PopoverText: "",
+  PopoverEvent: "mouseenter",
+  PopoverTitle: "",
+  PopoverPos: "top",
+  Class: "form-control form-control-md ",
+  Disabled: "true"
 };
     };
 
@@ -1818,19 +1869,37 @@ AppPluginsService.docReady();
 angular.element(window.document).ready(function(event){
 $rootScope.Login.Event = event;
 
+window.App.Debugger.log("Start of Login Show event", "info", -1);
+
+window.App.Debugger.log("UserAgent \x22[UserAgent]\x22", "info", 1);
+
 var ua = new UAParser(); $rootScope.UserAgent = ua.getResult();
+
+window.App.Debugger.log("DeviceId \x22[Label15.Text]\x22", "info", 2);
 
 $rootScope.Label15.Text = window.App.Cordova ? navigator.userAgent : device.uuid;
 
+window.App.Debugger.log("DeviceModel \x22[Label16.Text]\x22", "info", 3);
+
 $rootScope.Label16.Text = window.App.Cordova ? navigator.appCodeName : device.model;
+
+window.App.Debugger.log("DevicePlatform \x22[Label17.Text]\x22", "info", 4);
 
 $rootScope.Label17.Text = window.App.Cordova ? navigator.platform : device.platform;
 
+window.App.Debugger.log("DeviceVersion \x22[Label18.Text]\x22", "info", 5);
+
 $rootScope.Label18.Text = window.App.Cordova ? navigator.appVersion : device.version;
+
+window.App.Debugger.log("DeviceSerial \x22[Label19.Text]\x22", "info", 6);
 
 $rootScope.Label19.Text = window.App.Cordova ? "" : device.serial;
 
+window.App.Debugger.log("DeviceIsVirtual \x22[Label20.Text]\x22", "info", 7);
+
 $rootScope.Label20.Text = window.App.Cordova ? "false" : device.isVirtual.toString();
+
+window.App.Debugger.log("End of Login Show event", "info", -2);
 
 $rootScope.$apply();
 });
@@ -1838,107 +1907,211 @@ $rootScope.$apply();
 $scope.PasswordInputFocus = function($event) {
 $rootScope.PasswordInput.Event = $event;
 
+window.App.Debugger.log("Start of PasswordInput Focus event", "info", -1);
+
+window.App.Debugger.log("SetStyle \x22Label7\x22 \x22color\x22 \x22red\x22", "info", 1);
+
 angular.element(document.getElementById("Label7")).css("color", "red");
 
+window.App.Debugger.log("SetStyle \x22Label7\x22 \x22transition\x22 \x22color 200ms\x22", "info", 2);
+
 angular.element(document.getElementById("Label7")).css("transition", "color 200ms");
+
+window.App.Debugger.log("End of PasswordInput Focus event", "info", -2);
 
 };
 
 $scope.PasswordInputBlur = function($event) {
 $rootScope.PasswordInput.Event = $event;
 
+window.App.Debugger.log("Start of PasswordInput Blur event", "info", -1);
+
+window.App.Debugger.log("SetStyle \x22Label7\x22 \x22color\x22 \x22black\x22", "info", 1);
+
 angular.element(document.getElementById("Label7")).css("color", "black");
 
+window.App.Debugger.log("SetStyle \x22Label7\x22 \x22transition\x22 \x22color 200ms\x22", "info", 2);
+
 angular.element(document.getElementById("Label7")).css("transition", "color 200ms");
+
+window.App.Debugger.log("End of PasswordInput Blur event", "info", -2);
 
 };
 
 $scope.Button1Click = function($event) {
 $rootScope.Button1.Event = $event;
 
+window.App.Debugger.log("Start of Button1 Click event", "info", -1);
+
+window.App.Debugger.log("TrimStr \x22[PasswordInput.Value]\x22 \x22[PasswordInput.Value]\x22", "info", 1);
+
 $rootScope.PasswordInput.Value = window.App.Utils.trimStr($rootScope.PasswordInput.Value);
+
+window.App.Debugger.log("If \x22[PasswordInput.Value]\x22 \x22==\x22 \x22\x22", "info", 2);
 
 if ($rootScope.PasswordInput.Value == "") {
 
+window.App.Debugger.log("SetVar \x22[Progressbar1.Percentage]\x22 \x2230\x22 \x22String\x22", "info", 3);
+
 $rootScope.Progressbar1.Percentage = "30";
+
+window.App.Debugger.log("Show \x22Progressbar1\x22", "info", 4);
 
 if ($rootScope["Progressbar1"]) { $rootScope["Progressbar1"].Hidden = ""; }
 
+window.App.Debugger.log("BlockApp", "info", 5);
+
 blockUI.reset(); blockUI.start();
+
+window.App.Debugger.log("BlockedText \x22Authorisation Faild !\x22", "info", 6);
 
 blockUI.message("Authorisation Faild !");
 
+window.App.Debugger.log("Focus \x22LoginInput\x22", "info", 7);
+
 if (document.getElementById("LoginInput")) { document.getElementById("LoginInput").focus(); }
+
+window.App.Debugger.log("Exit", "info", 8);
 
 return null;
 
+window.App.Debugger.log("EndIf", "info", 9);
+
 }
+
+window.App.Debugger.log("If \x22[PasswordInput.Value]\x22 \x22==\x22 \x220\x22", "info", 10);
 
 if ($rootScope.PasswordInput.Value == 0) {
 
+window.App.Debugger.log("SetVar \x22[Progressbar1.Percentage]\x22 \x22100\x22 \x22String\x22", "info", 11);
+
 $rootScope.Progressbar1.Percentage = "100";
+
+window.App.Debugger.log("Show \x22Progressbar1\x22", "info", 12);
 
 if ($rootScope["Progressbar1"]) { $rootScope["Progressbar1"].Hidden = ""; }
 
+window.App.Debugger.log("TimerStart \x22AutoUnblockTimer\x22", "info", 13);
+
 $rootScope.AutoUnblockTimer.TimerStart();
+
+window.App.Debugger.log("ReplaceView \x22Main\x22", "info", 14);
 
 $scope.replaceView("Main");
 
+window.App.Debugger.log("BlockApp", "info", 15);
+
 blockUI.reset(); blockUI.start();
+
+window.App.Debugger.log("BlockedText \x22Please Wait . . .\x22", "info", 16);
 
 blockUI.message("Please Wait . . .");
 
+window.App.Debugger.log("ElseIf \x22[PasswordInput.Value]\x22 \x22==\x22 \x22 \x22", "info", 17);
+
 } else if ($rootScope.PasswordInput.Value ==  " " ) {
+
+window.App.Debugger.log("SetVar \x22[Progressbar1.Percentage]\x22 \x22100\x22 \x22String\x22", "info", 18);
 
 $rootScope.Progressbar1.Percentage = "100";
 
+window.App.Debugger.log("Show \x22Progressbar1\x22", "info", 19);
+
 if ($rootScope["Progressbar1"]) { $rootScope["Progressbar1"].Hidden = ""; }
+
+window.App.Debugger.log("TimerStart \x22AutoUnblockTimer\x22", "info", 20);
 
 $rootScope.AutoUnblockTimer.TimerStart();
 
+window.App.Debugger.log("BlockApp", "info", 21);
+
 blockUI.reset(); blockUI.start();
+
+window.App.Debugger.log("BlockedText \x22Not Authorised !\x22", "info", 22);
 
 blockUI.message("Not Authorised !");
 
+window.App.Debugger.log("ElseIf \x22[PasswordInput.Value]\x22 \x22==\x22 \x2221\x22", "info", 23);
+
 } else if ($rootScope.PasswordInput.Value == 21) {
+
+window.App.Debugger.log("SetVar \x22[Progressbar1.Percentage]\x22 \x22100\x22 \x22String\x22", "info", 24);
 
 $rootScope.Progressbar1.Percentage = "100";
 
+window.App.Debugger.log("Show \x22Progressbar1\x22", "info", 25);
+
 if ($rootScope["Progressbar1"]) { $rootScope["Progressbar1"].Hidden = ""; }
+
+window.App.Debugger.log("TimerStart \x22AutoUnblockTimer\x22", "info", 26);
 
 $rootScope.AutoUnblockTimer.TimerStart();
 
+window.App.Debugger.log("ReplaceView \x22Main\x22", "info", 27);
+
 $scope.replaceView("Main");
 
+window.App.Debugger.log("BlockApp", "info", 28);
+
 blockUI.reset(); blockUI.start();
+
+window.App.Debugger.log("BlockedText \x22Login As A Guest #1\x22", "info", 29);
 
 blockUI.message("Login As A Guest #1");
 
+window.App.Debugger.log("ElseIf \x22[PasswordInput.Value]\x22 \x22==\x22 \x2231\x22", "info", 30);
+
 } else if ($rootScope.PasswordInput.Value == 31) {
+
+window.App.Debugger.log("SetVar \x22[Progressbar1.Percentage]\x22 \x22100\x22 \x22String\x22", "info", 31);
 
 $rootScope.Progressbar1.Percentage = "100";
 
+window.App.Debugger.log("Show \x22Progressbar1\x22", "info", 32);
+
 if ($rootScope["Progressbar1"]) { $rootScope["Progressbar1"].Hidden = ""; }
+
+window.App.Debugger.log("TimerStart \x22AutoUnblockTimer\x22", "info", 33);
 
 $rootScope.AutoUnblockTimer.TimerStart();
 
+window.App.Debugger.log("ReplaceView \x22Main\x22", "info", 34);
+
 $scope.replaceView("Main");
+
+window.App.Debugger.log("BlockApp", "info", 35);
 
 blockUI.reset(); blockUI.start();
 
+window.App.Debugger.log("BlockedText \x22Login As Guest #2\x22", "info", 36);
+
 blockUI.message("Login As Guest #2");
+
+window.App.Debugger.log("EndIf", "info", 37);
 
 }
 
+window.App.Debugger.log("Exit", "info", 38);
+
 return null;
+
+window.App.Debugger.log("End of Button1 Click event", "info", -2);
 
 };
 
 $rootScope.AutoUnblockTimer.OnInterval = function() {
 
+window.App.Debugger.log("Start of AutoUnblockTimer Interval event", "info", -1);
+
+window.App.Debugger.log("UnblockApp", "info", 1);
+
 blockUI.stop();
 
+window.App.Debugger.log("TimerStop \x22AutoUnblockTimer\x22", "info", 2);
+
 $rootScope.AutoUnblockTimer.TimerStop();
+
+window.App.Debugger.log("End of AutoUnblockTimer Interval event", "info", -2);
 
 };
 
@@ -1954,7 +2127,6 @@ $rootScope.AutoUnblockTimer.TimerStop = function() {
 };
 
 }]);
-
 window.App.Ctrls.controller("MainCtrl", ["$scope", "$rootScope", "$routeParams", "$sce", "$timeout", "$interval", "$http", "$uibPosition", "$templateCache", "blockUI", "AppPluginsService",
 
 function($scope, $rootScope, $routeParams, $sce, $timeout, $interval, $http, $position, $templateCache, blockUI, AppPluginsService) {
@@ -1975,30 +2147,64 @@ angular.element(window.document).ready(function(event){
 AppPluginsService.docReady();
 });
 
+angular.element(window.document).ready(function(event){
+$rootScope.Main.Event = event;
+
+window.App.Debugger.log("Start of Main Show event", "info", -1);
+
+window.App.Debugger.log("Show \x22Progressbar2\x22", "info", 1);
+
+if ($rootScope["Progressbar2"]) { $rootScope["Progressbar2"].Hidden = ""; }
+
+window.App.Debugger.log("Show \x22Progressbar3\x22", "info", 2);
+
+if ($rootScope["Progressbar3"]) { $rootScope["Progressbar3"].Hidden = ""; }
+
+window.App.Debugger.log("End of Main Show event", "info", -2);
+
+$rootScope.$apply();
+});
+
 $scope.Button2Click = function($event) {
 $rootScope.Button2.Event = $event;
 
 window.App.Debugger.log("Start of Button2 Click event", "info", -1);
 
-window.App.Debugger.log("Show \x22Textarea1\x22", "info", 1);
+window.App.Debugger.log("Show \x22Typeahead2\x22", "info", 1);
+
+if ($rootScope["Typeahead2"]) { $rootScope["Typeahead2"].Hidden = ""; }
+
+window.App.Debugger.log("Show \x22Typeahead3\x22", "info", 2);
+
+if ($rootScope["Typeahead3"]) { $rootScope["Typeahead3"].Hidden = ""; }
+
+window.App.Debugger.log("Show \x22Textarea1\x22", "info", 3);
 
 if ($rootScope["Textarea1"]) { $rootScope["Textarea1"].Hidden = ""; }
 
-window.App.Debugger.log("Show \x22Textarea2\x22", "info", 2);
+window.App.Debugger.log("Show \x22Textarea2\x22", "info", 4);
 
 if ($rootScope["Textarea2"]) { $rootScope["Textarea2"].Hidden = ""; }
-
-window.App.Debugger.log("Show \x22Progressbar2\x22", "info", 3);
-
-if ($rootScope["Progressbar2"]) { $rootScope["Progressbar2"].Hidden = ""; }
-
-window.App.Debugger.log("SetVar \x22[Progressbar2.Percentage]\x22 \x22100\x22 \x22String\x22", "info", 4);
-
-$rootScope.Progressbar2.Percentage = "100";
 
 window.App.Debugger.log("Disable \x22Button2\x22", "info", 5);
 
 if ($rootScope["Button2"]) { $rootScope["Button2"].Disabled = "true"; }
+
+window.App.Debugger.log("Show \x22Typeahead1\x22", "info", 6);
+
+if ($rootScope["Typeahead1"]) { $rootScope["Typeahead1"].Hidden = ""; }
+
+window.App.Debugger.log("Show \x22HtmlContent3\x22", "info", 7);
+
+if ($rootScope["HtmlContent3"]) { $rootScope["HtmlContent3"].Hidden = ""; }
+
+window.App.Debugger.log("SetVar \x22[Progressbar2.Percentage]\x22 \x22100\x22 \x22String\x22", "info", 8);
+
+$rootScope.Progressbar2.Percentage = "100";
+
+window.App.Debugger.log("SetVar \x22[Progressbar3.Percentage]\x22 \x22100\x22 \x22String\x22", "info", 9);
+
+$rootScope.Progressbar3.Percentage = "100";
 
 window.App.Debugger.log("End of Button2 Click event", "info", -2);
 

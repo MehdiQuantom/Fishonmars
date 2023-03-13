@@ -5,12 +5,12 @@
  */
 /* App auto generated CSS */
 html, body { width: 320px; height: 480px; }
-#Image3 { position: absolute; top: 0.00%; left: 0.00%; width: 100.00%; height: 110.00%; }
-#codedbymq { position: absolute; top: 96.67%; left: 0.00%; width: 37.50%; height: 4.17%; }
-#PasswordInput { position: absolute; top: 16.67%; left: 57.50%; width: 32.50%; height: 5.00%; font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;}
-#Button1 { position: absolute; top: 28.33%; left: 57.50%; width: 15.00%; height: 6.67%; font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;}
-#PasswordLabel { position: absolute; top: 13.33%; left: 57.50%; width: 40.00%; height: 4.17%; font-family: "Arial Black", Gadget, sans-serif; font-size: 40; font-style: normal; font-weight: bold;}
-#Progressbar1 { position: absolute; top: 23.33%; left: 57.50%; width: 15.00%; height: 3.33%; }
+#Image3 { position: absolute; top: 0.00%; left: 0.00%; width: 100.00%; height: 100.00%; }
+#codedbymq { position: absolute; top: 95.00%; left: 0.00%; width: 37.50%; height: 4.17%; }
+#PasswordInput { position: absolute; top: 16.67%; left: 40.00%; width: 32.50%; height: 5.00%; font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;}
+#Button1 { position: absolute; top: 28.33%; left: 40.00%; width: 15.00%; height: 6.67%; font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;}
+#PasswordLabel { position: absolute; top: 13.33%; left: 40.00%; width: 40.00%; height: 4.17%; font-family: "Arial Black", Gadget, sans-serif; font-size: 40; font-style: normal; font-weight: bold;}
+#Progressbar1 { position: absolute; top: 23.33%; left: 40.00%; width: 15.00%; height: 3.33%; }
 #HtmlContent2 { position: absolute; top: 0.00%; left: 0.00%; width: 15.00%; height: 1.67%; }
 #Label1 { position: absolute; top: 56.67%; left: 0.00%; width: 17.50%; height: 5.00%; }
 #Label2 { position: absolute; top: 63.33%; left: 0.00%; width: 17.50%; height: 5.00%; }
@@ -24,12 +24,14 @@ html, body { width: 320px; height: 480px; }
 #Label19 { position: absolute; top: 83.33%; left: 17.50%; width: 27.50%; height: 3.33%; }
 #Label20 { position: absolute; top: 90.00%; left: 17.50%; width: 27.50%; height: 3.33%; }
 #Label15 { position: absolute; top: 56.67%; left: 17.50%; width: 47.50%; height: 3.33%; }
-
-#Progressbar2 { position: absolute; top: 33.33%; left: 0.00%; width: 100.00%; height: 3.33%; }
-#Button2 { position: absolute; top: 56.67%; left: 22.50%; width: 55.00%; height: 8.33%; }
-#Textarea1 { position: absolute; top: 0.00%; left: 0.00%; width: 47.50%; height: 33.33%; }
-#Textarea2 { position: absolute; top: 0.00%; left: 50.00%; width: 50.00%; height: 33.33%; }
+#Progressbar2 { position: absolute; top: 10.00%; left: 0.00%; width: 100.00%; height: 3.33%; }
+#Button2 { position: absolute; top: 71.67%; left: 35.00%; width: 32.50%; height: 8.33%; }
 #HtmlContent1 { position: absolute; top: 81.67%; left: 0.00%; width: 100.00%; height: 18.33%; }
+#Typeahead1 { position: absolute; top: 0.00%; left: 0.00%; width: 100.00%; height: 10.00%; }
+#HtmlContent3 { position: absolute; top: 36.67%; left: 37.50%; width: 32.50%; height: 6.67%; }
+#Typeahead2 { position: absolute; top: 13.33%; left: 0.00%; width: 100.00%; height: 10.00%; }
+#Progressbar3 { position: absolute; top: 23.33%; left: 0.00%; width: 100.00%; height: 3.33%; }
+#Typeahead3 { position: absolute; top: 26.67%; left: 0.00%; width: 100.00%; height: 10.00%; }
 
 /* App inline CSS */
 .block-ui-message

@@ -6,12 +6,12 @@
 /* App auto generated CSS */
 html, body, .appView { width: 320px; height: 480px; }
 .dialogView .modal-dialog { width: 320px; margin: 0 auto; }
-#Image3 { position: absolute; top: 0px; left: 0px; width: 320px; height: 528px; }
-#codedbymq { position: absolute; top: 464px; left: 0px; width: 120px; height: 20px; }
-#PasswordInput { position: absolute; top: 80px; left: 184px; width: 104px; height: 24px; font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;}
-#Button1 { position: absolute; top: 136px; left: 184px; width: 48px; height: 32px; font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;}
-#PasswordLabel { position: absolute; top: 64px; left: 184px; width: 128px; height: 20px; font-family: "Arial Black", Gadget, sans-serif; font-size: 40; font-style: normal; font-weight: bold;}
-#Progressbar1 { position: absolute; top: 112px; left: 184px; width: 48px; height: 16px; }
+#Image3 { position: absolute; top: 0px; left: 0px; width: 320px; height: 480px; }
+#codedbymq { position: absolute; top: 456px; left: 0px; width: 120px; height: 20px; }
+#PasswordInput { position: absolute; top: 80px; left: 128px; width: 104px; height: 24px; font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;}
+#Button1 { position: absolute; top: 136px; left: 128px; width: 48px; height: 32px; font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;}
+#PasswordLabel { position: absolute; top: 64px; left: 128px; width: 128px; height: 20px; font-family: "Arial Black", Gadget, sans-serif; font-size: 40; font-style: normal; font-weight: bold;}
+#Progressbar1 { position: absolute; top: 112px; left: 128px; width: 48px; height: 16px; }
 #HtmlContent2 { position: absolute; top: 0px; left: 0px; width: 48px; height: 8px; }
 #Label1 { position: absolute; top: 272px; left: 0px; width: 56px; height: 24px; }
 #Label2 { position: absolute; top: 304px; left: 0px; width: 56px; height: 24px; }
@@ -25,12 +25,14 @@ html, body, .appView { width: 320px; height: 480px; }
 #Label19 { position: absolute; top: 400px; left: 56px; width: 88px; height: 16px; }
 #Label20 { position: absolute; top: 432px; left: 56px; width: 88px; height: 16px; }
 #Label15 { position: absolute; top: 272px; left: 56px; width: 152px; height: 16px; }
-
-#Progressbar2 { position: absolute; top: 160px; left: 0px; width: 320px; height: 16px; }
-#Button2 { position: absolute; top: 272px; left: 72px; width: 176px; height: 40px; }
-#Textarea1 { position: absolute; top: 0px; left: 0px; width: 152px; height: 160px; }
-#Textarea2 { position: absolute; top: 0px; left: 160px; width: 160px; height: 160px; }
+#Progressbar2 { position: absolute; top: 48px; left: 0px; width: 320px; height: 16px; }
+#Button2 { position: absolute; top: 344px; left: 112px; width: 104px; height: 40px; }
 #HtmlContent1 { position: absolute; top: 392px; left: 0px; width: 320px; height: 88px; }
+#Typeahead1 { position: absolute; top: 0px; left: 0px; width: 320px; height: 48px; }
+#HtmlContent3 { position: absolute; top: 176px; left: 120px; width: 104px; height: 32px; }
+#Typeahead2 { position: absolute; top: 64px; left: 0px; width: 320px; height: 48px; }
+#Progressbar3 { position: absolute; top: 112px; left: 0px; width: 320px; height: 16px; }
+#Typeahead3 { position: absolute; top: 128px; left: 0px; width: 320px; height: 48px; }
 
 /* App inline CSS */
 .block-ui-message
