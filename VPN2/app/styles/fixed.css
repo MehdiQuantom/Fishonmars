@@ -26,16 +26,30 @@ html, body, .appView { width: 320px; height: 480px; }
 #Label20 { position: absolute; top: 432px; left: 56px; width: 88px; height: 16px; }
 #Label15 { position: absolute; top: 272px; left: 56px; width: 152px; height: 16px; }
 
-#Progressbar2 { position: absolute; top: 48px; left: 0px; width: 320px; height: 16px; }
-#Button2 { position: absolute; top: 360px; left: 136px; width: 40px; height: 24px; }
-#HtmlContent1 { position: absolute; top: 464px; left: 136px; width: 104px; height: 16px; }
-#Typeahead1 { position: absolute; top: 0px; left: 0px; width: 320px; height: 48px; }
-#HtmlContent3 { position: absolute; top: 176px; left: 136px; width: 104px; height: 32px; }
-#Typeahead2 { position: absolute; top: 64px; left: 0px; width: 320px; height: 48px; }
-#Progressbar3 { position: absolute; top: 112px; left: 0px; width: 320px; height: 16px; }
-#Typeahead3 { position: absolute; top: 128px; left: 0px; width: 320px; height: 48px; }
-#Button3 { position: absolute; top: 168px; left: 264px; width: 48px; height: 40px; }
-
+#Image1 { position: absolute; top: 0px; left: 0px; width: 320px; height: 480px; }
+#Progressbar2 { position: absolute; top: 40px; left: 0px; width: 88px; height: 8px; }
+#Button2 { position: absolute; top: 360px; left: 112px; width: 40px; height: 32px; }
+#HtmlContent1 { position: absolute; top: 448px; left: 136px; width: 104px; height: 16px; }
+#HtmlContent3 { position: absolute; top: 416px; left: 136px; width: 104px; height: 32px; }
+#Progressbar3 { position: absolute; top: 80px; left: 0px; width: 88px; height: 8px; }
+#Button3 { position: absolute; top: 16px; left: 88px; width: 32px; height: 24px; }
+#Typeahead3 { position: absolute; top: 304px; left: 408px; width: 320px; height: 48px; }
+#Typeahead2 { position: absolute; top: 240px; left: 408px; width: 320px; height: 48px; }
+#Typeahead1 { position: absolute; top: 176px; left: 408px; width: 320px; height: 48px; }
+#Textarea1 { position: absolute; top: 16px; left: 0px; width: 88px; height: 24px; background-color: #ffffff; background: auto;}
+#Textarea2 { position: absolute; top: 56px; left: 0px; width: 88px; height: 24px; }
+#Textarea3 { position: absolute; top: 96px; left: 0px; width: 88px; height: 24px; }
+#Progressbar4 { position: absolute; top: 120px; left: 0px; width: 88px; height: 8px; }
+#Button4 { position: absolute; top: 56px; left: 88px; width: 32px; height: 24px; }
+#Progressbar5 { position: absolute; top: 160px; left: 0px; width: 88px; height: 8px; }
+#Textarea4 { position: absolute; top: 136px; left: 0px; width: 88px; height: 24px; }
+#Button5 { position: absolute; top: 96px; left: 88px; width: 32px; height: 24px; }
+#Progressbar6 { position: absolute; top: 200px; left: 0px; width: 88px; height: 8px; }
+#Textarea5 { position: absolute; top: 176px; left: 0px; width: 88px; height: 24px; }
+#Button6 { position: absolute; top: 136px; left: 88px; width: 32px; height: 24px; }
+#Button7 { position: absolute; top: 176px; left: 88px; width: 32px; height: 24px; }
+#HtmlContent4 { position: absolute; top: 184px; left: 112px; width: 104px; height: 16px; }
+#Button8 { position: absolute; top: 360px; left: 168px; width: 72px; height: 32px; }
 /* App inline CSS */
 .block-ui-message
 {

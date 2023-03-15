@@ -701,7 +701,7 @@ $rootScope.App.AuthorEmail = "info@quantom.com";
 $rootScope.App.AuthorUrl = "https://mehdiquantom.github.io/Fishonmars/";
 $rootScope.App.LanguageCode = "en";
 $rootScope.App.TextDirection = "ltr";
-$rootScope.App.BuildNumber = 92;
+$rootScope.App.BuildNumber = 163;
 $rootScope.App.Scaled = "scaled";
 $rootScope.App.Views = ["Login", "Main"];
 $rootScope.App.Theme = "Daydream";
@@ -821,7 +821,7 @@ $rootScope.Progressbar1 = {
   Hidden: "true",
   Title: "",
   AriaLabel: "",
-  BarText: "",
+  BarText: "Checking (%)",
   TooltipText: "",
   TooltipPos: "top",
   PopoverText: "",
@@ -1055,12 +1055,28 @@ $rootScope.Label15 = {
   Icon: ""
 };
 
+$rootScope.Image1 = {
+  ABRole: 8001,
+  Hidden: "",
+  Image: "app/images/7-9-2022.bmp",
+  Class: "",
+  Alt: "",
+  Title: "",
+  AriaLabel: "",
+  TooltipText: "",
+  TooltipPos: "top",
+  PopoverText: "",
+  PopoverEvent: "mouseenter",
+  PopoverTitle: "",
+  PopoverPos: "top"
+};
+
 $rootScope.Progressbar2 = {
   ABRole: 5001,
   Hidden: "true",
-  Title: "",
+  Title: "Availability",
   AriaLabel: "",
-  BarText: "",
+  BarText: "Availability",
   TooltipText: "",
   TooltipPos: "top",
   PopoverText: "",
@@ -1084,9 +1100,9 @@ $rootScope.Button2 = {
   PopoverEvent: "mouseenter",
   PopoverPos: "top",
   Badge: "",
-  Icon: "",
-  Text: "Generate ",
-  Class: "btn btn-secondary btn-md ",
+  Icon: "fas fa-wrench",
+  Text: "Generate",
+  Class: "btn btn-info btn-md ",
   Disabled: ""
 };
 
@@ -1103,26 +1119,6 @@ $rootScope.HtmlContent1 = {
   PopoverPos: "top"
 };
 
-$rootScope.Typeahead1 = {
-  ABRole: 20006,
-  Hidden: "true",
-  Items: [],
-  Value: "vmess://ew0KICAidiI6ICIyIiwNCiAgInBzIjogIk9yYWNsZSB78JOCgH0gUXVhbnRvbSIsDQogICJhZGQiOiAiZnJlZW9yYWNsZS1hLmFyZ290dXMubGl2ZSIsDQogICJwb3J0IjogIjgwODAiLA0KICAiaWQiOiAiYTljNjRlNzktMDUwOS00ZWI4LWJkNzMtMDQyZTM4YjYxZDIxIiwNCiAgImFpZCI6ICIwIiwNCiAgInNjeSI6ICJhdXRvIiwNCiAgIm5ldCI6ICJ3cyIsDQogICJ0eXBlIjogIm5vbmUiLA0KICAiaG9zdCI6ICJmcmVlb3JhY2xlLWEuYXJnb3R1cy5saXZlIiwNCiAgInBhdGgiOiAiL3VpdHNydCIsDQogICJ0bHMiOiAiIiwNCiAgInNuaSI6ICIiLA0KICAiYWxwbiI6ICIiDQp9",
-  PlaceHolder: "",
-  Title: "",
-  AriaLabel: "",
-  TabIndex: 0,
-  MinLength: 0,
-  TooltipText: "",
-  TooltipPos: "top",
-  PopoverText: "",
-  PopoverEvent: "mouseenter",
-  PopoverTitle: "",
-  PopoverPos: "top",
-  Class: "form-control form-control-md ",
-  Disabled: "true"
-};
-
 $rootScope.HtmlContent3 = {
   ABRole: 6001,
   Hidden: "true",
@@ -1136,32 +1132,12 @@ $rootScope.HtmlContent3 = {
   PopoverPos: "top"
 };
 
-$rootScope.Typeahead2 = {
-  ABRole: 20006,
-  Hidden: "true",
-  Items: [],
-  Value: "vmess://ew0KICAidiI6ICIyIiwNCiAgInBzIjogIkRlIHvwk4KAfSBRdWFudG9tIiwNCiAgImFkZCI6ICJmcmVlZGVseGMuYXJnb3R1cy5saXZlIiwNCiAgInBvcnQiOiAiNDQzIiwNCiAgImlkIjogImE5YzY0ZTc5LTA1MDktNGViOC1iZDczLTA0MmUzOGI2MWQyMSIsDQogICJhaWQiOiAiMCIsDQogICJzY3kiOiAiYXV0byIsDQogICJuZXQiOiAid3MiLA0KICAidHlwZSI6ICJub25lIiwNCiAgImhvc3QiOiAiZnJlZWRlbHhjLmFyZ290dXMubGl2ZSIsDQogICJwYXRoIjogIi91aXRzcnQiLA0KICAidGxzIjogInRscyIsDQogICJzbmkiOiAiIiwNCiAgImFscG4iOiAiIg0KfQ==",
-  PlaceHolder: "",
-  Title: "",
-  AriaLabel: "",
-  TabIndex: 0,
-  MinLength: 0,
-  TooltipText: "",
-  TooltipPos: "top",
-  PopoverText: "",
-  PopoverEvent: "mouseenter",
-  PopoverTitle: "",
-  PopoverPos: "top",
-  Class: "form-control form-control-md ",
-  Disabled: "true"
-};
-
 $rootScope.Progressbar3 = {
   ABRole: 5001,
   Hidden: "true",
-  Title: "",
+  Title: "Availability",
   AriaLabel: "",
-  BarText: "",
+  BarText: "Availability",
   TooltipText: "",
   TooltipPos: "top",
   PopoverText: "",
@@ -1170,26 +1146,6 @@ $rootScope.Progressbar3 = {
   PopoverPos: "top",
   Class: "progress-bar bg-success progress-bar-striped progress-bar-animated ",
   Percentage: 0
-};
-
-$rootScope.Typeahead3 = {
-  ABRole: 20006,
-  Hidden: "true",
-  Items: [],
-  Value: "vmess://eyJ2IjoiMiIsInBzIjoiQXNpYSDpppnmuK8wMSB8IOebtOi/niB8IOeUteS/oSB8IDEuMHggfCBWMSIsImFkZCI6ImhrMDEuc2V4YXZ2LmNvbSIsInBvcnQiOiI4MCIsImlkIjoiMjM4NDljZmUtNWEwMi0zNWFhLWEyZTQtNDcyMGFkZWUzMTY1IiwiYWlkIjoiMiIsIm5ldCI6IndzIiwidHlwZSI6Im5vbmUiLCJob3N0IjoiYWJvZGUuY29tIiwicGF0aCI6Ii9hZG9iZSIsInRscyI6IiIsInNuaSI6ImFib2RlLmNvbSJ9",
-  PlaceHolder: "",
-  Title: "",
-  AriaLabel: "",
-  TabIndex: 0,
-  MinLength: 0,
-  TooltipText: "",
-  TooltipPos: "top",
-  PopoverText: "",
-  PopoverEvent: "mouseenter",
-  PopoverTitle: "",
-  PopoverPos: "top",
-  Class: "form-control form-control-md ",
-  Disabled: "true"
 };
 
 $rootScope.Button3 = {
@@ -1214,6 +1170,317 @@ $rootScope.Button3 = {
 $rootScope.Clipboard1 = {
   ABRole: 30012,
   Error: ""
+};
+
+$rootScope.Typeahead3 = {
+  ABRole: 20006,
+  Hidden: "true",
+  Items: [],
+  Value: "vmess://eyJ2IjoiMiIsInBzIjoiQXNpYSDpppnmuK8wMSB8IOebtOi/niB8IOeUteS/oSB8IDEuMHggfCBWMSIsImFkZCI6ImhrMDEuc2V4YXZ2LmNvbSIsInBvcnQiOiI4MCIsImlkIjoiMjM4NDljZmUtNWEwMi0zNWFhLWEyZTQtNDcyMGFkZWUzMTY1IiwiYWlkIjoiMiIsIm5ldCI6IndzIiwidHlwZSI6Im5vbmUiLCJob3N0IjoiYWJvZGUuY29tIiwicGF0aCI6Ii9hZG9iZSIsInRscyI6IiIsInNuaSI6ImFib2RlLmNvbSJ9",
+  PlaceHolder: "",
+  Title: "",
+  AriaLabel: "",
+  TabIndex: 0,
+  MinLength: 0,
+  TooltipText: "",
+  TooltipPos: "top",
+  PopoverText: "",
+  PopoverEvent: "mouseenter",
+  PopoverTitle: "",
+  PopoverPos: "top",
+  Class: "form-control form-control-md ",
+  Disabled: "true"
+};
+
+$rootScope.Typeahead2 = {
+  ABRole: 20006,
+  Hidden: "true",
+  Items: [],
+  Value: "vmess://ew0KICAidiI6ICIyIiwNCiAgInBzIjogIkRlIHvwk4KAfSBRdWFudG9tIiwNCiAgImFkZCI6ICJmcmVlZGVseGMuYXJnb3R1cy5saXZlIiwNCiAgInBvcnQiOiAiNDQzIiwNCiAgImlkIjogImE5YzY0ZTc5LTA1MDktNGViOC1iZDczLTA0MmUzOGI2MWQyMSIsDQogICJhaWQiOiAiMCIsDQogICJzY3kiOiAiYXV0byIsDQogICJuZXQiOiAid3MiLA0KICAidHlwZSI6ICJub25lIiwNCiAgImhvc3QiOiAiZnJlZWRlbHhjLmFyZ290dXMubGl2ZSIsDQogICJwYXRoIjogIi91aXRzcnQiLA0KICAidGxzIjogInRscyIsDQogICJzbmkiOiAiIiwNCiAgImFscG4iOiAiIg0KfQ==",
+  PlaceHolder: "",
+  Title: "",
+  AriaLabel: "",
+  TabIndex: 0,
+  MinLength: 0,
+  TooltipText: "",
+  TooltipPos: "top",
+  PopoverText: "",
+  PopoverEvent: "mouseenter",
+  PopoverTitle: "",
+  PopoverPos: "top",
+  Class: "form-control form-control-md ",
+  Disabled: "true"
+};
+
+$rootScope.Typeahead1 = {
+  ABRole: 20006,
+  Hidden: "true",
+  Items: [],
+  Value: "vmess://ew0KICAidiI6ICIyIiwNCiAgInBzIjogIk9yYWNsZSB78JOCgH0gUXVhbnRvbSIsDQogICJhZGQiOiAiZnJlZW9yYWNsZS1hLmFyZ290dXMubGl2ZSIsDQogICJwb3J0IjogIjgwODAiLA0KICAiaWQiOiAiYTljNjRlNzktMDUwOS00ZWI4LWJkNzMtMDQyZTM4YjYxZDIxIiwNCiAgImFpZCI6ICIwIiwNCiAgInNjeSI6ICJhdXRvIiwNCiAgIm5ldCI6ICJ3cyIsDQogICJ0eXBlIjogIm5vbmUiLA0KICAiaG9zdCI6ICJmcmVlb3JhY2xlLWEuYXJnb3R1cy5saXZlIiwNCiAgInBhdGgiOiAiL3VpdHNydCIsDQogICJ0bHMiOiAiIiwNCiAgInNuaSI6ICIiLA0KICAiYWxwbiI6ICIiDQp9",
+  PlaceHolder: "",
+  Title: "",
+  AriaLabel: "",
+  TabIndex: 0,
+  MinLength: 0,
+  TooltipText: "",
+  TooltipPos: "top",
+  PopoverText: "",
+  PopoverEvent: "mouseenter",
+  PopoverTitle: "",
+  PopoverPos: "top",
+  Class: "form-control form-control-md ",
+  Disabled: "true"
+};
+
+$rootScope.Textarea1 = {
+  ABRole: 9001,
+  Hidden: "true",
+  Value: "vless://a61eb3a2-1adb-48cb-ab46-ce225769de16@ada3.qowch.com:443?path=users%3Fed%3D2048&security=tls&encryption=none&alpn=http/1.1&type=ws#%5BMehdiQuantom%5D+1291",
+  Title: "",
+  AriaLabel: "",
+  TabIndex: 0,
+  TooltipText: "",
+  TooltipPos: "top",
+  PopoverText: "",
+  PopoverEvent: "mouseenter",
+  PopoverTitle: "",
+  PopoverPos: "top",
+  PlaceHolder: "",
+  Class: "form-control form-control-md ",
+  Disabled: "true",
+  ReadOnly: ""
+};
+
+$rootScope.Textarea2 = {
+  ABRole: 9001,
+  Hidden: "true",
+  Value: "vless://a61eb3a2-1adb-48cb-ab46-ce225769de16@cdn.mqupk.com:443?path=users%3Fed%3D2048&security=tls&encryption=none&alpn=http/1.1&type=ws#%5BMehdiQuantom%5D+2731",
+  Title: "",
+  AriaLabel: "",
+  TabIndex: 0,
+  TooltipText: "",
+  TooltipPos: "top",
+  PopoverText: "",
+  PopoverEvent: "mouseenter",
+  PopoverTitle: "",
+  PopoverPos: "top",
+  PlaceHolder: "",
+  Class: "form-control form-control-md ",
+  Disabled: "true",
+  ReadOnly: ""
+};
+
+$rootScope.Textarea3 = {
+  ABRole: 9001,
+  Hidden: "true",
+  Value: "vless://bdf9b090-d86d-54d5-9bc8-c858f27c3136@cn-admin.cduckfuck.shop:2500?security=tls&encryption=none&headerType=none&type=tcp&flow=xtls-rprx-vision#%5BMehdiQuantom%5D+1282",
+  Title: "",
+  AriaLabel: "",
+  TabIndex: 0,
+  TooltipText: "",
+  TooltipPos: "top",
+  PopoverText: "",
+  PopoverEvent: "mouseenter",
+  PopoverTitle: "",
+  PopoverPos: "top",
+  PlaceHolder: "",
+  Class: "form-control form-control-md ",
+  Disabled: "true",
+  ReadOnly: ""
+};
+
+$rootScope.Progressbar4 = {
+  ABRole: 5001,
+  Hidden: "true",
+  Title: "Availability",
+  AriaLabel: "",
+  BarText: "Availability",
+  TooltipText: "",
+  TooltipPos: "top",
+  PopoverText: "",
+  PopoverEvent: "mouseenter",
+  PopoverTitle: "",
+  PopoverPos: "top",
+  Class: "progress-bar bg-success progress-bar-striped progress-bar-animated ",
+  Percentage: 0
+};
+
+$rootScope.Button4 = {
+  ABRole: 2001,
+  Hidden: "true",
+  Title: "",
+  AriaLabel: "",
+  TabIndex: 0,
+  TooltipText: "",
+  TooltipPos: "top",
+  PopoverText: "",
+  PopoverTitle: "",
+  PopoverEvent: "mouseenter",
+  PopoverPos: "top",
+  Badge: "",
+  Icon: "fas fa-copy",
+  Text: "Copy",
+  Class: "btn btn-link btn-md ",
+  Disabled: ""
+};
+
+$rootScope.Progressbar5 = {
+  ABRole: 5001,
+  Hidden: "true",
+  Title: "Availability",
+  AriaLabel: "",
+  BarText: "Availability",
+  TooltipText: "",
+  TooltipPos: "top",
+  PopoverText: "",
+  PopoverEvent: "mouseenter",
+  PopoverTitle: "",
+  PopoverPos: "top",
+  Class: "progress-bar bg-success progress-bar-striped progress-bar-animated ",
+  Percentage: 0
+};
+
+$rootScope.Textarea4 = {
+  ABRole: 9001,
+  Hidden: "true",
+  Value: "vmess://eyJhZGQiOiIxOC4xNDMuMTIzLjM1IiwiYWlkIjoiMCIsImFscG4iOiIiLCJmcCI6IiIsImhvc3QiOiIiLCJpZCI6IjY4ZGY0ODM4LTQ2ZDAtNGI1Yi1jM2YwLWE0MGVjNzA2MzI0NSIsIm5ldCI6IndzIiwicGF0aCI6Ii8iLCJwb3J0IjoiODAiLCJwcyI6IltNZWhkaSBRdWFudG9tXSAxNTYyIiwic2N5IjoiYXV0byIsInNuaSI6IiIsInRscyI6IiIsInR5cGUiOiIiLCJ2IjoiMiJ9",
+  Title: "",
+  AriaLabel: "",
+  TabIndex: 0,
+  TooltipText: "",
+  TooltipPos: "top",
+  PopoverText: "",
+  PopoverEvent: "mouseenter",
+  PopoverTitle: "",
+  PopoverPos: "top",
+  PlaceHolder: "",
+  Class: "form-control form-control-md ",
+  Disabled: "true",
+  ReadOnly: ""
+};
+
+$rootScope.Button5 = {
+  ABRole: 2001,
+  Hidden: "true",
+  Title: "",
+  AriaLabel: "",
+  TabIndex: 0,
+  TooltipText: "",
+  TooltipPos: "top",
+  PopoverText: "",
+  PopoverTitle: "",
+  PopoverEvent: "mouseenter",
+  PopoverPos: "top",
+  Badge: "",
+  Icon: "fas fa-copy",
+  Text: "Copy",
+  Class: "btn btn-link btn-md ",
+  Disabled: ""
+};
+
+$rootScope.Progressbar6 = {
+  ABRole: 5001,
+  Hidden: "true",
+  Title: "Availability",
+  AriaLabel: "",
+  BarText: "Availability",
+  TooltipText: "",
+  TooltipPos: "top",
+  PopoverText: "",
+  PopoverEvent: "mouseenter",
+  PopoverTitle: "",
+  PopoverPos: "top",
+  Class: "progress-bar bg-success progress-bar-striped progress-bar-animated ",
+  Percentage: 0
+};
+
+$rootScope.Textarea5 = {
+  ABRole: 9001,
+  Hidden: "true",
+  Value: "dm1lc3M6Ly9leUoySWpvaU1pSXNJbkJ6SWpvaVFYTnBZU0RwcHBubXVLOHdNU0I4SU9lYnRPaS9uaUI4SU9lVXRlUy9vU0I4SURFdU1IZ2dmQ0JXTVNJc0ltRmtaQ0k2SW1ock1ERXVjMlY0WVhaMkxtTnZiU0lzSW5CdmNuUWlPaUkwTkRNaUxDSnBaQ0k2SWpreVkySTROREZtTFROa1pXUXRNek5tWmkxaE16WTJMV1l6Wm1WallUYzBNamhtTkNJc0ltRnBaQ0k2SWpJaUxDSnVaWFFpT2lKMFkzQWlMQ0owZVhCbElqb2libTl1WlNJc0ltaHZjM1FpT2lJaUxDSndZWFJvSWpvaUwyRmtiMkpsSWl3aWRHeHpJam9pZEd4eklpd2ljMjVwSWpvaUluMD0NCnZtZXNzOi8vZXlKMklqb2lNaUlzSW5Ceklqb2lRWE5wWVNEcHBwbm11Szh3TWlCOElPbWFwK21Ca3lCOElPZVV0ZVMvb1NCOElETXVNSGdnZkNCV01TSXNJbUZrWkNJNkltWnpMV050TG1Gc2FIUjBaSGN1WTI0aUxDSndiM0owSWpvaU1qQXhPRGNpTENKcFpDSTZJamt5WTJJNE5ERm1MVE5rWldRdE16Tm1aaTFoTXpZMkxXWXpabVZqWVRjME1qaG1OQ0lzSW1GcFpDSTZJaklpTENKdVpYUWlPaUozY3lJc0luUjVjR1VpT2lKdWIyNWxJaXdpYUc5emRDSTZJaUlzSW5CaGRHZ2lPaUl2WVdSdlltVWlMQ0owYkhNaU9pSWlMQ0p6Ym1raU9pSWlmUT09DQp2bWVzczovL2V5SjJJam9pTWlJc0luQnpJam9pUVhOcFlTRHBwcG5tdUs4d015QjhJT2VidE9pL25pQjhJT1dGamVhMWdTQjhJREV1TUhnZ2ZDQldNU0lzSW1Ga1pDSTZJbWhyTURNdWMyVjRZWFoyTG1OdmJTSXNJbkJ2Y25RaU9pSTBORE1pTENKcFpDSTZJamt5WTJJNE5ERm1MVE5rWldRdE16Tm1aaTFoTXpZMkxXWXpabVZqWVRjME1qaG1OQ0lzSW1GcFpDSTZJakV3SWl3aWJtVjBJam9pZEdOd0lpd2lkSGx3WlNJNkltNXZibVVpTENKb2IzTjBJam9pSWl3aWNHRjBhQ0k2SWk5aFpHOWlaU0lzSW5Sc2N5STZJblJzY3lJc0luTnVhU0k2SWlKOQ0Kdm1lc3M6Ly9leUoySWpvaU1pSXNJbkJ6SWpvaVFYTnBZU0RwcHBubXVLOHdOQ0I4SU9tYXArbUJreUI4SU9pQmxPbUFtaUI4SURNdU1IZ2dmQ0JXTVNJc0ltRmtaQ0k2SW1aekxXTnRMbUZzYUhSMFpIY3VZMjRpTENKd2IzSjBJam9pTWpBeU5EZ2lMQ0pwWkNJNklqa3lZMkk0TkRGbUxUTmtaV1F0TXpObVppMWhNelkyTFdZelptVmpZVGMwTWpobU5DSXNJbUZwWkNJNklqSWlMQ0p1WlhRaU9pSjNjeUlzSW5SNWNHVWlPaUp1YjI1bElpd2lhRzl6ZENJNkltRmtiMkpsTG1OdmJTSXNJbkJoZEdnaU9pSXZZV1J2WW1VaUxDSjBiSE1pT2lJaUxDSnpibWtpT2lKaFpHOWlaUzVqYjIwaWZRPT0NCnZtZXNzOi8vZXlKMklqb2lNaUlzSW5Ceklqb2lRWE5wWVNEcHBwbm11Szh3TlNCOElPbWFwK21Ca3lCOElPZW51K1dLcUNCOElESXVNSGdnZkNCV01TSXNJbUZrWkNJNklucDZMbk5sZUdGMmRpNWpiMjBpTENKd2IzSjBJam9pTXpZM016SWlMQ0pwWkNJNklqa3lZMkk0TkRGbUxUTmtaV1F0TXpObVppMWhNelkyTFdZelptVmpZVGMwTWpobU5DSXNJbUZwWkNJNklqSWlMQ0p1WlhRaU9pSjNjeUlzSW5SNWNHVWlPaUp1YjI1bElpd2lhRzl6ZENJNklpSXNJbkJoZEdnaU9pSXZZV1J2WW1VaUxDSjBiSE1pT2lJaUxDSnpibWtpT2lJaWZRPT0NCnZtZXNzOi8vZXlKMklqb2lNaUlzSW5Ceklqb2lRWE5wWVNEcHBwbm11Szh3TmlCOElPbWFwK21Ca3lCOElPUzRpZWU5a1NCOElESXVNSGdnZkNCV01TSXNJbUZrWkNJNklucDZMbk5sZUdGMmRpNWpiMjBpTENKd2IzSjBJam9pTXpFeE16VWlMQ0pwWkNJNklqa3lZMkk0TkRGbUxUTmtaV1F0TXpObVppMWhNelkyTFdZelptVmpZVGMwTWpobU5DSXNJbUZwWkNJNklqSWlMQ0p1WlhRaU9pSjNjeUlzSW5SNWNHVWlPaUp1YjI1bElpd2lhRzl6ZENJNklpSXNJbkJoZEdnaU9pSXZZV1J2WW1VaUxDSjBiSE1pT2lJaUxDSnpibWtpT2lJaWZRPT0NCnZtZXNzOi8vZXlKMklqb2lNaUlzSW5Ceklqb2lRWE5wWVNEcHBwbm11Szh3TnlCOElPbWFwK21Ca3lCOElFNWxkR1pzYVhnZ2ZDQXlMakI0SUh3Z1ZqRWlMQ0poWkdRaU9pSjZlaTV6WlhoaGRuWXVZMjl0SWl3aWNHOXlkQ0k2SWpJd016VTFJaXdpYVdRaU9pSTVNbU5pT0RReFppMHpaR1ZrTFRNelptWXRZVE0yTmkxbU0yWmxZMkUzTkRJNFpqUWlMQ0poYVdRaU9pSXlJaXdpYm1WMElqb2lkM01pTENKMGVYQmxJam9pYm05dVpTSXNJbWh2YzNRaU9pSWlMQ0p3WVhSb0lqb2lMMkZrYjJKbElpd2lkR3h6SWpvaUlpd2ljMjVwSWpvaUluMD0NCnZtZXNzOi8vZXlKMklqb2lNaUlzSW5Ceklqb2lRWE5wWVNEcHBwbm11Szh3T0NCOElPZWJ0T2kvbmlCOElPaS9xdVdqcStXd3ZDQjhJREV1TUhnZ2ZDQldNU0lzSW1Ga1pDSTZJbWhyTURndWMyVjRZWFoyTG1OdmJTSXNJbkJ2Y25RaU9pSTBORE1pTENKcFpDSTZJamt5WTJJNE5ERm1MVE5rWldRdE16Tm1aaTFoTXpZMkxXWXpabVZqWVRjME1qaG1OQ0lzSW1GcFpDSTZJakV3SWl3aWJtVjBJam9pZEdOd0lpd2lkSGx3WlNJNkltNXZibVVpTENKb2IzTjBJam9pSWl3aWNHRjBhQ0k2SWk5aFpHOWlaU0lzSW5Sc2N5STZJblJzY3lJc0luTnVhU0k2SWlKOQ0Kdm1lc3M6Ly9leUoySWpvaU1pSXNJbkJ6SWpvaVFYTnBZU0RwcHBubXVLOHdPU0I4SU9lYnRPaS9uaUI4SUU1bGRHWnNhWGdnZkNBeExqQjRJSHdnVmpFaUxDSmhaR1FpT2lKb2F6QTVMbk5sZUdGMmRpNWpiMjBpTENKd2IzSjBJam9pTkRReklpd2lhV1FpT2lJNU1tTmlPRFF4WmkwelpHVmtMVE16Wm1ZdFlUTTJOaTFtTTJabFkyRTNOREk0WmpRaUxDSmhhV1FpT2lJeE1DSXNJbTVsZENJNkluUmpjQ0lzSW5SNWNHVWlPaUp1YjI1bElpd2lhRzl6ZENJNklpSXNJbkJoZEdnaU9pSXZZV1J2WW1VaUxDSjBiSE1pT2lKMGJITWlMQ0p6Ym1raU9pSWlmUT09DQp2bWVzczovL2V5SjJJam9pTWlJc0luQnpJam9pUVhOcFlTRHBwcG5tdUs4eE1DQjhJT1M4bU9XTWx1ZVV0ZVMvb2VlNnYraTNyeUI4SURFdU1IZ2dmQ0JXTVNJc0ltRmtaQ0k2SWpFd05DNHlNRGd1TVRBNExqSXpPQ0lzSW5CdmNuUWlPaUl6TmpBd01DSXNJbWxrSWpvaU9USmpZamcwTVdZdE0yUmxaQzB6TTJabUxXRXpOall0WmpObVpXTmhOelF5T0dZMElpd2lZV2xrSWpvaU1pSXNJbTVsZENJNkluZHpJaXdpZEhsd1pTSTZJbTV2Ym1VaUxDSm9iM04wSWpvaUlpd2ljR0YwYUNJNklpOWhaRzlpWlNJc0luUnNjeUk2SWlJc0luTnVhU0k2SWlKOQ0Kdm1lc3M6Ly9leUoySWpvaU1pSXNJbkJ6SWpvaVJFVWc1YjYzNVp1OUlId2c2WnFuNllHVElId2dNUzR3ZUNCOElGWXhJQ0lzSW1Ga1pDSTZJbnA2TG5ObGVHRjJkaTVqYjIwaUxDSndiM0owSWpvaU16RTFNRFVpTENKcFpDSTZJamt5WTJJNE5ERm1MVE5rWldRdE16Tm1aaTFoTXpZMkxXWXpabVZqWVRjME1qaG1OQ0lzSW1GcFpDSTZJaklpTENKdVpYUWlPaUozY3lJc0luUjVjR1VpT2lKdWIyNWxJaXdpYUc5emRDSTZJbUZrYjJKbExtTnZiU0lzSW5CaGRHZ2lPaUl2WVdSdlltVWlMQ0owYkhNaU9pSWlMQ0p6Ym1raU9pSmhaRzlpWlM1amIyMGlmUT09DQp2bWVzczovL2V5SjJJam9pTWlJc0luQnpJam9pU1U0ZzVZMnc1YnFtSUh3ZzZacW42WUdUSUh3Z01TNHdlQ0I4SUZZeElpd2lZV1JrSWpvaWVub3VjMlY0WVhaMkxtTnZiU0lzSW5CdmNuUWlPaUl6TXpjMk5pSXNJbWxrSWpvaU9USmpZamcwTVdZdE0yUmxaQzB6TTJabUxXRXpOall0WmpObVpXTmhOelF5T0dZMElpd2lZV2xrSWpvaU1pSXNJbTVsZENJNkluZHpJaXdpZEhsd1pTSTZJbTV2Ym1VaUxDSm9iM04wSWpvaUlpd2ljR0YwYUNJNklpOWhaRzlpWlNJc0luUnNjeUk2SWlJc0luTnVhU0k2SWlKOQ0Kdm1lc3M6Ly9leUoySWpvaU1pSXNJbkJ6SWpvaVNsQWc1cGVsNXB5c01ERWdmQ0RwbXFmcGdaTWdmQ0F5TGpCNElId2dWakVpTENKaFpHUWlPaUptY3kxamJTNWhiR2gwZEdSM0xtTnVJaXdpY0c5eWRDSTZJakl4TlRFd0lpd2lhV1FpT2lJNU1tTmlPRFF4WmkwelpHVmtMVE16Wm1ZdFlUTTJOaTFtTTJabFkyRTNOREk0WmpRaUxDSmhhV1FpT2lJeUlpd2libVYwSWpvaWQzTWlMQ0owZVhCbElqb2libTl1WlNJc0ltaHZjM1FpT2lKaFpHOWlaUzVqYjIwaUxDSndZWFJvSWpvaUwyRmtiMkpsSWl3aWRHeHpJam9pSWl3aWMyNXBJam9pWVdSdlltVXVZMjl0SW4wPQ0Kdm1lc3M6Ly9leUoySWpvaU1pSXNJbkJ6SWpvaVNsQWc1cGVsNXB5c01ESWdmQ0RwbXFmcGdaTWdmQ0F4TGpCNElId2dWakVpTENKaFpHUWlPaUo2ZWk1elpYaGhkbll1WTI5dElpd2ljRzl5ZENJNklqTTJOVFV3SWl3aWFXUWlPaUk1TW1OaU9EUXhaaTB6WkdWa0xUTXpabVl0WVRNMk5pMW1NMlpsWTJFM05ESTRaalFpTENKaGFXUWlPaUl5SWl3aWJtVjBJam9pZDNNaUxDSjBlWEJsSWpvaWJtOXVaU0lzSW1odmMzUWlPaUlpTENKd1lYUm9Jam9pTDJGa2IySmxJaXdpZEd4eklqb2lJaXdpYzI1cElqb2lJbjA9DQp2bWVzczovL2V5SjJJam9pTWlJc0luQnpJam9pUzFJZzZaK3A1WnU5TURFZ2ZDRHBtcWZwZ1pNZ2ZDQXhMakI0SUh3Z1ZqRWlMQ0poWkdRaU9pSjZlaTV6WlhoaGRuWXVZMjl0SWl3aWNHOXlkQ0k2SWpNek5UZzRJaXdpYVdRaU9pSTVNbU5pT0RReFppMHpaR1ZrTFRNelptWXRZVE0yTmkxbU0yWmxZMkUzTkRJNFpqUWlMQ0poYVdRaU9pSXlJaXdpYm1WMElqb2lkM01pTENKMGVYQmxJam9pYm05dVpTSXNJbWh2YzNRaU9pSWlMQ0p3WVhSb0lqb2lMMkZrYjJKbElpd2lkR3h6SWpvaUlpd2ljMjVwSWpvaUluMD0NCnZtZXNzOi8vZXlKMklqb2lNaUlzSW5Ceklqb2lTMUlnNlorcDVadTlNRElnZkNEcG1xZnBnWk1nZkNBeUxqQjRJSHdnVmpFaUxDSmhaR1FpT2lKbWN5MWpiUzVoYkdoMGRHUjNMbU51SWl3aWNHOXlkQ0k2SWpRME16WTJJaXdpYVdRaU9pSTVNbU5pT0RReFppMHpaR1ZrTFRNelptWXRZVE0yTmkxbU0yWmxZMkUzTkRJNFpqUWlMQ0poYVdRaU9pSXlJaXdpYm1WMElqb2lkM01pTENKMGVYQmxJam9pYm05dVpTSXNJbWh2YzNRaU9pSWlMQ0p3WVhSb0lqb2lMMkZrYjJKbElpd2lkR3h6SWpvaUlpd2ljMjVwSWpvaUluMD0NCnZtZXNzOi8vZXlKMklqb2lNaUlzSW5Ceklqb2lVbFVnNUwrRTU3Mlg1cGF2SUh3ZzZacW42WUdUSUh3Z01TNHdlQ0I4SUZZeElpd2lZV1JrSWpvaWVub3VjMlY0WVhaMkxtTnZiU0lzSW5CdmNuUWlPaUl4TlRreE9DSXNJbWxrSWpvaU9USmpZamcwTVdZdE0yUmxaQzB6TTJabUxXRXpOall0WmpObVpXTmhOelF5T0dZMElpd2lZV2xrSWpvaU1pSXNJbTVsZENJNkluZHpJaXdpZEhsd1pTSTZJbTV2Ym1VaUxDSm9iM04wSWpvaVlXUnZZbVV1WTI5dElpd2ljR0YwYUNJNklpOWhaRzlpWlNJc0luUnNjeUk2SWlJc0luTnVhU0k2SW1Ga2IySmxMbU52YlNKOQ0Kdm1lc3M6Ly9leUoySWpvaU1pSXNJbkJ6SWpvaVUwY2c1cGF3NVlxZzVaMmhJSHdnNlpxbjZZR1RJSHdnTVM0d2VDQjhJRll4SWl3aVlXUmtJam9pZW5vdWMyVjRZWFoyTG1OdmJTSXNJbkJ2Y25RaU9pSXpNVE0zTVNJc0ltbGtJam9pT1RKallqZzBNV1l0TTJSbFpDMHpNMlptTFdFek5qWXRaak5tWldOaE56UXlPR1kwSWl3aVlXbGtJam9pTWlJc0ltNWxkQ0k2SW5keklpd2lkSGx3WlNJNkltNXZibVVpTENKb2IzTjBJam9pSWl3aWNHRjBhQ0k2SWk5aFpHOWlaU0lzSW5Sc2N5STZJaUlzSW5OdWFTSTZJaUo5DQp2bWVzczovL2V5SjJJam9pTWlJc0luQnpJam9pVkZJZzVaeWY2SUN6NVlXMklId2c2WnFuNllHVElId2dWakVpTENKaFpHUWlPaUptY3kxamJTNWhiR2gwZEdSM0xtTnVJaXdpY0c5eWRDSTZJak16TlRBeElpd2lhV1FpT2lJNU1tTmlPRFF4WmkwelpHVmtMVE16Wm1ZdFlUTTJOaTFtTTJabFkyRTNOREk0WmpRaUxDSmhhV1FpT2lJeUlpd2libVYwSWpvaWQzTWlMQ0owZVhCbElqb2libTl1WlNJc0ltaHZjM1FpT2lJaUxDSndZWFJvSWpvaUwyRmtiMkpsSWl3aWRHeHpJam9pSWl3aWMyNXBJam9pSW4wPQ0Kdm1lc3M6Ly9leUoySWpvaU1pSXNJbkJ6SWpvaVZWTWc1NzZPNVp1OU1ERWdmQ0RwbXFmcGdaTWdmQ0F5TGpCNElId2dWakVpTENKaFpHUWlPaUptY3kxamJTNWhiR2gwZEdSM0xtTnVJaXdpY0c5eWRDSTZJalEzTlRZMklpd2lhV1FpT2lJNU1tTmlPRFF4WmkwelpHVmtMVE16Wm1ZdFlUTTJOaTFtTTJabFkyRTNOREk0WmpRaUxDSmhhV1FpT2lJeUlpd2libVYwSWpvaWQzTWlMQ0owZVhCbElqb2libTl1WlNJc0ltaHZjM1FpT2lKaFpHOWlaUzVqYjIwaUxDSndZWFJvSWpvaUwyRmtiMkpsSWl3aWRHeHpJam9pSWl3aWMyNXBJam9pWVdSdlltVXVZMjl0SW4wPQ0Kdm1lc3M6Ly9leUoySWpvaU1pSXNJbkJ6SWpvaVZWTWc1NzZPNVp1OU1ESWdmQ0RwbXFmcGdaTWdmQ0F4TGpCNElId2dWakVpTENKaFpHUWlPaUo2ZWk1elpYaGhkbll1WTI5dElpd2ljRzl5ZENJNklqTXpOVGc1SWl3aWFXUWlPaUk1TW1OaU9EUXhaaTB6WkdWa0xUTXpabVl0WVRNMk5pMW1NMlpsWTJFM05ESTRaalFpTENKaGFXUWlPaUl5SWl3aWJtVjBJam9pZDNNaUxDSjBlWEJsSWpvaWJtOXVaU0lzSW1odmMzUWlPaUlpTENKd1lYUm9Jam9pTDJGa2IySmxJaXdpZEd4eklqb2lJaXdpYzI1cElqb2lJbjA9DQp2bWVzczovL2V5SjJJam9pTWlJc0luQnpJam9pUTJoaGRFZFFWT1M0aytlVXFPaUtndWVDdVNJc0ltRmtaQ0k2SW1aekxXTnRMbUZzYUhSMFpIY3VZMjRpTENKd2IzSjBJam9pTXpZMk16Z2lMQ0pwWkNJNklqa3lZMkk0TkRGbUxUTmtaV1F0TXpObVppMWhNelkyTFdZelptVmpZVGMwTWpobU5DSXNJbUZwWkNJNklqSWlMQ0p1WlhRaU9pSjNjeUlzSW5SNWNHVWlPaUp1YjI1bElpd2lhRzl6ZENJNklpSXNJbkJoZEdnaU9pSXZZV1J2WW1VaUxDSjBiSE1pT2lJaUxDSnpibWtpT2lJaWZRPT0NCnZtZXNzOi8vZXlKMklqb2lNaUlzSW5Ceklqb2lWR0ZwZDJGdUlPV1BzT2E1dmlCOElPaS9xdVdqcStXd3ZDQjhJREV1TUhnZ2ZDQldNU0lzSW1Ga1pDSTZJakUyTlM0eE5UUXVNalEyTGpFd015SXNJbkJ2Y25RaU9pSTRNQ0lzSW1sa0lqb2lPVEpqWWpnME1XWXRNMlJsWkMwek0yWm1MV0V6TmpZdFpqTm1aV05oTnpReU9HWTBJaXdpWVdsa0lqb2lNaUlzSW01bGRDSTZJbmR6SWl3aWRIbHdaU0k2SW01dmJtVWlMQ0pvYjNOMElqb2lJaXdpY0dGMGFDSTZJaTloWkc5aVpTSXNJblJzY3lJNklpSXNJbk51YVNJNklpSjk=",
+  Title: "",
+  AriaLabel: "",
+  TabIndex: 0,
+  TooltipText: "",
+  TooltipPos: "top",
+  PopoverText: "",
+  PopoverEvent: "mouseenter",
+  PopoverTitle: "",
+  PopoverPos: "top",
+  PlaceHolder: "",
+  Class: "form-control form-control-md ",
+  Disabled: "true",
+  ReadOnly: ""
+};
+
+$rootScope.Button6 = {
+  ABRole: 2001,
+  Hidden: "true",
+  Title: "",
+  AriaLabel: "",
+  TabIndex: 0,
+  TooltipText: "",
+  TooltipPos: "top",
+  PopoverText: "",
+  PopoverTitle: "",
+  PopoverEvent: "mouseenter",
+  PopoverPos: "top",
+  Badge: "",
+  Icon: "fas fa-copy",
+  Text: "Copy",
+  Class: "btn btn-link btn-md ",
+  Disabled: ""
+};
+
+$rootScope.Button7 = {
+  ABRole: 2001,
+  Hidden: "true",
+  Title: "",
+  AriaLabel: "",
+  TabIndex: 0,
+  TooltipText: "",
+  TooltipPos: "top",
+  PopoverText: "",
+  PopoverTitle: "",
+  PopoverEvent: "mouseenter",
+  PopoverPos: "top",
+  Badge: "",
+  Icon: "fas fa-copy",
+  Text: "Copy",
+  Class: "btn btn-link btn-md ",
+  Disabled: ""
+};
+
+$rootScope.HtmlContent4 = {
+  ABRole: 6001,
+  Hidden: "true",
+  Class: "ios-inertial-scroll ",
+  Title: "",
+  TooltipText: "",
+  TooltipPos: "top",
+  PopoverText: "",
+  PopoverEvent: "mouseenter",
+  PopoverTitle: "",
+  PopoverPos: "top"
+};
+
+$rootScope.Button8 = {
+  ABRole: 2001,
+  Hidden: "true",
+  Title: "",
+  AriaLabel: "",
+  TabIndex: 0,
+  TooltipText: "",
+  TooltipPos: "top",
+  PopoverText: "",
+  PopoverTitle: "",
+  PopoverEvent: "mouseenter",
+  PopoverPos: "top",
+  Badge: "",
+  Icon: "fas fa-rss",
+  Text: "Nodes Availability",
+  Class: "btn btn-secondary btn-md ",
+  Disabled: ""
 };
     };
 
@@ -1967,157 +2234,73 @@ $rootScope.Button1.Event = $event;
 
 window.App.Debugger.log("Start of Button1 Click event", "info", -1);
 
-window.App.Debugger.log("TrimStr \x22[PasswordInput.Value]\x22 \x22[PasswordInput.Value]\x22", "info", 1);
+window.App.Debugger.log("If \x22[PasswordInput.Value]\x22 \x22==\x22 \x22v7MicEgJJ570\x22", "info", 1);
 
-$rootScope.PasswordInput.Value = window.App.Utils.trimStr($rootScope.PasswordInput.Value);
+if ($rootScope.PasswordInput.Value ==  "v7MicEgJJ570" ) {
 
-window.App.Debugger.log("If \x22[PasswordInput.Value]\x22 \x22==\x22 \x22\x22", "info", 2);
+window.App.Debugger.log("SetVar \x22[Progressbar1.Percentage]\x22 \x22100\x22 \x22String\x22", "info", 2);
 
-if ($rootScope.PasswordInput.Value == "") {
+$rootScope.Progressbar1.Percentage = "100";
 
-window.App.Debugger.log("SetVar \x22[Progressbar1.Percentage]\x22 \x2230\x22 \x22String\x22", "info", 3);
-
-$rootScope.Progressbar1.Percentage = "30";
-
-window.App.Debugger.log("Show \x22Progressbar1\x22", "info", 4);
+window.App.Debugger.log("Show \x22Progressbar1\x22", "info", 3);
 
 if ($rootScope["Progressbar1"]) { $rootScope["Progressbar1"].Hidden = ""; }
 
-window.App.Debugger.log("BlockApp", "info", 5);
+window.App.Debugger.log("TimerStart \x22AutoUnblockTimer\x22", "info", 4);
+
+$rootScope.AutoUnblockTimer.TimerStart();
+
+window.App.Debugger.log("ReplaceView \x22Main\x22", "info", 5);
+
+$scope.replaceView("Main");
+
+window.App.Debugger.log("BlockApp", "info", 6);
 
 blockUI.reset(); blockUI.start();
 
-window.App.Debugger.log("BlockedText \x22Authorisation Faild !\x22", "info", 6);
+window.App.Debugger.log("BlockedText \x22Please Wait . . .\x22", "info", 7);
 
-blockUI.message("Authorisation Faild !");
-
-window.App.Debugger.log("Focus \x22LoginInput\x22", "info", 7);
-
-if (document.getElementById("LoginInput")) { document.getElementById("LoginInput").focus(); }
+blockUI.message("Please Wait . . .");
 
 window.App.Debugger.log("Exit", "info", 8);
 
 return null;
 
-window.App.Debugger.log("EndIf", "info", 9);
+window.App.Debugger.log("Else", "info", 9);
 
-}
+} else {
 
-window.App.Debugger.log("If \x22[PasswordInput.Value]\x22 \x22==\x22 \x220\x22", "info", 10);
+window.App.Debugger.log("SetVar \x22[Progressbar1.Percentage]\x22 \x2245\x22 \x22String\x22", "info", 10);
 
-if ($rootScope.PasswordInput.Value == 0) {
+$rootScope.Progressbar1.Percentage = "45";
 
-window.App.Debugger.log("SetVar \x22[Progressbar1.Percentage]\x22 \x22100\x22 \x22String\x22", "info", 11);
+window.App.Debugger.log("SetVar \x22[Progressbar1.Class]\x22 \x22progress-bar bg-danger progress-bar-striped progress-bar-animated\x22 \x22String\x22", "info", 11);
 
-$rootScope.Progressbar1.Percentage = "100";
+$rootScope.Progressbar1.Class = "progress-bar bg-danger progress-bar-striped progress-bar-animated";
 
 window.App.Debugger.log("Show \x22Progressbar1\x22", "info", 12);
 
 if ($rootScope["Progressbar1"]) { $rootScope["Progressbar1"].Hidden = ""; }
 
-window.App.Debugger.log("TimerStart \x22AutoUnblockTimer\x22", "info", 13);
-
-$rootScope.AutoUnblockTimer.TimerStart();
-
-window.App.Debugger.log("ReplaceView \x22Main\x22", "info", 14);
-
-$scope.replaceView("Main");
-
-window.App.Debugger.log("BlockApp", "info", 15);
+window.App.Debugger.log("BlockApp", "info", 13);
 
 blockUI.reset(); blockUI.start();
 
-window.App.Debugger.log("BlockedText \x22Please Wait . . .\x22", "info", 16);
+window.App.Debugger.log("BlockedText \x22Authorisation Faild !\x22", "info", 14);
 
-blockUI.message("Please Wait . . .");
+blockUI.message("Authorisation Faild !");
 
-window.App.Debugger.log("ElseIf \x22[PasswordInput.Value]\x22 \x22==\x22 \x22 \x22", "info", 17);
+window.App.Debugger.log("Focus \x22LoginInput\x22", "info", 15);
 
-} else if ($rootScope.PasswordInput.Value ==  " " ) {
+if (document.getElementById("LoginInput")) { document.getElementById("LoginInput").focus(); }
 
-window.App.Debugger.log("SetVar \x22[Progressbar1.Percentage]\x22 \x22100\x22 \x22String\x22", "info", 18);
-
-$rootScope.Progressbar1.Percentage = "100";
-
-window.App.Debugger.log("Show \x22Progressbar1\x22", "info", 19);
-
-if ($rootScope["Progressbar1"]) { $rootScope["Progressbar1"].Hidden = ""; }
-
-window.App.Debugger.log("TimerStart \x22AutoUnblockTimer\x22", "info", 20);
-
-$rootScope.AutoUnblockTimer.TimerStart();
-
-window.App.Debugger.log("BlockApp", "info", 21);
-
-blockUI.reset(); blockUI.start();
-
-window.App.Debugger.log("BlockedText \x22Not Authorised !\x22", "info", 22);
-
-blockUI.message("Not Authorised !");
-
-window.App.Debugger.log("ElseIf \x22[PasswordInput.Value]\x22 \x22==\x22 \x2221\x22", "info", 23);
-
-} else if ($rootScope.PasswordInput.Value == 21) {
-
-window.App.Debugger.log("SetVar \x22[Progressbar1.Percentage]\x22 \x22100\x22 \x22String\x22", "info", 24);
-
-$rootScope.Progressbar1.Percentage = "100";
-
-window.App.Debugger.log("Show \x22Progressbar1\x22", "info", 25);
-
-if ($rootScope["Progressbar1"]) { $rootScope["Progressbar1"].Hidden = ""; }
-
-window.App.Debugger.log("TimerStart \x22AutoUnblockTimer\x22", "info", 26);
-
-$rootScope.AutoUnblockTimer.TimerStart();
-
-window.App.Debugger.log("ReplaceView \x22Main\x22", "info", 27);
-
-$scope.replaceView("Main");
-
-window.App.Debugger.log("BlockApp", "info", 28);
-
-blockUI.reset(); blockUI.start();
-
-window.App.Debugger.log("BlockedText \x22Login As A Guest #1\x22", "info", 29);
-
-blockUI.message("Login As A Guest #1");
-
-window.App.Debugger.log("ElseIf \x22[PasswordInput.Value]\x22 \x22==\x22 \x2231\x22", "info", 30);
-
-} else if ($rootScope.PasswordInput.Value == 31) {
-
-window.App.Debugger.log("SetVar \x22[Progressbar1.Percentage]\x22 \x22100\x22 \x22String\x22", "info", 31);
-
-$rootScope.Progressbar1.Percentage = "100";
-
-window.App.Debugger.log("Show \x22Progressbar1\x22", "info", 32);
-
-if ($rootScope["Progressbar1"]) { $rootScope["Progressbar1"].Hidden = ""; }
-
-window.App.Debugger.log("TimerStart \x22AutoUnblockTimer\x22", "info", 33);
-
-$rootScope.AutoUnblockTimer.TimerStart();
-
-window.App.Debugger.log("ReplaceView \x22Main\x22", "info", 34);
-
-$scope.replaceView("Main");
-
-window.App.Debugger.log("BlockApp", "info", 35);
-
-blockUI.reset(); blockUI.start();
-
-window.App.Debugger.log("BlockedText \x22Login As Guest #2\x22", "info", 36);
-
-blockUI.message("Login As Guest #2");
-
-window.App.Debugger.log("EndIf", "info", 37);
-
-}
-
-window.App.Debugger.log("Exit", "info", 38);
+window.App.Debugger.log("Exit", "info", 16);
 
 return null;
+
+window.App.Debugger.log("EndIf", "info", 17);
+
+}
 
 window.App.Debugger.log("End of Button1 Click event", "info", -2);
 
@@ -2175,48 +2358,116 @@ AppPluginsService.docReady();
 angular.element(window.document).ready(function(event){
 $rootScope.Main.Event = event;
 
-if ($rootScope["Progressbar2"]) { $rootScope["Progressbar2"].Hidden = ""; }
-
-if ($rootScope["Progressbar3"]) { $rootScope["Progressbar3"].Hidden = ""; }
-
 $rootScope.$apply();
 });
 
 $scope.Button2Click = function($event) {
 $rootScope.Button2.Event = $event;
 
-if ($rootScope["Typeahead2"]) { $rootScope["Typeahead2"].Hidden = ""; }
+window.App.Debugger.log("Start of Button2 Click event", "info", -1);
 
-if ($rootScope["Typeahead3"]) { $rootScope["Typeahead3"].Hidden = ""; }
+window.App.Debugger.log("Show \x22Textarea1\x22", "info", 1);
 
 if ($rootScope["Textarea1"]) { $rootScope["Textarea1"].Hidden = ""; }
 
+window.App.Debugger.log("Show \x22Textarea2\x22", "info", 2);
+
 if ($rootScope["Textarea2"]) { $rootScope["Textarea2"].Hidden = ""; }
+
+window.App.Debugger.log("Disable \x22Button2\x22", "info", 3);
 
 if ($rootScope["Button2"]) { $rootScope["Button2"].Disabled = "true"; }
 
-if ($rootScope["Typeahead1"]) { $rootScope["Typeahead1"].Hidden = ""; }
+window.App.Debugger.log("Show \x22HtmlContent3\x22", "info", 4);
 
 if ($rootScope["HtmlContent3"]) { $rootScope["HtmlContent3"].Hidden = ""; }
 
-$rootScope.Progressbar2.Percentage = "100";
-
-$rootScope.Progressbar3.Percentage = "100";
+window.App.Debugger.log("Show \x22Button3\x22", "info", 5);
 
 if ($rootScope["Button3"]) { $rootScope["Button3"].Hidden = ""; }
+
+window.App.Debugger.log("Show \x22Textarea1\x22", "info", 6);
+
+if ($rootScope["Textarea1"]) { $rootScope["Textarea1"].Hidden = ""; }
+
+window.App.Debugger.log("Show \x22Textarea2\x22", "info", 7);
+
+if ($rootScope["Textarea2"]) { $rootScope["Textarea2"].Hidden = ""; }
+
+window.App.Debugger.log("Show \x22Textarea3\x22", "info", 8);
+
+if ($rootScope["Textarea3"]) { $rootScope["Textarea3"].Hidden = ""; }
+
+window.App.Debugger.log("Show \x22Textarea4\x22", "info", 9);
+
+if ($rootScope["Textarea4"]) { $rootScope["Textarea4"].Hidden = ""; }
+
+window.App.Debugger.log("Show \x22Button4\x22", "info", 10);
+
+if ($rootScope["Button4"]) { $rootScope["Button4"].Hidden = ""; }
+
+window.App.Debugger.log("Show \x22Textarea5\x22", "info", 11);
+
+if ($rootScope["Textarea5"]) { $rootScope["Textarea5"].Hidden = ""; }
+
+window.App.Debugger.log("Show \x22Button5\x22", "info", 12);
+
+if ($rootScope["Button5"]) { $rootScope["Button5"].Hidden = ""; }
+
+window.App.Debugger.log("Show \x22Button6\x22", "info", 13);
+
+if ($rootScope["Button6"]) { $rootScope["Button6"].Hidden = ""; }
+
+window.App.Debugger.log("Show \x22Button7\x22", "info", 14);
+
+if ($rootScope["Button7"]) { $rootScope["Button7"].Hidden = ""; }
+
+window.App.Debugger.log("Show \x22Progressbar2\x22", "info", 15);
+
+if ($rootScope["Progressbar2"]) { $rootScope["Progressbar2"].Hidden = ""; }
+
+window.App.Debugger.log("Show \x22Progressbar3\x22", "info", 16);
+
+if ($rootScope["Progressbar3"]) { $rootScope["Progressbar3"].Hidden = ""; }
+
+window.App.Debugger.log("Show \x22Progressbar4\x22", "info", 17);
+
+if ($rootScope["Progressbar4"]) { $rootScope["Progressbar4"].Hidden = ""; }
+
+window.App.Debugger.log("Show \x22Progressbar5\x22", "info", 18);
+
+if ($rootScope["Progressbar5"]) { $rootScope["Progressbar5"].Hidden = ""; }
+
+window.App.Debugger.log("Show \x22Progressbar6\x22", "info", 19);
+
+if ($rootScope["Progressbar6"]) { $rootScope["Progressbar6"].Hidden = ""; }
+
+window.App.Debugger.log("Show \x22Button8\x22", "info", 20);
+
+if ($rootScope["Button8"]) { $rootScope["Button8"].Hidden = ""; }
+
+window.App.Debugger.log("End of Button2 Click event", "info", -2);
 
 };
 
 $scope.Button3Click = function($event) {
 $rootScope.Button3.Event = $event;
 
-if ($rootScope.Typeahead3.Value !== "") {
-  $rootScope.Clipboard1.Clipboard = new Clipboard(".btn", {text: function() {return $rootScope.Typeahead3.Value;}});
+window.App.Debugger.log("Start of Button3 Click event", "info", -1);
+
+window.App.Debugger.log("CopyToClipboard \x22Clipboard1\x22 \x22[Textarea1.Value]\x22", "info", 1);
+
+if ($rootScope.Textarea1.Value !== "") {
+  $rootScope.Clipboard1.Clipboard = new Clipboard(".btn", {text: function() {return $rootScope.Textarea1.Value;}});
   $rootScope.Clipboard1.Clipboard.on("error", function(e) {$rootScope.Clipboard1.onError(e)});
   $rootScope.Clipboard1.Clipboard.on("success", function(e) {$rootScope.Clipboard1.onSuccess(e)});
 }
 
+window.App.Debugger.log("Disable \x22Button3\x22", "info", 2);
+
 if ($rootScope["Button3"]) { $rootScope["Button3"].Disabled = "true"; }
+
+window.App.Debugger.log("End of Button3 Click event", "info", -2);
 
 };
 
@@ -2235,6 +2486,147 @@ $rootScope.Clipboard1.onError = function(error) {
 
 
 $rootScope.Clipboard1.Clipboard.destroy();
+};
+
+$scope.Button4Click = function($event) {
+$rootScope.Button4.Event = $event;
+
+window.App.Debugger.log("Start of Button4 Click event", "info", -1);
+
+window.App.Debugger.log("CopyToClipboard \x22Clipboard1\x22 \x22[Textarea2.Value]\x22", "info", 1);
+
+if ($rootScope.Textarea2.Value !== "") {
+  $rootScope.Clipboard1.Clipboard = new Clipboard(".btn", {text: function() {return $rootScope.Textarea2.Value;}});
+  $rootScope.Clipboard1.Clipboard.on("error", function(e) {$rootScope.Clipboard1.onError(e)});
+  $rootScope.Clipboard1.Clipboard.on("success", function(e) {$rootScope.Clipboard1.onSuccess(e)});
+}
+
+window.App.Debugger.log("Disable \x22Button4\x22", "info", 2);
+
+if ($rootScope["Button4"]) { $rootScope["Button4"].Disabled = "true"; }
+
+window.App.Debugger.log("End of Button4 Click event", "info", -2);
+
+};
+
+$scope.Button5Click = function($event) {
+$rootScope.Button5.Event = $event;
+
+window.App.Debugger.log("Start of Button5 Click event", "info", -1);
+
+window.App.Debugger.log("CopyToClipboard \x22Clipboard1\x22 \x22[Textarea3.Value]\x22", "info", 1);
+
+if ($rootScope.Textarea3.Value !== "") {
+  $rootScope.Clipboard1.Clipboard = new Clipboard(".btn", {text: function() {return $rootScope.Textarea3.Value;}});
+  $rootScope.Clipboard1.Clipboard.on("error", function(e) {$rootScope.Clipboard1.onError(e)});
+  $rootScope.Clipboard1.Clipboard.on("success", function(e) {$rootScope.Clipboard1.onSuccess(e)});
+}
+
+window.App.Debugger.log("Disable \x22Button5\x22", "info", 2);
+
+if ($rootScope["Button5"]) { $rootScope["Button5"].Disabled = "true"; }
+
+window.App.Debugger.log("End of Button5 Click event", "info", -2);
+
+};
+
+$scope.Button6Click = function($event) {
+$rootScope.Button6.Event = $event;
+
+window.App.Debugger.log("Start of Button6 Click event", "info", -1);
+
+window.App.Debugger.log("CopyToClipboard \x22Clipboard1\x22 \x22[Textarea4.Value]\x22", "info", 1);
+
+if ($rootScope.Textarea4.Value !== "") {
+  $rootScope.Clipboard1.Clipboard = new Clipboard(".btn", {text: function() {return $rootScope.Textarea4.Value;}});
+  $rootScope.Clipboard1.Clipboard.on("error", function(e) {$rootScope.Clipboard1.onError(e)});
+  $rootScope.Clipboard1.Clipboard.on("success", function(e) {$rootScope.Clipboard1.onSuccess(e)});
+}
+
+window.App.Debugger.log("Disable \x22Button6\x22", "info", 2);
+
+if ($rootScope["Button6"]) { $rootScope["Button6"].Disabled = "true"; }
+
+window.App.Debugger.log("End of Button6 Click event", "info", -2);
+
+};
+
+$scope.Button7Click = function($event) {
+$rootScope.Button7.Event = $event;
+
+window.App.Debugger.log("Start of Button7 Click event", "info", -1);
+
+window.App.Debugger.log("CopyToClipboard \x22Clipboard1\x22 \x22[Textarea5.Value]\x22", "info", 1);
+
+if ($rootScope.Textarea5.Value !== "") {
+  $rootScope.Clipboard1.Clipboard = new Clipboard(".btn", {text: function() {return $rootScope.Textarea5.Value;}});
+  $rootScope.Clipboard1.Clipboard.on("error", function(e) {$rootScope.Clipboard1.onError(e)});
+  $rootScope.Clipboard1.Clipboard.on("success", function(e) {$rootScope.Clipboard1.onSuccess(e)});
+}
+
+window.App.Debugger.log("Disable \x22Button7\x22", "info", 2);
+
+if ($rootScope["Button7"]) { $rootScope["Button7"].Disabled = "true"; }
+
+window.App.Debugger.log("End of Button7 Click event", "info", -2);
+
+};
+
+$scope.Button8Click = function($event) {
+$rootScope.Button8.Event = $event;
+
+window.App.Debugger.log("Start of Button8 Click event", "info", -1);
+
+window.App.Debugger.log("SetVar \x22[Progressbar2.Percentage]\x22 \x2248\x22 \x22String\x22", "info", 1);
+
+$rootScope.Progressbar2.Percentage = "48";
+
+window.App.Debugger.log("SetVar \x22[Progressbar3.Percentage]\x22 \x2267\x22 \x22String\x22", "info", 2);
+
+$rootScope.Progressbar3.Percentage = "67";
+
+window.App.Debugger.log("SetVar \x22[Progressbar4.Percentage]\x22 \x2212\x22 \x22String\x22", "info", 3);
+
+$rootScope.Progressbar4.Percentage = "12";
+
+window.App.Debugger.log("SetVar \x22[Progressbar5.Percentage]\x22 \x2224\x22 \x22String\x22", "info", 4);
+
+$rootScope.Progressbar5.Percentage = "24";
+
+window.App.Debugger.log("SetVar \x22[Progressbar6.Percentage]\x22 \x2298\x22 \x22String\x22", "info", 5);
+
+$rootScope.Progressbar6.Percentage = "98";
+
+window.App.Debugger.log("Show \x22Progressbar2\x22", "info", 6);
+
+if ($rootScope["Progressbar2"]) { $rootScope["Progressbar2"].Hidden = ""; }
+
+window.App.Debugger.log("Show \x22Progressbar3\x22", "info", 7);
+
+if ($rootScope["Progressbar3"]) { $rootScope["Progressbar3"].Hidden = ""; }
+
+window.App.Debugger.log("Show \x22Progressbar4\x22", "info", 8);
+
+if ($rootScope["Progressbar4"]) { $rootScope["Progressbar4"].Hidden = ""; }
+
+window.App.Debugger.log("Show \x22Progressbar5\x22", "info", 9);
+
+if ($rootScope["Progressbar5"]) { $rootScope["Progressbar5"].Hidden = ""; }
+
+window.App.Debugger.log("Show \x22Progressbar6\x22", "info", 10);
+
+if ($rootScope["Progressbar6"]) { $rootScope["Progressbar6"].Hidden = ""; }
+
+window.App.Debugger.log("Show \x22HtmlContent4\x22", "info", 11);
+
+if ($rootScope["HtmlContent4"]) { $rootScope["HtmlContent4"].Hidden = ""; }
+
+window.App.Debugger.log("Disable \x22Button8\x22", "info", 12);
+
+if ($rootScope["Button8"]) { $rootScope["Button8"].Disabled = "true"; }
+
+window.App.Debugger.log("End of Button8 Click event", "info", -2);
+
 };
 
 }]);

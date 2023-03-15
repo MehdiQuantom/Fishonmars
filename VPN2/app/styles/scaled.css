@@ -25,16 +25,30 @@ html, body { width: 320px; height: 480px; }
 #Label20 { position: absolute; top: 90.00%; left: 17.50%; width: 27.50%; height: 3.33%; }
 #Label15 { position: absolute; top: 56.67%; left: 17.50%; width: 47.50%; height: 3.33%; }
 
-#Progressbar2 { position: absolute; top: 10.00%; left: 0.00%; width: 100.00%; height: 3.33%; }
-#Button2 { position: absolute; top: 75.00%; left: 42.50%; width: 12.50%; height: 5.00%; }
-#HtmlContent1 { position: absolute; top: 96.67%; left: 42.50%; width: 32.50%; height: 3.33%; }
-#Typeahead1 { position: absolute; top: 0.00%; left: 0.00%; width: 100.00%; height: 10.00%; }
-#HtmlContent3 { position: absolute; top: 36.67%; left: 42.50%; width: 32.50%; height: 6.67%; }
-#Typeahead2 { position: absolute; top: 13.33%; left: 0.00%; width: 100.00%; height: 10.00%; }
-#Progressbar3 { position: absolute; top: 23.33%; left: 0.00%; width: 100.00%; height: 3.33%; }
-#Typeahead3 { position: absolute; top: 26.67%; left: 0.00%; width: 100.00%; height: 10.00%; }
-#Button3 { position: absolute; top: 35.00%; left: 82.50%; width: 15.00%; height: 8.33%; }
-
+#Image1 { position: absolute; top: 0.00%; left: 0.00%; width: 100.00%; height: 100.00%; }
+#Progressbar2 { position: absolute; top: 8.33%; left: 0.00%; width: 27.50%; height: 1.67%; }
+#Button2 { position: absolute; top: 75.00%; left: 35.00%; width: 12.50%; height: 6.67%; }
+#HtmlContent1 { position: absolute; top: 93.33%; left: 42.50%; width: 32.50%; height: 3.33%; }
+#HtmlContent3 { position: absolute; top: 86.67%; left: 42.50%; width: 32.50%; height: 6.67%; }
+#Progressbar3 { position: absolute; top: 16.67%; left: 0.00%; width: 27.50%; height: 1.67%; }
+#Button3 { position: absolute; top: 3.33%; left: 27.50%; width: 10.00%; height: 5.00%; }
+#Typeahead3 { position: absolute; top: 63.33%; left: 127.50%; width: 100.00%; height: 10.00%; }
+#Typeahead2 { position: absolute; top: 50.00%; left: 127.50%; width: 100.00%; height: 10.00%; }
+#Typeahead1 { position: absolute; top: 36.67%; left: 127.50%; width: 100.00%; height: 10.00%; }
+#Textarea1 { position: absolute; top: 3.33%; left: 0.00%; width: 27.50%; height: 5.00%; background-color: #ffffff; background: auto;}
+#Textarea2 { position: absolute; top: 11.67%; left: 0.00%; width: 27.50%; height: 5.00%; }
+#Textarea3 { position: absolute; top: 20.00%; left: 0.00%; width: 27.50%; height: 5.00%; }
+#Progressbar4 { position: absolute; top: 25.00%; left: 0.00%; width: 27.50%; height: 1.67%; }
+#Button4 { position: absolute; top: 11.67%; left: 27.50%; width: 10.00%; height: 5.00%; }
+#Progressbar5 { position: absolute; top: 33.33%; left: 0.00%; width: 27.50%; height: 1.67%; }
+#Textarea4 { position: absolute; top: 28.33%; left: 0.00%; width: 27.50%; height: 5.00%; }
+#Button5 { position: absolute; top: 20.00%; left: 27.50%; width: 10.00%; height: 5.00%; }
+#Progressbar6 { position: absolute; top: 41.67%; left: 0.00%; width: 27.50%; height: 1.67%; }
+#Textarea5 { position: absolute; top: 36.67%; left: 0.00%; width: 27.50%; height: 5.00%; }
+#Button6 { position: absolute; top: 28.33%; left: 27.50%; width: 10.00%; height: 5.00%; }
+#Button7 { position: absolute; top: 36.67%; left: 27.50%; width: 10.00%; height: 5.00%; }
+#HtmlContent4 { position: absolute; top: 38.33%; left: 35.00%; width: 32.50%; height: 3.33%; }
+#Button8 { position: absolute; top: 75.00%; left: 52.50%; width: 22.50%; height: 6.67%; }
 /* App inline CSS */
 .block-ui-message
 {
