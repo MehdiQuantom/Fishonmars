@@ -24,6 +24,7 @@ html, body { width: 320px; height: 480px; }
 #Label19 { position: absolute; top: 83.33%; left: 17.50%; width: 27.50%; height: 3.33%; }
 #Label20 { position: absolute; top: 90.00%; left: 17.50%; width: 27.50%; height: 3.33%; }
 #Label15 { position: absolute; top: 56.67%; left: 17.50%; width: 47.50%; height: 3.33%; }
+#Button9 { position: absolute; top: 36.67%; left: 40.00%; width: 15.00%; height: 6.67%; }
 
 #Image1 { position: absolute; top: 0.00%; left: 0.00%; width: 100.00%; height: 100.00%; }
 #Progressbar2 { position: absolute; top: 8.33%; left: 0.00%; width: 27.50%; height: 1.67%; }
@@ -49,6 +50,7 @@ html, body { width: 320px; height: 480px; }
 #Button7 { position: absolute; top: 36.67%; left: 27.50%; width: 10.00%; height: 5.00%; }
 #HtmlContent4 { position: absolute; top: 38.33%; left: 35.00%; width: 32.50%; height: 3.33%; }
 #Button8 { position: absolute; top: 75.00%; left: 52.50%; width: 22.50%; height: 6.67%; }
+
 /* App inline CSS */
 .block-ui-message
 {

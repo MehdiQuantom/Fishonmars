@@ -701,7 +701,7 @@ $rootScope.App.AuthorEmail = "info@quantom.com";
 $rootScope.App.AuthorUrl = "https://mehdiquantom.github.io/Fishonmars/";
 $rootScope.App.LanguageCode = "en";
 $rootScope.App.TextDirection = "ltr";
-$rootScope.App.BuildNumber = 163;
+$rootScope.App.BuildNumber = 169;
 $rootScope.App.Scaled = "scaled";
 $rootScope.App.Views = ["Login", "Main"];
 $rootScope.App.Theme = "Daydream";
@@ -1053,6 +1053,25 @@ $rootScope.Label15 = {
   PopoverTitle: "",
   PopoverPos: "top",
   Icon: ""
+};
+
+$rootScope.Button9 = {
+  ABRole: 2001,
+  Hidden: "",
+  Title: "",
+  AriaLabel: "",
+  TabIndex: 0,
+  TooltipText: "",
+  TooltipPos: "top",
+  PopoverText: "",
+  PopoverTitle: "",
+  PopoverEvent: "mouseenter",
+  PopoverPos: "top",
+  Badge: "",
+  Icon: "",
+  Text: "FingerPrint",
+  Class: "btn btn-primary btn-md ",
+  Disabled: ""
 };
 
 $rootScope.Image1 = {
@@ -2009,6 +2028,30 @@ window.App.Ctrls.controller
     };        
 
    
+$scope.BiometricAuthenticateSuccessCallback = function()
+{
+
+window.App.Debugger.log("Start of BiometricAuthenticateSuccessCallback app function", "info", -1);
+
+window.App.Debugger.log("Alert \x22Congrats!\x22 \x22Authenticate successfully!\x22", "info", 1);
+
+$scope.alert("Congrats!", "Authenticate successfully!");
+
+window.App.Debugger.log("End of BiometricAuthenticateSuccessCallback app function", "info", -2);
+};
+
+$scope.BiometricAuthenticateErrorCallback = function(Error)
+{
+
+window.App.Debugger.log("Start of BiometricAuthenticateErrorCallback app function", "info", -1);
+
+window.App.Debugger.log("Alert \x22Warning\x22 \x22Authentication error! :: [Error]\x22", "info", 1);
+
+$scope.alert("Warning", "Authentication error! :: "+Error+"");
+
+window.App.Debugger.log("End of BiometricAuthenticateErrorCallback app function", "info", -2);
+};
+
 }]);
 
 window.App.Ctrls.controller
@@ -2331,6 +2374,19 @@ $rootScope.AutoUnblockTimer.TimerStop = function() {
   if ($rootScope.App._Timers.AutoUnblockTimer !== null) {
     $interval.cancel($rootScope.App._Timers.AutoUnblockTimer);
   }
+};
+
+$scope.Button9Click = function($event) {
+$rootScope.Button9.Event = $event;
+
+window.App.Debugger.log("Start of Button9 Click event", "info", -1);
+
+window.App.Debugger.log("BiometricAuthenticate \x22BiometricAuthenticateSuccessCallback\x22 \x22BiometricAuthenticateErrorCallback\x22", "info", 1);
+
+window.App.Plugins.Biometric.call().BiometricAuthenticate("BiometricAuthenticateSuccessCallback", "BiometricAuthenticateErrorCallback");
+
+window.App.Debugger.log("End of Button9 Click event", "info", -2);
+
 };
 
 }]);
