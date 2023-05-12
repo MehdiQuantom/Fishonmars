@@ -3,8 +3,8 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 
-<!-- Mirrored from aries.lol/ by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 15 Apr 2023 11:17:08 GMT -->
-<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" />
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -18,7 +18,7 @@
 <link rel="shortcut icon" type="image/png" href="static/logoaf42.svg?v20210804" />
 </head>
 <body>
-<div class="ui large top fixed menu nb-menu">
+<!--<div class="ui large top fixed menu nb-menu">
 <div class="ui container">
 <a class="item" href="index.html">
 <img src="static/logoaf42.svg?v20210804">
@@ -31,7 +31,7 @@
 </div>
 </div>
 </div>
-</div>
+</div>-->
 <div class="ui mini confirm modal transition hidden">
 <div class="header"></div>
 <div class="content">
@@ -138,12 +138,12 @@ toFixed2(server.State.Load15) #@<br/>
 </div>
 </div>
 </div>
-<div class="ui inverted vertical footer segment">
+<!--<div class="ui inverted vertical footer segment">
 <div class="ui center aligned is-size-7 container">
 <b>&copy; <a style="color: white;" href="index.html">Aries</a></b> | <small>Powered by <a href="https://github.com/naiba/nezha" style="color: white;" target="_blank">哪吒监控</a>
 v0.14.3</small>
 </div>
-</div>
+</div>-->
 <script data-cfasync="false" src="cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="../cdn.staticfile.org/jquery/3.6.0/jquery.min.js_%3b%20filename_%3dutf-8%27%27jquery.min.js"></script>
 <script src="../cdn.staticfile.org/semantic-ui/2.4.1/semantic.min.js_%3b%20filename_%3dutf-8%27%27semantic.min.js"></script>
 <script src="static/semantic-ui-alerts.min.js"></script>
@@ -323,8 +323,8 @@ v0.14.3</small>
     ws.onopen = function (evt) {
       canShowError = true;
       $.suiAlert({
-        title: '实时通道建立',
-        description: '可以实时获取最新监控数据啦',
+        title: 'Real-time channel establishment',
+        description: 'You can get the latest monitoring data in real time',
         type: 'success',
         time: '2',
         position: 'top-center',
@@ -352,8 +352,8 @@ v0.14.3</small>
       if (canShowError) {
         canShowError = false;
         $.suiAlert({
-          title: '实时通道断开',
-          description: '无法实时获取最新监控数据咯',
+          title: 'Real-time Channel Disconnect',
+          description: 'Unable to get the latest monitoring data in real-time!',
           type: 'warning',
           time: '2',
           position: 'top-center',
@@ -372,3 +372,6 @@ v0.14.3</small>
 
   $('.ui.accordion').accordion({ "exclusive": false });
 </script>
+
+
+
