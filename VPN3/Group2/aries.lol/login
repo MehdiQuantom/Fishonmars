@@ -1,0 +1,56 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<!-- Mirrored from aries.lol/login by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 15 Apr 2023 11:18:04 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta content="telephone=no" name="format-detection">
+<title>登录 - Aries</title>
+<link rel="stylesheet" type="text/css" href="../cdn.staticfile.org/semantic-ui/2.4.1/semantic.min.css_%3b%20filename_%3dutf-8%27%27semantic.min.css">
+<link href="../cdn.staticfile.org/font-logos/0.17/font-logos.min.css_%3b%20filename_%3dutf-8%27%27font-logos.min.css" type="text/css" rel="stylesheet" />
+<link rel="stylesheet" type="text/css" href="static/semantic-ui-alerts.min.css">
+<link rel="stylesheet" type="text/css" href="static/main74f1.css?v2022042314">
+<link rel="shortcut icon" type="image/png" href="static/logoaf42.svg?v20210804" />
+</head>
+<body>
+<div class="login nb-container">
+<div class="ui center aligned grid">
+<div class="column">
+<h2 class="ui image header">
+<img src="static/logoaf42.svg?v20210804" class="image">
+<div class="content">
+使用 GitHub 账号登录
+</div>
+</h2>
+<a href="oauth2/login.html" class="ui fluid large nezha-primary-btn submit button">登录</a>
+<div class="ui message">
+没有账号？ <a href="https://github.com/join" target="_blank" rel="noopener noreferrer">注册</a>
+</div>
+</div>
+</div>
+</div>
+<div class="ui inverted vertical footer segment">
+<div class="ui center aligned is-size-7 container">
+<b>&copy; <a style="color: white;" href="index.html">Aries</a></b> | <small>Powered by <a href="https://github.com/naiba/nezha" style="color: white;" target="_blank">哪吒监控</a>
+v0.14.3</small>
+</div>
+</div>
+<script src="../cdn.staticfile.org/jquery/3.6.0/jquery.min.js_%3b%20filename_%3dutf-8%27%27jquery.min.js"></script>
+<script src="../cdn.staticfile.org/semantic-ui/2.4.1/semantic.min.js_%3b%20filename_%3dutf-8%27%27semantic.min.js"></script>
+<script src="static/semantic-ui-alerts.min.js"></script>
+<script src="../cdn.staticfile.org/vue/2.6.14/vue.min.js_%3b%20filename_%3dutf-8%27%27vue.min.js"></script>
+<script src="static/main1b51.js?v20220917"></script>
+<script>
+    (function () {
+        updateLang({"Add":"添加","AlarmRule":"报警规则","Cron":"计划任务","Edit":"修改","Monitor":"服务监控","Notification":"通知方式","Server":"主机"});
+    })();
+</script>
+</body>
+
+<!-- Mirrored from aries.lol/login by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 15 Apr 2023 11:18:04 GMT -->
+</html>

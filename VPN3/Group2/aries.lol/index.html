@@ -1,0 +1,374 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<!-- Mirrored from aries.lol/ by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 15 Apr 2023 11:17:08 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta content="telephone=no" name="format-detection">
+<title>Aries</title>
+<link rel="stylesheet" type="text/css" href="../cdn.staticfile.org/semantic-ui/2.4.1/semantic.min.css_%3b%20filename_%3dutf-8%27%27semantic.min.css">
+<link href="../cdn.staticfile.org/font-logos/0.17/font-logos.min.css_%3b%20filename_%3dutf-8%27%27font-logos.min.css" type="text/css" rel="stylesheet" />
+<link rel="stylesheet" type="text/css" href="static/semantic-ui-alerts.min.css">
+<link rel="stylesheet" type="text/css" href="static/main74f1.css?v2022042314">
+<link rel="shortcut icon" type="image/png" href="static/logoaf42.svg?v20210804" />
+</head>
+<body>
+<div class="ui large top fixed menu nb-menu">
+<div class="ui container">
+<a class="item" href="index.html">
+<img src="static/logoaf42.svg?v20210804">
+</a>
+<a class="item active" href="index.html"><i class="home icon"></i>首页</a>
+<a class="item" href="service.html"><i class="rss icon"></i>服务</a>
+<div class="right menu">
+<div class="item">
+<a href="login" class="ui large positive nezha-primary-btn button"><i class="sign-in icon"></i>登录</a>
+</div>
+</div>
+</div>
+</div>
+<div class="ui mini confirm modal transition hidden">
+<div class="header"></div>
+<div class="content">
+</div>
+<div class="actions">
+<div class="ui negative button">取消</div>
+<button class="ui positive nezha-primary-btn right labeled icon button">确认<i class="checkmark icon"></i>
+</button>
+</div>
+</div>
+<div class="nb-container">
+<div class="ui container">
+<div id="app">
+<div class="ui styled fluid accordion" v-for="group in groups">
+<div class="active title">
+<i class="dropdown icon"></i>
+@#(group.Tag!==''?group.Tag:'默认')#@
+</div>
+<div class="active content">
+<div class="ui four stackable status cards">
+<div v-for="server in group.data" :id="server.ID" class="ui card">
+<div class="content" v-if="server.Host" style="margin-top: 10px; padding-bottom: 5px">
+<div class="header">
+<i :class="server.Host.CountryCode + ' flag'"></i>&nbsp;<i v-if="server.Host.Platform == &quot;darwin&quot;" class="apple icon"></i><i v-else-if="isWindowsPlatform(server.Host.Platform)" class="windows icon"></i><i v-else :class="'fl-' + getFontLogoClass(server.Host.Platform)"></i>
+@#server.Name + (server.live?'':'[已离线]')#@
+<i class="nezha-secondary-font info circle icon" style="height: 28px"></i>
+<div class="ui content popup" style="margin-bottom: 0">
+系统: @#server.Host.Platform#@<a href="cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="d4f994">[email&#160;protected]</a>#server.Host.PlatformVersion#@
+[<span v-if="server.Host.Virtualization">@#server.Host.Virtualization#@:</span>@#server.Host.Arch#@]<br/>
+CPU: @#server.Host.CPU#@<br/>
+硬盘:
+@#formatByteSize(server.State.DiskUsed)#@/@#formatByteSize(server.Host.DiskTotal)#@<br/>
+内存:
+@#formatByteSize(server.State.MemUsed)#@/@#formatByteSize(server.Host.MemTotal)#@<br/>
+交换:
+@#formatByteSize(server.State.SwapUsed)#@/@#formatByteSize(server.Host.SwapTotal)#@<br/>
+流量: <i class="arrow alternate circle down outline icon"></i>@#formatByteSize(server.State.NetInTransfer)#@<i class="arrow alternate circle up outline icon"></i>@#formatByteSize(server.State.NetOutTransfer)#@<br/>
+负载: @# toFixed2(server.State.Load1) #@/@# toFixed2(server.State.Load5) #@/@#
+toFixed2(server.State.Load15) #@<br/>
+进程数: @# server.State.ProcessCount #@<br/>
+连接数: TCP @# server.State.TcpConnCount #@ / UDP @# server.State.UdpConnCount #@<br/>
+启动: @# formatTimestamp(server.Host.BootTime) #@<br/>
+活动: @# new Date(server.LastActive).toLocaleString() #@<br/>
+版本: @#server.Host.Version#@<br/>
+</div>
+<div class="ui divider" style="margin-bottom: 5px"></div>
+</div>
+<div class="description">
+<div class="ui grid">
+<div class="three wide column">CPU</div>
+<div class="thirteen wide column">
+<div :class="formatPercent(server.live,server.State.CPU, 100).class">
+<div class="bar" :style="formatPercent(server.live,server.State.CPU, 100).style">
+<small>@#formatPercent(server.live,server.State.CPU,100).percent#@%</small>
+</div>
+</div>
+</div>
+<div class="three wide column">内存</div>
+<div class="thirteen wide column">
+<div :class="formatPercent(server.live,server.State.MemUsed, server.Host.MemTotal).class">
+<div class="bar" :style="formatPercent(server.live,server.State.MemUsed, server.Host.MemTotal).style">
+<small>@#parseInt(server.State?server.State.MemUsed/server.Host.MemTotal*100:0)#@%</small>
+</div>
+</div>
+</div>
+<div class="three wide column">交换</div>
+<div class="thirteen wide column">
+<div :class="formatPercent(server.live,server.State.SwapUsed, server.Host.SwapTotal).class">
+<div class="bar" :style="formatPercent(server.live,server.State.SwapUsed, server.Host.SwapTotal).style">
+<small>@#parseInt(server.State?server.State.SwapUsed/server.Host.SwapTotal*100:0)#@%</small>
+</div>
+</div>
+</div>
+<div class="three wide column">网络</div>
+<div class="thirteen wide column">
+<i class="arrow alternate circle down outline icon"></i>
+@#formatByteSize(server.State.NetInSpeed)#@/s
+<i class="arrow alternate circle up outline icon"></i>
+@#formatByteSize(server.State.NetOutSpeed)#@/s
+</div>
+<div class="three wide column">硬盘</div>
+<div class="thirteen wide column">
+<div :class="formatPercent(server.live,server.State.DiskUsed, server.Host.DiskTotal).class">
+<div class="bar" :style="formatPercent(server.live,server.State.DiskUsed, server.Host.DiskTotal).style">
+<small>@#parseInt(server.State?server.State.DiskUsed/server.Host.DiskTotal*100:0)#@%</small>
+</div>
+</div>
+</div>
+<div class="three wide column">在线</div>
+<div class="thirteen wide column">
+<i class="clock icon"></i>@#secondToDate(server.State.Uptime)#@
+</div>
+</div>
+</div>
+</div>
+<div class="content" v-else>
+<p>@#server.Name#@</p>
+<p>节点已离线</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="ui inverted vertical footer segment">
+<div class="ui center aligned is-size-7 container">
+<b>&copy; <a style="color: white;" href="index.html">Aries</a></b> | <small>Powered by <a href="https://github.com/naiba/nezha" style="color: white;" target="_blank">哪吒监控</a>
+v0.14.3</small>
+</div>
+</div>
+<script data-cfasync="false" src="cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="../cdn.staticfile.org/jquery/3.6.0/jquery.min.js_%3b%20filename_%3dutf-8%27%27jquery.min.js"></script>
+<script src="../cdn.staticfile.org/semantic-ui/2.4.1/semantic.min.js_%3b%20filename_%3dutf-8%27%27semantic.min.js"></script>
+<script src="static/semantic-ui-alerts.min.js"></script>
+<script src="../cdn.staticfile.org/vue/2.6.14/vue.min.js_%3b%20filename_%3dutf-8%27%27vue.min.js"></script>
+<script src="static/main1b51.js?v20220917"></script>
+<script>
+    (function () {
+        updateLang({"Add":"添加","AlarmRule":"报警规则","Cron":"计划任务","Edit":"修改","Monitor":"服务监控","Notification":"通知方式","Server":"主机"});
+    })();
+</script>
+</body>
+
+<!-- Mirrored from aries.lol/ by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 15 Apr 2023 11:17:56 GMT -->
+</html>
+<script>
+  const initData = JSON.parse('{\u0022now\u0022:1681557428000,\u0022servers\u0022:[{\u0022ID\u0022:130,\u0022CreatedAt\u0022:\u00220001-01-01T00:00:00Z\u0022,\u0022UpdatedAt\u0022:\u00222023-01-29T20:35:15.409721974\u002b08:00\u0022,\u0022DeletedAt\u0022:null,\u0022Name\u0022:\u0022ADVIN_NL\u0022,\u0022Tag\u0022:\u0022Aries_BUY\u0022,\u0022DisplayIndex\u0022:99999999,\u0022Host\u0022:{\u0022Platform\u0022:\u0022ubuntu\u0022,\u0022PlatformVersion\u0022:\u002220.04\u0022,\u0022CPU\u0022:[\u0022AMD Ryzen 9 5950X 16-Core Processor 4 Virtual Core\u0022],\u0022MemTotal\u0022:16786919424,\u0022DiskTotal\u0022:115312410624,\u0022SwapTotal\u0022:0,\u0022Arch\u0022:\u0022x86_64\u0022,\u0022Virtualization\u0022:\u0022kvm\u0022,\u0022BootTime\u0022:1678752476,\u0022CountryCode\u0022:\u0022nl\u0022,\u0022Version\u0022:\u00220.14.11\u0022},\u0022State\u0022:{\u0022CPU\u0022:13.49036403808003,\u0022MemUsed\u0022:7531458560,\u0022SwapUsed\u0022:0,\u0022DiskUsed\u0022:25831002112,\u0022NetInTransfer\u0022:32764397895,\u0022NetOutTransfer\u0022:6705174053,\u0022NetInSpeed\u0022:18600,\u0022NetOutSpeed\u0022:12420,\u0022Uptime\u0022:2804952,\u0022Load1\u0022:0.24,\u0022Load5\u0022:0.19,\u0022Load15\u0022:0.23,\u0022TcpConnCount\u0022:436,\u0022UdpConnCount\u0022:1,\u0022ProcessCount\u0022:224},\u0022LastActive\u0022:\u00222023-04-15T19:17:08.305280019\u002b08:00\u0022},{\u0022ID\u0022:9,\u0022CreatedAt\u0022:\u00220001-01-01T00:00:00Z\u0022,\u0022UpdatedAt\u0022:\u00222023-01-22T07:48:46.257297542\u002b08:00\u0022,\u0022DeletedAt\u0022:null,\u0022Name\u0022:\u0022Microsoft_Azure_HK_STU\u0022,\u0022Tag\u0022:\u0022Azure\u0022,\u0022DisplayIndex\u0022:3,\u0022Host\u0022:{\u0022Platform\u0022:\u0022debian\u0022,\u0022PlatformVersion\u0022:\u002211.6\u0022,\u0022CPU\u0022:[\u0022Intel(R) Xeon(R) Platinum 8171M CPU @ 2.60GHz 1 Virtual Core\u0022],\u0022MemTotal\u0022:958435328,\u0022DiskTotal\u0022:35535839232,\u0022SwapTotal\u0022:1074786304,\u0022Arch\u0022:\u0022x86_64\u0022,\u0022Virtualization\u0022:\u0022hyperv\u0022,\u0022BootTime\u0022:1664526310,\u0022CountryCode\u0022:\u0022hk\u0022,\u0022Version\u0022:\u00220.14.11\u0022},\u0022State\u0022:{\u0022CPU\u0022:24.347826060196404,\u0022MemUsed\u0022:375525376,\u0022SwapUsed\u0022:183705600,\u0022DiskUsed\u0022:11122581504,\u0022NetInTransfer\u0022:97298319514,\u0022NetOutTransfer\u0022:40774397254,\u0022NetInSpeed\u0022:16375,\u0022NetOutSpeed\u0022:5881,\u0022Uptime\u0022:17031118,\u0022Load1\u0022:0.18,\u0022Load5\u0022:0.44,\u0022Load15\u0022:0.53,\u0022TcpConnCount\u0022:16,\u0022UdpConnCount\u0022:3,\u0022ProcessCount\u0022:101},\u0022LastActive\u0022:\u00222023-04-15T19:17:08.593331243\u002b08:00\u0022},{\u0022ID\u0022:3,\u0022CreatedAt\u0022:\u00220001-01-01T00:00:00Z\u0022,\u0022UpdatedAt\u0022:\u00222023-01-22T07:48:37.443644131\u002b08:00\u0022,\u0022DeletedAt\u0022:null,\u0022Name\u0022:\u0022Tencent_广州\u0022,\u0022Tag\u0022:\u0022CN\u0022,\u0022DisplayIndex\u0022:1,\u0022Host\u0022:{\u0022Platform\u0022:\u0022debian\u0022,\u0022PlatformVersion\u0022:\u002211.3\u0022,\u0022CPU\u0022:[\u0022Intel(R) Xeon(R) Gold 6148 CPU @ 2.40GHz 2 Physical Core\u0022],\u0022MemTotal\u0022:2078416896,\u0022DiskTotal\u0022:42157305856,\u0022SwapTotal\u0022:0,\u0022Arch\u0022:\u0022x86_64\u0022,\u0022Virtualization\u0022:\u0022\u0022,\u0022BootTime\u0022:1665536517,\u0022CountryCode\u0022:\u0022cn\u0022,\u0022Version\u0022:\u00220.14.11\u0022},\u0022State\u0022:{\u0022CPU\u0022:0,\u0022MemUsed\u0022:490778624,\u0022SwapUsed\u0022:0,\u0022DiskUsed\u0022:7268167680,\u0022NetInTransfer\u0022:21402127344,\u0022NetOutTransfer\u0022:22435583987,\u0022NetInSpeed\u0022:337,\u0022NetOutSpeed\u0022:398,\u0022Uptime\u0022:16020910,\u0022Load1\u0022:0,\u0022Load5\u0022:0,\u0022Load15\u0022:0,\u0022TcpConnCount\u0022:35,\u0022UdpConnCount\u0022:5,\u0022ProcessCount\u0022:95},\u0022LastActive\u0022:\u00222023-04-15T19:17:07.767826757\u002b08:00\u0022},{\u0022ID\u0022:13,\u0022CreatedAt\u0022:\u00220001-01-01T00:00:00Z\u0022,\u0022UpdatedAt\u0022:\u00222022-09-19T15:17:05.408773632\u002b08:00\u0022,\u0022DeletedAt\u0022:null,\u0022Name\u0022:\u0022N5105-UBUNTU\u0022,\u0022Tag\u0022:\u0022CN\u0022,\u0022DisplayIndex\u0022:0,\u0022Host\u0022:{\u0022Platform\u0022:\u0022ubuntu\u0022,\u0022PlatformVersion\u0022:\u002222.04\u0022,\u0022CPU\u0022:[\u0022Intel(R) Celeron(R) N5105 @ 2.00GHz 4 Physical Core\u0022],\u0022MemTotal\u0022:8335069184,\u0022DiskTotal\u0022:42382565376,\u0022SwapTotal\u0022:4294963200,\u0022Arch\u0022:\u0022x86_64\u0022,\u0022Virtualization\u0022:\u0022\u0022,\u0022BootTime\u0022:1680930019,\u0022CountryCode\u0022:\u0022hk\u0022,\u0022Version\u0022:\u00220.14.11\u0022},\u0022State\u0022:{\u0022CPU\u0022:0.409836065955069,\u0022MemUsed\u0022:652730368,\u0022SwapUsed\u0022:0,\u0022DiskUsed\u0022:18762559488,\u0022NetInTransfer\u0022:42576004,\u0022NetOutTransfer\u0022:33490575,\u0022NetInSpeed\u0022:282,\u0022NetOutSpeed\u0022:214,\u0022Uptime\u0022:34919,\u0022Load1\u0022:0.84,\u0022Load5\u0022:0.82,\u0022Load15\u0022:0.82,\u0022TcpConnCount\u0022:38,\u0022UdpConnCount\u0022:4,\u0022ProcessCount\u0022:230},\u0022LastActive\u0022:\u00222023-04-08T22:42:18.250291144\u002b08:00\u0022},{\u0022ID\u0022:14,\u0022CreatedAt\u0022:\u00222022-08-25T08:30:34.220967614\u002b08:00\u0022,\u0022UpdatedAt\u0022:\u00222022-08-25T08:30:34.220967614\u002b08:00\u0022,\u0022DeletedAt\u0022:null,\u0022Name\u0022:\u0022RackNerd_US\u0022,\u0022Tag\u0022:\u0022Aries_BUY\u0022,\u0022DisplayIndex\u0022:0,\u0022Host\u0022:{\u0022Platform\u0022:\u0022debian\u0022,\u0022PlatformVersion\u0022:\u002211.3\u0022,\u0022CPU\u0022:[\u0022Intel(R) Xeon(R) CPU E5-2690 0 @ 2.90GHz 1 Physical Core\u0022],\u0022MemTotal\u0022:1023819776,\u0022DiskTotal\u0022:22288822272,\u0022SwapTotal\u0022:1073737728,\u0022Arch\u0022:\u0022x86_64\u0022,\u0022Virtualization\u0022:\u0022\u0022,\u0022BootTime\u0022:1666767810,\u0022CountryCode\u0022:\u0022us\u0022,\u0022Version\u0022:\u00220.14.11\u0022},\u0022State\u0022:{\u0022CPU\u0022:2.0618556225916853,\u0022MemUsed\u0022:398155776,\u0022SwapUsed\u0022:176840704,\u0022DiskUsed\u0022:7195615232,\u0022NetInTransfer\u0022:214501333177,\u0022NetOutTransfer\u0022:174211559887,\u0022NetInSpeed\u0022:10661,\u0022NetOutSpeed\u0022:25558,\u0022Uptime\u0022:14789617,\u0022Load1\u0022:0.29,\u0022Load5\u0022:0.25,\u0022Load15\u0022:0.23,\u0022TcpConnCount\u0022:16,\u0022UdpConnCount\u0022:1,\u0022ProcessCount\u0022:77},\u0022LastActive\u0022:\u00222023-04-15T19:17:07.988515702\u002b08:00\u0022},{\u0022ID\u0022:27,\u0022CreatedAt\u0022:\u00220001-01-01T00:00:00Z\u0022,\u0022UpdatedAt\u0022:\u00222022-10-21T07:55:15.928304361\u002b08:00\u0022,\u0022DeletedAt\u0022:null,\u0022Name\u0022:\u0022BuyVM_LU_BT下载鸡\u0022,\u0022Tag\u0022:\u0022Aries_BUY\u0022,\u0022DisplayIndex\u0022:0,\u0022Host\u0022:{\u0022Platform\u0022:\u0022debian\u0022,\u0022PlatformVersion\u0022:\u002211.6\u0022,\u0022CPU\u0022:[\u0022AMD Ryzen 9 3900X 12-Core Processor 1 Virtual Core\u0022],\u0022MemTotal\u0022:1024028672,\u0022DiskTotal\u0022:21033996288,\u0022SwapTotal\u0022:0,\u0022Arch\u0022:\u0022x86_64\u0022,\u0022Virtualization\u0022:\u0022kvm\u0022,\u0022BootTime\u0022:1680437263,\u0022CountryCode\u0022:\u0022lu\u0022,\u0022Version\u0022:\u00220.14.11\u0022},\u0022State\u0022:{\u0022CPU\u0022:47.15447154202225,\u0022MemUsed\u0022:668377088,\u0022SwapUsed\u0022:0,\u0022DiskUsed\u0022:2224939008,\u0022NetInTransfer\u0022:29162766857202,\u0022NetOutTransfer\u0022:28456347104017,\u0022NetInSpeed\u0022:38218474,\u0022NetOutSpeed\u0022:36905906,\u0022Uptime\u0022:1120155,\u0022Load1\u0022:0.49,\u0022Load5\u0022:0.69,\u0022Load15\u0022:0.68,\u0022TcpConnCount\u0022:3285,\u0022UdpConnCount\u0022:2,\u0022ProcessCount\u0022:66},\u0022LastActive\u0022:\u00222023-04-15T19:17:07.978948981\u002b08:00\u0022},{\u0022ID\u0022:42,\u0022CreatedAt\u0022:\u00222022-09-21T15:44:43.501325545\u002b08:00\u0022,\u0022UpdatedAt\u0022:\u00222022-09-21T15:44:43.501325545\u002b08:00\u0022,\u0022DeletedAt\u0022:null,\u0022Name\u0022:\u0022N5105-OPENWRT\u0022,\u0022Tag\u0022:\u0022CN\u0022,\u0022DisplayIndex\u0022:0,\u0022Host\u0022:{\u0022Platform\u0022:\u0022openwrt\u0022,\u0022PlatformVersion\u0022:\u002222.03.0\u0022,\u0022CPU\u0022:[\u0022Intel(R) Celeron(R) N5105 @ 2.00GHz 2 Virtual Core\u0022],\u0022MemTotal\u0022:2090991616,\u0022DiskTotal\u0022:971767808,\u0022SwapTotal\u0022:344977408,\u0022Arch\u0022:\u0022x86_64\u0022,\u0022Virtualization\u0022:\u0022kvm\u0022,\u0022BootTime\u0022:1681434665,\u0022CountryCode\u0022:\u0022cn\u0022,\u0022Version\u0022:\u00220.14.11\u0022},\u0022State\u0022:{\u0022CPU\u0022:0.8403361352244852,\u0022MemUsed\u0022:289083392,\u0022SwapUsed\u0022:0,\u0022DiskUsed\u0022:211574784,\u0022NetInTransfer\u0022:16680462581,\u0022NetOutTransfer\u0022:16986296808,\u0022NetInSpeed\u0022:24573,\u0022NetOutSpeed\u0022:25160,\u0022Uptime\u0022:122762,\u0022Load1\u0022:0,\u0022Load5\u0022:0.04,\u0022Load15\u0022:0.01,\u0022TcpConnCount\u0022:290,\u0022UdpConnCount\u0022:27,\u0022ProcessCount\u0022:94},\u0022LastActive\u0022:\u00222023-04-15T19:17:07.949612703\u002b08:00\u0022},{\u0022ID\u0022:43,\u0022CreatedAt\u0022:\u00220001-01-01T00:00:00Z\u0022,\u0022UpdatedAt\u0022:\u00222023-03-26T17:28:27.835022275\u002b08:00\u0022,\u0022DeletedAt\u0022:null,\u0022Name\u0022:\u0022N5105-WIN\u0022,\u0022Tag\u0022:\u0022CN\u0022,\u0022DisplayIndex\u0022:0,\u0022Host\u0022:{\u0022Platform\u0022:\u0022Microsoft Windows Server 2022 Datacenter\u0022,\u0022PlatformVersion\u0022:\u002210.0.20348.1607 Build 20348.1607\u0022,\u0022CPU\u0022:[\u0022Intel(R) Celeron(R) N5105 @ 2.00GHz 4 Physical Core\u0022],\u0022MemTotal\u0022:8589398016,\u0022DiskTotal\u0022:106604523520,\u0022SwapTotal\u0022:9931575296,\u0022Arch\u0022:\u0022x86_64\u0022,\u0022Virtualization\u0022:\u0022\u0022,\u0022BootTime\u0022:1680923070,\u0022CountryCode\u0022:\u0022hk\u0022,\u0022Version\u0022:\u00220.14.11\u0022},\u0022State\u0022:{\u0022CPU\u0022:0.9868421052631579,\u0022MemUsed\u0022:1665134592,\u0022SwapUsed\u0022:1367224320,\u0022DiskUsed\u0022:16659202048,\u0022NetInTransfer\u0022:2343913,\u0022NetOutTransfer\u0022:439571,\u0022NetInSpeed\u0022:329,\u0022NetOutSpeed\u0022:324,\u0022Uptime\u0022:201,\u0022Load1\u0022:0.19999433337196737,\u0022Load5\u0022:0.24283761294220255,\u0022Load15\u0022:0.10971410447009272,\u0022TcpConnCount\u0022:55,\u0022UdpConnCount\u0022:19,\u0022ProcessCount\u0022:121},\u0022LastActive\u0022:\u00222023-04-08T11:07:51.393066483\u002b08:00\u0022},{\u0022ID\u0022:45,\u0022CreatedAt\u0022:\u00220001-01-01T00:00:00Z\u0022,\u0022UpdatedAt\u0022:\u00222022-09-25T10:37:46.144841431\u002b08:00\u0022,\u0022DeletedAt\u0022:null,\u0022Name\u0022:\u0022Scaleway_iPv6_NL\u0022,\u0022Tag\u0022:\u0022Aries_BUY\u0022,\u0022DisplayIndex\u0022:0,\u0022Host\u0022:{\u0022Platform\u0022:\u0022debian\u0022,\u0022PlatformVersion\u0022:\u002211.6\u0022,\u0022CPU\u0022:[\u0022AMD EPYC 7281 16-Core Processor 1 Virtual Core\u0022],\u0022MemTotal\u0022:1023209472,\u0022DiskTotal\u0022:9667530752,\u0022SwapTotal\u0022:0,\u0022Arch\u0022:\u0022x86_64\u0022,\u0022Virtualization\u0022:\u0022kvm\u0022,\u0022BootTime\u0022:1679892433,\u0022CountryCode\u0022:\u0022nl\u0022,\u0022Version\u0022:\u00220.14.11\u0022},\u0022State\u0022:{\u0022CPU\u0022:44.954128446735965,\u0022MemUsed\u0022:514326528,\u0022SwapUsed\u0022:0,\u0022DiskUsed\u0022:8619126784,\u0022NetInTransfer\u0022:19767355356749,\u0022NetOutTransfer\u0022:10708375923759,\u0022NetInSpeed\u0022:8188561,\u0022NetOutSpeed\u0022:3097364,\u0022Uptime\u0022:1664994,\u0022Load1\u0022:1,\u0022Load5\u0022:1.15,\u0022Load15\u0022:1.36,\u0022TcpConnCount\u0022:2752,\u0022UdpConnCount\u0022:127,\u0022ProcessCount\u0022:68},\u0022LastActive\u0022:\u00222023-04-15T19:17:07.636877711\u002b08:00\u0022},{\u0022ID\u0022:56,\u0022CreatedAt\u0022:\u00220001-01-01T00:00:00Z\u0022,\u0022UpdatedAt\u0022:\u00222023-01-23T13:42:37.574343092\u002b08:00\u0022,\u0022DeletedAt\u0022:null,\u0022Name\u0022:\u0022RackNerd_纽约年付\u0022,\u0022Tag\u0022:\u0022Aries_BUY\u0022,\u0022DisplayIndex\u0022:0,\u0022Host\u0022:{\u0022Platform\u0022:\u0022debian\u0022,\u0022PlatformVersion\u0022:\u002210.13\u0022,\u0022CPU\u0022:[\u0022Intel(R) Xeon(R) CPU E5-2660 0 @ 2.20GHz 1 Physical Core\u0022],\u0022MemTotal\u0022:506683392,\u0022DiskTotal\u0022:14235779072,\u0022SwapTotal\u0022:536866816,\u0022Arch\u0022:\u0022x86_64\u0022,\u0022Virtualization\u0022:\u0022\u0022,\u0022BootTime\u0022:1674451065,\u0022CountryCode\u0022:\u0022us\u0022,\u0022Version\u0022:\u00220.14.11\u0022},\u0022State\u0022:{\u0022CPU\u0022:0.9174311722797854,\u0022MemUsed\u0022:180764672,\u0022SwapUsed\u0022:362889216,\u0022DiskUsed\u0022:7893139456,\u0022NetInTransfer\u0022:14886946045,\u0022NetOutTransfer\u0022:8930912014,\u0022NetInSpeed\u0022:1122,\u0022NetOutSpeed\u0022:1080,\u0022Uptime\u0022:7106363,\u0022Load1\u0022:0.04,\u0022Load5\u0022:0.02,\u0022Load15\u0022:0,\u0022TcpConnCount\u0022:15,\u0022UdpConnCount\u0022:2,\u0022ProcessCount\u0022:82},\u0022LastActive\u0022:\u00222023-04-15T19:17:08.627377195\u002b08:00\u0022},{\u0022ID\u0022:69,\u0022CreatedAt\u0022:\u00222022-10-17T15:10:11.943910757\u002b08:00\u0022,\u0022UpdatedAt\u0022:\u00222022-10-17T15:10:11.943910757\u002b08:00\u0022,\u0022DeletedAt\u0022:null,\u0022Name\u0022:\u0022 Scaleway_iPv6_FR\u0022,\u0022Tag\u0022:\u0022Aries_BUY\u0022,\u0022DisplayIndex\u0022:0,\u0022Host\u0022:{\u0022Platform\u0022:\u0022debian\u0022,\u0022PlatformVersion\u0022:\u002211.6\u0022,\u0022CPU\u0022:[\u0022AMD EPYC 7281 16-Core Processor 1 Virtual Core\u0022],\u0022MemTotal\u0022:1019731968,\u0022DiskTotal\u0022:9667530752,\u0022SwapTotal\u0022:0,\u0022Arch\u0022:\u0022x86_64\u0022,\u0022Virtualization\u0022:\u0022kvm\u0022,\u0022BootTime\u0022:1670861446,\u0022CountryCode\u0022:\u0022fr\u0022,\u0022Version\u0022:\u00220.14.11\u0022},\u0022State\u0022:{\u0022CPU\u0022:60.68376066743243,\u0022MemUsed\u0022:763822080,\u0022SwapUsed\u0022:0,\u0022DiskUsed\u0022:7866245120,\u0022NetInTransfer\u0022:37973539406704,\u0022NetOutTransfer\u0022:26970731523839,\u0022NetInSpeed\u0022:6165113,\u0022NetOutSpeed\u0022:5028399,\u0022Uptime\u0022:10695982,\u0022Load1\u0022:1.15,\u0022Load5\u0022:1.34,\u0022Load15\u0022:1.54,\u0022TcpConnCount\u0022:2162,\u0022UdpConnCount\u0022:51,\u0022ProcessCount\u0022:71},\u0022LastActive\u0022:\u00222023-04-15T19:17:08.160368311\u002b08:00\u0022},{\u0022ID\u0022:73,\u0022CreatedAt\u0022:\u00222022-10-24T19:42:00.108441751\u002b08:00\u0022,\u0022UpdatedAt\u0022:\u00222022-10-24T19:42:00.108441751\u002b08:00\u0022,\u0022DeletedAt\u0022:null,\u0022Name\u0022:\u0022Hostmaze_RO\u0022,\u0022Tag\u0022:\u0022Aries_BUY\u0022,\u0022DisplayIndex\u0022:0,\u0022Host\u0022:{\u0022Platform\u0022:\u0022debian\u0022,\u0022PlatformVersion\u0022:\u002211.5\u0022,\u0022CPU\u0022:[\u0022Common KVM processor 2 Virtual Core\u0022],\u0022MemTotal\u0022:232251392,\u0022DiskTotal\u0022:15479119872,\u0022SwapTotal\u0022:268427264,\u0022Arch\u0022:\u0022x86_64\u0022,\u0022Virtualization\u0022:\u0022kvm\u0022,\u0022BootTime\u0022:1675844153,\u0022CountryCode\u0022:\u0022ro\u0022,\u0022Version\u0022:\u00220.14.8\u0022},\u0022State\u0022:{\u0022CPU\u0022:2.155172415523414,\u0022MemUsed\u0022:113455104,\u0022SwapUsed\u0022:24616960,\u0022DiskUsed\u0022:11005513728,\u0022NetInTransfer\u0022:1088924582405,\u0022NetOutTransfer\u0022:944056362882,\u0022NetInSpeed\u0022:289524,\u0022NetOutSpeed\u0022:288263,\u0022Uptime\u0022:5713275,\u0022Load1\u0022:0.07,\u0022Load5\u0022:0.11,\u0022Load15\u0022:0.2,\u0022TcpConnCount\u0022:146,\u0022UdpConnCount\u0022:2,\u0022ProcessCount\u0022:79},\u0022LastActive\u0022:\u00222023-04-15T19:17:08.46492993\u002b08:00\u0022},{\u0022ID\u0022:74,\u0022CreatedAt\u0022:\u00222022-10-25T09:00:21.608577869\u002b08:00\u0022,\u0022UpdatedAt\u0022:\u00222022-10-25T09:00:21.608577869\u002b08:00\u0022,\u0022DeletedAt\u0022:null,\u0022Name\u0022:\u0022CloudFly_VN\u0022,\u0022Tag\u0022:\u0022Aries_BUY\u0022,\u0022DisplayIndex\u0022:0,\u0022Host\u0022:{\u0022Platform\u0022:\u0022ubuntu\u0022,\u0022PlatformVersion\u0022:\u002222.04\u0022,\u0022CPU\u0022:[\u0022Intel(R) Xeon(R) CPU E5-2695 v2 @ 2.40GHz 1 Physical Core\u0022],\u0022MemTotal\u0022:1016545280,\u0022DiskTotal\u0022:20617822208,\u0022SwapTotal\u0022:0,\u0022Arch\u0022:\u0022x86_64\u0022,\u0022Virtualization\u0022:\u0022\u0022,\u0022BootTime\u0022:1675212183,\u0022CountryCode\u0022:\u0022vn\u0022,\u0022Version\u0022:\u00220.14.11\u0022},\u0022State\u0022:{\u0022CPU\u0022:84.12698418329992,\u0022MemUsed\u0022:662347776,\u0022SwapUsed\u0022:0,\u0022DiskUsed\u0022:13147443200,\u0022NetInTransfer\u0022:29276365575364,\u0022NetOutTransfer\u0022:27780469244031,\u0022NetInSpeed\u0022:24016265,\u0022NetOutSpeed\u0022:21563132,\u0022Uptime\u0022:6345197,\u0022Load1\u0022:1.38,\u0022Load5\u0022:1.64,\u0022Load15\u0022:1.77,\u0022TcpConnCount\u0022:1136,\u0022UdpConnCount\u0022:3,\u0022ProcessCount\u0022:94},\u0022LastActive\u0022:\u00222023-04-15T19:17:08.405571825\u002b08:00\u0022},{\u0022ID\u0022:76,\u0022CreatedAt\u0022:\u00220001-01-01T00:00:00Z\u0022,\u0022UpdatedAt\u0022:\u00222022-10-29T21:37:29.323672995\u002b08:00\u0022,\u0022DeletedAt\u0022:null,\u0022Name\u0022:\u0022pilvio_EE\u0022,\u0022Tag\u0022:\u0022Aries_BUY\u0022,\u0022DisplayIndex\u0022:0,\u0022Host\u0022:{\u0022Platform\u0022:\u0022debian\u0022,\u0022PlatformVersion\u0022:\u002211.6\u0022,\u0022CPU\u0022:[\u0022Intel Core Processor (Broadwell, IBRS) 1 Physical Core\u0022],\u0022MemTotal\u0022:1024020480,\u0022DiskTotal\u0022:20961435648,\u0022SwapTotal\u0022:0,\u0022Arch\u0022:\u0022x86_64\u0022,\u0022Virtualization\u0022:\u0022\u0022,\u0022BootTime\u0022:1675591882,\u0022CountryCode\u0022:\u0022ee\u0022,\u0022Version\u0022:\u00220.14.11\u0022},\u0022State\u0022:{\u0022CPU\u0022:57.264957262235896,\u0022MemUsed\u0022:402571264,\u0022SwapUsed\u0022:0,\u0022DiskUsed\u0022:8647122944,\u0022NetInTransfer\u0022:17614832771873,\u0022NetOutTransfer\u0022:17307956705261,\u0022NetInSpeed\u0022:25667102,\u0022NetOutSpeed\u0022:17006203,\u0022Uptime\u0022:5965545,\u0022Load1\u0022:1.95,\u0022Load5\u0022:1.8,\u0022Load15\u0022:1.68,\u0022TcpConnCount\u0022:1386,\u0022UdpConnCount\u0022:9,\u0022ProcessCount\u0022:67},\u0022LastActive\u0022:\u00222023-04-15T19:17:07.590208043\u002b08:00\u0022},{\u0022ID\u0022:99,\u0022CreatedAt\u0022:\u00222022-11-23T17:41:42.882658688\u002b08:00\u0022,\u0022UpdatedAt\u0022:\u00222022-11-23T17:41:42.882658688\u002b08:00\u0022,\u0022DeletedAt\u0022:null,\u0022Name\u0022:\u0022Aries的Dell G15 5515_Linux\u0022,\u0022Tag\u0022:\u0022CN\u0022,\u0022DisplayIndex\u0022:0,\u0022Host\u0022:{\u0022Platform\u0022:\u0022debian\u0022,\u0022PlatformVersion\u0022:\u0022bookworm\/sid\u0022,\u0022CPU\u0022:[\u0022AMD Ryzen 7 5800H with Radeon Graphics 16 Virtual Core\u0022],\u0022MemTotal\u0022:16616054784,\u0022DiskTotal\u0022:127119691776,\u0022SwapTotal\u0022:2147479552,\u0022Arch\u0022:\u0022x86_64\u0022,\u0022Virtualization\u0022:\u0022kvm\u0022,\u0022BootTime\u0022:1681119684,\u0022CountryCode\u0022:\u0022th\u0022,\u0022Version\u0022:\u00220.14.10\u0022},\u0022State\u0022:{\u0022CPU\u0022:1.5755950385481257,\u0022MemUsed\u0022:2425024512,\u0022SwapUsed\u0022:0,\u0022DiskUsed\u0022:37897801728,\u0022NetInTransfer\u0022:48435945,\u0022NetOutTransfer\u0022:2334771,\u0022NetInSpeed\u0022:2003222,\u0022NetOutSpeed\u0022:33165,\u0022Uptime\u0022:396,\u0022Load1\u0022:0.79,\u0022Load5\u0022:0.41,\u0022Load15\u0022:0.18,\u0022TcpConnCount\u0022:174,\u0022UdpConnCount\u0022:9,\u0022ProcessCount\u0022:364},\u0022LastActive\u0022:\u00222023-04-10T17:48:00.959846932\u002b08:00\u0022},{\u0022ID\u0022:112,\u0022CreatedAt\u0022:\u00222023-01-02T11:04:31.957821214\u002b08:00\u0022,\u0022UpdatedAt\u0022:\u00222023-01-02T11:04:31.957821214\u002b08:00\u0022,\u0022DeletedAt\u0022:null,\u0022Name\u0022:\u0022Scaleway_PL\u0022,\u0022Tag\u0022:\u0022Aries_BUY\u0022,\u0022DisplayIndex\u0022:0,\u0022Host\u0022:{\u0022Platform\u0022:\u0022debian\u0022,\u0022PlatformVersion\u0022:\u002211.6\u0022,\u0022CPU\u0022:[\u0022AMD EPYC 7543 32-Core Processor 4 Virtual Core\u0022],\u0022MemTotal\u0022:8340365312,\u0022DiskTotal\u0022:98248921088,\u0022SwapTotal\u0022:0,\u0022Arch\u0022:\u0022x86_64\u0022,\u0022Virtualization\u0022:\u0022kvm\u0022,\u0022BootTime\u0022:1679411225,\u0022CountryCode\u0022:\u0022pl\u0022,\u0022Version\u0022:\u00220.14.11\u0022},\u0022State\u0022:{\u0022CPU\u0022:9.868421034088973,\u0022MemUsed\u0022:1573474304,\u0022SwapUsed\u0022:0,\u0022DiskUsed\u0022:2366345216,\u0022NetInTransfer\u0022:15414840676276,\u0022NetOutTransfer\u0022:9434028916461,\u0022NetInSpeed\u0022:13630286,\u0022NetOutSpeed\u0022:3564047,\u0022Uptime\u0022:2146202,\u0022Load1\u0022:1.08,\u0022Load5\u0022:0.68,\u0022Load15\u0022:0.64,\u0022TcpConnCount\u0022:933,\u0022UdpConnCount\u0022:99,\u0022ProcessCount\u0022:103},\u0022LastActive\u0022:\u00222023-04-15T19:17:07.535257866\u002b08:00\u0022},{\u0022ID\u0022:121,\u0022CreatedAt\u0022:\u00222023-01-17T09:48:06.747407545\u002b08:00\u0022,\u0022UpdatedAt\u0022:\u00222023-01-17T09:48:06.747407545\u002b08:00\u0022,\u0022DeletedAt\u0022:null,\u0022Name\u0022:\u0022Scaleway_FR\u0022,\u0022Tag\u0022:\u0022Aries_BUY\u0022,\u0022DisplayIndex\u0022:0,\u0022Host\u0022:{\u0022Platform\u0022:\u0022debian\u0022,\u0022PlatformVersion\u0022:\u002211.6\u0022,\u0022CPU\u0022:[\u0022AMD EPYC 7543 32-Core Processor 2 Virtual Core\u0022],\u0022MemTotal\u0022:8340938752,\u0022DiskTotal\u0022:58878287872,\u0022SwapTotal\u0022:0,\u0022Arch\u0022:\u0022x86_64\u0022,\u0022Virtualization\u0022:\u0022kvm\u0022,\u0022BootTime\u0022:1679325959,\u0022CountryCode\u0022:\u0022fr\u0022,\u0022Version\u0022:\u00220.14.11\u0022},\u0022State\u0022:{\u0022CPU\u0022:22.270742389734796,\u0022MemUsed\u0022:1493811200,\u0022SwapUsed\u0022:0,\u0022DiskUsed\u0022:1907396608,\u0022NetInTransfer\u0022:29290480972780,\u0022NetOutTransfer\u0022:28610921806396,\u0022NetInSpeed\u0022:42176844,\u0022NetOutSpeed\u0022:50996472,\u0022Uptime\u0022:2231468,\u0022Load1\u0022:0.42,\u0022Load5\u0022:0.48,\u0022Load15\u0022:0.53,\u0022TcpConnCount\u0022:4912,\u0022UdpConnCount\u0022:36,\u0022ProcessCount\u0022:76},\u0022LastActive\u0022:\u00222023-04-15T19:17:08.048498936\u002b08:00\u0022},{\u0022ID\u0022:127,\u0022CreatedAt\u0022:\u00222023-01-24T12:40:17.57334009\u002b08:00\u0022,\u0022UpdatedAt\u0022:\u00222023-01-24T12:40:17.57334009\u002b08:00\u0022,\u0022DeletedAt\u0022:null,\u0022Name\u0022:\u0022Scaleway_NL\u0022,\u0022Tag\u0022:\u0022Aries_BUY\u0022,\u0022DisplayIndex\u0022:0,\u0022Host\u0022:{\u0022Platform\u0022:\u0022debian\u0022,\u0022PlatformVersion\u0022:\u002211.6\u0022,\u0022CPU\u0022:[\u0022AMD EPYC 7543 32-Core Processor 2 Virtual Core\u0022],\u0022MemTotal\u0022:8340946944,\u0022DiskTotal\u0022:97265762304,\u0022SwapTotal\u0022:0,\u0022Arch\u0022:\u0022x86_64\u0022,\u0022Virtualization\u0022:\u0022kvm\u0022,\u0022BootTime\u0022:1679215525,\u0022CountryCode\u0022:\u0022nl\u0022,\u0022Version\u0022:\u00220.14.11\u0022},\u0022State\u0022:{\u0022CPU\u0022:9.333333331677649,\u0022MemUsed\u0022:734552064,\u0022SwapUsed\u0022:0,\u0022DiskUsed\u0022:1898758144,\u0022NetInTransfer\u0022:21679628122433,\u0022NetOutTransfer\u0022:21405665949618,\u0022NetInSpeed\u0022:4839025,\u0022NetOutSpeed\u0022:4825136,\u0022Uptime\u0022:2341903,\u0022Load1\u0022:0.31,\u0022Load5\u0022:0.37,\u0022Load15\u0022:0.41,\u0022TcpConnCount\u0022:2500,\u0022UdpConnCount\u0022:36,\u0022ProcessCount\u0022:76},\u0022LastActive\u0022:\u00222023-04-15T19:17:08.642143301\u002b08:00\u0022},{\u0022ID\u0022:128,\u0022CreatedAt\u0022:\u00220001-01-01T00:00:00Z\u0022,\u0022UpdatedAt\u0022:\u00222023-01-25T15:32:29.760497476\u002b08:00\u0022,\u0022DeletedAt\u0022:null,\u0022Name\u0022:\u0022OVH.CA_SG\u0022,\u0022Tag\u0022:\u0022Aries_BUY\u0022,\u0022DisplayIndex\u0022:0,\u0022Host\u0022:{\u0022Platform\u0022:\u0022debian\u0022,\u0022PlatformVersion\u0022:\u002211.6\u0022,\u0022CPU\u0022:[\u0022Intel Core Processor (Haswell, no TSX) 1 Virtual Core\u0022],\u0022MemTotal\u0022:2031640576,\u0022DiskTotal\u0022:20961435648,\u0022SwapTotal\u0022:0,\u0022Arch\u0022:\u0022x86_64\u0022,\u0022Virtualization\u0022:\u0022kvm\u0022,\u0022BootTime\u0022:1680437300,\u0022CountryCode\u0022:\u0022ca\u0022,\u0022Version\u0022:\u00220.14.11\u0022},\u0022State\u0022:{\u0022CPU\u0022:88.23529412570348,\u0022MemUsed\u0022:1180987392,\u0022SwapUsed\u0022:0,\u0022DiskUsed\u0022:6463643648,\u0022NetInTransfer\u0022:14420360831798,\u0022NetOutTransfer\u0022:7396161411459,\u0022NetInSpeed\u0022:15352855,\u0022NetOutSpeed\u0022:11636235,\u0022Uptime\u0022:1120128,\u0022Load1\u0022:2.49,\u0022Load5\u0022:2.08,\u0022Load15\u0022:1.96,\u0022TcpConnCount\u0022:391,\u0022UdpConnCount\u0022:10,\u0022ProcessCount\u0022:98},\u0022LastActive\u0022:\u00222023-04-15T19:17:08.48985833\u002b08:00\u0022},{\u0022ID\u0022:135,\u0022CreatedAt\u0022:\u00220001-01-01T00:00:00Z\u0022,\u0022UpdatedAt\u0022:\u00222023-04-09T18:53:31.411087636\u002b08:00\u0022,\u0022DeletedAt\u0022:null,\u0022Name\u0022:\u0022AWS_JP\u0022,\u0022Tag\u0022:\u0022Aries_BUY\u0022,\u0022DisplayIndex\u0022:0,\u0022Host\u0022:{\u0022Platform\u0022:\u0022debian\u0022,\u0022PlatformVersion\u0022:\u002211.6\u0022,\u0022CPU\u0022:[\u0022Neoverse-N1 2 Physical Core\u0022],\u0022MemTotal\u0022:1959440384,\u0022DiskTotal\u0022:31462268928,\u0022SwapTotal\u0022:0,\u0022Arch\u0022:\u0022aarch64\u0022,\u0022Virtualization\u0022:\u0022\u0022,\u0022BootTime\u0022:1681037299,\u0022CountryCode\u0022:\u0022jp\u0022,\u0022Version\u0022:\u00220.14.11\u0022},\u0022State\u0022:{\u0022CPU\u0022:36.28318584344307,\u0022MemUsed\u0022:755003392,\u0022SwapUsed\u0022:0,\u0022DiskUsed\u0022:1709522944,\u0022NetInTransfer\u0022:6127728117139,\u0022NetOutTransfer\u0022:5970448655459,\u0022NetInSpeed\u0022:13384268,\u0022NetOutSpeed\u0022:13656317,\u0022Uptime\u0022:520129,\u0022Load1\u0022:1.12,\u0022Load5\u0022:0.92,\u0022Load15\u0022:0.9,\u0022TcpConnCount\u0022:2129,\u0022UdpConnCount\u0022:3,\u0022ProcessCount\u0022:105},\u0022LastActive\u0022:\u00222023-04-15T19:17:08.559674886\u002b08:00\u0022},{\u0022ID\u0022:138,\u0022CreatedAt\u0022:\u00220001-01-01T00:00:00Z\u0022,\u0022UpdatedAt\u0022:\u00222023-03-26T17:29:53.054709344\u002b08:00\u0022,\u0022DeletedAt\u0022:null,\u0022Name\u0022:\u0022Aries的DELL G15 5515_WIN\u0022,\u0022Tag\u0022:\u0022CN\u0022,\u0022DisplayIndex\u0022:0,\u0022Host\u0022:{\u0022Platform\u0022:\u0022Microsoft Windows 11 Pro for Workstations\u0022,\u0022PlatformVersion\u0022:\u002210.0.22621.1555 Build 22621.1555\u0022,\u0022CPU\u0022:[\u0022AMD Ryzen 7 5800H with Radeon Graphics          1 Physical Core\u0022],\u0022MemTotal\u0022:17020743680,\u0022DiskTotal\u0022:444037324800,\u0022SwapTotal\u0022:21047275520,\u0022Arch\u0022:\u0022x86_64\u0022,\u0022Virtualization\u0022:\u0022\u0022,\u0022BootTime\u0022:1681556477,\u0022CountryCode\u0022:\u0022hk\u0022,\u0022Version\u0022:\u00220.14.11\u0022},\u0022State\u0022:{\u0022CPU\u0022:1.7515923566878981,\u0022MemUsed\u0022:9338470400,\u0022SwapUsed\u0022:15593746432,\u0022DiskUsed\u0022:206932086784,\u0022NetInTransfer\u0022:726529816,\u0022NetOutTransfer\u0022:23442577,\u0022NetInSpeed\u0022:23014,\u0022NetOutSpeed\u0022:1688,\u0022Uptime\u0022:946,\u0022Load1\u0022:0.040330619425813626,\u0022Load5\u0022:0.0797791367798786,\u0022Load15\u0022:0.06306249249587341,\u0022TcpConnCount\u0022:243,\u0022UdpConnCount\u0022:154,\u0022ProcessCount\u0022:303},\u0022LastActive\u0022:\u00222023-04-15T19:17:07.932220963\u002b08:00\u0022},{\u0022ID\u0022:139,\u0022CreatedAt\u0022:\u00222023-04-14T23:58:03.684174292\u002b08:00\u0022,\u0022UpdatedAt\u0022:\u00222023-04-14T23:58:03.684174292\u002b08:00\u0022,\u0022DeletedAt\u0022:null,\u0022Name\u0022:\u0022CONTABO_JP\u0022,\u0022Tag\u0022:\u0022Aries_BUY\u0022,\u0022DisplayIndex\u0022:0,\u0022Host\u0022:{\u0022Platform\u0022:\u0022debian\u0022,\u0022PlatformVersion\u0022:\u002211.6\u0022,\u0022CPU\u0022:[\u0022AMD EPYC 7282 16-Core Processor 4 Physical Core\u0022],\u0022MemTotal\u0022:8343318528,\u0022DiskTotal\u0022:210198544384,\u0022SwapTotal\u0022:0,\u0022Arch\u0022:\u0022x86_64\u0022,\u0022Virtualization\u0022:\u0022\u0022,\u0022BootTime\u0022:1681487411,\u0022CountryCode\u0022:\u0022jp\u0022,\u0022Version\u0022:\u00220.14.11\u0022},\u0022State\u0022:{\u0022CPU\u0022:5.630630629390511,\u0022MemUsed\u0022:442744832,\u0022SwapUsed\u0022:0,\u0022DiskUsed\u0022:1746198528,\u0022NetInTransfer\u0022:99488679944,\u0022NetOutTransfer\u0022:96565394214,\u0022NetInSpeed\u0022:15756560,\u0022NetOutSpeed\u0022:12682545,\u0022Uptime\u0022:70016,\u0022Load1\u0022:0.25,\u0022Load5\u0022:0.3,\u0022Load15\u0022:0.19,\u0022TcpConnCount\u0022:174,\u0022UdpConnCount\u0022:0,\u0022ProcessCount\u0022:97},\u0022LastActive\u0022:\u00222023-04-15T19:17:07.562300038\u002b08:00\u0022},{\u0022ID\u0022:140,\u0022CreatedAt\u0022:\u00222023-04-15T12:20:21.558049834\u002b08:00\u0022,\u0022UpdatedAt\u0022:\u00222023-04-15T12:20:21.558049834\u002b08:00\u0022,\u0022DeletedAt\u0022:null,\u0022Name\u0022:\u0022CONTABO_SG\u0022,\u0022Tag\u0022:\u0022Aries_BUY\u0022,\u0022DisplayIndex\u0022:0,\u0022Host\u0022:{\u0022Platform\u0022:\u0022ubuntu\u0022,\u0022PlatformVersion\u0022:\u002220.04\u0022,\u0022CPU\u0022:[\u0022AMD EPYC 7282 16-Core Processor 4 Physical Core\u0022],\u0022MemTotal\u0022:8343732224,\u0022DiskTotal\u0022:210198544384,\u0022SwapTotal\u0022:0,\u0022Arch\u0022:\u0022x86_64\u0022,\u0022Virtualization\u0022:\u0022\u0022,\u0022BootTime\u0022:1681525680,\u0022CountryCode\u0022:\u0022sg\u0022,\u0022Version\u0022:\u00220.14.11\u0022},\u0022State\u0022:{\u0022CPU\u0022:0.847457627291085,\u0022MemUsed\u0022:375078912,\u0022SwapUsed\u0022:0,\u0022DiskUsed\u0022:3263758336,\u0022NetInTransfer\u0022:8656555185,\u0022NetOutTransfer\u0022:8176982981,\u0022NetInSpeed\u0022:7152,\u0022NetOutSpeed\u0022:9020,\u0022Uptime\u0022:31747,\u0022Load1\u0022:0,\u0022Load5\u0022:0.02,\u0022Load15\u0022:0,\u0022TcpConnCount\u0022:63,\u0022UdpConnCount\u0022:2,\u0022ProcessCount\u0022:100},\u0022LastActive\u0022:\u00222023-04-15T19:17:07.975910549\u002b08:00\u0022},{\u0022ID\u0022:141,\u0022CreatedAt\u0022:\u00222023-04-15T13:02:37.510396734\u002b08:00\u0022,\u0022UpdatedAt\u0022:\u00222023-04-15T13:02:37.510396734\u002b08:00\u0022,\u0022DeletedAt\u0022:null,\u0022Name\u0022:\u0022CONTABO_JP-WIN\u0022,\u0022Tag\u0022:\u0022Aries_BUY\u0022,\u0022DisplayIndex\u0022:0,\u0022Host\u0022:{\u0022Platform\u0022:\u0022Microsoft Windows Server 2022 Datacenter\u0022,\u0022PlatformVersion\u0022:\u002210.0.20348.169 Build 20348.169\u0022,\u0022CPU\u0022:[\u0022AMD EPYC 7282 16-Core Processor                 1 Physical Core\u0022],\u0022MemTotal\u0022:8583720960,\u0022DiskTotal\u0022:214192615424,\u0022SwapTotal\u0022:10596986880,\u0022Arch\u0022:\u0022x86_64\u0022,\u0022Virtualization\u0022:\u0022\u0022,\u0022BootTime\u0022:1681534640,\u0022CountryCode\u0022:\u0022jp\u0022,\u0022Version\u0022:\u00220.14.11\u0022},\u0022State\u0022:{\u0022CPU\u0022:0.7042253521126761,\u0022MemUsed\u0022:2841419776,\u0022SwapUsed\u0022:2732068864,\u0022DiskUsed\u0022:15433785344,\u0022NetInTransfer\u0022:1754454692,\u0022NetOutTransfer\u0022:503612422,\u0022NetInSpeed\u0022:4400,\u0022NetOutSpeed\u0022:3642,\u0022Uptime\u0022:22788,\u0022Load1\u0022:3.7028839518570016,\u0022Load5\u0022:2.882644577869128,\u0022Load15\u0022:2.53854722104554,\u0022TcpConnCount\u0022:74,\u0022UdpConnCount\u0022:42,\u0022ProcessCount\u0022:126},\u0022LastActive\u0022:\u00222023-04-15T19:17:08.357783186\u002b08:00\u0022},{\u0022ID\u0022:142,\u0022CreatedAt\u0022:\u00222023-04-15T13:32:44.873405479\u002b08:00\u0022,\u0022UpdatedAt\u0022:\u00222023-04-15T13:32:44.873405479\u002b08:00\u0022,\u0022DeletedAt\u0022:null,\u0022Name\u0022:\u0022CONTABO_DE\u0022,\u0022Tag\u0022:\u0022Aries_BUY\u0022,\u0022DisplayIndex\u0022:0,\u0022Host\u0022:{\u0022Platform\u0022:\u0022ubuntu\u0022,\u0022PlatformVersion\u0022:\u002220.04\u0022,\u0022CPU\u0022:[\u0022Intel(R) Xeon(R) CPU E5-2630 v4 @ 2.20GHz 4 Physical Core\u0022],\u0022MemTotal\u0022:8343736320,\u0022DiskTotal\u0022:210198544384,\u0022SwapTotal\u0022:0,\u0022Arch\u0022:\u0022x86_64\u0022,\u0022Virtualization\u0022:\u0022\u0022,\u0022BootTime\u0022:1681536476,\u0022CountryCode\u0022:\u0022de\u0022,\u0022Version\u0022:\u00220.14.11\u0022},\u0022State\u0022:{\u0022CPU\u0022:1.7391304345075254,\u0022MemUsed\u0022:383102976,\u0022SwapUsed\u0022:0,\u0022DiskUsed\u0022:3272499200,\u0022NetInTransfer\u0022:11735905231,\u0022NetOutTransfer\u0022:10959588112,\u0022NetInSpeed\u0022:69555,\u0022NetOutSpeed\u0022:65841,\u0022Uptime\u0022:20951,\u0022Load1\u0022:0,\u0022Load5\u0022:0.06,\u0022Load15\u0022:0.07,\u0022TcpConnCount\u0022:97,\u0022UdpConnCount\u0022:4,\u0022ProcessCount\u0022:101},\u0022LastActive\u0022:\u00222023-04-15T19:17:07.954571922\u002b08:00\u0022}]}').servers;
+  var statusCards = new Vue({
+    el: '#app',
+    delimiters: ['@#', '#@'],
+    data: {
+      data: initData,
+      groups: [],
+      cache: [],
+    },
+    created() {
+      this.group()
+    },
+    mounted() {
+      $('.nezha-secondary-font.info.icon').popup({
+        popup: '.ui.content.popup',
+        exclusive: true,
+      });
+    },
+    methods: {
+      toFixed2(f) {
+        return f.toFixed(2)
+      },
+      isWindowsPlatform(str) {
+        return str.includes('Windows')
+      },
+      getFontLogoClass(str) {
+        if (["almalinux",
+          "alpine",
+          "aosc",
+          "apple",
+          "archlinux",
+          "archlabs",
+          "artix",
+          "budgie",
+          "centos",
+          "coreos",
+          "debian",
+          "deepin",
+          "devuan",
+          "docker",
+          "elementary",
+          "fedora",
+          "ferris",
+          "flathub",
+          "freebsd",
+          "gentoo",
+          "gnu-guix",
+          "illumos",
+          "kali-linux",
+          "linuxmint",
+          "mageia",
+          "mandriva",
+          "manjaro",
+          "nixos",
+          "openbsd",
+          "opensuse",
+          "pop-os",
+          "raspberry-pi",
+          "redhat",
+          "rocky-linux",
+          "sabayon",
+          "slackware",
+          "snappy",
+          "solus",
+          "tux",
+          "ubuntu",
+          "void",
+          "zorin"].indexOf(str)
+          > -1) {
+            return str;
+        }
+        if (['openwrt','linux'].indexOf(str) > -1) {
+          return 'tux';
+        }
+        if (str == 'amazon') {
+          return 'redhat';
+        }
+        if (str == 'arch') {
+          return 'archlinux';
+        }
+        return '';
+      },
+      group() {
+        this.groups = groupingData(this.data, "Tag")
+      },
+      formatPercent(live, used, total) {
+        const percent = live ? (parseInt(used / total * 100) || 0) : -1
+        if (!this.cache[percent]) {
+          this.cache[percent] = {
+            class: {
+              ui: true,
+              progress: true,
+            },
+            style: {
+              'transition-duration': '300ms',
+              'min-width': 'unset',
+              width: percent + '% !important',
+            },
+            percent,
+          }
+          if (percent < 0) {
+            this.cache[percent].style['background-color'] = 'slategray'
+            this.cache[percent].class.offline = true
+          } else if (percent < 51) {
+            this.cache[percent].style['background-color'] = '#0a94f2'
+            this.cache[percent].class.fine = true
+          } else if (percent < 81) {
+            this.cache[percent].style['background-color'] = 'orange'
+            this.cache[percent].class.warning = true
+          } else {
+            this.cache[percent].style['background-color'] = 'crimson'
+            this.cache[percent].class.error = true
+          }
+        }
+        return this.cache[percent]
+      },
+      secondToDate(s) {
+        var d = Math.floor(s / 3600 / 24);
+        if (d > 0) {
+          return d + " 天"
+        }
+        var h = Math.floor(s / 3600 % 24);
+        var m = Math.floor(s / 60 % 60);
+        var s = Math.floor(s % 60);
+        return h + ":" + ("0" + m).slice(-2) + ":" + ("0" + s).slice(-2);
+      },
+      formatTimestamp(t) {
+        return new Date(t * 1000).toLocaleString()
+      },
+      formatByteSize(bs) {
+        const x = readableBytes(bs)
+        return x != "NaN undefined" ? x : '0B'
+      }
+    }
+  })
+
+  function groupingData(data, field) {
+    let map = {};
+    let dest = [];
+    data.forEach(item => {
+      if (!map[item[field]]) {
+        dest.push({
+          [field]: item[field],
+          data: [item]
+        });
+        map[item[field]] = item;
+      } else {
+        dest.forEach(dItem => {
+          if (dItem[field] == item[field]) {
+            dItem.data.push(item);
+          }
+        });
+      }
+    })
+    return dest;
+  }
+
+  let canShowError = true;
+  function connect() {
+    const wsProtocol = window.location.protocol == "https:" ? "wss" : "ws"
+    const ws = new WebSocket(wsProtocol + '://' + window.location.host + '/ws');
+    ws.onopen = function (evt) {
+      canShowError = true;
+      $.suiAlert({
+        title: '实时通道建立',
+        description: '可以实时获取最新监控数据啦',
+        type: 'success',
+        time: '2',
+        position: 'top-center',
+      });
+    }
+    ws.onmessage = function (evt) {
+      const oldServers = statusCards.servers
+      const data = JSON.parse(evt.data)
+      statusCards.servers = data.servers
+      for (let i = 0; i < statusCards.servers.length; i++) {
+        const ns = statusCards.servers[i];
+        if (!ns.Host) ns.live = false
+        else {
+          const lastActive = new Date(ns.LastActive).getTime()
+          if (data.now - lastActive > 10 * 1000) {
+            ns.live = false
+          } else {
+            ns.live = true
+          }
+        }
+      }
+      statusCards.groups = groupingData(statusCards.servers, "Tag")
+    }
+    ws.onclose = function () {
+      if (canShowError) {
+        canShowError = false;
+        $.suiAlert({
+          title: '实时通道断开',
+          description: '无法实时获取最新监控数据咯',
+          type: 'warning',
+          time: '2',
+          position: 'top-center',
+        });
+      }
+      setTimeout(function () {
+        connect()
+      }, 3000);
+    }
+    ws.onerror = function () {
+      ws.close()
+    }
+  }
+
+  connect();
+
+  $('.ui.accordion').accordion({ "exclusive": false });
+</script>

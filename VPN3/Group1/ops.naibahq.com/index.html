@@ -1,0 +1,457 @@
+
+
+<!DOCTYPE html>
+<html lang="en-US">
+
+<!-- Mirrored from ops.naibahq.com/ by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 15 Apr 2023 11:30:36 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta content="telephone=no" name="format-detection">
+<title>Nezha Monitoring</title>
+    <link rel="stylesheet" type="text/css" href="../cdn.staticfile.org/semantic-ui/2.4.1/semantic.min.css_%3b%20filename_%3dutf-8%27%27semantic.min.css">
+    <link href="../cdn.staticfile.org/font-logos/0.17/font-logos.min.css_%3b%20filename_%3dutf-8%27%27font-logos.min.css" type="text/css" rel="stylesheet" />
+    <link href="../cdn.staticfile.org/bootstrap-icons/1.10.3/font/bootstrap-icons.css_%3b%20filename_%3dutf-8%27%27bootstrap-icons.css" type="text/css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="static/semantic-ui-alerts.min.css">
+    <link rel="stylesheet" type="text/css" href="static/main74f1.css?v2022042314">
+    <link rel="shortcut icon" type="image/png" href="static/logoaf42.svg?v20210804" />
+    <link href="static/theme-angel-kanade/ktz.css" rel="stylesheet">
+</head>
+
+<body>
+    
+ <script>
+document.addEventListener("DOMContentLoaded", function(event) {
+if (!event.isTrusted) return;
+const boringbay = document.createElement("a")
+boringbay.href="https://boringbay.com/"
+boringbay.target="_blank"
+const badge = document.createElement("img")
+badge.src = "https://boringbay.com/api/badge/ops.naibahq.com"
+badge.setAttribute("height","30rem")
+boringbay.appendChild(badge)
+const footer = document.querySelector("div.footer")
+footer.classList.add("center","aligned")
+footer.appendChild(boringbay)
+});
+</script> 
+
+<div class="ui large top fixed menu nb-menu">
+    <div class="ui container">
+        <a class="item" href="index.html">
+            <img class="ui" style="height: 2rem" src="static/logoaf42.svg?v20210804">
+        </a>
+        
+        <a class="item active" href="index.html"><i class="home icon"></i>Home</a>
+        <a class="item" href="service.html"><i class="rss icon"></i>Services</a>
+        
+        <div class="right menu">
+            <div class="item">
+                
+                <a href="login.html" class="ui large positive nezha-primary-btn button"><i class="sign-in icon"></i>Log in</a>
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="ui mini confirm modal transition hidden">
+    <div class="header"></div>
+    <div class="content">
+    </div>
+    <div class="actions">
+        <div class="ui negative button">Cancel</div>
+        <button class="ui positive nezha-primary-btn right labeled icon button">Confirm<i class="checkmark icon"></i>
+        </button>
+    </div>
+</div>
+
+
+<div class="nb-container">
+  <div class="ui container">
+    <div id="app">
+      <div class="ui styled fluid accordion" v-for="group in groups">
+        <div class="active title">
+          <i class="dropdown icon"></i>
+          @#(group.Tag!==''?group.Tag:'Default')#@
+        </div>
+        <div class="active content">
+          <div class="ui four stackable status cards">
+            <div v-for="server in group.data" :id="server.ID" class="ui card">
+              <div class="content" v-if="server.Host" style="margin-top: 10px; padding-bottom: 5px">
+                <div class="header">
+                  <img v-if="server.Host.CountryCode" style="border-radius: 50%;box-shadow:-1px -1px 2px #eee, 1px 1px 2px #000;width:19px;" :src="'https://cdn.staticfile.org/flag-icon-css/6.6.5/flags/1x1/'+server.Host.CountryCode + '.svg'" alt="国家" />&nbsp;<i v-if="server.Host.Platform == &quot;darwin&quot;" class="apple icon"></i><i v-else-if="isWindowsPlatform(server.Host.Platform)" class="windows icon"></i><i v-else :class="'fl-' + getFontLogoClass(server.Host.Platform)"></i>
+                  @#server.Name + (server.live?'':'[Offline]')#@
+                  <i class="nezha-secondary-font info circle icon" style="height: 28px"></i>
+                  <div class="ui content popup" style="margin-bottom: 0">
+                    Platform: @#server.Host.Platform#@<a href="cdn-cgi/l/email-protection.html" class="__cf_email__" data-cfemail="96bbd6">[email&#160;protected]</a>#server.Host.PlatformVersion#@
+                    [<span v-if="server.Host.Virtualization">@#server.Host.Virtualization#@:</span>@#server.Host.Arch#@]<br/>
+                    CPU: @#server.Host.CPU#@<br/>
+                    Disk:
+                    @#formatByteSize(server.State.DiskUsed)#@/@#formatByteSize(server.Host.DiskTotal)#@<br/>
+                    RAM:
+                    @#formatByteSize(server.State.MemUsed)#@/@#formatByteSize(server.Host.MemTotal)#@<br/>
+                    Swap:
+                    @#formatByteSize(server.State.SwapUsed)#@/@#formatByteSize(server.Host.SwapTotal)#@<br/>
+                    Data Transfer: <i class="arrow alternate circle down outline icon"></i>@#formatByteSize(server.State.NetInTransfer)#@<i class="arrow alternate circle up outline icon"></i>@#formatByteSize(server.State.NetOutTransfer)#@<br/>
+                    Load: @# toFixed2(server.State.Load1) #@/@# toFixed2(server.State.Load5) #@/@#
+                    toFixed2(server.State.Load15) #@<br/>
+                    Processes Count: @# server.State.ProcessCount #@<br/>
+                    Connections Count: TCP @# server.State.TcpConnCount #@ / UDP @# server.State.UdpConnCount #@<br/>
+                    Boot Time: @# formatTimestamp(server.Host.BootTime) #@<br/>
+                    Last Active: @# new Date(server.LastActive).toLocaleString() #@<br/>
+                    Version: @#server.Host.Version#@<br/>
+                  </div>
+                  <div class="ui divider" style="margin-bottom: 5px"></div>
+                </div>
+                <div class="description">
+                  <div class="ui grid">
+                    <div class="three wide column">CPU</div>
+                    <div class="thirteen wide column">
+                      <div :class="formatPercent(server.live,server.State.CPU, 100).class">
+                        <div class="bar" :style="formatPercent(server.live,server.State.CPU, 100).style">
+                          <small>@#formatPercent(server.live,server.State.CPU,100).percent#@%</small>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="three wide column">RAM</div>
+                    <div class="thirteen wide column">
+                      <div :class="formatPercent(server.live,server.State.MemUsed, server.Host.MemTotal).class">
+                        <div class="bar" :style="formatPercent(server.live,server.State.MemUsed, server.Host.MemTotal).style">
+                          <small>@#parseInt(server.State?server.State.MemUsed/server.Host.MemTotal*100:0)#@%</small>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="three wide column">Swap</div>
+                    <div class="thirteen wide column">
+                      <div :class="formatPercent(server.live,server.State.SwapUsed, server.Host.SwapTotal).class">
+                        <div class="bar" :style="formatPercent(server.live,server.State.SwapUsed, server.Host.SwapTotal).style">
+                          <small>@#parseInt(server.State?server.State.SwapUsed/server.Host.SwapTotal*100:0)#@%</small>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="three wide column">Network</div>
+                    <div class="thirteen wide column">
+                      <i class="arrow alternate circle down outline icon"></i>
+                      @#formatByteSize(server.State.NetInSpeed)#@/s
+                      <i class="arrow alternate circle up outline icon"></i>
+                      @#formatByteSize(server.State.NetOutSpeed)#@/s
+                    </div>
+                    <div class="three wide column">Data Transfer</div>
+                    <div class="thirteen wide column">
+                      <i class="arrow circle down icon"></i>
+                      @#formatByteSize(server.State.NetInTransfer)#@
+                      &nbsp;
+                      <i class="arrow circle up icon"></i>
+                      @#formatByteSize(server.State.NetOutTransfer)#@
+                    </div>
+                    <div class="three wide column">Disk</div>
+                    <div class="thirteen wide column">
+                      <div :class="formatPercent(server.live,server.State.DiskUsed, server.Host.DiskTotal).class">
+                        <div class="bar" :style="formatPercent(server.live,server.State.DiskUsed, server.Host.DiskTotal).style">
+                          <small>@#parseInt(server.State?server.State.DiskUsed/server.Host.DiskTotal*100:0)#@%</small>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="three wide column">Info</div>
+                    <div class="thirteen wide column">
+                      <i class="bi bi-cpu-fill" style="font-size: 1.1rem; color: #4a86e8;"></i> @#getCoreAndGHz(server.Host.CPU)#@
+                      &nbsp;
+                      <i class="bi bi-memory" style="font-size: 1.1rem; color: #00ac0d;"></i> @#getK2Gb(server.Host.MemTotal)#@
+                      &nbsp;
+                      <i class="bi bi-hdd-rack-fill" style="font-size: 1.1rem; color: #980000"></i> @#getK2Gb(server.Host.DiskTotal)#@
+                    </div>
+                    <div class="three wide column">Uptime</div>
+                    <div class="thirteen wide column">
+                      <i class="clock icon"></i>@#secondToDate(server.State.Uptime)#@
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="content" v-else>
+                <p>@#server.Name#@</p>
+                <p>Server is offline</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="ui inverted vertical footer segment">
+    <div class="ui center aligned is-size-7 container">
+        <b>&copy; <a style="color: white;" href="index.html">Nezha Monitoring</a></b> | 
+		Powered by <a style="color: white;" href="https://github.com/naiba/nezha"><st>Nezha Monitoring&lt;v0.14.13&gt;</st></a>&nbsp;| Theme designed 
+        <small>by.<a href="https://yujie.pro/" style="color: white;" target="_blank">夜灭</a>
+        </small>
+    </div>
+</div>
+<script data-cfasync="false" src="cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="../cdn.staticfile.org/jquery/3.6.0/jquery.min.js_%3b%20filename_%3dutf-8%27%27jquery.min.js"></script>
+<script src="../cdn.staticfile.org/semantic-ui/2.4.1/semantic.min.js_%3b%20filename_%3dutf-8%27%27semantic.min.js"></script>
+<script src="static/semantic-ui-alerts.min.js"></script>
+<script src="../cdn.staticfile.org/vue/2.6.14/vue.min.js_%3b%20filename_%3dutf-8%27%27vue.min.js"></script>
+<script src="static/main7388.js?v20220930"></script>
+<script>
+    (function () {
+        updateLang({"Add":"Add","AlarmRule":"Alarm Rule","Cron":"Scheduled Tasks","Edit":"Edit","Monitor":"Services","Notification":"Notification Method","Server":"Servers"});
+    })();
+</script>
+<script src="cdn-cgi/scripts/7d0fa10a/cloudflare-static/rocket-loader.min.js" data-cf-settings="baccbcf8ecc610bc8c71a519-|49" defer></script><script defer src="https://static.cloudflareinsights.com/beacon.min.js/v2b4487d741ca48dcbadcaf954e159fc61680799950996" integrity="sha512-D/jdE0CypeVxFadTejKGTzmwyV10c1pxZk/AqjJuZbaJwGMyNHY3q/mTPWqMUnFACfCTunhZUVcd4cV78dK1pQ==" data-cf-beacon='{"rayId":"7b83db838b59bb7f","version":"2023.3.0","r":1,"b":1,"token":"91c5bb06c1294656b6918bdaeb548ae4","si":100}' crossorigin="anonymous"></script>
+</body>
+
+
+<!-- Mirrored from ops.naibahq.com/ by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 15 Apr 2023 11:31:22 GMT -->
+</html>
+
+<script>
+  const initData = JSON.parse('{\u0022now\u0022:1681558237000,\u0022servers\u0022:[{\u0022ID\u0022:19,\u0022CreatedAt\u0022:\u00220001-01-01T00:00:00Z\u0022,\u0022UpdatedAt\u0022:\u00222023-04-05T13:23:54.405555169\u002b08:00\u0022,\u0022DeletedAt\u0022:null,\u0022Name\u0022:\u0022Oracle_SJ\u0022,\u0022Tag\u0022:\u0022naiba\u0022,\u0022DisplayIndex\u0022:9999,\u0022HideForGuest\u0022:false,\u0022Host\u0022:{\u0022Platform\u0022:\u0022ubuntu\u0022,\u0022PlatformVersion\u0022:\u002222.04\u0022,\u0022CPU\u0022:[\u0022Neoverse-N1 4 Physical Core\u0022],\u0022MemTotal\u0022:25153310720,\u0022DiskTotal\u0022:291863339008,\u0022SwapTotal\u0022:0,\u0022Arch\u0022:\u0022aarch64\u0022,\u0022Virtualization\u0022:\u0022\u0022,\u0022BootTime\u0022:1681306740,\u0022CountryCode\u0022:\u0022us\u0022,\u0022Version\u0022:\u00220.14.11\u0022},\u0022State\u0022:{\u0022CPU\u0022:0.4987531176703242,\u0022MemUsed\u0022:2659049472,\u0022SwapUsed\u0022:0,\u0022DiskUsed\u0022:11844001792,\u0022NetInTransfer\u0022:2735462698,\u0022NetOutTransfer\u0022:5440656101,\u0022NetInSpeed\u0022:4688,\u0022NetOutSpeed\u0022:24543,\u0022Uptime\u0022:251496,\u0022Load1\u0022:0.27,\u0022Load5\u0022:0.1,\u0022Load15\u0022:0.06,\u0022TcpConnCount\u0022:29,\u0022UdpConnCount\u0022:3,\u0022ProcessCount\u0022:263},\u0022LastActive\u0022:\u00222023-04-15T19:30:36.184206549\u002b08:00\u0022},{\u0022ID\u0022:23,\u0022CreatedAt\u0022:\u00222023-04-05T13:18:13.474788031\u002b08:00\u0022,\u0022UpdatedAt\u0022:\u00222023-04-05T13:24:02.036683665\u002b08:00\u0022,\u0022DeletedAt\u0022:null,\u0022Name\u0022:\u0022Oracle_Edo\u0022,\u0022Tag\u0022:\u0022naiba\u0022,\u0022DisplayIndex\u0022:9998,\u0022HideForGuest\u0022:false,\u0022Host\u0022:{\u0022Platform\u0022:\u0022ubuntu\u0022,\u0022PlatformVersion\u0022:\u002222.04\u0022,\u0022CPU\u0022:[\u0022Neoverse-N1 2 Physical Core\u0022],\u0022MemTotal\u0022:2061651968,\u0022DiskTotal\u0022:48277495808,\u0022SwapTotal\u0022:0,\u0022Arch\u0022:\u0022aarch64\u0022,\u0022Virtualization\u0022:\u0022\u0022,\u0022BootTime\u0022:1680667988,\u0022CountryCode\u0022:\u0022jp\u0022,\u0022Version\u0022:\u00220.14.11\u0022},\u0022State\u0022:{\u0022CPU\u0022:0.45248868816417465,\u0022MemUsed\u0022:372514816,\u0022SwapUsed\u0022:0,\u0022DiskUsed\u0022:5976109056,\u0022NetInTransfer\u0022:27481138846,\u0022NetOutTransfer\u0022:27305771815,\u0022NetInSpeed\u0022:283,\u0022NetOutSpeed\u0022:467,\u0022Uptime\u0022:890248,\u0022Load1\u0022:0,\u0022Load5\u0022:0,\u0022Load15\u0022:0,\u0022TcpConnCount\u0022:9,\u0022UdpConnCount\u0022:3,\u0022ProcessCount\u0022:149},\u0022LastActive\u0022:\u00222023-04-15T19:30:36.233952786\u002b08:00\u0022},{\u0022ID\u0022:2,\u0022CreatedAt\u0022:\u00222021-06-26T13:06:48.144475812\u002b08:00\u0022,\u0022UpdatedAt\u0022:\u00222022-09-17T13:12:23.638560147\u002b08:00\u0022,\u0022DeletedAt\u0022:null,\u0022Name\u0022:\u0022KT_LA11\u0022,\u0022Tag\u0022:\u0022naiba\u0022,\u0022DisplayIndex\u0022:9500,\u0022HideForGuest\u0022:false,\u0022Host\u0022:{\u0022Platform\u0022:\u0022debian\u0022,\u0022PlatformVersion\u0022:\u00229.13\u0022,\u0022CPU\u0022:[\u0022Intel(R) Xeon(R) CPU E5-2697 v2 @ 2.70GHz 1 Physical Core\u0022],\u0022MemTotal\u0022:1022865408,\u0022DiskTotal\u0022:28645734400,\u0022SwapTotal\u0022:2999971840,\u0022Arch\u0022:\u0022x86_64\u0022,\u0022Virtualization\u0022:\u0022\u0022,\u0022BootTime\u0022:1680863372,\u0022CountryCode\u0022:\u0022us\u0022,\u0022Version\u0022:\u00220.14.11\u0022},\u0022State\u0022:{\u0022CPU\u0022:0,\u0022MemUsed\u0022:431910912,\u0022SwapUsed\u0022:0,\u0022DiskUsed\u0022:3773457408,\u0022NetInTransfer\u0022:1625821575,\u0022NetOutTransfer\u0022:429157446,\u0022NetInSpeed\u0022:1663,\u0022NetOutSpeed\u0022:565,\u0022Uptime\u0022:694864,\u0022Load1\u0022:0,\u0022Load5\u0022:0,\u0022Load15\u0022:0,\u0022TcpConnCount\u0022:8,\u0022UdpConnCount\u0022:0,\u0022ProcessCount\u0022:134},\u0022LastActive\u0022:\u00222023-04-15T19:30:36.332530859\u002b08:00\u0022},{\u0022ID\u0022:9,\u0022CreatedAt\u0022:\u00220001-01-01T00:00:00Z\u0022,\u0022UpdatedAt\u0022:\u00222022-11-28T15:50:37.669792169\u002b08:00\u0022,\u0022DeletedAt\u0022:null,\u0022Name\u0022:\u0022KS_Windows\u0022,\u0022Tag\u0022:\u0022F.4.\u0022,\u0022DisplayIndex\u0022:9000,\u0022HideForGuest\u0022:false,\u0022Host\u0022:{\u0022Platform\u0022:\u0022Microsoft Windows 10 Pro\u0022,\u0022PlatformVersion\u0022:\u002210.0.19042.1586 Build 19042.1586\u0022,\u0022CPU\u0022:[\u0022Intel(R) Core(TM) i5-2400 CPU @ 3.10GHz 1 Physical Core\u0022],\u0022MemTotal\u0022:17082773504,\u0022DiskTotal\u0022:1999789379584,\u0022SwapTotal\u0022:19632910336,\u0022Arch\u0022:\u0022x86_64\u0022,\u0022Virtualization\u0022:\u0022\u0022,\u0022BootTime\u0022:1667441657,\u0022CountryCode\u0022:\u0022fr\u0022,\u0022Version\u0022:\u00220.14.11\u0022},\u0022State\u0022:{\u0022CPU\u0022:6,\u0022MemUsed\u0022:6692544512,\u0022SwapUsed\u0022:7904342016,\u0022DiskUsed\u0022:230551764992,\u0022NetInTransfer\u0022:50921604028,\u0022NetOutTransfer\u0022:16443378677,\u0022NetInSpeed\u0022:5363,\u0022NetOutSpeed\u0022:2094,\u0022Uptime\u0022:14116580,\u0022Load1\u0022:0.01784657953522607,\u0022Load5\u0022:0.018475188083715396,\u0022Load15\u0022:0.02457797147406299,\u0022TcpConnCount\u0022:78,\u0022UdpConnCount\u0022:26,\u0022ProcessCount\u0022:173},\u0022LastActive\u0022:\u00222023-04-15T19:30:36.45341859\u002b08:00\u0022},{\u0022ID\u0022:4,\u0022CreatedAt\u0022:\u00220001-01-01T00:00:00Z\u0022,\u0022UpdatedAt\u0022:\u00222023-04-05T13:19:11.352649604\u002b08:00\u0022,\u0022DeletedAt\u0022:null,\u0022Name\u0022:\u0022RU_Moscow\u0022,\u0022Tag\u0022:\u0022naiba\u0022,\u0022DisplayIndex\u0022:0,\u0022HideForGuest\u0022:false,\u0022Host\u0022:{\u0022Platform\u0022:\u0022debian\u0022,\u0022PlatformVersion\u0022:\u002210.11\u0022,\u0022CPU\u0022:[\u0022Intel(R) Xeon(R) CPU E5-2658 v4 @ 2.30GHz 1 Virtual Core\u0022],\u0022MemTotal\u0022:427114496,\u0022DiskTotal\u0022:10433609728,\u0022SwapTotal\u0022:2147479552,\u0022Arch\u0022:\u0022x86_64\u0022,\u0022Virtualization\u0022:\u0022hyperv\u0022,\u0022BootTime\u0022:1677281520,\u0022CountryCode\u0022:\u0022ru\u0022,\u0022Version\u0022:\u00220.14.11\u0022},\u0022State\u0022:{\u0022CPU\u0022:0,\u0022MemUsed\u0022:214110208,\u0022SwapUsed\u0022:35127296,\u0022DiskUsed\u0022:4553232384,\u0022NetInTransfer\u0022:63858702259,\u0022NetOutTransfer\u0022:66480613270,\u0022NetInSpeed\u0022:409,\u0022NetOutSpeed\u0022:525,\u0022Uptime\u0022:4276716,\u0022Load1\u0022:0,\u0022Load5\u0022:0.01,\u0022Load15\u0022:0,\u0022TcpConnCount\u0022:4,\u0022UdpConnCount\u0022:0,\u0022ProcessCount\u0022:69},\u0022LastActive\u0022:\u00222023-04-15T19:30:36.430891453\u002b08:00\u0022},{\u0022ID\u0022:10,\u0022CreatedAt\u0022:\u00220001-01-01T00:00:00Z\u0022,\u0022UpdatedAt\u0022:\u00222021-09-23T19:02:00.716818167\u002b08:00\u0022,\u0022DeletedAt\u0022:null,\u0022Name\u0022:\u0022SH_Router\u0022,\u0022Tag\u0022:\u0022F.4.\u0022,\u0022DisplayIndex\u0022:0,\u0022HideForGuest\u0022:false,\u0022Host\u0022:{\u0022Platform\u0022:\u0022debian\u0022,\u0022PlatformVersion\u0022:\u002210.8\u0022,\u0022CPU\u0022:[\u0022Intel(R) Celeron(R) CPU 3865U @ 1.80GHz 2 Virtual Core\u0022],\u0022MemTotal\u0022:8267685888,\u0022DiskTotal\u0022:31044079616,\u0022SwapTotal\u0022:7516188672,\u0022Arch\u0022:\u0022x86_64\u0022,\u0022Virtualization\u0022:\u0022kvm\u0022,\u0022BootTime\u0022:1673503221,\u0022CountryCode\u0022:\u0022cn\u0022,\u0022Version\u0022:\u00220.14.11\u0022},\u0022State\u0022:{\u0022CPU\u0022:79.47598251215014,\u0022MemUsed\u0022:6342873088,\u0022SwapUsed\u0022:162267136,\u0022DiskUsed\u0022:2316709888,\u0022NetInTransfer\u0022:69900964061540,\u0022NetOutTransfer\u0022:69725287387314,\u0022NetInSpeed\u0022:21415979,\u0022NetOutSpeed\u0022:21390906,\u0022Uptime\u0022:7979758,\u0022Load1\u0022:2.32,\u0022Load5\u0022:2.14,\u0022Load15\u0022:2.01,\u0022TcpConnCount\u0022:10,\u0022UdpConnCount\u0022:2,\u0022ProcessCount\u0022:164},\u0022LastActive\u0022:\u00222023-04-14T22:36:19.981146305\u002b08:00\u0022},{\u0022ID\u0022:14,\u0022CreatedAt\u0022:\u00220001-01-01T00:00:00Z\u0022,\u0022UpdatedAt\u0022:\u00222023-04-06T22:08:29.985454856\u002b08:00\u0022,\u0022DeletedAt\u0022:null,\u0022Name\u0022:\u0022RPI4_Router\u0022,\u0022Tag\u0022:\u0022naiba\u0022,\u0022DisplayIndex\u0022:0,\u0022HideForGuest\u0022:false,\u0022Host\u0022:{\u0022Platform\u0022:\u0022openwrt\u0022,\u0022PlatformVersion\u0022:\u002222.03.3\u0022,\u0022CPU\u0022:[\u0022Cortex-A72 4 Physical Core\u0022],\u0022MemTotal\u0022:1945849856,\u0022DiskTotal\u0022:1014562816,\u0022SwapTotal\u0022:648015872,\u0022Arch\u0022:\u0022aarch64\u0022,\u0022Virtualization\u0022:\u0022\u0022,\u0022BootTime\u0022:1681388945,\u0022CountryCode\u0022:\u0022cn\u0022,\u0022Version\u0022:\u00220.14.11\u0022},\u0022State\u0022:{\u0022CPU\u0022:0.7648183563555518,\u0022MemUsed\u0022:303910912,\u0022SwapUsed\u0022:0,\u0022DiskUsed\u0022:293355520,\u0022NetInTransfer\u0022:8318711292,\u0022NetOutTransfer\u0022:7758463797,\u0022NetInSpeed\u0022:585,\u0022NetOutSpeed\u0022:5877,\u0022Uptime\u0022:169291,\u0022Load1\u0022:0,\u0022Load5\u0022:0,\u0022Load15\u0022:0,\u0022TcpConnCount\u0022:0,\u0022UdpConnCount\u0022:0,\u0022ProcessCount\u0022:0},\u0022LastActive\u0022:\u00222023-04-15T19:30:36.227450181\u002b08:00\u0022},{\u0022ID\u0022:16,\u0022CreatedAt\u0022:\u00220001-01-01T00:00:00Z\u0022,\u0022UpdatedAt\u0022:\u00222023-04-06T22:08:15.468065848\u002b08:00\u0022,\u0022DeletedAt\u0022:null,\u0022Name\u0022:\u0022GameFi_Prod\u0022,\u0022Tag\u0022:\u0022Playground\u0022,\u0022DisplayIndex\u0022:0,\u0022HideForGuest\u0022:false,\u0022Host\u0022:{\u0022Platform\u0022:\u0022amazon\u0022,\u0022PlatformVersion\u0022:\u00222\u0022,\u0022CPU\u0022:[\u0022Intel(R) Xeon(R) CPU E5-2686 v4 @ 2.30GHz 1 Virtual Core\u0022],\u0022MemTotal\u0022:2087239680,\u0022DiskTotal\u0022:25757200384,\u0022SwapTotal\u0022:0,\u0022Arch\u0022:\u0022x86_64\u0022,\u0022Virtualization\u0022:\u0022xen\u0022,\u0022BootTime\u0022:1672633875,\u0022CountryCode\u0022:\u0022kr\u0022,\u0022Version\u0022:\u00220.14.11\u0022},\u0022State\u0022:{\u0022CPU\u0022:0,\u0022MemUsed\u0022:502116352,\u0022SwapUsed\u0022:0,\u0022DiskUsed\u0022:25757179904,\u0022NetInTransfer\u0022:113976425676,\u0022NetOutTransfer\u0022:86174941124,\u0022NetInSpeed\u0022:120,\u0022NetOutSpeed\u0022:227,\u0022Uptime\u0022:8924361,\u0022Load1\u0022:0,\u0022Load5\u0022:0,\u0022Load15\u0022:0,\u0022TcpConnCount\u0022:57,\u0022UdpConnCount\u0022:4,\u0022ProcessCount\u0022:90},\u0022LastActive\u0022:\u00222023-04-15T19:30:36.128787347\u002b08:00\u0022},{\u0022ID\u0022:17,\u0022CreatedAt\u0022:\u00222022-02-16T13:09:33.381558594\u002b08:00\u0022,\u0022UpdatedAt\u0022:\u00222022-09-17T13:12:23.638560147\u002b08:00\u0022,\u0022DeletedAt\u0022:null,\u0022Name\u0022:\u0022BWG_GIA\u0022,\u0022Tag\u0022:\u0022naiba\u0022,\u0022DisplayIndex\u0022:0,\u0022HideForGuest\u0022:false,\u0022Host\u0022:{\u0022Platform\u0022:\u0022ubuntu\u0022,\u0022PlatformVersion\u0022:\u002220.04\u0022,\u0022CPU\u0022:[\u0022QEMU Virtual CPU version (cpu64-rhel6) 2 Virtual Core\u0022],\u0022MemTotal\u0022:1039245312,\u0022DiskTotal\u0022:21023662080,\u0022SwapTotal\u0022:272625664,\u0022Arch\u0022:\u0022x86_64\u0022,\u0022Virtualization\u0022:\u0022kvm\u0022,\u0022BootTime\u0022:1680365846,\u0022CountryCode\u0022:\u0022us\u0022,\u0022Version\u0022:\u00220.14.11\u0022},\u0022State\u0022:{\u0022CPU\u0022:0.9900990108139619,\u0022MemUsed\u0022:895234048,\u0022SwapUsed\u0022:272625664,\u0022DiskUsed\u0022:7700938752,\u0022NetInTransfer\u0022:5513267900,\u0022NetOutTransfer\u0022:6052765735,\u0022NetInSpeed\u0022:349,\u0022NetOutSpeed\u0022:527,\u0022Uptime\u0022:1192390,\u0022Load1\u0022:0,\u0022Load5\u0022:0,\u0022Load15\u0022:0,\u0022TcpConnCount\u0022:9,\u0022UdpConnCount\u0022:4,\u0022ProcessCount\u0022:152},\u0022LastActive\u0022:\u00222023-04-15T19:30:36.631844603\u002b08:00\u0022},{\u0022ID\u0022:20,\u0022CreatedAt\u0022:\u00222023-01-13T21:51:46.836728451\u002b08:00\u0022,\u0022UpdatedAt\u0022:\u00222023-04-06T22:07:52.570807587\u002b08:00\u0022,\u0022DeletedAt\u0022:null,\u0022Name\u0022:\u0022ThePlan_1\u0022,\u0022Tag\u0022:\u0022F.4.\u0022,\u0022DisplayIndex\u0022:0,\u0022HideForGuest\u0022:false,\u0022Host\u0022:{\u0022Platform\u0022:\u0022\u0022,\u0022PlatformVersion\u0022:\u0022\u0022,\u0022CPU\u0022:null,\u0022MemTotal\u0022:0,\u0022DiskTotal\u0022:0,\u0022SwapTotal\u0022:0,\u0022Arch\u0022:\u0022\u0022,\u0022Virtualization\u0022:\u0022\u0022,\u0022BootTime\u0022:0,\u0022CountryCode\u0022:\u0022\u0022,\u0022Version\u0022:\u0022\u0022},\u0022State\u0022:{\u0022CPU\u0022:0,\u0022MemUsed\u0022:0,\u0022SwapUsed\u0022:0,\u0022DiskUsed\u0022:0,\u0022NetInTransfer\u0022:0,\u0022NetOutTransfer\u0022:0,\u0022NetInSpeed\u0022:0,\u0022NetOutSpeed\u0022:0,\u0022Uptime\u0022:0,\u0022Load1\u0022:0,\u0022Load5\u0022:0,\u0022Load15\u0022:0,\u0022TcpConnCount\u0022:0,\u0022UdpConnCount\u0022:0,\u0022ProcessCount\u0022:0},\u0022LastActive\u0022:\u00220001-01-01T00:00:00Z\u0022},{\u0022ID\u0022:21,\u0022CreatedAt\u0022:\u00222023-01-13T21:52:23.78860652\u002b08:00\u0022,\u0022UpdatedAt\u0022:\u00222023-04-06T22:07:58.978638253\u002b08:00\u0022,\u0022DeletedAt\u0022:null,\u0022Name\u0022:\u0022ThePlan_2\u0022,\u0022Tag\u0022:\u0022naiba\u0022,\u0022DisplayIndex\u0022:0,\u0022HideForGuest\u0022:false,\u0022Host\u0022:{\u0022Platform\u0022:\u0022centos\u0022,\u0022PlatformVersion\u0022:\u00227.3.1611\u0022,\u0022CPU\u0022:[\u0022QEMU Virtual CPU version (cpu64-rhel6) 2 Virtual Core\u0022],\u0022MemTotal\u0022:2113642496,\u0022DiskTotal\u0022:42193551360,\u0022SwapTotal\u0022:1073737728,\u0022Arch\u0022:\u0022x86_64\u0022,\u0022Virtualization\u0022:\u0022kvm\u0022,\u0022BootTime\u0022:1678087737,\u0022CountryCode\u0022:\u0022jp\u0022,\u0022Version\u0022:\u00220.14.11\u0022},\u0022State\u0022:{\u0022CPU\u0022:0,\u0022MemUsed\u0022:539865088,\u0022SwapUsed\u0022:0,\u0022DiskUsed\u0022:5358645248,\u0022NetInTransfer\u0022:135065616687,\u0022NetOutTransfer\u0022:137072897375,\u0022NetInSpeed\u0022:283,\u0022NetOutSpeed\u0022:469,\u0022Uptime\u0022:3470499,\u0022Load1\u0022:0,\u0022Load5\u0022:0,\u0022Load15\u0022:0,\u0022TcpConnCount\u0022:5,\u0022UdpConnCount\u0022:3,\u0022ProcessCount\u0022:113},\u0022LastActive\u0022:\u00222023-04-15T19:30:36.766673863\u002b08:00\u0022},{\u0022ID\u0022:22,\u0022CreatedAt\u0022:\u00222023-03-12T16:06:24.379673251\u002b08:00\u0022,\u0022UpdatedAt\u0022:\u00222023-04-06T22:07:44.528797246\u002b08:00\u0022,\u0022DeletedAt\u0022:null,\u0022Name\u0022:\u0022RPI2_Router\u0022,\u0022Tag\u0022:\u0022naiba\u0022,\u0022DisplayIndex\u0022:0,\u0022HideForGuest\u0022:false,\u0022Host\u0022:{\u0022Platform\u0022:\u0022openwrt\u0022,\u0022PlatformVersion\u0022:\u002222.03.3\u0022,\u0022CPU\u0022:[\u0022Cortex-A7 4 Physical Core\u0022],\u0022MemTotal\u0022:972546048,\u0022DiskTotal\u0022:1018036224,\u0022SwapTotal\u0022:324005888,\u0022Arch\u0022:\u0022armv7l\u0022,\u0022Virtualization\u0022:\u0022\u0022,\u0022BootTime\u0022:1681453892,\u0022CountryCode\u0022:\u0022cn\u0022,\u0022Version\u0022:\u00220.14.11\u0022},\u0022State\u0022:{\u0022CPU\u0022:0.20661157043926262,\u0022MemUsed\u0022:128286720,\u0022SwapUsed\u0022:0,\u0022DiskUsed\u0022:201076736,\u0022NetInTransfer\u0022:34213625,\u0022NetOutTransfer\u0022:85386699,\u0022NetInSpeed\u0022:120,\u0022NetOutSpeed\u0022:254,\u0022Uptime\u0022:104344,\u0022Load1\u0022:0,\u0022Load5\u0022:0,\u0022Load15\u0022:0,\u0022TcpConnCount\u0022:0,\u0022UdpConnCount\u0022:0,\u0022ProcessCount\u0022:0},\u0022LastActive\u0022:\u00222023-04-15T19:30:36.114022096\u002b08:00\u0022},{\u0022ID\u0022:24,\u0022CreatedAt\u0022:\u00222023-04-07T22:26:18.945030061\u002b08:00\u0022,\u0022UpdatedAt\u0022:\u00222023-04-07T22:26:18.945030061\u002b08:00\u0022,\u0022DeletedAt\u0022:null,\u0022Name\u0022:\u0022DeFi_Prod\u0022,\u0022Tag\u0022:\u0022Playground\u0022,\u0022DisplayIndex\u0022:0,\u0022HideForGuest\u0022:false,\u0022Host\u0022:{\u0022Platform\u0022:\u0022ubuntu\u0022,\u0022PlatformVersion\u0022:\u002218.04\u0022,\u0022CPU\u0022:[\u0022Intel(R) Xeon(R) Gold 6130 CPU @ 2.10GHz 4 Physical Core\u0022],\u0022MemTotal\u0022:8363859968,\u0022DiskTotal\u0022:161115340800,\u0022SwapTotal\u0022:0,\u0022Arch\u0022:\u0022x86_64\u0022,\u0022Virtualization\u0022:\u0022\u0022,\u0022BootTime\u0022:1680834963,\u0022CountryCode\u0022:\u0022us\u0022,\u0022Version\u0022:\u00220.14.11\u0022},\u0022State\u0022:{\u0022CPU\u0022:8.353221959374702,\u0022MemUsed\u0022:1249796096,\u0022SwapUsed\u0022:0,\u0022DiskUsed\u0022:20920188928,\u0022NetInTransfer\u0022:44677151040,\u0022NetOutTransfer\u0022:9917548810,\u0022NetInSpeed\u0022:7075,\u0022NetOutSpeed\u0022:5158,\u0022Uptime\u0022:723273,\u0022Load1\u0022:0,\u0022Load5\u0022:0.02,\u0022Load15\u0022:0,\u0022TcpConnCount\u0022:12,\u0022UdpConnCount\u0022:2,\u0022ProcessCount\u0022:154},\u0022LastActive\u0022:\u00222023-04-15T19:30:36.629097961\u002b08:00\u0022}]}').servers;
+  var statusCards = new Vue({
+    el: '#app',
+    delimiters: ['@#', '#@'],
+    data: {
+      data: initData,
+      groups: [],
+      cache: [],
+    },
+    created() {
+      this.group()
+    },
+    mounted() {
+      $('.nezha-secondary-font.info.icon').popup({
+        popup: '.ui.content.popup',
+        exclusive: true,
+      });
+    },
+    methods: {
+      toFixed2(f) {
+        return f.toFixed(2)
+      },
+      isWindowsPlatform(str) {
+        return str.includes('Windows')
+      },
+      getFontLogoClass(str) {
+        if (["almalinux",
+          "alpine",
+          "aosc",
+          "apple",
+          "archlinux",
+          "archlabs",
+          "artix",
+          "budgie",
+          "centos",
+          "coreos",
+          "debian",
+          "deepin",
+          "devuan",
+          "docker",
+          "elementary",
+          "fedora",
+          "ferris",
+          "flathub",
+          "freebsd",
+          "gentoo",
+          "gnu-guix",
+          "illumos",
+          "kali-linux",
+          "linuxmint",
+          "mageia",
+          "mandriva",
+          "manjaro",
+          "nixos",
+          "openbsd",
+          "opensuse",
+          "pop-os",
+          "raspberry-pi",
+          "redhat",
+          "rocky-linux",
+          "sabayon",
+          "slackware",
+          "snappy",
+          "solus",
+          "tux",
+          "ubuntu",
+          "void",
+          "zorin"].indexOf(str)
+          > -1) {
+            return str;
+        }
+        if (['openwrt','linux'].indexOf(str) > -1) {
+          return 'tux';
+        }
+        if (str == 'amazon') {
+          return 'redhat';
+        }
+        if (str == 'arch') {
+          return 'archlinux';
+        }
+        return '';
+      },
+      group() {
+        this.groups = groupingData(this.data, "Tag")
+      },
+      formatPercent(live, used, total) {
+        const percent = live ? (parseInt(used / total * 100) || 0) : -1
+        if (!this.cache[percent]) {
+          this.cache[percent] = {
+            class: {
+              ui: true,
+              progress: true,
+            },
+            style: {
+              'transition-duration': '300ms',
+              'min-width': 'unset',
+              width: percent + '% !important',
+            },
+            percent,
+          }
+          if (percent < 0) {
+            this.cache[percent].style['background-color'] = 'slategray'
+            this.cache[percent].class.offline = true
+          } else if (percent < 51) {
+            this.cache[percent].style['background-color'] = '#0a94f2'
+            this.cache[percent].class.fine = true
+          } else if (percent < 81) {
+            this.cache[percent].style['background-color'] = 'orange'
+            this.cache[percent].class.warning = true
+          } else {
+            this.cache[percent].style['background-color'] = 'crimson'
+            this.cache[percent].class.error = true
+          }
+        }
+        return this.cache[percent]
+      },
+      secondToDate(s) {
+        var d = Math.floor(s / 3600 / 24);
+        if (d > 0) {
+          return d + " Days"
+        }
+        var h = Math.floor(s / 3600 % 24);
+        var m = Math.floor(s / 60 % 60);
+        var s = Math.floor(s % 60);
+        return h + ":" + ("0" + m).slice(-2) + ":" + ("0" + s).slice(-2);
+      },
+      formatTimestamp(t) {
+        return new Date(t * 1000).toLocaleString()
+      },
+      formatByteSize(bs) {
+        const x = readableBytes(bs)
+        return x != "NaN undefined" ? x : '0B'
+      },
+      getCoreAndGHz(str){
+        if((str || []).hasOwnProperty(0) === false){
+            return '';
+        }
+        str = str[0];
+	    let GHz = str.match(/(\d|\.)+GHz/g);
+	    let Core = str.match(/(\d|\.)+ Physical/g);
+	    GHz = GHz!==null?GHz.hasOwnProperty(0)===false?'':GHz[0]:''
+	    Core = Core!==null?Core.hasOwnProperty(0)===false?'?':Core[0]:'?'
+	    if(Core === '?'){
+	        let Core = str.match(/(\d|\.)+ Virtual/g);
+	        Core = Core!==null?Core.hasOwnProperty(0)===false?'?':Core[0]:'?'
+	        return Core.replace('Virtual','Core')
+	    }
+	    return Core.replace('Physical','Core');
+	   
+      },
+      getK2Gb(bs){
+          bs = bs / 1024 /1024 /1024;
+          return Math.ceil(bs.toFixed(2)) + 'GB';
+      },
+      listTipsMouseenter(obj,strs,tipsNum=1){
+          this.layerIndex = layer.tips(strs, '#'+obj,{tips: [tipsNum, 'rgb(0 0 0 / 85%)'],time:0});
+          $('#'+obj).attr('layerIndex',this.layerIndex)
+      },
+      listTipsMouseleave(obj){
+          layer.close(this.layerIndex)
+      }
+    }
+  })
+
+  function groupingData(data, field) {
+    if (!data) {
+      return
+    }
+    let map = {};
+    let dest = [];
+    data.forEach(item => {
+      if (!map[item[field]]) {
+        dest.push({
+          [field]: item[field],
+          data: [item]
+        });
+        map[item[field]] = item;
+      } else {
+        dest.forEach(dItem => {
+          if (dItem[field] == item[field]) {
+            dItem.data.push(item);
+          }
+        });
+      }
+    })
+    return dest;
+  }
+
+  let canShowError = true;
+  function connect() {
+    const wsProtocol = window.location.protocol == "https:" ? "wss" : "ws"
+    const ws = new WebSocket(wsProtocol + '://' + window.location.host + '/ws');
+    ws.onopen = function (evt) {
+      canShowError = true;
+      $.suiAlert({
+        title: 'Real-time Channel Established',
+        description: 'You can get the latest monitoring data in real-time!',
+        type: 'success',
+        time: '2',
+        position: 'top-center',
+      });
+    }
+    ws.onmessage = function (evt) {
+      const oldServers = statusCards.servers
+      const data = JSON.parse(evt.data)
+      statusCards.servers = data.servers
+      if (!statusCards.servers) {
+        return
+      }
+      for (let i = 0; i < statusCards.servers.length; i++) {
+        const ns = statusCards.servers[i];
+        if (!ns.Host) ns.live = false
+        else {
+          const lastActive = new Date(ns.LastActive).getTime()
+          if (data.now - lastActive > 10 * 1000) {
+            ns.live = false
+          } else {
+            ns.live = true
+          }
+        }
+      }
+      statusCards.groups = groupingData(statusCards.servers, "Tag")
+    }
+    ws.onclose = function () {
+      if (canShowError) {
+        canShowError = false;
+        $.suiAlert({
+          title: 'Real-time Channel Disconnect',
+          description: 'Unable to get the latest monitoring data in real-time!',
+          type: 'warning',
+          time: '2',
+          position: 'top-center',
+        });
+      }
+      setTimeout(function () {
+        connect()
+      }, 3000);
+    }
+    ws.onerror = function () {
+      ws.close()
+    }
+  }
+
+  connect();
+
+  $('.ui.accordion').accordion({ "exclusive": false });
+</script>

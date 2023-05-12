@@ -1,0 +1,826 @@
+
+
+<!DOCTYPE html>
+<html lang="en-US">
+
+<!-- Mirrored from ops.naibahq.com/service by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 15 Apr 2023 11:31:35 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta content="telephone=no" name="format-detection">
+<title>Services Status - Nezha Monitoring</title>
+    <link rel="stylesheet" type="text/css" href="../cdn.staticfile.org/semantic-ui/2.4.1/semantic.min.css_%3b%20filename_%3dutf-8%27%27semantic.min.css">
+    <link href="../cdn.staticfile.org/font-logos/0.17/font-logos.min.css_%3b%20filename_%3dutf-8%27%27font-logos.min.css" type="text/css" rel="stylesheet" />
+    <link href="../cdn.staticfile.org/bootstrap-icons/1.10.3/font/bootstrap-icons.css_%3b%20filename_%3dutf-8%27%27bootstrap-icons.css" type="text/css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="static/semantic-ui-alerts.min.css">
+    <link rel="stylesheet" type="text/css" href="static/main74f1.css?v2022042314">
+    <link rel="shortcut icon" type="image/png" href="static/logoaf42.svg?v20210804" />
+    <link href="static/theme-angel-kanade/ktz.css" rel="stylesheet">
+</head>
+
+<body>
+    
+
+<script>
+document.addEventListener("DOMContentLoaded", function(event) {
+if (!event.isTrusted) return;
+const boringbay = document.createElement("a")
+boringbay.href="https://boringbay.com/"
+boringbay.target="_blank"
+const badge = document.createElement("img")
+badge.src = "https://boringbay.com/api/badge/ops.naibahq.com"
+badge.setAttribute("height","30rem")
+boringbay.appendChild(badge)
+const footer = document.querySelector("div.footer")
+footer.classList.add("center","aligned")
+footer.appendChild(boringbay)
+});
+</script>
+
+
+<div class="ui large top fixed menu nb-menu">
+    <div class="ui container">
+        <a class="item" href="index.html">
+            <img class="ui" style="height: 2rem" src="static/logoaf42.svg?v20210804">
+        </a>
+        
+        <a class="item" href="index.html"><i class="home icon"></i>Home</a>
+        <a class="item active" href="service.html"><i class="rss icon"></i>Services</a>
+        
+        <div class="right menu">
+            <div class="item">
+                
+                <a href="login.html" class="ui large positive nezha-primary-btn button"><i class="sign-in icon"></i>Log in</a>
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="ui mini confirm modal transition hidden">
+    <div class="header"></div>
+    <div class="content">
+    </div>
+    <div class="actions">
+        <div class="ui negative button">Cancel</div>
+        <button class="ui positive nezha-primary-btn right labeled icon button">Confirm<i class="checkmark icon"></i>
+        </button>
+    </div>
+</div>
+
+
+<div class="nb-container">
+    <div class="ui container">
+        <div class="service-status">
+            <table class="ui celled table">
+                <thead>
+                    <tr>
+                        <th class="ui center aligned">Name</th>
+                        <th class="ui center aligned">Last 30 days availability</th>
+                        <th class="ui center aligned">Details</th>
+                        <th class="ui center aligned">Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                    <tr>
+                        <td class="ui center aligned">Juli DPS</td>
+                        <td class="ui center aligned">
+                            80.928%
+                        </td>
+                        <td class="ui center aligned">
+                            <div class="ui icon button good" data-tooltip="03/17，Availability:100.000%，Average delay:24.551ms">
+                            </div> 
+                            <div class="ui icon button good" data-tooltip="03/18，Availability:100.000%，Average delay:6.324ms">
+                            </div> 
+                            <div class="ui icon button good" data-tooltip="03/19，Availability:100.000%，Average delay:7.030ms">
+                            </div> 
+                            <div class="ui icon button good" data-tooltip="03/20，Availability:100.000%，Average delay:30.416ms">
+                            </div> 
+                            <div class="ui icon button good" data-tooltip="03/21，Availability:100.000%，Average delay:4.683ms">
+                            </div> 
+                            <div class="ui icon button good" data-tooltip="03/22，Availability:100.000%，Average delay:18.735ms">
+                            </div> 
+                            <div class="ui icon button good" data-tooltip="03/23，Availability:100.000%，Average delay:5.783ms">
+                            </div> 
+                            <div class="ui icon button good" data-tooltip="03/24，Availability:100.000%，Average delay:199.318ms">
+                            </div> 
+                            <div class="ui icon button good" data-tooltip="03/25，Availability:100.000%，Average delay:12.117ms">
+                            </div> 
+                            <div class="ui icon button good" data-tooltip="03/26，Availability:100.000%，Average delay:4.135ms">
+                            </div> 
+                            <div class="ui icon button good" data-tooltip="03/27，Availability:100.000%，Average delay:15.592ms">
+                            </div> 
+                            <div class="ui icon button good" data-tooltip="03/28，Availability:100.000%，Average delay:4.811ms">
+                            </div> 
+                            <div class="ui icon button good" data-tooltip="03/29，Availability:100.000%，Average delay:21.581ms">
+                            </div> 
+                            <div class="ui icon button good" data-tooltip="03/30，Availability:100.000%，Average delay:7.636ms">
+                            </div> 
+                            <div class="ui icon button good" data-tooltip="03/31，Availability:100.000%，Average delay:10.672ms">
+                            </div> 
+                            <div class="ui icon button " data-tooltip="04/01，Availability:0.000%，Average delay:0.000ms">
+                            </div> 
+                            <div class="ui icon button danger" data-tooltip="04/02，Availability:33.333%，Average delay:38.733ms">
+                            </div> 
+                            <div class="ui icon button danger" data-tooltip="04/03，Availability:0.000%，Average delay:0.000ms">
+                            </div> 
+                            <div class="ui icon button danger" data-tooltip="04/04，Availability:0.000%，Average delay:0.000ms">
+                            </div> 
+                            <div class="ui icon button danger" data-tooltip="04/05，Availability:0.000%，Average delay:0.000ms">
+                            </div> 
+                            <div class="ui icon button danger" data-tooltip="04/06，Availability:0.000%，Average delay:0.000ms">
+                            </div> 
+                            <div class="ui icon button danger" data-tooltip="04/07，Availability:0.000%，Average delay:0.000ms">
+                            </div> 
+                            <div class="ui icon button warning" data-tooltip="04/08，Availability:85.000%，Average delay:17.813ms">
+                            </div> 
+                            <div class="ui icon button " data-tooltip="04/09，Availability:0.000%，Average delay:0.000ms">
+                            </div> 
+                            <div class="ui icon button good" data-tooltip="04/10，Availability:100.000%，Average delay:35.264ms">
+                            </div> 
+                            <div class="ui icon button good" data-tooltip="04/11，Availability:100.000%，Average delay:8.022ms">
+                            </div> 
+                            <div class="ui icon button good" data-tooltip="04/12，Availability:100.000%，Average delay:370.220ms">
+                            </div> 
+                            <div class="ui icon button good" data-tooltip="04/13，Availability:100.000%，Average delay:385.418ms">
+                            </div> 
+                            <div class="ui icon button good" data-tooltip="04/14，Availability:100.000%，Average delay:454.479ms">
+                            </div> 
+                            <div class="ui icon button good" data-tooltip="04/15，Availability:100.000%，Average delay:436.571ms">
+                            </div> 
+                        </td>
+                        <td class="ui center aligned delay-today">
+                            <i class="delay-today good"></i>
+                            Good
+                        </td>
+                    </tr> 
+                    <tr>
+                        <td class="ui center aligned">KT-SSL</td>
+                        <td class="ui center aligned">
+                            0.000%
+                        </td>
+                        <td class="ui center aligned">
+                            <div class="ui icon button danger" data-tooltip="03/17，Availability:0.000%，Average delay:0.000ms">
+                            </div> 
+                            <div class="ui icon button danger" data-tooltip="03/18，Availability:0.000%，Average delay:0.000ms">
+                            </div> 
+                            <div class="ui icon button danger" data-tooltip="03/19，Availability:0.000%，Average delay:0.000ms">
+                            </div> 
+                            <div class="ui icon button danger" data-tooltip="03/20，Availability:0.000%，Average delay:0.000ms">
+                            </div> 
+                            <div class="ui icon button danger" data-tooltip="03/21，Availability:0.000%，Average delay:0.000ms">
+                            </div> 
+                            <div class="ui icon button danger" data-tooltip="03/22，Availability:0.000%，Average delay:0.000ms">
+                            </div> 
+                            <div class="ui icon button danger" data-tooltip="03/23，Availability:0.000%，Average delay:0.000ms">
+                            </div> 
+                            <div class="ui icon button danger" data-tooltip="03/24，Availability:0.000%，Average delay:0.000ms">
+                            </div> 
+                            <div class="ui icon button danger" data-tooltip="03/25，Availability:0.000%，Average delay:0.000ms">
+                            </div> 
+                            <div class="ui icon button danger" data-tooltip="03/26，Availability:0.000%，Average delay:0.000ms">
+                            </div> 
+                            <div class="ui icon button danger" data-tooltip="03/27，Availability:0.000%，Average delay:0.000ms">
+                            </div> 
+                            <div class="ui icon button danger" data-tooltip="03/28，Availability:0.000%，Average delay:0.000ms">
+                            </div> 
+                            <div class="ui icon button danger" data-tooltip="03/29，Availability:0.000%，Average delay:0.000ms">
+                            </div> 
+                            <div class="ui icon button danger" data-tooltip="03/30，Availability:0.000%，Average delay:0.000ms">
+                            </div> 
+                            <div class="ui icon button danger" data-tooltip="03/31，Availability:0.000%，Average delay:0.000ms">
+                            </div> 
+                            <div class="ui icon button danger" data-tooltip="04/01，Availability:0.000%，Average delay:0.000ms">
+                            </div> 
+                            <div class="ui icon button danger" data-tooltip="04/02，Availability:0.000%，Average delay:0.000ms">
+                            </div> 
+                            <div class="ui icon button danger" data-tooltip="04/03，Availability:0.000%，Average delay:0.000ms">
+                            </div> 
+                            <div class="ui icon button danger" data-tooltip="04/04，Availability:0.000%，Average delay:0.000ms">
+                            </div> 
+                            <div class="ui icon button danger" data-tooltip="04/05，Availability:0.000%，Average delay:0.000ms">
+                            </div> 
+                            <div class="ui icon button danger" data-tooltip="04/06，Availability:0.000%，Average delay:0.000ms">
+                            </div> 
+                            <div class="ui icon button danger" data-tooltip="04/07，Availability:0.000%，Average delay:0.000ms">
+                            </div> 
+                            <div class="ui icon button danger" data-tooltip="04/08，Availability:0.000%，Average delay:0.000ms">
+                            </div> 
+                            <div class="ui icon button danger" data-tooltip="04/09，Availability:0.000%，Average delay:0.000ms">
+                            </div> 
+                            <div class="ui icon button danger" data-tooltip="04/10，Availability:0.000%，Average delay:0.000ms">
+                            </div> 
+                            <div class="ui icon button danger" data-tooltip="04/11，Availability:0.000%，Average delay:0.000ms">
+                            </div> 
+                            <div class="ui icon button danger" data-tooltip="04/12，Availability:0.000%，Average delay:0.000ms">
+                            </div> 
+                            <div class="ui icon button danger" data-tooltip="04/13，Availability:0.000%，Average delay:0.000ms">
+                            </div> 
+                            <div class="ui icon button danger" data-tooltip="04/14，Availability:0.000%，Average delay:0.000ms">
+                            </div> 
+                            <div class="ui icon button danger" data-tooltip="04/15，Availability:0.000%，Average delay:0.000ms">
+                            </div> 
+                        </td>
+                        <td class="ui center aligned delay-today">
+                            <i class="delay-today danger"></i>
+                            Failure
+                        </td>
+                    </tr> 
+                    <tr>
+                        <td class="ui center aligned">ping-demo</td>
+                        <td class="ui center aligned">
+                            99.941%
+                        </td>
+                        <td class="ui center aligned">
+                            <div class="ui icon button good" data-tooltip="03/17，Availability:100.000%，Average delay:4.432ms">
+                            </div> 
+                            <div class="ui icon button good" data-tooltip="03/18，Availability:100.000%，Average delay:4.712ms">
+                            </div> 
+                            <div class="ui icon button good" data-tooltip="03/19，Availability:100.000%，Average delay:3.833ms">
+                            </div> 
+                            <div class="ui icon button good" data-tooltip="03/20，Availability:100.000%，Average delay:5.802ms">
+                            </div> 
+                            <div class="ui icon button good" data-tooltip="03/21，Availability:100.000%，Average delay:7.113ms">
+                            </div> 
+                            <div class="ui icon button good" data-tooltip="03/22，Availability:100.000%，Average delay:17.427ms">
+                            </div> 
+                            <div class="ui icon button good" data-tooltip="03/23，Availability:100.000%，Average delay:6.258ms">
+                            </div> 
+                            <div class="ui icon button good" data-tooltip="03/24，Availability:100.000%，Average delay:19.581ms">
+                            </div> 
+                            <div class="ui icon button good" data-tooltip="03/25，Availability:100.000%，Average delay:6.188ms">
+                            </div> 
+                            <div class="ui icon button good" data-tooltip="03/26，Availability:99.667%，Average delay:42.283ms">
+                            </div> 
+                            <div class="ui icon button good" data-tooltip="03/27，Availability:100.000%，Average delay:7.164ms">
+                            </div> 
+                            <div class="ui icon button good" data-tooltip="03/28，Availability:100.000%，Average delay:22.988ms">
+                            </div> 
+                            <div class="ui icon button good" data-tooltip="03/29，Availability:99.667%，Average delay:8.134ms">
+                            </div> 
+                            <div class="ui icon button good" data-tooltip="03/30，Availability:99.630%，Average delay:6.559ms">
+                            </div> 
+                            <div class="ui icon button good" data-tooltip="03/31，Availability:100.000%，Average delay:6.111ms">
+                            </div> 
+                            <div class="ui icon button good" data-tooltip="04/01，Availability:100.000%，Average delay:1.341ms">
+                            </div> 
+                            <div class="ui icon button good" data-tooltip="04/02，Availability:100.000%，Average delay:0.911ms">
+                            </div> 
+                            <div class="ui icon button good" data-tooltip="04/03，Availability:100.000%，Average delay:1.050ms">
+                            </div> 
+                            <div class="ui icon button good" data-tooltip="04/04，Availability:100.000%，Average delay:1.967ms">
+                            </div> 
+                            <div class="ui icon button good" data-tooltip="04/05，Availability:100.000%，Average delay:0.905ms">
+                            </div> 
+                            <div class="ui icon button good" data-tooltip="04/06，Availability:100.000%，Average delay:2.902ms">
+                            </div> 
+                            <div class="ui icon button good" data-tooltip="04/07，Availability:100.000%，Average delay:6.100ms">
+                            </div> 
+                            <div class="ui icon button good" data-tooltip="04/08，Availability:100.000%，Average delay:2.013ms">
+                            </div> 
+                            <div class="ui icon button good" data-tooltip="04/09，Availability:100.000%，Average delay:5.622ms">
+                            </div> 
+                            <div class="ui icon button good" data-tooltip="04/10，Availability:99.667%，Average delay:6.526ms">
+                            </div> 
+                            <div class="ui icon button good" data-tooltip="04/11，Availability:99.667%，Average delay:6.507ms">
+                            </div> 
+                            <div class="ui icon button good" data-tooltip="04/12，Availability:100.000%，Average delay:18.702ms">
+                            </div> 
+                            <div class="ui icon button good" data-tooltip="04/13，Availability:100.000%，Average delay:28.661ms">
+                            </div> 
+                            <div class="ui icon button good" data-tooltip="04/14，Availability:100.000%，Average delay:33.727ms">
+                            </div> 
+                            <div class="ui icon button good" data-tooltip="04/15，Availability:100.000%，Average delay:23.792ms">
+                            </div> 
+                        </td>
+                        <td class="ui center aligned delay-today">
+                            <i class="delay-today good"></i>
+                            Good
+                        </td>
+                    </tr> 
+                    <tr>
+                        <td class="ui center aligned">tcp-demo</td>
+                        <td class="ui center aligned">
+                            100.000%
+                        </td>
+                        <td class="ui center aligned">
+                            <div class="ui icon button good" data-tooltip="03/17，Availability:100.000%，Average delay:4.132ms">
+                            </div> 
+                            <div class="ui icon button good" data-tooltip="03/18，Availability:100.000%，Average delay:4.072ms">
+                            </div> 
+                            <div class="ui icon button good" data-tooltip="03/19，Availability:100.000%，Average delay:8.104ms">
+                            </div> 
+                            <div class="ui icon button good" data-tooltip="03/20，Availability:100.000%，Average delay:3.562ms">
+                            </div> 
+                            <div class="ui icon button good" data-tooltip="03/21，Availability:100.000%，Average delay:2.586ms">
+                            </div> 
+                            <div class="ui icon button good" data-tooltip="03/22，Availability:100.000%，Average delay:3.765ms">
+                            </div> 
+                            <div class="ui icon button good" data-tooltip="03/23，Availability:100.000%，Average delay:2.873ms">
+                            </div> 
+                            <div class="ui icon button good" data-tooltip="03/24，Availability:100.000%，Average delay:10.880ms">
+                            </div> 
+                            <div class="ui icon button good" data-tooltip="03/25，Availability:100.000%，Average delay:3.598ms">
+                            </div> 
+                            <div class="ui icon button good" data-tooltip="03/26，Availability:100.000%，Average delay:2.733ms">
+                            </div> 
+                            <div class="ui icon button good" data-tooltip="03/27，Availability:100.000%，Average delay:4.187ms">
+                            </div> 
+                            <div class="ui icon button good" data-tooltip="03/28，Availability:100.000%，Average delay:5.681ms">
+                            </div> 
+                            <div class="ui icon button good" data-tooltip="03/29，Availability:100.000%，Average delay:3.903ms">
+                            </div> 
+                            <div class="ui icon button good" data-tooltip="03/30，Availability:100.000%，Average delay:2.205ms">
+                            </div> 
+                            <div class="ui icon button good" data-tooltip="03/31，Availability:100.000%，Average delay:1.783ms">
+                            </div> 
+                            <div class="ui icon button good" data-tooltip="04/01，Availability:100.000%，Average delay:0.952ms">
+                            </div> 
+                            <div class="ui icon button good" data-tooltip="04/02，Availability:100.000%，Average delay:0.853ms">
+                            </div> 
+                            <div class="ui icon button good" data-tooltip="04/03，Availability:100.000%，Average delay:4.203ms">
+                            </div> 
+                            <div class="ui icon button good" data-tooltip="04/04，Availability:100.000%，Average delay:0.921ms">
+                            </div> 
+                            <div class="ui icon button good" data-tooltip="04/05，Availability:100.000%，Average delay:1.396ms">
+                            </div> 
+                            <div class="ui icon button good" data-tooltip="04/06，Availability:100.000%，Average delay:6.843ms">
+                            </div> 
+                            <div class="ui icon button good" data-tooltip="04/07，Availability:100.000%，Average delay:3.596ms">
+                            </div> 
+                            <div class="ui icon button good" data-tooltip="04/08，Availability:100.000%，Average delay:0.809ms">
+                            </div> 
+                            <div class="ui icon button good" data-tooltip="04/09，Availability:100.000%，Average delay:0.797ms">
+                            </div> 
+                            <div class="ui icon button good" data-tooltip="04/10，Availability:100.000%，Average delay:3.017ms">
+                            </div> 
+                            <div class="ui icon button good" data-tooltip="04/11，Availability:100.000%，Average delay:1.078ms">
+                            </div> 
+                            <div class="ui icon button good" data-tooltip="04/12，Availability:100.000%，Average delay:5.023ms">
+                            </div> 
+                            <div class="ui icon button good" data-tooltip="04/13，Availability:100.000%，Average delay:18.142ms">
+                            </div> 
+                            <div class="ui icon button good" data-tooltip="04/14，Availability:100.000%，Average delay:18.230ms">
+                            </div> 
+                            <div class="ui icon button good" data-tooltip="04/15，Availability:100.000%，Average delay:7.027ms">
+                            </div> 
+                        </td>
+                        <td class="ui center aligned delay-today">
+                            <i class="delay-today good"></i>
+                            Good
+                        </td>
+                    </tr> 
+                    <tr>
+                        <td class="ui center aligned">BWG-SSL</td>
+                        <td class="ui center aligned">
+                            83.624%
+                        </td>
+                        <td class="ui center aligned">
+                            <div class="ui icon button warning" data-tooltip="03/17，Availability:89.630%，Average delay:154.854ms">
+                            </div> 
+                            <div class="ui icon button danger" data-tooltip="03/18，Availability:65.926%，Average delay:108.015ms">
+                            </div> 
+                            <div class="ui icon button danger" data-tooltip="03/19，Availability:72.333%，Average delay:194.974ms">
+                            </div> 
+                            <div class="ui icon button danger" data-tooltip="03/20，Availability:74.000%，Average delay:128.288ms">
+                            </div> 
+                            <div class="ui icon button danger" data-tooltip="03/21，Availability:70.000%，Average delay:80.961ms">
+                            </div> 
+                            <div class="ui icon button danger" data-tooltip="03/22，Availability:75.667%，Average delay:94.935ms">
+                            </div> 
+                            <div class="ui icon button danger" data-tooltip="03/23，Availability:76.296%，Average delay:67.646ms">
+                            </div> 
+                            <div class="ui icon button danger" data-tooltip="03/24，Availability:72.667%，Average delay:227.282ms">
+                            </div> 
+                            <div class="ui icon button danger" data-tooltip="03/25，Availability:74.000%，Average delay:119.791ms">
+                            </div> 
+                            <div class="ui icon button danger" data-tooltip="03/26，Availability:72.963%，Average delay:83.273ms">
+                            </div> 
+                            <div class="ui icon button danger" data-tooltip="03/27，Availability:62.500%，Average delay:105.140ms">
+                            </div> 
+                            <div class="ui icon button danger" data-tooltip="03/28，Availability:75.667%，Average delay:162.860ms">
+                            </div> 
+                            <div class="ui icon button danger" data-tooltip="03/29，Availability:70.000%，Average delay:81.507ms">
+                            </div> 
+                            <div class="ui icon button danger" data-tooltip="03/30，Availability:73.704%，Average delay:555.170ms">
+                            </div> 
+                            <div class="ui icon button danger" data-tooltip="03/31，Availability:79.333%，Average delay:178.864ms">
+                            </div> 
+                            <div class="ui icon button warning" data-tooltip="04/01，Availability:90.741%，Average delay:135.081ms">
+                            </div> 
+                            <div class="ui icon button good" data-tooltip="04/02，Availability:95.417%，Average delay:152.034ms">
+                            </div> 
+                            <div class="ui icon button good" data-tooltip="04/03，Availability:97.037%，Average delay:465.572ms">
+                            </div> 
+                            <div class="ui icon button good" data-tooltip="04/04，Availability:96.667%，Average delay:131.489ms">
+                            </div> 
+                            <div class="ui icon button good" data-tooltip="04/05，Availability:97.407%，Average delay:222.083ms">
+                            </div> 
+                            <div class="ui icon button good" data-tooltip="04/06，Availability:96.667%，Average delay:138.847ms">
+                            </div> 
+                            <div class="ui icon button good" data-tooltip="04/07，Availability:97.778%，Average delay:742.138ms">
+                            </div> 
+                            <div class="ui icon button good" data-tooltip="04/08，Availability:98.519%，Average delay:223.659ms">
+                            </div> 
+                            <div class="ui icon button warning" data-tooltip="04/09，Availability:89.583%，Average delay:139.059ms">
+                            </div> 
+                            <div class="ui icon button warning" data-tooltip="04/10，Availability:89.667%，Average delay:323.725ms">
+                            </div> 
+                            <div class="ui icon button warning" data-tooltip="04/11，Availability:89.000%，Average delay:203.053ms">
+                            </div> 
+                            <div class="ui icon button warning" data-tooltip="04/12，Availability:93.701%，Average delay:937.731ms">
+                            </div> 
+                            <div class="ui icon button warning" data-tooltip="04/13，Availability:88.112%，Average delay:814.577ms">
+                            </div> 
+                            <div class="ui icon button warning" data-tooltip="04/14，Availability:89.753%，Average delay:861.410ms">
+                            </div> 
+                            <div class="ui icon button good" data-tooltip="04/15，Availability:95.217%，Average delay:769.305ms">
+                            </div> 
+                        </td>
+                        <td class="ui center aligned delay-today">
+                            <i class="delay-today warning"></i>
+                            Low Available
+                        </td>
+                    </tr> 
+                    <tr>
+                        <td class="ui center aligned">TradeBot</td>
+                        <td class="ui center aligned">
+                            99.964%
+                        </td>
+                        <td class="ui center aligned">
+                            <div class="ui icon button good" data-tooltip="03/17，Availability:99.333%，Average delay:270.237ms">
+                            </div> 
+                            <div class="ui icon button good" data-tooltip="03/18，Availability:100.000%，Average delay:289.877ms">
+                            </div> 
+                            <div class="ui icon button good" data-tooltip="03/19，Availability:100.000%，Average delay:329.003ms">
+                            </div> 
+                            <div class="ui icon button good" data-tooltip="03/20，Availability:100.000%，Average delay:321.869ms">
+                            </div> 
+                            <div class="ui icon button good" data-tooltip="03/21，Availability:99.931%，Average delay:449.534ms">
+                            </div> 
+                            <div class="ui icon button good" data-tooltip="03/22，Availability:100.000%，Average delay:373.746ms">
+                            </div> 
+                            <div class="ui icon button good" data-tooltip="03/23，Availability:100.000%，Average delay:307.046ms">
+                            </div> 
+                            <div class="ui icon button good" data-tooltip="03/24，Availability:100.000%，Average delay:227.040ms">
+                            </div> 
+                            <div class="ui icon button good" data-tooltip="03/25，Availability:100.000%，Average delay:276.035ms">
+                            </div> 
+                            <div class="ui icon button good" data-tooltip="03/26，Availability:99.931%，Average delay:276.254ms">
+                            </div> 
+                            <div class="ui icon button good" data-tooltip="03/27，Availability:100.000%，Average delay:234.941ms">
+                            </div> 
+                            <div class="ui icon button good" data-tooltip="03/28，Availability:100.000%，Average delay:258.639ms">
+                            </div> 
+                            <div class="ui icon button good" data-tooltip="03/29，Availability:100.000%，Average delay:375.631ms">
+                            </div> 
+                            <div class="ui icon button good" data-tooltip="03/30，Availability:100.000%，Average delay:269.478ms">
+                            </div> 
+                            <div class="ui icon button good" data-tooltip="03/31，Availability:100.000%，Average delay:303.223ms">
+                            </div> 
+                            <div class="ui icon button good" data-tooltip="04/01，Availability:100.000%，Average delay:260.876ms">
+                            </div> 
+                            <div class="ui icon button good" data-tooltip="04/02，Availability:99.912%，Average delay:334.136ms">
+                            </div> 
+                            <div class="ui icon button good" data-tooltip="04/03，Availability:100.000%，Average delay:281.241ms">
+                            </div> 
+                            <div class="ui icon button good" data-tooltip="04/04，Availability:100.000%，Average delay:415.605ms">
+                            </div> 
+                            <div class="ui icon button good" data-tooltip="04/05，Availability:100.000%，Average delay:316.634ms">
+                            </div> 
+                            <div class="ui icon button good" data-tooltip="04/06，Availability:100.000%，Average delay:281.905ms">
+                            </div> 
+                            <div class="ui icon button good" data-tooltip="04/07，Availability:100.000%，Average delay:376.024ms">
+                            </div> 
+                            <div class="ui icon button good" data-tooltip="04/08，Availability:99.921%，Average delay:321.998ms">
+                            </div> 
+                            <div class="ui icon button good" data-tooltip="04/09，Availability:99.852%，Average delay:329.136ms">
+                            </div> 
+                            <div class="ui icon button good" data-tooltip="04/10，Availability:100.000%，Average delay:345.598ms">
+                            </div> 
+                            <div class="ui icon button good" data-tooltip="04/11，Availability:100.000%，Average delay:370.814ms">
+                            </div> 
+                            <div class="ui icon button good" data-tooltip="04/12，Availability:100.000%，Average delay:391.222ms">
+                            </div> 
+                            <div class="ui icon button good" data-tooltip="04/13，Availability:100.000%，Average delay:420.587ms">
+                            </div> 
+                            <div class="ui icon button good" data-tooltip="04/14，Availability:100.000%，Average delay:400.619ms">
+                            </div> 
+                            <div class="ui icon button good" data-tooltip="04/15，Availability:100.000%，Average delay:385.588ms">
+                            </div> 
+                        </td>
+                        <td class="ui center aligned delay-today">
+                            <i class="delay-today good"></i>
+                            Good
+                        </td>
+                    </tr> 
+                    <tr>
+                        <td class="ui center aligned">gg0</td>
+                        <td class="ui center aligned">
+                            99.503%
+                        </td>
+                        <td class="ui center aligned">
+                            <div class="ui icon button good" data-tooltip="03/17，Availability:99.630%，Average delay:197.466ms">
+                            </div> 
+                            <div class="ui icon button good" data-tooltip="03/18，Availability:96.667%，Average delay:680.870ms">
+                            </div> 
+                            <div class="ui icon button " data-tooltip="03/19，Availability:0.000%，Average delay:0.000ms">
+                            </div> 
+                            <div class="ui icon button good" data-tooltip="03/20，Availability:100.000%，Average delay:44.921ms">
+                            </div> 
+                            <div class="ui icon button good" data-tooltip="03/21，Availability:98.889%，Average delay:116.560ms">
+                            </div> 
+                            <div class="ui icon button good" data-tooltip="03/22，Availability:100.000%，Average delay:560.676ms">
+                            </div> 
+                            <div class="ui icon button good" data-tooltip="03/23，Availability:100.000%，Average delay:140.131ms">
+                            </div> 
+                            <div class="ui icon button good" data-tooltip="03/24，Availability:100.000%，Average delay:88.637ms">
+                            </div> 
+                            <div class="ui icon button good" data-tooltip="03/25，Availability:98.750%，Average delay:200.727ms">
+                            </div> 
+                            <div class="ui icon button good" data-tooltip="03/26，Availability:98.889%，Average delay:203.626ms">
+                            </div> 
+                            <div class="ui icon button good" data-tooltip="03/27，Availability:97.667%，Average delay:3810.624ms">
+                            </div> 
+                            <div class="ui icon button good" data-tooltip="03/28，Availability:99.630%，Average delay:126.946ms">
+                            </div> 
+                            <div class="ui icon button good" data-tooltip="03/29，Availability:99.259%，Average delay:210.801ms">
+                            </div> 
+                            <div class="ui icon button good" data-tooltip="03/30，Availability:97.778%，Average delay:357.113ms">
+                            </div> 
+                            <div class="ui icon button good" data-tooltip="03/31，Availability:98.148%，Average delay:132.253ms">
+                            </div> 
+                            <div class="ui icon button good" data-tooltip="04/01，Availability:99.667%，Average delay:305.547ms">
+                            </div> 
+                            <div class="ui icon button good" data-tooltip="04/02，Availability:100.000%，Average delay:113.401ms">
+                            </div> 
+                            <div class="ui icon button good" data-tooltip="04/03，Availability:100.000%，Average delay:384.728ms">
+                            </div> 
+                            <div class="ui icon button good" data-tooltip="04/04，Availability:100.000%，Average delay:129.734ms">
+                            </div> 
+                            <div class="ui icon button good" data-tooltip="04/05，Availability:100.000%，Average delay:369.055ms">
+                            </div> 
+                            <div class="ui icon button good" data-tooltip="04/06，Availability:100.000%，Average delay:142.961ms">
+                            </div> 
+                            <div class="ui icon button good" data-tooltip="04/07，Availability:100.000%，Average delay:97.957ms">
+                            </div> 
+                            <div class="ui icon button good" data-tooltip="04/08，Availability:99.667%，Average delay:204.152ms">
+                            </div> 
+                            <div class="ui icon button good" data-tooltip="04/09，Availability:100.000%，Average delay:64.804ms">
+                            </div> 
+                            <div class="ui icon button good" data-tooltip="04/10，Availability:100.000%，Average delay:161.893ms">
+                            </div> 
+                            <div class="ui icon button good" data-tooltip="04/11，Availability:100.000%，Average delay:100.744ms">
+                            </div> 
+                            <div class="ui icon button good" data-tooltip="04/12，Availability:100.000%，Average delay:585.318ms">
+                            </div> 
+                            <div class="ui icon button good" data-tooltip="04/13，Availability:100.000%，Average delay:453.828ms">
+                            </div> 
+                            <div class="ui icon button good" data-tooltip="04/14，Availability:100.000%，Average delay:479.634ms">
+                            </div> 
+                            <div class="ui icon button good" data-tooltip="04/15，Availability:98.718%，Average delay:739.147ms">
+                            </div> 
+                        </td>
+                        <td class="ui center aligned delay-today">
+                            <i class="delay-today good"></i>
+                            Good
+                        </td>
+                    </tr> 
+                    <tr>
+                        <td class="ui center aligned">jh4</td>
+                        <td class="ui center aligned">
+                            98.969%
+                        </td>
+                        <td class="ui center aligned">
+                            <div class="ui icon button good" data-tooltip="03/17，Availability:99.630%，Average delay:216.407ms">
+                            </div> 
+                            <div class="ui icon button warning" data-tooltip="03/18，Availability:87.500%，Average delay:593.326ms">
+                            </div> 
+                            <div class="ui icon button " data-tooltip="03/19，Availability:0.000%，Average delay:0.000ms">
+                            </div> 
+                            <div class="ui icon button good" data-tooltip="03/20，Availability:100.000%，Average delay:34.214ms">
+                            </div> 
+                            <div class="ui icon button good" data-tooltip="03/21，Availability:98.519%，Average delay:127.653ms">
+                            </div> 
+                            <div class="ui icon button good" data-tooltip="03/22，Availability:100.000%，Average delay:376.265ms">
+                            </div> 
+                            <div class="ui icon button good" data-tooltip="03/23，Availability:100.000%，Average delay:190.867ms">
+                            </div> 
+                            <div class="ui icon button good" data-tooltip="03/24，Availability:100.000%，Average delay:104.729ms">
+                            </div> 
+                            <div class="ui icon button good" data-tooltip="03/25，Availability:99.167%，Average delay:189.566ms">
+                            </div> 
+                            <div class="ui icon button good" data-tooltip="03/26，Availability:98.519%，Average delay:250.071ms">
+                            </div> 
+                            <div class="ui icon button warning" data-tooltip="03/27，Availability:95.000%，Average delay:1086.022ms">
+                            </div> 
+                            <div class="ui icon button good" data-tooltip="03/28，Availability:100.000%，Average delay:117.168ms">
+                            </div> 
+                            <div class="ui icon button good" data-tooltip="03/29，Availability:96.296%，Average delay:202.072ms">
+                            </div> 
+                            <div class="ui icon button warning" data-tooltip="03/30，Availability:91.481%，Average delay:467.254ms">
+                            </div> 
+                            <div class="ui icon button good" data-tooltip="03/31，Availability:98.148%，Average delay:162.976ms">
+                            </div> 
+                            <div class="ui icon button good" data-tooltip="04/01，Availability:100.000%，Average delay:682.033ms">
+                            </div> 
+                            <div class="ui icon button good" data-tooltip="04/02，Availability:100.000%，Average delay:131.766ms">
+                            </div> 
+                            <div class="ui icon button good" data-tooltip="04/03，Availability:100.000%，Average delay:275.855ms">
+                            </div> 
+                            <div class="ui icon button good" data-tooltip="04/04，Availability:99.630%，Average delay:131.213ms">
+                            </div> 
+                            <div class="ui icon button good" data-tooltip="04/05，Availability:100.000%，Average delay:296.850ms">
+                            </div> 
+                            <div class="ui icon button good" data-tooltip="04/06，Availability:100.000%，Average delay:133.505ms">
+                            </div> 
+                            <div class="ui icon button good" data-tooltip="04/07，Availability:100.000%，Average delay:90.015ms">
+                            </div> 
+                            <div class="ui icon button good" data-tooltip="04/08，Availability:100.000%，Average delay:186.821ms">
+                            </div> 
+                            <div class="ui icon button good" data-tooltip="04/09，Availability:100.000%，Average delay:70.175ms">
+                            </div> 
+                            <div class="ui icon button good" data-tooltip="04/10，Availability:100.000%，Average delay:148.704ms">
+                            </div> 
+                            <div class="ui icon button good" data-tooltip="04/11，Availability:100.000%，Average delay:107.906ms">
+                            </div> 
+                            <div class="ui icon button good" data-tooltip="04/12，Availability:100.000%，Average delay:522.940ms">
+                            </div> 
+                            <div class="ui icon button good" data-tooltip="04/13，Availability:100.000%，Average delay:546.888ms">
+                            </div> 
+                            <div class="ui icon button good" data-tooltip="04/14，Availability:100.000%，Average delay:549.809ms">
+                            </div> 
+                            <div class="ui icon button good" data-tooltip="04/15，Availability:98.718%，Average delay:1016.955ms">
+                            </div> 
+                        </td>
+                        <td class="ui center aligned delay-today">
+                            <i class="delay-today warning"></i>
+                            Low Available
+                        </td>
+                    </tr> 
+                    <tr>
+                        <td class="ui center aligned">nb2</td>
+                        <td class="ui center aligned">
+                            99.627%
+                        </td>
+                        <td class="ui center aligned">
+                            <div class="ui icon button good" data-tooltip="03/17，Availability:99.630%，Average delay:157.435ms">
+                            </div> 
+                            <div class="ui icon button warning" data-tooltip="03/18，Availability:94.167%，Average delay:401.973ms">
+                            </div> 
+                            <div class="ui icon button " data-tooltip="03/19，Availability:0.000%，Average delay:0.000ms">
+                            </div> 
+                            <div class="ui icon button good" data-tooltip="03/20，Availability:99.444%，Average delay:54.335ms">
+                            </div> 
+                            <div class="ui icon button good" data-tooltip="03/21，Availability:99.259%，Average delay:130.540ms">
+                            </div> 
+                            <div class="ui icon button good" data-tooltip="03/22，Availability:100.000%，Average delay:379.404ms">
+                            </div> 
+                            <div class="ui icon button good" data-tooltip="03/23，Availability:100.000%，Average delay:153.561ms">
+                            </div> 
+                            <div class="ui icon button good" data-tooltip="03/24，Availability:100.000%，Average delay:82.306ms">
+                            </div> 
+                            <div class="ui icon button good" data-tooltip="03/25，Availability:98.750%，Average delay:264.998ms">
+                            </div> 
+                            <div class="ui icon button good" data-tooltip="03/26，Availability:98.889%，Average delay:203.340ms">
+                            </div> 
+                            <div class="ui icon button good" data-tooltip="03/27，Availability:97.667%，Average delay:1879.775ms">
+                            </div> 
+                            <div class="ui icon button good" data-tooltip="03/28，Availability:100.000%，Average delay:142.486ms">
+                            </div> 
+                            <div class="ui icon button good" data-tooltip="03/29，Availability:99.259%，Average delay:275.333ms">
+                            </div> 
+                            <div class="ui icon button good" data-tooltip="03/30，Availability:98.889%，Average delay:246.689ms">
+                            </div> 
+                            <div class="ui icon button good" data-tooltip="03/31，Availability:99.630%，Average delay:135.671ms">
+                            </div> 
+                            <div class="ui icon button good" data-tooltip="04/01，Availability:100.000%，Average delay:414.551ms">
+                            </div> 
+                            <div class="ui icon button good" data-tooltip="04/02，Availability:100.000%，Average delay:116.095ms">
+                            </div> 
+                            <div class="ui icon button good" data-tooltip="04/03，Availability:100.000%，Average delay:229.300ms">
+                            </div> 
+                            <div class="ui icon button good" data-tooltip="04/04，Availability:100.000%，Average delay:117.437ms">
+                            </div> 
+                            <div class="ui icon button good" data-tooltip="04/05，Availability:100.000%，Average delay:226.690ms">
+                            </div> 
+                            <div class="ui icon button good" data-tooltip="04/06，Availability:100.000%，Average delay:140.434ms">
+                            </div> 
+                            <div class="ui icon button good" data-tooltip="04/07，Availability:100.000%，Average delay:85.107ms">
+                            </div> 
+                            <div class="ui icon button good" data-tooltip="04/08，Availability:100.000%，Average delay:177.205ms">
+                            </div> 
+                            <div class="ui icon button good" data-tooltip="04/09，Availability:100.000%，Average delay:63.316ms">
+                            </div> 
+                            <div class="ui icon button good" data-tooltip="04/10，Availability:100.000%，Average delay:185.090ms">
+                            </div> 
+                            <div class="ui icon button good" data-tooltip="04/11，Availability:100.000%，Average delay:96.560ms">
+                            </div> 
+                            <div class="ui icon button good" data-tooltip="04/12，Availability:100.000%，Average delay:526.422ms">
+                            </div> 
+                            <div class="ui icon button good" data-tooltip="04/13，Availability:100.000%，Average delay:416.453ms">
+                            </div> 
+                            <div class="ui icon button good" data-tooltip="04/14，Availability:100.000%，Average delay:471.192ms">
+                            </div> 
+                            <div class="ui icon button good" data-tooltip="04/15，Availability:100.000%，Average delay:663.935ms">
+                            </div> 
+                        </td>
+                        <td class="ui center aligned delay-today">
+                            <i class="delay-today good"></i>
+                            Good
+                        </td>
+                    </tr> 
+                </tbody>
+            </table>
+
+            
+
+            <h2 style="text-align: center;">Cycle Transfer Statistics</h2>
+
+            <table class="ui celled table">
+                <thead>
+                    <tr>
+                        <th class="ui center aligned">ID</th>
+                        <th class="ui center aligned">Rules</th>
+                        <th class="ui center aligned">Servers</th>
+                        <th class="ui center aligned">From</th>
+                        <th class="ui center aligned">To</th>
+                        <th class="ui center aligned">MAX</th>
+                        <th class="ui center aligned">MIN</th>
+                        <th class="ui center aligned">Next check</th>
+                        <th class="ui center aligned">Current Usage</th>
+                        <th class="ui center aligned" style="padding: 0px 31px 0px 31px;">Data remaining</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                    
+                    
+                        <tr>
+                            <td class="ui center aligned">6</td>
+                            <td class="ui center aligned">GIA 1T</td>
+                            <td class="ui center aligned">BWG_GIA</td>
+                            <td class="ui center aligned">03/18/2023 16:00:00</td>
+                            <td class="ui center aligned">04/18/2023 16:00:00</td>
+                            <td class="ui center aligned">931.3G</td>
+                            <td class="ui center aligned">0B</td>
+                            <td class="ui center aligned">20m8s</td>
+                            <td class="ui center aligned">20.6G</td>
+                            <td class="ui center aligned" style="padding: 14px 0px 0px 0px; position: relative;"><div class="thirteen wide column"><div class="ui progress fine" style=" background: rgba(0,0,0,.1); background-color: rgba(0,0,0,.1)!important; height: 25px;"><div class="bar" style="transition-duration: 300ms; min-width: unset; background-color: rgb(10, 148, 242); width: 97.79% !important;"></div><small style="position: relative; top: -2em;">910.7G / 97.79 %</small></div></div></td>
+                        </tr>
+                    
+                    
+                    
+                    
+                        <tr>
+                            <td class="ui center aligned">8</td>
+                            <td class="ui center aligned">KT 1T</td>
+                            <td class="ui center aligned">KT_LA11</td>
+                            <td class="ui center aligned">04/10/2023 16:00:00</td>
+                            <td class="ui center aligned">05/10/2023 16:00:00</td>
+                            <td class="ui center aligned">931.3G</td>
+                            <td class="ui center aligned">0B</td>
+                            <td class="ui center aligned">19m44s</td>
+                            <td class="ui center aligned">277.2M</td>
+                            <td class="ui center aligned" style="padding: 14px 0px 0px 0px; position: relative;"><div class="thirteen wide column"><div class="ui progress fine" style=" background: rgba(0,0,0,.1); background-color: rgba(0,0,0,.1)!important; height: 25px;"><div class="bar" style="transition-duration: 300ms; min-width: unset; background-color: rgb(10, 148, 242); width: 99.97% !important;"></div><small style="position: relative; top: -2em;">931.1G / 99.97 %</small></div></div></td>
+                        </tr>
+                    
+                    
+                    
+                    
+                </tbody>
+            </table>
+
+            
+        </div>
+    </div>
+</div>
+
+<div class="ui inverted vertical footer segment">
+    <div class="ui center aligned is-size-7 container">
+        <b>&copy; <a style="color: white;" href="index.html">Nezha Monitoring</a></b> | 
+		Powered by <a style="color: white;" href="https://github.com/naiba/nezha"><st>Nezha Monitoring&lt;v0.14.13&gt;</st></a>&nbsp;| Theme designed 
+        <small>by.<a href="https://yujie.pro/" style="color: white;" target="_blank">夜灭</a>
+        </small>
+    </div>
+</div>
+<script src="../cdn.staticfile.org/jquery/3.6.0/jquery.min.js_%3b%20filename_%3dutf-8%27%27jquery.min.js"></script>
+<script src="../cdn.staticfile.org/semantic-ui/2.4.1/semantic.min.js_%3b%20filename_%3dutf-8%27%27semantic.min.js"></script>
+<script src="static/semantic-ui-alerts.min.js"></script>
+<script src="../cdn.staticfile.org/vue/2.6.14/vue.min.js_%3b%20filename_%3dutf-8%27%27vue.min.js"></script>
+<script src="static/main7388.js?v20220930"></script>
+<script>
+    (function () {
+        updateLang({"Add":"Add","AlarmRule":"Alarm Rule","Cron":"Scheduled Tasks","Edit":"Edit","Monitor":"Services","Notification":"Notification Method","Server":"Servers"});
+    })();
+</script>
+<script src="cdn-cgi/scripts/7d0fa10a/cloudflare-static/rocket-loader.min.js" data-cf-settings="3d229d98a6d6e47fa3ec37b6-|49" defer></script><script defer src="https://static.cloudflareinsights.com/beacon.min.js/v2b4487d741ca48dcbadcaf954e159fc61680799950996" integrity="sha512-D/jdE0CypeVxFadTejKGTzmwyV10c1pxZk/AqjJuZbaJwGMyNHY3q/mTPWqMUnFACfCTunhZUVcd4cV78dK1pQ==" data-cf-beacon='{"rayId":"7b83dc14cec89bca","version":"2023.3.0","r":1,"b":1,"token":"91c5bb06c1294656b6918bdaeb548ae4","si":100}' crossorigin="anonymous"></script>
+</body>
+
+
+<!-- Mirrored from ops.naibahq.com/service by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 15 Apr 2023 11:31:35 GMT -->
+</html>
+
