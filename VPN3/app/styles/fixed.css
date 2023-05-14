@@ -1,0 +1,14 @@
+﻿
+/*!
+This file is part of DecSoft App Builder.
+Visit our website for license information.
+Copyright ©2023 DecSoft. All rights reserved.
+Visit our website at: https://www.decsoftutils.com/
+
+*/
+
+html, body, .app-view { width: 320px; height: 480px; }
+.app-dialog .modal-dialog { margin: auto; width: 320px; height: 480px; }
+.app-dialog .modal-dialog .modal-content { width: 320px; height: 480px; }
+
+#Main #iframe1 { position: absolute; top: 0px; left: 0px; width: 320px; height: 480px; }
