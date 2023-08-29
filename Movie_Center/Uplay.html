@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Video Player</title>
+  <style>
+    #video-player {
+      width: 100%;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+  </style>
+</head>
+<body>
+  <div id="video-player">
+    <video id="video" controls>
+      <source src="video.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+  </div>
+
+  <script>
+    const videoPlayer = document.getElementById('video');
+    const videoLinks = document.querySelectorAll('.video-link');
+
+    videoLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        const videoSrc = link.getAttribute('data-src');
+        videoPlayer.src = videoSrc;
+        videoPlayer.load();
+        videoPlayer.play();
+      });
+    });
+  </script>
+</body>
+</html>
