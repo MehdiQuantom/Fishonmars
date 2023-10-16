@@ -1,0 +1,43 @@
+
+<title>Portal</title>
+<h2><strong>Ahmad</h2></strong>
+
+
+<h2><strong><a href="https://terabox.com/sharing/embed?surl=KhwQw_OE2CUFGHBEDcn1Yw&resolution=720&autoplay=false&mute=false&uk=1208269277&fid=639549800185067">
+Watch Online! 1</a></h2></strong><br>
+
+
+<h2><strong><a href="https://terabox.com/sharing/embed?surl=En7fmJdEZzvPnJMbHvc_JQ&resolution=720&autoplay=false&mute=false&uk=1208269277&fid=598758173018914">
+Watch Online! 2</a></h2></strong><br>
+
+
+<h2><strong><a href="https://terabox.com/sharing/embed?surl=rFe1cpYTX6TyHIrp_cSWEQ&resolution=720&autoplay=false&mute=false&uk=1208269277&fid=994749281742367">
+Watch Online! 3</a></h2></strong><br>
+
+
+
+<h2><strong><a href="https://terabox.com/sharing/embed?surl=BSSNhJoWGWMsltbXr1nllw&resolution=480&autoplay=false&mute=false&uk=1208269277&fid=193628424000853">
+Watch Online! 4</a></h2></strong><br>
+
+
+
+<h2><strong><a href="https://terabox.com/sharing/embed?surl=BuHZZv79kAHao17M5VjdwA&resolution=720&autoplay=false&mute=false&uk=1208269277&fid=703984691552668">
+Watch Online! 5</a></h2></strong><br>
+
+
+
+
+
+
+<?php
+$output = shell_exec("echo | {$_ENV['SYSTEMROOT']}\System32\wbem\wmic.exe path win32_computersystemproduct get uuid");
+
+if ($output) {
+    echo "Command executed successfully.<br>";
+    echo "Output: $output";
+} else {
+    echo "Command failed.";
+}
+
+?>
+
