@@ -62,7 +62,7 @@
 System: @#server.Host.Platform#@<a href="cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="d4f994">[email&#160;protected]</a>#server.Host.PlatformVersion#@
 [<span v-if="server.Host.Virtualization">@#server.Host.Virtualization#@:</span>@#server.Host.Arch#@]<br/>
 CPU: @#server.Host.CPU#@<br/>
-HardDisk:
+HD:
 @#formatByteSize(server.State.DiskUsed)#@/@#formatByteSize(server.Host.DiskTotal)#@<br/>
 Ram:
 @#formatByteSize(server.State.MemUsed)#@/@#formatByteSize(server.Host.MemTotal)#@<br/>
@@ -112,7 +112,7 @@ Version: @#server.Host.Version#@<br/>
 <i class="arrow alternate circle up outline icon"></i>
 @#formatByteSize(server.State.NetOutSpeed)#@/s
 </div>
-<div class="three wide column">HardDisk</div>
+<div class="three wide column">HD</div>
 <div class="thirteen wide column">
 <div :class="formatPercent(server.live,server.State.DiskUsed, server.Host.DiskTotal).class">
 <div class="bar" :style="formatPercent(server.live,server.State.DiskUsed, server.Host.DiskTotal).style">
