@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget android-versionCode="1" id="com.appbuilder.biometric" ios-CFBundleVersion="1.0.0" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0" xmlns:gap="http://phonegap.com/ns/1.0">
+    <name short="Biometric">Biometric</name>
+    <description>Another App Builder app</description>
+    <author email="info@davidesperalta.com" href="https://www.davidesperalta.com/">App Builder</author>
+    <access origin="*" />
+    <allow-intent href="*" />
+    <allow-navigation href="*" />
+    <content src="index.html" />
+    <icon src="res/icon.png" />
+    <gap:plugin name="cordova-plugin-whitelist" source="npm" />
+    <gap:plugin name="cordova-plugin-dialogs" source="npm" />
+    <gap:plugin name="cordova-plugin-fingerprint-aio@rc" source="npm" />
+    <preference name="phonegap-version" value="cli-8.0.0" />
+    <preference name="fullscreen" value="false" />
+    <preference name="disallowOverscroll" value="true" />
+    <preference name="orientation" value="portrait" />
+    <preference name="StatusBarOverlaysWebView" value="false" />
+    <preference name="StatusBarBackgroundColor" value="#000000" />
+    <preference name="StatusBarStyle" value="default" />
+    <preference name="deployment-target" value="10.0" />
+    <preference name="target-device" value="universal" />
+    <preference name="KeepRunning" value="true" />
+    <preference name="ShowTitle" value="false" />
+    <preference name="android-minSdkVersion" value="19" />
+    <preference name="android-targetSdkVersion" value="28" />
+    <preference name="SplashMaintainAspectRatio" value="true" />
+    <preference name="windows-target-version" value="10.0" />
+    <preference name="SplashScreenDelay" value="3000" />
+    <preference name="FadeSplashScreen" value="true" />
+    <preference name="ShowSplashScreenSpinner" value="true" />
+    <preference name="SplashScreenSpinnerColor" value="#ffffff" />
+</widget>
